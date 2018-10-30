@@ -1,0 +1,18 @@
+<!--pages/PromotionCenter/IntegralDetail/IntegralDetail.wxml-->
+<block wx:for="{{3}}">
+  <view class='view'>
+    <view>
+        <image mode='widthFix' src='/imgs/jfmx.jpg'></image>
+      <text>积分来源 ： 推广会员</text>
+    </view>
+    <view>
+      <image mode='widthFix' src='/imgs/dhmximg2.jpg'></image>
+      <text>积分数额 ： </text>
+      <text class='red'>-500</text>
+    </view>
+    <view>
+      <image mode='widthFix' src='/imgs/dhmximg3.jpg'></image>
+      <text>获得时间 ： 2018-09-18  20:22</text>
+    </view>
+  </view>
+</block>

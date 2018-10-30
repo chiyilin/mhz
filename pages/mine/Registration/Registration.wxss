@@ -1,0 +1,34 @@
+/* pages/mine/Registration/Registration.wxss */
+.baoming{
+  margin: 0 25rpx;
+  padding: 43rpx 70rpx 37rpx 53rpx;
+  border-bottom: 1px solid #E3E3E3;
+  color: #605F5F;
+}
+.title{
+  font-size: 28rpx;
+  display: inline-block;
+  width: 400rpx;
+  overflow: hidden;
+}
+.time{
+  font-size: 24rpx;
+  float: right;
+  margin-top: 5rpx;
+  color: #AAAAAA;
+}
+.content{
+  display: block;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  margin-bottom: 30rpx;
+  height: 140rpx;
+  overflow: hidden;
+}
+.name{
+  font-size: 26rpx;
+  margin-right: 100rpx;
+}
+.phone{
+  font-size: 26rpx;
+}

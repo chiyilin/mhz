@@ -1,0 +1,34 @@
+<!--pages/mine/MySubject/MySubject.wxml-->
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">单节</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">套餐</view>
+</view>
+
+
+<view class="weui-cells__title" hidden="{{!isShow}}">
+  <block wx:for="{{kecheng}}">
+    <view wx:if="{{item.producttaoc==null}}" bindtap='xiangqing' data-productid='{{item.product_id}}' class='TuiJian'>
+      <image wx:if="{{item.productbanner.url}}" class='TJimg' src="{{filepath}}{{item.productbanner.url}}"></image>
+      <image wx:else class="TJimg" src="/imgs/img1.jpg"></image>
+      <text class='tjtitle'>{{item.product.product_name}}</text>
+      <text class='tjcont'>{{item.product.product_introduce}}</text>
+      <text class='time'>课程时长：{{item.product.product_times}}</text>
+      <text wx:if="{{item.is_pay==2}}" bindtap='pingjia' data-listid='{{item.list_id}}' class='price'>评价</text>
+      <text wx:else class='price' style='color:red;border-color:red'>已评价</text>
+    </view>
+  </block>
+</view>
+<view class="weui-cells__title" hidden="{{isShow}}">
+  <block wx:for="{{kecheng}}">
+    <view wx:if="{{item.product==null}}" bindtap='taocan' data-taocid='{{item.taoc_id}}' class='TuiJian'>
+      <image wx:if="{{item.producttaocbanner.url}}" class='TJimg' src="{{filepath}}{{item.producttaocbanner.url}}"></image>
+      <image wx:else class="TJimg" src="/imgs/img1.jpg"></image>
+      <text class='tjtitle'>{{item.producttaoc.taoc_name}}</text>
+      <text class='taocan'>套餐</text>
+      <text class='tjcont'>{{item.producttaoc.taoc_content}}</text>
+      <text class='time'>课程节数：{{item.num}}节</text>
+      <text wx:if="{{item.is_pay==2}}" bindtap='pingjia' data-listid='{{item.list_id}}' class='price'>评价</text>
+      <text wx:else class='price' style='color:red;border-color:red'>已评价</text>
+    </view>
+  </block>
+</view>

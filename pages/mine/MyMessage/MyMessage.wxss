@@ -1,0 +1,67 @@
+/* pages/mine/MyMessage/MyMessage.wxss */
+page{
+  background-color: #EFEFEF;
+}
+.swiper-tab {
+  width: 100%;
+  line-height:75rpx;
+  background-color:#EFEFEF;
+  border-bottom:  #DCDCDC solid 1px;
+}
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  color: #777;
+  border-bottom: 0rpx;
+  text-align: center;
+  width:20%;
+  margin-left: 20%;
+}
+.on {
+  color: #666666;
+  border-bottom: 2px solid #727171;
+}
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.swiper-box view {
+  text-align: center;
+}
+.top{
+  margin-bottom: 40rpx;
+}
+.content{
+  background-color: #fff;
+  margin: 0 24rpx;
+  margin-top: 25rpx;
+  font-size: 26rpx;
+  padding: 48rpx 40rpx;
+  color: #605F5F;
+  position: relative;
+}
+.shu{
+  width: 37rpx;
+  vertical-align: middle;
+  margin-right: 15rpx;
+}
+.xiaoxi{
+  width: 35rpx;
+  vertical-align: middle;
+  margin-right: 15rpx;
+}
+.huifu{
+  float: right;
+  color: #ADB183;
+}
+.xtText{
+  width: 560rpx;
+  float: right;
+  line-height: 50rpx;
+}
+.dingwei{
+  position: absolute;
+  left: 40rpx; top: 58rpx;
+}

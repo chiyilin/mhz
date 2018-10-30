@@ -1,0 +1,71 @@
+<!--pages/mine/mine.wxml-->
+<view class='member'>
+  <image class='touxiang' mode='widthFix' src='{{userinfo.face}}'></image>
+  <view class='message'>
+    <image bindtap='message' mode='widthFix' class='xiaoxi' src='../../imgs/message.jpg'></image>
+    <text bindtap='message'>13</text>
+  </view>
+  <text class='zhiwu'>{{userinfo.nick_name}}</text>
+  <image class='grzl' mode='widthFix' src='/imgs/grzl.jpg' data-userid="{{userinfo.user_id}}" bindtap='person'></image>
+</view>
+<view class='money'>
+  <text>我的资产</text>
+</view>
+<view class='hy'>
+  <view>
+    <image bindtap='myhome' mode='widthFix' src='/imgs/wdzy.jpg'></image>
+    <text bindtap='myhome' >我的作业</text>
+  </view>
+  <view>
+      <image bindtap='mypro'  mode='widthFix' src='/imgs/wdkc1.jpg'></image>
+      <text bindtap='mypro'>我的课程</text>
+  </view>
+  <view>
+    <image bindtap='mycl' mode='widthFix' src='/imgs/wdsc.jpg'></image>
+    <text bindtap='mycl'>我的收藏</text>
+  </view>
+</view>
+<!--列表-->
+<view  bindtap='history' class='list clearfix'>
+  <view class='left fl'>
+    <image mode='widthFix' src='/imgs/bfjl.jpg'></image>
+    <text>播放记录</text>
+  </view>
+  <view class='right fr'>
+    <image mode='widthFix' src='/imgs/you.jpg'></image>
+  </view>
+</view>
+
+<view bindtap='Registration' class='list clearfix'>
+  <view class='left fl'>
+    <image mode='widthFix' src='/imgs/bmgl.jpg'></image>
+    <text>报名管理</text>
+  </view>
+  <view class='right fr'>
+    <image mode='widthFix' src='/imgs/you.jpg'></image>
+  </view>
+</view>
+
+<view bindtap='center' class='list clearfix'>
+  <view class='left fl'>
+    <image mode='widthFix' src='/imgs/tgzx.jpg'></image>
+    <text>推广中心</text>
+  </view>
+  <view class='right fr'>
+    <image mode='widthFix' src='/imgs/you.jpg'></image>
+  </view>
+</view>
+
+<view bindtap='dizi' data-userid="{{userinfo.user_id}}" data-usersmrz="{{userinfo.usersmrz}}" class='list clearfix'>
+  <view class='left fl'>
+    <image mode='widthFix' src='/imgs/dzb.jpg'></image>
+    <text>弟子班特权</text>
+  </view>
+  <view class='right fr'>
+    <image mode='widthFix' src='/imgs/you.jpg'></image>
+  </view>
+</view>
+
+<view>
+
+</view>

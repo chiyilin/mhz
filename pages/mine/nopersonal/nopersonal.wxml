@@ -1,0 +1,45 @@
+<!--pages/mine/nopersonal/nopersonal.wxml-->
+<view class='member clearfix'>
+  <image class='touxiang' mode='widthFix' src='{{userinfo.face}}'></image>
+  <text class='zhiwu'>{{userinfo.nick_name}}</text>
+  <image class='dun' mode='widthFix' src='/imgs/wtongguo.jpg'></image>
+  <text wx:if="{{userinfo.usersmrz.smrz_state==2}}" class='Dtext'>已通过实名认证</text>
+  <text wx:else class='Dtext'>未通过实名认证</text>
+</view>
+<form bindsubmit="formSubmit">
+  <view class='clearfix'>
+    <text class='fl'>姓名：</text>
+    <input class='fl' wx:if="{{userinfo.usersmrz}}" name="smrz_name" value='{{userinfo.usersmrz.smrz_name}}'></input>
+    <input class='fl' wx:else name="smrz_name" value='真实姓名'></input>
+    <input type="text" value="{{userinfo.user_id}}" name="hidden" hidden="true"></input>
+  </view>
+  <view class='clearfix'>
+    <text class='fl'>性别：</text>
+    <radio-group class="radio-group"  name="user_sex" bindchange="radioChange">
+      <label class="radio">
+        <radio value="0" checked="{{userinfo.user_sex==0}}" />女
+        <radio value="1" checked="{{userinfo.user_sex==1}}" />男
+      </label>
+    </radio-group>
+  </view>
+  <view class='clearfix'>
+    <text class='fl'>联系方式：</text>
+    <input class='fl' name="user_mobile" value='{{userinfo.user_mobile}}'></input>
+  </view>
+  <view class='clearfix'>
+    <text class='fl'>收货地址：</text>
+    <picker mode="region" class='fl' name="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <text class="picker fl">
+        {{region[0]}} {{region[1]}} {{region[2]}} 
+      </text>
+    </picker>
+    <input class="addxiang" name="addxiang" value='{{userinfo.useraddress.addxiang}}'></input>
+  </view>
+  <view wx:if="{{userinfo.usersmrz.smrz_state==2}}" class='green'>
+    <text>你已通过实名认证</text>
+  </view>
+  <view wx:else class='green' bindtap='renzheng' data-userid='{{userinfo.user_id}}'>
+    <text>进行实名认证>></text>
+  </view>
+  <button form-type='submit'>设置</button>
+</form>

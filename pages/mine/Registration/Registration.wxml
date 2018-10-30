@@ -1,0 +1,11 @@
+<!--pages/mine/Registration/Registration.wxml-->
+<block wx:for="{{baoming}}">
+  <view class='baoming' bindtap='xiangqing' data-id='{{item.list_id}}'>
+    <text wx:if="{{item.list_state==1}}" class='title'>报名内容：{{item.baokao.baokao_name}}</text>
+    <text wx:else class='title'>报考内容：{{item.baokao.baokao_name}}</text>
+    <text class='time'>{{item.addtime}}</text>
+    <text class='content'>{{item.baokao.baokao_xuzhi}}</text>
+    <text class='name'>姓名：{{item.usersmrz.smrz_name}}</text>
+    <text class='phone'>电话：{{item.user.user_mobile}}</text>
+  </view>
+</block>

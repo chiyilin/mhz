@@ -1,0 +1,42 @@
+/* pages/mine/MyTeam/MyTeam.wxss */
+page{
+  background-color: #F9F9F9;
+}
+.top{
+  padding:35rpx 79rpx;
+  border-bottom: #ADB183 1px solid;
+}
+image{
+  width: 43rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+text{
+  font-size: 28rpx;
+  color: #6B6B6B;
+}
+.mt{
+  margin-top: 10rpx;
+}
+.list{
+  background-color: #fff;
+  box-shadow: 0 0 10rpx #ccc;
+  margin: 25rpx 15rpx;
+  padding: 20rpx 60rpx;
+  position: relative;
+}
+.bottom .team{
+  padding-left: 72rpx;
+  padding-top: 23rpx;
+}
+.num{
+  display: block;
+  background-color:#ADB183;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  position: absolute;
+  left: 0; top: 0;
+  height: 48rpx;
+  width: 55rpx;
+}

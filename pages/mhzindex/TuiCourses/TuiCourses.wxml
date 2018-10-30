@@ -1,0 +1,15 @@
+<!--pages/mhzindex/HotCourses/HotCourses.wxml-->
+<!--pages/mhzindex/commen/commen.wxml-->
+<view class="navbar">
+  <text wx:for="{{category}}" data-idx="{{index}}" data-ids="{{index}}" data-id="0" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+<!--理论-->
+<block wx:for="{{product}}">
+  <view class='TuiJian' bindtap='xiangqing' data-id="{{item.product_id}}">
+    <image class='TJimg' mode='widthFix' src='/imgs/img1.jpg'></image>
+    <text class='tjtitle'>{{item.product_name}}</text>
+    <text class='tjcont'>{{item.product_introduce}}</text>
+    <text class='time'>课程时长：{{item.product_times}}</text>
+    <text class='price'>￥{{item.product_money}}</text>
+  </view>
+</block>

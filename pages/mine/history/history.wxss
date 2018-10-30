@@ -1,0 +1,27 @@
+/* pages/mine/history/history.wxss */
+.vid{
+  padding: 47rpx 49rpx 47rpx 56rpx;
+  border-bottom: #E3E3E3 1px solid;
+}
+.hui{
+  width: 199rpx;
+  height: 147rpx;
+  margin-right: 40rpx;
+}
+text{
+  display: block;
+}
+.name{
+  font-size: 28rpx;
+  color: #605F5F;
+  line-height: 45rpx;
+}
+.date{
+  font-size: 24rpx;
+  color: #AAAAAA;
+  line-height: 50rpx;
+}
+.you{
+  width: 15rpx;
+  margin-top: -30rpx;
+}

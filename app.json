@@ -1,0 +1,79 @@
+{
+  "pages": [
+    "pages/Login/againLogin/againLogin",
+    "pages/mine/MySubject/MySubject",
+    "pages/comment/comment",
+    "pages/Login/Login",
+    "pages/mine/mine",
+    "pages/mhzindex/mhzindex",
+    "pages/mhzindex/finish/finish",
+    "pages/program/programlist/programlist",
+    "pages/program/buyAlready/buyAlready",
+    "pages/program/buy/buy",
+    "pages/program/CurriculaVariable/CurriculaVariable",
+    "pages/mine/UpHomework/UpHomework",
+    "pages/program/talk/talk",
+    "pages/mhzindex/PressReleases/PressReleases",
+    "pages/mhzindex/PressReleases/article/article",
+    "pages/mine/authentication/authentication",
+    "pages/mine/nopersonal/nopersonal",
+    "pages/mine/personal/personal",
+    "pages/mhzindex/EnrolmentDetails/EnrolmentDetails",
+    "pages/PromotionCenter/product/product",
+    "pages/PromotionCenter/IntegralDetail/IntegralDetail",
+    "pages/mine/Registration/Registration",
+    "pages/PromotionCenter/PromotionCenter",
+    "pages/PromotionCenter/ExchangeOfDetails/ExchangeOfDetails",
+    "pages/PromotionCenter/withdrawal/withdrawal",
+    "pages/mhzindex/examination/examination",
+    "pages/mhzindex/HotCourses/HotCourses",
+    "pages/mhzindex/commen/commen",
+    "pages/program/program",
+    "pages/mine/MyMessage/MyMessage",
+    "pages/mine/privilege/privilege",
+    "pages/PromotionCenter/PutForward/PutForward",
+    "pages/PromotionCenter/Bill/Bill",
+    "pages/mine/MyTeam/MyTeam",
+    "pages/mine/DiscipleClass/DiscipleClass",
+    "pages/PromotionCenter/Exchange/Exchange",
+    "pages/mine/MyHomework/MyHomework",
+    "pages/mine/history/history",
+    "pages/mine/MyCollection/MyCollection",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/mhzindex/NewCourses/NewCourses",
+    "pages/mhzindex/TuiCourses/TuiCourses"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ADB183",
+    "navigationBarTitleText": "梅花针",
+    "navigationBarTextStyle": "#FFFFFF"
+  },
+  "tabBar": {
+    "color": "#727171",
+    "selectedColor": "#727171",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "selectedIconPath": "imgs/index.jpg",
+        "iconPath": "imgs/index1.jpg",
+        "pagePath": "pages/mhzindex/mhzindex",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "imgs/kecheng1.jpg",
+        "iconPath": "imgs/kecheng.jpg",
+        "pagePath": "pages/program/program",
+        "text": "课程"
+      },
+      {
+        "selectedIconPath": "imgs/wode1.jpg",
+        "iconPath": "imgs/wode.jpg",
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  }
+}

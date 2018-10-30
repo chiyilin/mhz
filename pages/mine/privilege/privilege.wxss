@@ -1,0 +1,30 @@
+/* pages/mine/privilege/privilege.wxss */
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+image{
+  width: 143rpx;
+  margin-top: 141rpx;
+  margin-bottom: 47rpx;
+}
+.title{
+  font-size: 30rpx;
+  color: #ADB183;
+  margin-bottom: 137rpx;
+}
+.text{
+  font-size: 26rpx;
+  color: #605F5F;
+}
+button{
+  width: 336rpx;
+  height: 66rpx;
+  color: #fff;
+  background-color: #ADB183;
+  line-height: 66rpx;
+  font-size: 30rpx;
+  margin-top: 22rpx;
+  
+}

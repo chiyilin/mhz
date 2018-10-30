@@ -1,0 +1,124 @@
+/* pages/program/talk/talk.wxss */
+.pinlun{
+  padding: 36rpx 44rpx;
+  position: relative;
+  padding-bottom: 65rpx;
+  border-bottom: 1px solid #D6D6D6;
+  margin-bottom: 7rpx;
+}
+.touxiang{
+  width: 105rpx;
+  height: 105rpx;
+  border-radius: 50%;
+  background-color: #BEBEBE;
+  float:left;
+  margin-right: 26rpx;
+  vertical-align: top;
+}
+.name{
+  font-size: 28rpx;
+  color: #4F4F4F;
+  display: inline-block;
+  vertical-align: top;
+}
+.date{
+  font-size: 26rpx;
+  border-radius: 3px;
+  padding: 3rpx 9rpx;
+  margin-left:20rpx;
+  color: #A5A5A5;
+  display: inline-block;
+  vertical-align: top;
+}
+.pinlun-text{
+  font-size:26rpx;
+  line-height: 34rpx;
+  width: 533rpx;
+  color: #4F4F4F;
+  display: block;
+  padding-left: 130rpx;
+}
+.mess{
+  width: 36rpx;
+  height: 34rpx;
+  display: block;
+  margin-left: 620rpx;
+  margin-top: 20rpx;
+}
+.img {
+  padding: 40rpx 61rpx 10rpx 130rpx; 
+}
+.img image{
+  width: 23.2%;  
+}
+.com{
+  margin-top: 30rpx;
+  background-color: #FBFBFB;
+  padding: 20rpx;
+}
+
+.hide{
+ display: none;
+}
+.show{ 
+ display: block;
+}
+.plq{
+  background-color: #D6D6D6;
+  width: 35rpx;
+  height: 35rpx;
+  border-radius: 50%;
+  float: left;
+}
+.cont{
+  font-size: 26rpx;
+  color: #4F4F4F;
+  display: inline-block;
+  vertical-align: top;
+}
+.tp{
+ padding-left: 105rpx;
+}
+.hui{
+  width: 136rpx;
+  height:136rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+}
+.input{
+  height: 100rpx;
+  width: 100%;
+  background-color: #ADB183;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+}
+.content{
+  position: absolute;
+  left: 20rpx;
+  top:22rpx;
+  border-radius: 8px;
+  width: 85%;
+  height:50rpx;
+  padding-left: 10rpx;
+  font-size: 28rpx;
+  line-height: 50rpx;
+  background-color: #fff; 
+}
+.sent{
+  width: 40rpx;
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+}
+.btn{
+  position: absolute;
+  top: 30rpx;
+  right: 20rpx;
+  width:20rpx;
+  height:40rpx;
+  background-color: rgba(200, 200, 0, 0);
+}
+button::after {
+  border: none
+}

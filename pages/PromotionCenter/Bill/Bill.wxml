@@ -1,0 +1,27 @@
+<!--pages/PromotionCenter/Bill/Bill.wxml-->
+<block wx:for="{{3}}">
+  <view class='view'>
+    <view>
+      <label wx:if="{{index==0}}">
+        <image mode='widthFix' src='/imgs/shu.jpg'></image>
+      </label>
+      <label wx:if="{{index==1}}">
+        <image mode='widthFix' src='/imgs/xsbm.jpg'></image>
+      </label>
+      <label wx:if="{{index==2}}">
+        <image mode='widthFix' src='/imgs/pen.jpg'></image>
+      </label>
+
+      <text>课程订购 ：梅花针×1</text>
+    </view>
+    <view>
+      <image mode='widthFix' src='/imgs/dhmximg2.jpg'></image>
+      <text>实付金额 ： </text>
+      <text class='red'>-500</text>
+    </view>
+    <view>
+      <image mode='widthFix' src='/imgs/dhmximg3.jpg'></image>
+      <text>交易时间 ： 2018-09-18  20:22</text>
+    </view>
+  </view>
+</block>

@@ -1,0 +1,50 @@
+/* pages/mine/authentication/authentication.wxss */
+page{
+  background-color: #F9F9F9;
+}
+view{
+  padding-top: 65rpx;
+  padding-left: 90rpx;
+  color: #6B6B6B;
+  background-color: #fff;
+}
+text{
+  float: left;
+  font-size: 34rpx;
+}
+input{
+  width: 370rpx;
+  font-size: 28rpx;
+  border-bottom: 1px solid #ccc;
+}
+.bottom{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 80rpx 0 0 0rpx; 
+  
+}
+.bottom image{
+  display: block;
+  width: 308rpx;
+  height: 208rpx;
+  margin: 0 auto 30rpx auto;
+}
+.bottom text{
+  display: block;
+  font-size: 28rpx;
+  padding-bottom: 53rpx;
+}
+.btn{
+  background-color:  #F9F9F9;
+  padding: 0;
+}
+button{
+  width: 266rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  color: #fff;
+  font-size: 30rpx;
+  background-color: #ADB183;
+  margin-top: 47rpx;
+}

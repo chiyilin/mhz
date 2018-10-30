@@ -1,0 +1,68 @@
+page{
+  background-color: #EFEFEF;
+}
+.navbar{ 
+  width: 100%;
+  line-height:75rpx;
+  border-bottom:  #DCDCDC solid 1px;
+ } 
+ .navbar .item{ 
+  font-size: 30rpx;
+  display: inline-block;
+  color: #777;
+  border-bottom: 0rpx;
+  text-align: center;
+  width:20%;
+  margin-left: 10%;
+} 
+.navbar .item{ 
+ position: relative; 
+ flex: auto; 
+ text-align: center; 
+ line-height: 80rpx; 
+} 
+.navbar .item.active{ 
+  color: #666666;
+  border-bottom: 2px solid #727171;
+} 
+.navbar .item.active:after{ 
+ content: ""; 
+ display: block; 
+ position: absolute; 
+ bottom: 0; 
+ left: 0; 
+ right: 0; 
+ height: 4rpx; 
+} 
+.NoFinish{
+  background-color: #F9F9F9;
+  margin: 0 24rpx;
+  padding:0 37rpx;
+  margin-top: 18rpx;
+  height: 120rpx;
+}
+.shu{
+  width: 37rpx;
+  vertical-align: middle;
+  margin-right: 13rpx;
+}
+.NoFinishText{
+  font-size: 26rpx;
+  vertical-align: middle;
+  line-height: 120rpx;
+  width: 400rpx;
+  display: inline-block;
+}
+.you{
+  width: 15rpx;
+  margin-top: 48rpx;
+}
+.shenhe{
+  width:86rpx;
+  margin-top: 30rpx;
+}
+.pingfen{
+  font-size: 28rpx;
+  color: #FA8100;
+  line-height: 120rpx;
+}

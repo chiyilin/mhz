@@ -1,0 +1,44 @@
+<!--pages/mhzindex/examination/examination.wxml-->
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" data-state="1" bindtap="swichNav">线上报名</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" data-state="2" bindtap="swichNav">取证报考</view>
+</view>
+
+<view class="weui-cells__title">
+  <text class='title'>报考内容</text>
+  <view class='select_box '>
+    <view class='select' catchtap='selectTap'>
+      <text class='select_text'>{{name}}</text>
+      <image class='select_img {{show&&"select_img_rotate"}}' src='/imgs/sanjiao.jpg'></image>
+    </view>
+    <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
+      <text class='option' style='{{index==selectData.length&&"border:0;"}}' wx:for='{{baoming}}' wx:key='this' data-name="{{item.baokao_name}}" data-id="{{item.baokao_id}}" data-index='{{index}}'  catchtap='optionTap'>{{item.baokao_name}}</text>
+    </view>
+  </view>
+  <!--报考须知-->
+  <view class='bottom'>
+    <text class='Btitle'>报考须知</text>
+    <text class='content'>{{baomings.baokao_xuzhi}}</text>
+    <text class='time'>考试时间：{{baomings.baokao_time}}</text>
+    <text class='address'>考试地点：{{baomings.baokao_address}}</text>
+    <checkbox class='fuxuan' color='#4f4f4f'>
+    </checkbox>
+    <text class='tiaokuan'>同意接受以下服务条款>></text>
+    <view class='foot'>
+      <view class='zuo'>
+        <text>费用：</text>
+        <text class='red'>￥{{baomings.baokao_money}}</text>
+      </view>
+      <view wx:if="{{baomings.lists==null&&((baomings.baokao_state==2&&user.usersmrz!=null)||(baomings.baokao_state==1&&(user.usersmrz==null||user.usersmrz!=null)))}}"  bindtap='baom' data-baokaoid='{{baomings.baokao_id}}' class='you'>
+        <text>报名费用</text>
+      </view>
+      <view wx:elif="{{baomings.baokao_state==2&&baomings.lists==null&&user.usersmrz==null}}" class='you'>
+        <text>请实名认证后操作</text>
+      </view>
+      <view wx:elif="{{baomings.lists!=null}}" class='you'>
+        <text>已报名</text>
+      </view>
+    </view>
+
+  </view>
+</view>

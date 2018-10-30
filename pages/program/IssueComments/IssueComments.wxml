@@ -1,0 +1,30 @@
+<!--pages/program/IssueComments/IssueComments.wxml-->
+<view class='question'>
+  <image mode='widthFix' src='/imgs/lv.jpg'></image>
+  <text>{{pingjia.product.product_name}}</text>
+</view>
+
+<view class='bottom'>
+  <view class='clearfix'>
+    <image class='tou fl' src='{{pingjia.user.face}}'></image>
+    <text class='name'>{{pingjia.user.nick_name}}</text>
+    <text class='date'>{{pingjia.list_add_time}}</text>
+  </view>
+  <view class='pinlun clearfix'>
+    <textarea maxlength="300" placeholder="随便写点什么吧" class='pinlun-text' name="textarea" />
+    <view class='tupian'>
+      <label wx:for='{{tempFilePaths}}' wx:key="" class='add-item'>
+        <image mode='aspectFill' src='{{item}}' bindtap='previewImage' data-index='{{index}}'></image>
+        <image class='close' mode='widthFix' src='/imgs/close.jpg' bindtap='closeimg' data-index='{{index}}'></image>
+      </label>
+      <label wx:if="{{tempFilePaths.length!=9}}">
+        <view>
+          <image bindtap='chooseImage' src='/imgs/imgup.jpg' class='addImg'></image>
+        </view>
+      </label>
+    </view>
+  </view>
+  <view>
+    <button form-type="submit"> 发布评论 </button>
+  </view>
+</view>

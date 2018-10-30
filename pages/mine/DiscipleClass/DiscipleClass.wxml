@@ -1,0 +1,15 @@
+<!--pages/mine/DiscipleClass/DiscipleClass.wxml-->
+<view class='top clearfix'>
+  <image class='fl' mode='widthFix' src='/imgs/dzbzuo.jpg'></image>
+  <view class='fl textView'>
+    <text class='title'>身份验证已通过</text>
+    <text class='texts'>弟子班学徒观看视频无限制</text>
+  </view>
+  <image class='fl' mode='widthFix' src='/imgs/dzbyou.jpg'></image>
+</view>
+<view class='bottom'>
+  <text>弟子姓名：{{userdata.nick_name}}</text>
+  <text>联系方式：{{userdata.user_mobile}}</text>
+  <text>身份证号：{{userdata.usersmrz.smrz_code}}</text>
+</view>
+<button bindtap='xuekec'>学课程</button>

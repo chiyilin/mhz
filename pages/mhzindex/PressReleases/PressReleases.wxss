@@ -1,0 +1,55 @@
+/* pages/mhzindex/PressReleases/PressReleases.wxss */
+.item{
+  width: 15%;
+  height: 39rpx;
+  display: inline-block;
+  color: #BEBEBE;
+  font-size: 26rpx;
+  text-align: center;
+  margin-left: 30rpx;
+  padding: 5rpx 0; 
+  margin-top: 30rpx;
+  border-bottom: 3rpx solod #fff;
+}
+.navbar{
+  white-space: nowrap;
+}
+scroll-view{
+    border-bottom: 1px solid #E6E6E6;
+}
+.navbar .item.active{ 
+ color: #727171; 
+ border-bottom: 3rpx solid #727171;
+}
+.list{
+  padding:38rpx 47rpx;
+  border-bottom: #E6E6E6 solid 1px;
+}
+image{
+  width: 7rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+.title{
+  font-size: 30rpx;
+  display: inline-block;
+  margin-bottom: 30rpx;
+}
+.date{
+  margin-top: 15rpx;
+  text-align: right;
+  font-size: 24rpx;
+  color: #8D8D8D;
+}
+.content{
+  display: block;
+  font-size: 24rpx;
+  color: #8D8D8D;
+  height: 30rpx;
+  overflow: hidden;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

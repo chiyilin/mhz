@@ -1,0 +1,92 @@
+/* pages/program/IssueComments/IssueComments.wxss */
+.question{
+  padding:34rpx 47rpx;
+  border-bottom: #F3F3F3 1px solid; 
+  margin-bottom: 20rpx;
+}
+.question image{
+  width:12rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.question text{
+  font-size: 30rpx;
+  color:  #4F4F4F;
+}
+.bottom{
+  padding: 25rpx 60rpx;
+}
+.tou{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin-right: 15rpx;
+}
+.tupian image{
+  width:180rpx;
+  height:180rpx;
+  margin:0rpx 8rpx;
+  /* margin-right: 19rpx; */
+}
+.tupian{
+  padding:0rpx 20rpx;
+}
+.tupian view{
+  width:190rpx;
+  height:200rpx;
+  position: relative;
+  display: inline-block;
+}
+.tupian .close{
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+  position: absolute;
+  top:-166rpx;
+  right: -20rpx;
+  border-radius: 50% 50%;
+  z-index: 2;
+}
+label{
+  position: relative;
+}
+.pinlun-text{
+  font-size: 26rpx;
+  line-height: 34rpx;
+  width:96%;
+  display: block;
+  margin-left:10rpx;
+  margin-top: 37rpx;
+  color: #727171;
+  margin-bottom: 30rpx;
+}
+.mess{
+  width: 36rpx;
+  height: 34rpx;
+  position: absolute;
+  right: 41rpx;
+  bottom: 31rpx;
+}
+.ml{
+  margin-left:-10rpx;
+}
+button{
+  width: 321rpx;
+  line-height: 59rpx;
+  background-color: #ADB183;
+  color: #fff;
+  font-size: 30rpx;
+  margin-top: 74rpx;
+  margin-bottom: 107rpx;
+}
+.name{
+  display: block;
+  font-size: 28rpx;
+  color:  #4F4F4F;
+  margin-top: 5rpx;
+}
+.date{
+  font-size: 24rpx;
+  display: block;
+  color: #B2B2B2;
+}

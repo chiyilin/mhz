@@ -1,0 +1,50 @@
+<!--pages/PromotionCenter/PromotionCenter.wxml-->
+<view class='top clearfix'>
+  <image class='touxiang fl' mode='widthFix' src='{{userinfo.face}}'></image>
+  <text class='tuiguang fr'>推广总则</text>
+  <text class='name'>{{userinfo.nick_name}}</text>
+  <view class='vip'>
+    <text class='VipV'>V</text>
+    <text class='VipText'>vip1</text>
+  </view>
+  <view class='money'>
+    <view class='yue'>
+      <text>余额（￥）</text>
+      <text>500</text>
+    </view>
+    <view class='yue'>
+      <text>积分（分）</text>
+      <text>{{userinfo.addjifen-userinfo.jianjifen-need}}</text>
+    </view>
+  </view>
+</view>
+
+<!--&nbsp-->
+<view class='bottom'>
+  <view bindtap='money'>
+    <image mode='widthFix' src='/imgs/tx.jpg'></image>
+    <text>提现</text>
+  </view>
+    <view bindtap='exchange'>
+    <image mode='widthFix' src='/imgs/dh.jpg'></image>
+    <text>兑换</text>
+  </view>
+    <view bindtap='team'>
+    <image mode='widthFix' src='/imgs/tj.jpg'></image>
+    <text>我的推荐</text>
+  </view>
+</view>
+<view class='bottom bottom1'>
+  <view>
+    <image mode='widthFix' src='/imgs/ewm.jpg'></image>
+    <text>二维码</text>
+  </view>
+    <view bindtap='moneydan'>
+    <image mode='widthFix' src='/imgs/mx.jpg'></image>
+    <text>账单明细</text>
+  </view>
+    <view bindtap='jifendan'>
+    <image mode='widthFix' src='/imgs/jfmx.jpg'></image>
+    <text>积分明细</text>
+  </view>
+</view>

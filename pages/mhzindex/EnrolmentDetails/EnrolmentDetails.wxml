@@ -1,0 +1,17 @@
+<!--pages/mhzindex/EnrolmentDetails/EnrolmentDetails.wxml-->
+<view class='top'>
+  <text wx:if="{{list.list_state==1}}" class='title'>报名内容：{{list.baokao.baokao_name}}</text>
+  <text wx:else class='title'>报考内容：{{list.list_name}}</text>
+  <text class='title'>课程预告：</text>
+  <text wx:if="{{zhi}}" class='content1'>{{list.baokao.baokao_xuzhi}}</text>
+  <text wx:else class='content'>{{list.baokao.baokao_xuzhi}}</text>
+  <image bindtap='gengduo' hidden='{{zhi?true:false}}' class='down' mode='widthFix' src='/imgs/down.jpg'></image>
+</view>
+<view class='bottom'>
+  <text class='BTitle'>报名费用：</text>
+  <text class='red'>￥{{list.baokao.baokao_money}}</text>
+  <text class='red pay'>已付</text>
+  <text class='Btitle'>真实姓名：{{list.usersmrz.smrz_name}}</text>
+  <text class='Btitle'>联系方式：{{list.user.user_mobile}}</text>
+  <text class='footer'>报名时间：{{list.addtime}}</text>
+</view>

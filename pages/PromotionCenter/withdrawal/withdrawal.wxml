@@ -1,0 +1,14 @@
+<!--pages/PromotionCenter/withdrawal/withdrawal.wxml-->
+<block wx:for="{{3}}">
+  <view class='view'>
+    <view>
+      <image mode='widthFix' src='/imgs/dhmximg2.jpg'></image>
+      <text>提现金额 ： </text>
+      <text class='red'>￥500</text>
+    </view>
+    <view>
+      <image mode='widthFix' src='/imgs/dhmximg3.jpg'></image>
+      <text>提现时间 ： 2018-09-18  20:22</text>
+    </view>
+  </view>
+</block>

@@ -1,0 +1,174 @@
+/* pages/PromotionCenter/product/product.wxss */
+.top{
+  font-size: 26rpx;
+  padding: 0 70rpx;
+  line-height: 80rpx;
+  color: #605F5F;
+}
+.address{
+  display: block;
+}
+.bottom{
+  padding-left: 10rpx;
+}
+.num{
+  color: #FA8100;
+}
+.jifen{
+  margin-top: -30rpx;
+}
+.center{
+  border-bottom: #DEDEDE 1px solid;
+}
+.banner{
+  width: 100%;
+  height: 371rpx;
+}
+.name,.color{
+  font-size: 28rpx;
+  line-height: 100rpx;
+  padding: 0 50rpx;
+  color: #605F5F;
+}
+.color{
+  color:#FA8100;
+}
+.bottom{
+  padding: 26rpx 50rpx;
+  color: #605F5F;
+}
+.title{
+  font-size: 28rpx;
+  display: block;
+}
+.content{
+  font-size: 24rpx;
+}
+.btn{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 100rpx;
+
+  font-size: 24rpx;
+}
+.btn{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 100rpx;
+  background-color: #ADB183;
+  width:100%;
+  font-size: 34rpx;
+  color: #fff; 
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.isRuleShow{
+    display: block;
+}
+.isRuleHide{
+    display: none;
+}
+.ruleZhezhao{
+    height:100%;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    top:0rpx;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.ruleHide{
+    height: 30rpx!important;
+    width: 30rpx!important;
+    position: absolute;
+    top: 113rpx;
+    right: 90rpx;
+}
+.stepper { 
+  width: 80px; 
+  height: 26px; 
+  /*给主容器设一个边框*/
+  border: 1px solid #ccc; 
+  border-radius: 3px; 
+  margin:0 auto; 
+} 
+.rulecontent{
+  background-color: #fff;
+  width: 621rpx;
+  height: 862rpx;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 92rpx;
+}
+.ruleimg{
+  width: 453rpx;
+  height: 296rpx;
+  margin-left: 84rpx;
+  margin-top: 61rpx;
+  margin-bottom: 50rpx;
+}
+  
+/*加号和减号*/
+.stepper text { 
+  width: 19px; 
+  line-height: 26px; 
+  text-align: center; 
+  float: left; 
+  background-color: #F0F0F0;
+  color: #605F5F;
+} 
+  
+/*数值*/
+.stepper input { 
+  width: 40px; 
+  height: 26px; 
+  float: left; 
+  margin: 0 auto; 
+  text-align: center; 
+  font-size: 12px; 
+  background-color: #fff;
+  /*给中间的input设置左右边框即可*/
+  border-left: 1px solid #ccc; 
+  border-right: 1px solid #ccc; 
+} 
+  
+/*普通样式*/
+.stepper .normal{ 
+  color: black; 
+} 
+  
+/*禁用样式*/
+.stepper .disabled{ 
+  color: #ccc; 
+} 
+.ruletext{
+  font-size: 28rpx;
+  line-height: 100rpx;
+  padding: 0 0 0 50rpx;
+  color: #605F5F;
+}
+.rulecolor{
+  font-size: 28rpx;
+  line-height: 100rpx;
+  color: #FA8100;
+  margin-right: 50rpx;
+}
+.red{
+  font-size: 28rpx;
+  line-height: 50rpx;
+  color: #F52020;
+  display: block;
+  text-align: center;
+}
+button{
+  width: 290rpx;
+  height: 75rpx;
+  background-color: #ADB183;
+  margin-top: 20rpx;
+  line-height: 75rpx;
+  color: #fff;
+  font-size: 30rpx;
+  }

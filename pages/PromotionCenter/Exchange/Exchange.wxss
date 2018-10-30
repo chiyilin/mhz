@@ -1,0 +1,52 @@
+/* pages/PromotionCenter/Exchange/Exchange.wxss */
+page{
+  background-color: #FBFBFB;
+}
+.top{
+  font-size: 26rpx;
+  padding: 0 70rpx;
+  line-height: 80rpx;
+  color: #605F5F;
+}
+.address{
+  display: block;
+}
+.bottom{
+  padding-left: 10rpx;
+}
+.num{
+  color: #FA8100;
+}
+.list{
+  width: 330rpx;
+  margin-left: 24rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 22rpx;
+  margin-bottom: 22rpx;
+  padding-top: 12rpx;
+  background-color: #fff;
+  box-shadow: 0rpx 0rpx 5rpx #ccc
+}
+.jifen{
+  margin-top: -30rpx;
+}
+button{
+  background-color: #ADB183;
+  color: #fff;
+  width: 219rpx;
+  height: 54rpx;
+  line-height: 54rpx;
+  font-size: 30rpx;
+}
+.Btext{
+  font-size: 26rpx;
+  line-height: 56rpx;
+  color: #605F5F;
+}
+.bottom image{
+  width:292rpx;
+  height: 218rpx;
+  background-color: #ECEEEB;
+}

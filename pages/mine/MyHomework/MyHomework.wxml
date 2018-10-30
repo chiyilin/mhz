@@ -1,0 +1,50 @@
+<!--pages/mine/MyHomework/MyHomework.wxml-->
+  <view class="navbar">
+    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+  </view>
+
+  <!--未完成-->
+  <view hidden="{{currentTab!==0}}">
+      <view class='NoFinish clearfix'>
+          <image class='shu' mode='widthFix' src='/imgs/shu.jpg'></image>
+          <text class='NoFinishText'>所属课程：什么是梅花针</text>
+          <image class='you fr' mode='widthFix' src='/imgs/you.jpg'></image>
+      </view>
+            <view class='NoFinish clearfix'>
+          <image class='shu' mode='widthFix' src='/imgs/shu.jpg'></image>
+          <text class='NoFinishText'>所属课程：什么是梅花针</text>
+          <image class='you fr' mode='widthFix' src='/imgs/you.jpg'></image>
+      </view>
+            <view class='NoFinish clearfix'>
+          <image class='shu' mode='widthFix' src='/imgs/shu.jpg'></image>
+          <text class='NoFinishText'>所属课程：什么是梅花针</text>
+          <image class='you fr' mode='widthFix' src='/imgs/you.jpg'></image>
+      </view>
+  </view>
+  <!--已提交-->
+  <view hidden="{{currentTab!==1}}">
+      <view class='NoFinish clearfix'>
+          <image class='shu' mode='widthFix' src='/imgs/shu.jpg'></image>
+          <text class='NoFinishText'>所属课程：什么是梅花针</text>
+          <image class='shenhe fr' mode='widthFix' src='/imgs/shenhe.jpg'></image>
+      </view>
+            <view class='NoFinish clearfix'>
+          <image class='shu' mode='widthFix' src='/imgs/shu.jpg'></image>
+          <text class='NoFinishText'>所属课程：什么是梅花针</text>
+          <image class='shenhe fr' mode='widthFix' src='/imgs/shenhe.jpg'></image>
+      </view>
+  </view>
+
+  <!--已完成-->
+  <view hidden="{{currentTab!==2}}">
+      <view class='NoFinish clearfix'>
+          <image class='shu' mode='widthFix' src='/imgs/shu.jpg'></image>
+          <text class='NoFinishText'>所属课程：什么是梅花针</text>
+          <text class='pingfen fr'>评分78</text>
+      </view>
+      <view class='NoFinish clearfix'>
+          <image class='shu' mode='widthFix' src='/imgs/shu.jpg'></image>
+          <text class='NoFinishText'>所属课程：什么是梅花针</text>
+          <text class='pingfen fr'>评分78</text>
+      </view>
+  </view>

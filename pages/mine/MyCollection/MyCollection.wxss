@@ -1,0 +1,30 @@
+/* pages/mine/MyCollection/MyCollection.wxss */
+.clo{
+  padding: 48rpx 55rpx;
+  border-bottom: #E3E3E3 1px solid;
+}
+.cloImg{
+  width: 199rpx;
+  height: 120rpx;
+  float: left;
+  margin-right: 34rpx;
+}
+.cloText{
+  font-size: 26rpx;
+  display: block;
+  margin-right: 40rpx;
+}
+.dingyue{
+  width: 17rpx;
+  margin-right:15rpx;
+  vertical-align: middle;
+}
+.dyText{
+  font-size: 24rpx;
+  vertical-align: middle;
+  color: #9E9E9E;
+}
+.xing{
+  width: 36rpx;
+  margin-top: -30rpx;
+}

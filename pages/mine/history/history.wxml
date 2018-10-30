@@ -1,0 +1,19 @@
+<!--pages/mine/history/history.wxml-->
+<view class='vid clearfix'>
+  <image class='fl hui' src='/imgs/hui.jpg'></image>
+  <text class='name'>梅花针暑期集训</text>
+  <text class='date'>2018-09-09</text>
+  <image class='fr you' mode='widthFix' src='/imgs/you.jpg'></image>
+</view>
+<view class='vid clearfix'>
+  <image class='fl hui' src='/imgs/hui.jpg'></image>
+  <text class='name'>梅花针暑期集训</text>
+  <text class='date'>2018-09-09</text>
+  <image class='fr you' mode='widthFix' src='/imgs/you.jpg'></image>
+</view>
+<view class='vid clearfix'>
+  <image class='fl hui' src='/imgs/hui.jpg'></image>
+  <text class='name'>梅花针暑期集训</text>
+  <text class='date'>2018-09-09</text>
+  <image class='fr you' mode='widthFix' src='/imgs/you.jpg'></image>
+</view>

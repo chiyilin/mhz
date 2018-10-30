@@ -1,0 +1,48 @@
+/* pages/PromotionCenter/PutForward/PutForward.wxss */
+page{
+  background-color: #F9F9F9;
+}
+.title{
+  font-size: 28rpx;
+  margin-top: 96rpx;
+  margin-left: 55rpx;
+  display: block;
+  color: #605E5F;
+  margin-bottom: 25rpx;
+}
+input{
+  border-bottom: 1px solid #DDDDDD;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 70rpx;
+  font-size: 50rpx;
+  color: #605E5F;
+}
+.content{
+  background-color: #fff;
+  padding: 0 50rpx;
+  padding-bottom: 40rpx;
+  padding-top: 45rpx;
+  position: relative;
+}
+.tip{
+  font-size: 26rpx;
+   color: #606060;
+   padding-left: 20rpx;
+   padding-top: 10rpx;
+}
+.money{
+  width: 39rpx;
+  position: absolute;
+  top: 65rpx;
+  left: 66rpx;
+}
+.btn{
+  width: 280rpx;
+  height: 67rpx;
+  line-height: 67rpx;
+  color: #FEFEFE;
+  background-color: #AEB184;
+  margin-top: 75rpx;
+  font-size: 36rpx;
+}

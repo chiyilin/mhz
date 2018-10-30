@@ -1,0 +1,93 @@
+/* pages/program/CurriculaVariable/ CurriculaVariable.wxss */
+page{
+  background-color: #F7F7F7;
+}
+.radio-box {
+  display: inline-block;
+  position: relative;
+  line-height: 15px;
+  margin-right: 5px;
+  font-size: 26rpx;
+  width: 750rpx;
+  height: 318rpx;
+  background-color: #fff;
+}
+
+.input-radio {
+  display: inline-block;
+  position: absolute;
+  opacity: 0;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  left: 0px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.radio {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  vertical-align: middle;
+  cursor: pointer;
+  border:1px solid #d7d7d9;
+  float: left;
+  background-color: #fff;
+  position: absolute;
+  top: 53rpx;
+  left: 58rpx;
+}
+
+.on {
+   border:1px solid #d7d7d9;
+}
+
+lebel image {
+  width: 15px;
+  height: 15px;
+}
+.list text{
+  color: #727171;
+  width: 400rpx;
+  float: left;
+  font-size: 26rpx;
+  position: absolute;
+  left: 117rpx;
+}
+.time{
+  top: 170rpx;
+}
+.money{
+  top: 215rpx;
+}
+.title{
+  font-size: 30rpx;
+  top: 53rpx;
+}
+.first{
+  top: 125rpx;
+}
+.tu{
+  width: 189rpx;
+  height: 189rpx;
+  position: absolute;
+  top: 53rpx;
+  right: 72rpx;
+}
+.list .red{
+  color: #FE0000;
+  top: 215rpx;
+  left: 247rpx;
+}
+button{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #ADB183;
+  width: 100%;
+  height: 97rpx;
+  line-height: 97rpx;
+  font-size: 30rpx;
+  color: #fff;
+}

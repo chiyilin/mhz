@@ -1,0 +1,16 @@
+<view class="radio-box clearfix" wx:for="{{radios}}" key="item.id">
+  <lebel class="radio {{ index==sex ? 'on' : ''}}" data-index='{{index}}' data-value='{{item.value}}' bindtap="check">
+    <image wx:if='{{index==sex}}' src='/imgs/dian.jpg'></image>
+  </lebel>
+  <view class='list'>
+    <text class='title'>{{item.label}}</text>
+    <text class='first'>{{item.first}}</text>
+    <text class='time'>{{item.time}}</text>
+    <text class='money'>{{item.money}}</text>
+    <text class='red'>{{item.mon}}</text>
+    <image class='tu' src='{{item.picture}}'></image>
+  </view>
+</view>
+<view>
+  <button>提交(￥50.00）</button>
+</view>

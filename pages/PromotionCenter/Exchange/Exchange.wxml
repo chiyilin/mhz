@@ -1,0 +1,18 @@
+<!--pages/PromotionCenter/Exchange/Exchange.wxml-->
+<view class='top clearfix'>
+  <text class='address'>兑换产品（配送至{{user.useraddress.sheng}}{{user.useraddress.shi}}{{user.useraddress.qu}}{{user.useraddress.addxiang}}）</text>
+  <view class='fr jifen'>
+    <text>剩余积分 ： </text>
+    <text class='num'>{{user.addjifen-user.jianjifen}}</text>
+  </view>
+
+</view>
+<view class='bottom clearfix'>
+  <block wx:for="{{jfproduct}}">
+    <view class='fl list'>
+      <image src="{{filepath}}{{item.jfproductbanner['0'].url}}"></image>
+      <text class='Btext'>{{item.jfproduct_name}} {{item.jfproduct_money}}积分</text>
+      <button bindtap='duihuan' data-jfproductid='{{item.jfproduct_id}}'>兑 换</button>
+    </view>
+  </block>
+</view>

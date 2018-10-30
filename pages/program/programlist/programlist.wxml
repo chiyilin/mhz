@@ -1,0 +1,42 @@
+<!--pages/mhzindex/HotCourses/HotCourses.wxml-->
+<form>
+  <view class='top'>
+    <input type='text' class='searchBarInput_in' placeholder="请输入课程名称" value='{{valueKeyword}}' confirm-type='search' focus="{{autoFocus}}"  bindconfirm='resignFocus'   bindfocus="activeFocus" bindblur="resignFocus"></input>
+    <view class='shaixuan'>
+      <view>
+        <text bindtap='SwitchTab' data-tab="{{1}}" data-tuijianStatus='{{tuijianStatus}}' class="{{tuijianStatus==2 ? 'redblod' : ''}}">推荐</text>
+      </view>
+      <view>
+        <text bindtap="SwitchTab" data-tab="{{2}}" data-jiageStatus='{{jiageStatus}}' class="{{(jiageStatus==2||jiageStatus==3)?'redblod':''}}">价格</text>
+        <image wx:if="{{jiageStatus==2}}" mode='widthFix' src='/imgs/choose2.jpg'></image>
+        <image wx:elif="{{jiageStatus==3}}" mode='widthFix' src='/imgs/choose.jpg'></image>
+        <image wx:else mode='widthFix' src='/imgs/choose1.jpg'></image>
+      </view>
+      <view>
+        <text bindtap="SwitchTab" data-tab="{{3}}" data-renqiStatus='{{renqiStatus}}' class="{{(renqiStatus==2||renqiStatus==3)?'redblod':''}}">人气</text>
+        <image wx:if="{{renqiStatus==2}}" mode='widthFix' src='/imgs/choose2.jpg'></image>
+        <image wx:elif="{{renqiStatus==3}}" mode='widthFix' src='/imgs/choose.jpg'></image>
+        <image wx:else mode='widthFix' src='/imgs/choose1.jpg'></image>
+      </view>
+    </view>
+  </view>
+  <block wx:for="{{data}}">
+    <view wx:if="{{item.taoc_id}}"  bindtap='xiangqing' data-taocid="{{item.taoc_id}}" class='TuiJian'>
+      <text class='taocan'>套餐</text>
+      <image wx:if="{{item.producttaocbanner['0'].url}}" class='TJimg' src="{{filepath}}{{item.producttaocbanner['0'].url}}"></image>
+      <image wx:else class='TJimg' src="/imgs/img1.jpg"></image>
+      <text class='tjtitle'>{{item.taoc_name}}</text>
+      <text class='tjcont'>{{item.taoc_content}}</text>
+      <text class='time'>课程节数：{{item.num}}节</text>
+      <text class='price'>￥{{item.product_money}}</text>
+    </view>
+    <view wx:else class='TuiJian' bindtap='xiangqing' data-productid="{{item.product_id}}">
+      <image wx:if="{{item.productbanner['0'].url}}" class='TJimg' src="{{filepath}}{{item.productbanner['0'].url}}"></image>
+      <image wx:else class='TJimg' src="/imgs/img1.jpg"></image>
+      <text class='tjtitle'>{{item.product_name}}</text>
+      <text class='tjcont'>{{item.product_introduce}}</text>
+      <text class='time'>课程时长：{{item.product_times}}</text>
+      <text class='price'>￥{{item.product_money}}</text>
+    </view>
+  </block>
+</form>

@@ -1,0 +1,42 @@
+/* pages/mine/DiscipleClass/DiscipleClass.wxss */
+.top{
+ margin-left: 150rpx;
+ margin-top: 135rpx;
+ margin-bottom: 100rpx;
+}
+image{
+  width: 67rpx;
+  margin-right: 23rpx;
+  margin-top: 5rpx;
+}
+text{
+  display: block;
+  text-align: center;
+}
+.texts{
+  font-size: 24rpx;
+  color: #AEB184;
+}
+.title{
+  font-size: 38rpx;
+  color: #AEB184;
+}
+.textView{
+  margin-right: 23rpx;
+}
+.bottom text{
+  text-align: left;
+  font-size: 28rpx;
+  line-height: 78rpx;
+  padding-left: 140rpx;
+  color: #5F5F5F;
+}
+button{
+  background-color:#AEB184;
+  color: #fff;
+  width: 366rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  font-size: 30rpx;
+  margin-top: 120rpx;
+}

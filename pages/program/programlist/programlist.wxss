@@ -1,0 +1,79 @@
+.top{
+  padding: 26rpx 44rpx;
+  border-bottom: #C9B195 solid 1px;
+  color: #6B400D;
+}
+.shaixuan{
+  display: flex;
+  width: 100%;
+}
+.shaixuan view{
+  width: 32%;
+  text-align: center;
+}
+.top image{
+  width: 20rpx;
+  vertical-align: middle;
+}
+.top text{
+  font-size: 28rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+input{
+  border: #DEDEDE 1px solid;
+  border-radius: 10rpx;
+  height: 49rpx;
+  font-size: 26rpx;
+  padding-left: 20rpx;
+  margin-bottom: 10rpx;
+}
+
+.TuiJian{
+  padding:40rpx 59rpx 17rpx 30rpx; 
+  border-bottom: 1px solid #E6E6E6;
+  position: relative;
+}
+.TJimg{
+  width: 264rpx;
+  height: 195rpx;
+  float: left;
+  margin-right: 30rpx;
+}
+.tjtitle{
+  font-size: 30rpx;
+  color: #605F5F;
+  display: block;
+}
+.redblod{
+  font-weight: bold;
+  color:  #FE0000;
+}
+.tjcont{
+  font-size: 24rpx;
+  color: #8D8D8D;
+  height: 100rpx;
+  overflow: hidden;
+  display: block;
+  margin-top: 10rpx;
+}
+.time{
+  font-size: 24rpx;
+  color: #8D8D8D;
+  }
+.price{
+  font-size: 26rpx;
+  color: #FE0000;
+  margin-left: 70rpx;
+}
+.taocan{
+color: #fff;
+font-size: 24rpx;
+position: absolute;
+left: 225rpx;
+top: 50rpx;
+background-color: #000;
+opacity: 0.5;
+padding: 3rpx 6rpx;
+border-radius: 8rpx;
+}

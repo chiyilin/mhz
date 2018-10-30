@@ -1,0 +1,47 @@
+/* pages/Login/Login.wxss */
+image{
+  width: 100%;
+}
+
+.buqian{
+  font-size: 28rpx;
+  position: absolute;
+  top: 500rpx;
+  left: 146rpx;
+  color: #545454;
+}
+input{
+  width: 300rpx;
+  height: 58rpx;
+  padding-left: 37rpx;
+  background-color: #EDEDED;
+  position: absolute;
+  top:490rpx;
+  left: 306rpx;
+  font-size: 30rpx;
+  color: #545454;
+  border: 1px solid #BBBBBB;
+}
+.buqian1{
+  margin-top: 90rpx;
+}
+.pt1{
+  margin-top: 95rpx;
+  display: inline-block;
+}
+button{
+  width: 346rpx;
+  height: 59rpx;
+  line-height: 59rpx;
+  background-color: #C9151E;
+  color: #fff;
+  font-size: 30rpx;
+  margin-top: 366rpx;
+}
+.rexian{
+  display: block;
+  text-align: center;
+  font-size: 22rpx;
+  color: #747474;
+  margin-top: 37rpx;
+}

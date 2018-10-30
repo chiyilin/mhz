@@ -1,0 +1,79 @@
+/* pages/mine/MySubject/MySubject.wxss */
+.swiper-tab {
+  width: 100%;
+  line-height:75rpx;
+  background-color:white;
+  border-bottom:  #DCDCDC solid 1px;
+}
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  color: #777;
+  border-bottom: 0rpx;
+  text-align: center;
+  width:20%;
+  margin-left: 20%;
+}
+.on {
+  color: #666666;
+  border-bottom: 2px solid #727171;
+}
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.swiper-box view {
+  text-align: center;
+}
+.TuiJian{
+  position: relative;
+  padding:40rpx 59rpx 17rpx 30rpx; 
+  border-bottom: 1px solid #E6E6E6;
+}
+.TJimg{
+  width: 264rpx;
+  height: 196rpx;
+  float: left;
+  margin-right: 30rpx;
+}
+.tjtitle{
+  font-size: 30rpx;
+  color: #605F5F;
+  display: block;
+}
+.tjcont{
+  font-size: 24rpx;
+  color: #8D8D8D;
+  height: 100rpx;
+  overflow: hidden;
+  display: block;
+  margin-top: 10rpx;
+}
+.time{
+  font-size: 24rpx;
+  color: #8D8D8D;
+  }
+.price{
+  font-size: 24rpx;
+  color: #ADB183;
+  margin-left: 15rpx;
+  border: 1px solid #ADB183;
+  padding: 3rpx 10rpx;
+  border-radius: 6px;
+  position: absolute;
+  right: 65rpx;
+  bottom: 16rpx;
+}
+.taocan{
+color: #fff;
+font-size: 24rpx;
+position: absolute;
+left: 225rpx;
+top: 50rpx;
+background-color: #000;
+opacity: 0.5;
+padding: 3rpx 6rpx;
+border-radius: 8rpx;
+}

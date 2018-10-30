@@ -1,0 +1,16 @@
+<!--pages/mhzindex/finish/finish.wxml-->
+<view class='content'>
+  <image mode='widthFix' src='/imgs/bmcg.jpg'></image>
+  <text wx:if="{{baokao.baokao_state}}" class='title'>报名成功</text>
+  <text wx:else class='title'>报考成功</text>
+  </view>
+  <view class='word'>
+    <text class='text'>恭喜你：</text>
+    <text class='text1'>{{user.usersmrz.smrz_name}}</text>
+  </view>
+  <view class='word'>
+    <text wx:if="{{baokao.baokao_state}}" class='text'>已报名：</text>
+    <text wx:else class='text'>已报考：</text>
+    <text class='text1'>{{baokao.baokao_name}}</text>
+  </view>
+  <button bindtap='fanhui'>返回</button>

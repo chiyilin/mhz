@@ -1,0 +1,39 @@
+<!--pages/mhzindex/commen/commen.wxml-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+<!--理论-->
+<view hidden="{{currentTab!==0}}">
+  <block wx:for="{{3}}">
+    <view class='TuiJian'>
+      <image class='TJimg' mode='widthFix' src='/imgs/img1.jpg'></image>
+      <text class='tjtitle'>梅花针</text>
+      <text class='tjcont'>在古代中医将5根针梱成一束，外形似梅花，阿萨德联发科拉三等奖了卡死的肌肤来看看决定是否多艺取名为梅花针</text>
+      <text class='time'>课程时长：30：21</text>
+      <text class='price'>￥50.00</text>
+    </view>
+  </block>
+</view>
+<!--咨询-->
+<view hidden="{{currentTab!==1}}">
+  <block wx:for="{4}}">
+    <view class='TuiJian'>
+      <image class='TJimg' mode='widthFix' src='/imgs/img1.jpg'></image>
+      <text class='tjtitle'>梅花针</text>
+      <text class='tjcont'>在古代中医将5根针梱成一束，外形似梅花，阿萨德联发科拉三等奖了卡死的肌肤来看看决定是否多艺取名为梅花针</text>
+      <text class='time'>课程时长：30：21</text>
+      <text class='price'>￥50.00</text>
+    </view>
+  </block>
+</view>
+<view hidden="{{currentTab!==2}}">
+  <block wx:for="{4}}">
+    <view class='TuiJian'>
+      <image class='TJimg' mode='widthFix' src='/imgs/img1.jpg'></image>
+      <text class='tjtitle'>梅花针</text>
+      <text class='tjcont'>在古代中医将5根针梱成一束，外形似梅花，阿萨德联发科拉三等奖了卡死的肌肤来看看决定是否多艺取名为梅花针</text>
+      <text class='time'>课程时长：30：21</text>
+      <text class='price'>￥50.00</text>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,14 @@
+<view class='title'>
+  <!-- <text>{{title}}</text> -->
+  <text class='date'>{{time}}</text>
+</view>
+<block wx:for="{{details}}" wx:key="">
+  <label wx:if="{{item.text}}">
+    <view class='text'>
+      <text>{{item.text}}</text>
+    </view>
+  </label>
+  <label wx:if="{{item.image}}">
+    <image mode='widthFix' class='img' src='{{filepath}}{{item.image}}'></image>
+  </label>
+</block>

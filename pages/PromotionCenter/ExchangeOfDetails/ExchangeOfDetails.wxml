@@ -1,0 +1,18 @@
+<!--pages/PromotionCenter/ExchangeOfDetails/ExchangeOfDetails.wxml-->
+<block wx:for="{{3}}">
+  <view class='view'>
+    <view>
+      <image mode='widthFix' src='/imgs/dhmximg1.jpg'></image>
+      <text>积分兑换 ：梅花针×1</text>
+    </view>
+    <view>
+      <image mode='widthFix' src='/imgs/dhmximg2.jpg'></image>
+      <text>积分消耗 ： </text>
+      <text class='red'>-500</text>
+    </view>
+    <view>
+      <image mode='widthFix' src='/imgs/dhmximg3.jpg'></image>
+      <text>兑换时间 ： 2018-09-18  20:22</text>
+    </view>
+  </view>
+</block>

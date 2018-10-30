@@ -1,0 +1,40 @@
+/* pages/mhzindex/finish/finish.wxss */
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+image{
+  width: 143rpx;
+  margin-top: 141rpx;
+  margin-bottom: 30rpx;
+}
+.title{
+  font-size: 46rpx;
+  color: #ADB183;
+  margin-bottom: 95rpx;
+  text-align: left;
+}
+.text{
+  font-size: 28rpx;
+  color: #605F5F;
+  text-align: left;
+
+}
+.word{
+  margin-left: 260rpx;
+}
+.text1{
+  font-size: 30rpx;
+  color:  #ADB183;
+  padding-left: 10rpx;
+}
+button{
+  width: 336rpx;
+  height: 66rpx;
+  color: #fff;
+  background-color: #ADB183;
+  line-height: 66rpx;
+  font-size: 30rpx;
+  margin-top: 120rpx;
+}
