@@ -2,7 +2,7 @@
 <import src="./mhzindex/template.wxml" />
 <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{apiData.banner}}" wx:key="">
-    <swiper-item>
+    <swiper-item> 
       <image mode='widthFix' src="{{filepath}}{{item.url}}" class="slide-image" />
     </swiper-item>
   </block>
