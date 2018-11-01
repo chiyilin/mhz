@@ -1,0 +1,25 @@
+<template name="indexTemplate">
+  <view class='title'>
+    <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
+    <text>{{sign}}</text>
+  </view>
+  <!--导航条-->
+  <view class="navbar">
+    <text wx:for="{{category}}" wx:for-index="indexs" data-index='{{index}}' data-indexitem='{{indexs}}' data-category_id='{{item.category_id}}' class="item {{currentTab[index]==indexs ? 'active' : ''}}" bindtap="navbarTap">{{item.category_name}}</text>
+  </view>
+  <view>
+    <block wx:for="{{data}}">
+      <view class='TuiJian' bindtap='coursesDetails' data-id="{{item.product_id}}">
+        <image wx:if="{{item.product_banner[0].url}}" class='TJimg' src='{{filepath}}{{item.product_banner[0].url}}'></image>
+        <image wx:else class='TJimg' mode='widthFix' src='{{item.product_video_vframe}}'></image>
+        <text class='tjtitle'>{{item.product_name}}</text>
+        <text class='tjcont'>{{item.product_introduce}}</text>
+        <text class='time'><text></text>课程时长：{{item.product_times}}</text>
+        <text class='price'>￥{{item.product_money}}</text>
+      </view>
+    </block>
+  </view>
+  <view bindtap="coursesList" data-index="{{index}}" class='more'>
+    <text class='more'>查看更多></text>
+  </view>
+</template>

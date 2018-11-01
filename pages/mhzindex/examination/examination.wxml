@@ -12,7 +12,7 @@
       <image class='select_img {{show&&"select_img_rotate"}}' src='/imgs/sanjiao.jpg'></image>
     </view>
     <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
-      <text class='option' style='{{index==selectData.length&&"border:0;"}}' wx:for='{{baoming}}' wx:key='this' data-name="{{item.baokao_name}}" data-id="{{item.baokao_id}}" data-index='{{index}}'  catchtap='optionTap'>{{item.baokao_name}}</text>
+      <text class='option' style='{{index==selectData.length&&"border:0;"}}' wx:for='{{baoming}}' wx:key='this' data-name="{{item.baokao_name}}" data-id="{{item.baokao_id}}" data-index='{{index}}' catchtap='optionTap'>{{item.baokao_name}}</text>
     </view>
   </view>
   <!--报考须知-->
@@ -29,7 +29,7 @@
         <text>费用：</text>
         <text class='red'>￥{{baomings.baokao_money}}</text>
       </view>
-      <view wx:if="{{baomings.lists==null&&((baomings.baokao_state==2&&user.usersmrz!=null)||(baomings.baokao_state==1&&(user.usersmrz==null||user.usersmrz!=null)))}}"  bindtap='baom' data-baokaoid='{{baomings.baokao_id}}' class='you'>
+      <view wx:if="{{baomings.lists==null&&((baomings.baokao_state==2&&user.usersmrz!=null)||(baomings.baokao_state==1&&(user.usersmrz==null||user.usersmrz!=null)))}}" bindtap='baom' data-baokaoid='{{baomings.baokao_id}}' class='you'>
         <text>报名费用</text>
       </view>
       <view wx:elif="{{baomings.baokao_state==2&&baomings.lists==null&&user.usersmrz==null}}" class='you'>

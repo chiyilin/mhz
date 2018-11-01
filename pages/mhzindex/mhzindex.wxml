@@ -1,6 +1,7 @@
 <!--pages/mhzindex/mhzindex.wxml-->
-<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{imgUrls}}" wx:key="">
+<import src="./mhzindex/template.wxml" />
+<swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{apiData.banner}}" wx:key="">
     <swiper-item>
       <image mode='widthFix' src="{{filepath}}{{item.url}}" class="slide-image" />
     </swiper-item>
@@ -9,129 +10,56 @@
 <!--导航-->
 <view class='nav'>
   <navigator url="PressReleases/PressReleases?title=navigate" hover-class="none">
-  <view class='navView'>
-    <image class='navImg' mode='widthFix' src='/imgs/xwgg.jpg'></image>
-    <text class='navText'>新闻公告</text>
-  </view>
-   </navigator>
+    <view class='navView'>
+      <image class='navImg' mode='widthFix' src='/imgs/xwgg.jpg'></image>
+      <text class='navText'>新闻公告</text>
+    </view>
+  </navigator>
   <navigator url="HotCourses/HotCourses?category_id=0" hover-class="none">
-  <view class='navView'>
-    <image class='navImg' mode='widthFix' src='/imgs/rmkc.jpg'></image>
-    <text class='navText'>热门课程</text>
-  </view>
-  </navigator>
-    <navigator url="examination/examination?state=1" hover-class="none">
-  <view class='navView'>
-    <image class='navImg' mode='widthFix' src='/imgs/bmbk.jpg'></image>
-    <text class='navText'>报名报考</text>
-  </view>
-  </navigator>
-   <navigator url="../mine/MySubject/MySubject?title=navigate" hover-class="none">
-  <view class='navView'>
-    <image class='navImg' mode='widthFix' src='/imgs/wdkc.jpg'></image>
-    <text class='navText'>我的课程</text>
-  </view>
-  </navigator>
-</view>
-
-<!--热门课程-->
-<view class='title'>
-  <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
-  <text>热门课程</text>
-</view>
-<!--导航条-->
-<view class="navbar">
-  <text wx:for="{{categorys}}" data-idx='{{index}}' class="item {{currentTab==index ? 'active' : ''}}"  bindtap="navbarTap">{{item}}</text>
-</view>
-<view hidden="">
-  <block wx:for="{{product}}">
-    <view wx:if="{{index < 3}}" class='TuiJian' bindtap='xiangqing' data-id="{{item.product_id}}">
-      <image wx:if="{{item.product_banner[0].url}}" class='TJimg' src='{{filepath}}{{item.product_banner[0].url}}'></image>
-      <image wx:else class='TJimg' mode='widthFix' src='/imgs/img1.jpg'></image>
-      <text class='tjtitle'>{{item.product_name}}</text>
-      <text class='tjcont'>{{item.product_introduce}}</text>
-      <text class='time'><text></text>课程时长：{{item.product_times}}</text>
-      <text class='price'>￥{{item.product_money}}</text>
+    <view class='navView'>
+      <image class='navImg' mode='widthFix' src='/imgs/rmkc.jpg'></image>
+      <text class='navText'>热门课程</text>
     </view>
-  </block>
-</view>
-<view wx:if="{{num > 3}}" bindtap="hotke" data-id="0" class='more'>
-  <text class='more'>查看更多></text>
-</view>
-
-<!--最新课程-->
-<view class='title'>
-  <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
-  <text>最新课程</text>
-</view>
-<!--导航条-->
-<view class="navbar">
-  <text wx:for="{{categorys}}" data-idx="{{index}}" class="item {{currentTab1==index ? 'active' : ''}}" bindtap="navbarTap1">{{item}}</text>
-</view>
-<view hidden="">
-  <block wx:for="{{products}}">
-    <view wx:if="{{index < 3}}" class='TuiJian' bindtap='xiangqing' data-id="{{item.product_id}}">
-      <image wx:if="{{item.product_banner[0].url}}" class='TJimg' src='{{filepath}}{{item.product_banner[0].url}}'></image>
-      <image wx:else class='TJimg' mode='widthFix' src='/imgs/img1.jpg'></image>
-      <text class='tjtitle'>{{item.product_name}}</text>
-      <text class='tjcont'>{{item.product_introduce}}</text>
-      <text class='time'><text>{{ind}}</text>课程时长：{{item.product_times}}</text>
-      <text class='price'>￥{{item.product_money}}</text>
+  </navigator>
+  <navigator url="examination/examination?state=1" hover-class="none">
+    <view class='navView'>
+      <image class='navImg' mode='widthFix' src='/imgs/bmbk.jpg'></image>
+      <text class='navText'>报名报考</text>
     </view>
-  </block>
-</view>
-<view wx:if="{{nums > 3}}"  bindtap="newke" data-id="1" class='more'>
-  <text class='more'>查看更多></text>
-</view>
-
-<!--推荐课程-->
-<view class='title'>
-  <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
-  <text>推荐课程</text>
-</view>
-<!--导航条-->
-<view class="navbar">
-  <text wx:for="{{categorys}}" data-idx="{{index}}" class="item {{currentTab2==index ? 'active' : ''}}" bindtap="navbarTap2">{{item}}</text>
-</view>
-<view hidden="">
-  <block wx:for="{{productss}}">
-    <view wx:if="{{index < 3}}" class='TuiJian' bindtap='xiangqing' data-id="{{item.product_id}}">
-      <image wx:if="{{item.product_banner[0].url}}" class='TJimg' src='{{filepath}}{{item.product_banner[0].url}}'></image>
-      <image wx:else class='TJimg' mode='widthFix' src='/imgs/img1.jpg'></image>
-      <text class='tjtitle'>{{item.product_name}}</text>
-      <text class='tjcont'>{{item.product_introduce}}</text>
-      <text class='time'><text>{{ind}}</text>课程时长：{{item.product_times}}</text>
-      <text class='price'>￥{{item.product_money}}</text>
+  </navigator>
+  <navigator url="../mine/MySubject/MySubject?title=navigate" hover-class="none">
+    <view class='navView'>
+      <image class='navImg' mode='widthFix' src='/imgs/wdkc.jpg'></image>
+      <text class='navText'>我的课程</text>
     </view>
-  </block>
+  </navigator>
 </view>
-<view wx:if="{{numss > 3}}" bindtap="tuike" data-id="2" class='more'>
-  <text class='more'>查看更多></text>
-</view>
-
-<!---->
+<template is="indexTemplate" data="{{index:0,sign:'热门课程',category:apiData.oneCategory,data:apiData.popularCourses,currentTab:currentTab}}"></template>
+<template is="indexTemplate" data="{{index:1,sign:'推荐课程',category:apiData.oneCategory,data:apiData.recommendCourses,currentTab:currentTab}}"></template>
+<template is="indexTemplate" data="{{index:2,sign:'最新课程',category:apiData.oneCategory,data:apiData.newCourses,currentTab:currentTab}}"></template>
+<!--报名报考-->
 <view class="swiper-tab">
   <view class="swiper-tab-list {{currentTabs==0 ? 'on' : ''}}" data-currents="0" bindtap="swichNav">线上报考</view>
   <view class="swiper-tab-list {{currentTabs==1 ? 'on' : ''}}" data-currents="1" bindtap="swichNav">取证报考</view>
 </view>
 
 
-<view class="weui-cells__title" hidden="{{!isShow}}">
-<view class='chd'>
-<image mode='widthFix' src="{{filepath}}{{baoming.baokao_banner['0'].url}}"></image>
-<text class='chdText'>{{baoming.baokao_xuzhi}}</text>
-<navigator url="examination/examination?state=1" hover-class="none">
-<button class='btn'>我要报考</button>
-</navigator>
-</view>
+<view class="weui-cells__title">
+  <view class='chd'>
+    <image mode='widthFix' src="{{filepath}}{{baoming.baokao_banner['0'].url}}"></image>
+    <text class='chdText'>{{baoming.baokao_xuzhi}}</text>
+    <navigator url="examination/examination?state=1" hover-class="none">
+      <button class='btn'>我要报考</button>
+    </navigator>
+  </view>
 
 </view>
-<view class="weui-cells__title" hidden="{{isShow}}">
+<view class="weui-cells__title">
   <view class='chd'>
-  <image mode='widthFix' src="{{filepath}}{{baokao.baokao_banner['0'].url}}"></image>
-  <text class='chdText'>{{baokao.baokao_xuzhi}}</text>
-  <navigator url="examination/examination?title=navigate" hover-class="none">
-  <button class='btn'>我要报考</button>
-  </navigator>
+    <image mode='widthFix' src="{{filepath}}{{baokao.baokao_banner['0'].url}}"></image>
+    <text class='chdText'>{{baokao.baokao_xuzhi}}</text>
+    <navigator url="examination/examination?title=navigate" hover-class="none">
+      <button class='btn'>我要报考</button>
+    </navigator>
   </view>
 </view>

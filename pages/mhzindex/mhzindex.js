@@ -1,8 +1,7 @@
+// pages/mhzindex/mhzindex.js
 var App = getApp();
 var common = require('../../utils/common.js');
-// pages/mhzindex/mhzindex.js
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -10,10 +9,9 @@ Page({
     autoplay: true,
     interval: 3000,
     duration: 1000,
-    currentTab: 0,
-    currentTab1: 0,
-    currentTab2: 0,
+    currentTab: [0, 0, 0],
     isShow: true,
+    filepath: App.globalData.filepath
   },
 
   /**
@@ -25,19 +23,10 @@ Page({
     });
     var that = this;
     common.PostMain('index/index', {}, function(data) {
+      console.log(data)
       that.setData({
-        imgUrls: data.banner,
-        filepath: App.globalData.filepath,
-        product: data.product,
-        num: data.num,
-        products: data.products,
-        nums: data.nums,
-        productss: data.productss,
-        numss: data.numss,
-        categorys: data.categorys,
-        baoming: data.baoming,
-        baokao: data.baokao,
-      });
+        apiData: data
+      })
       wx.hideLoading();
     });
   },
@@ -90,48 +79,41 @@ Page({
   onShareAppMessage: function() {
 
   },
+  /**
+   * 课程选项卡切换
+   */
   navbarTap: function(e) {
-    var ids = e.currentTarget.dataset.idx;
     var that = this;
+    //分类ID
+    var category_id = e.currentTarget.dataset.category_id;
+    //大的索引
+    var index = e.currentTarget.dataset.index;
+    //小分类的索引
+    var indexitem = e.currentTarget.dataset.indexitem
+    that.data.currentTab[index] = indexitem
     common.PostMain('index/product', {
-      ids: ids
+      category_id: category_id,
+      index: index
     }, function(data) {
+      var temp = that.data.currentTab;
+      var apiData = that.data.apiData;
+      if (index == 0) {
+        apiData.popularCourses = data;
+      } else if (index == 1) {
+        apiData.recommendCourses = data;
+      } else if (index == 2) {
+        apiData.newCourses = data;
+      }
       that.setData({
-        filepath: getApp().globalData.filepath,
-        product: data.product,
-        num: data.num,
-        currentTab: e.currentTarget.dataset.idx,
+        //小分类的选项卡改变
+        currentTab: temp,
+        apiData: apiData
       })
     })
   },
-  navbarTap1: function(e) {
-    var ids = e.currentTarget.dataset.idx;
-    var that = this;
-    common.PostMain('index/product', {
-      ids: ids
-    }, function(data) {
-      that.setData({
-        filepath: getApp().globalData.filepath,
-        products: data.products,
-        nums: data.nums,
-        currentTab1: e.currentTarget.dataset.idx,
-      })
-    })
-  },
-  navbarTap2: function(e) {
-    var ids = e.currentTarget.dataset.idx;
-    var that = this;
-    common.PostMain('index/product', {
-      ids: ids
-    }, function(data) {
-      that.setData({
-        filepath: getApp().globalData.filepath,
-        productss: data.productss,
-        numss: data.numss,
-        currentTab2: e.currentTarget.dataset.idx,
-      })
-    })
-  },
+  /**
+   * 报名报考
+   */
   swichNav: function(e) {
     if (this.data.currentTabs === e.target.dataset.currents) {
       return false;
@@ -143,28 +125,22 @@ Page({
       })
     }
   },
-  xiangqing: function(e) {
+  /**
+   * 课程详情
+   */
+  coursesDetails: function(e) {
     var id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: "../program/buy/buy?productid=" + id,
     })
   },
-  hotke: function(e) {
-    var id = e.currentTarget.dataset.id
+  /**
+   * 查看更多课程
+   */
+  coursesList: function(e) {
+    var index = e.currentTarget.dataset.index
     wx.navigateTo({
-      url: "HotCourses/HotCourses?id=" + id,
+      url: "coursesList/coursesList?index=" + index,
     })
   },
-  newke: function(e) {
-    var id = e.currentTarget.dataset.id
-    wx.navigateTo({
-      url: "NewCourses/NewCourses?id=" + id,
-    })
-  },
-  tuike: function(e) {
-    var id = e.currentTarget.dataset.id
-    wx.navigateTo({
-      url: 'TuiCourses/TuiCourses?id=' + id,
-    })
-  }
 })

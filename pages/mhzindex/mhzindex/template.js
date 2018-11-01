@@ -1,4 +1,4 @@
-// pages/mhzindex/PressReleases/article/article.js
+// pages/mhzindex/mhzindex/template.js
 Page({
 
   /**
