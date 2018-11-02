@@ -1,23 +1,23 @@
 var App = getApp();
 var common = require('../../../utils/common.js');
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    currentTab: 0,
     show: false, //控制下拉列表的显示隐藏，false隐藏、true显示
-
-    index: 0 //选择的下拉列表下标
+    index: 0, //选择的下拉列表下标
+    filepath: getApp().globalData.filepath,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var state = options.state;
     var that = this;
+    var index = options.index;
+    console.log(options)
+    var state = index + 1;
     wx.showLoading({
       title: '加载中',
     });
@@ -25,7 +25,7 @@ Page({
       state: state
     }, function(data) {
       that.setData({
-        filepath: getApp().globalData.filepath,
+        currentTab:index,
         baoming: data.baoming,
         selectData: data.baoming,
       });

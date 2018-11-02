@@ -10,7 +10,8 @@ Page({
     interval: 3000,
     duration: 1000,
     currentTab: [0, 0, 0],
-    isShow: true,
+    //默认展示报名还是报考
+    defaultTab:0,
     filepath: App.globalData.filepath
   },
 
@@ -26,7 +27,7 @@ Page({
       console.log(data)
       that.setData({
         apiData: data
-      })
+      });
       wx.hideLoading();
     });
   },
@@ -112,18 +113,12 @@ Page({
     })
   },
   /**
-   * 报名报考
+   * 报名报考选项卡切换
    */
   swichNav: function(e) {
-    if (this.data.currentTabs === e.target.dataset.currents) {
-      return false;
-    } else {
-      var showMode = e.target.dataset.currents == 0;
-      this.setData({
-        currentTabs: e.target.dataset.currents,
-        isShow: showMode
-      })
-    }
+    this.setData({
+      defaultTab: e.target.dataset.currents,
+    })
   },
   /**
    * 课程详情
@@ -141,6 +136,15 @@ Page({
     var index = e.currentTarget.dataset.index
     wx.navigateTo({
       url: "coursesList/coursesList?index=" + index,
-    })
+    });
   },
+  /**
+   * 跳转至报名报考页面
+   */
+  navigate_sign:function(e){
+    var index=e.currentTarget.dataset.index;
+    wx.navigateTo({
+      url: 'examination/examination?index=' + index,
+    })
+  }
 })

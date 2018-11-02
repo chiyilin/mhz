@@ -1,8 +1,8 @@
 <!--pages/mhzindex/mhzindex.wxml-->
-<import src="./mhzindex/template.wxml" />
+<import src="/pages/mhzindex/mhzindex/template.wxml" />
 <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{apiData.banner}}" wx:key="">
-    <swiper-item> 
+    <swiper-item>
       <image mode='widthFix' src="{{filepath}}{{item.url}}" class="slide-image" />
     </swiper-item>
   </block>
@@ -39,27 +39,13 @@
 <template is="indexTemplate" data="{{index:2,sign:'最新课程',category:apiData.oneCategory,data:apiData.newCourses,currentTab:currentTab}}"></template>
 <!--报名报考-->
 <view class="swiper-tab">
-  <view class="swiper-tab-list {{currentTabs==0 ? 'on' : ''}}" data-currents="0" bindtap="swichNav">线上报考</view>
-  <view class="swiper-tab-list {{currentTabs==1 ? 'on' : ''}}" data-currents="1" bindtap="swichNav">取证报考</view>
+  <view class="swiper-tab-list {{defaultTab==0 ? 'on' : ''}}" data-currents="0" bindtap="swichNav">线上报名</view>
+  <view class="swiper-tab-list {{defaultTab==1 ? 'on' : ''}}" data-currents="1" bindtap="swichNav">取证报考</view>
 </view>
-
-
-<view class="weui-cells__title">
-  <view class='chd'>
-    <image mode='widthFix' src="{{filepath}}{{baoming.baokao_banner['0'].url}}"></image>
-    <text class='chdText'>{{baoming.baokao_xuzhi}}</text>
-    <navigator url="examination/examination?state=1" hover-class="none">
-      <button class='btn'>我要报考</button>
-    </navigator>
-  </view>
-
-</view>
-<view class="weui-cells__title">
-  <view class='chd'>
-    <image mode='widthFix' src="{{filepath}}{{baokao.baokao_banner['0'].url}}"></image>
-    <text class='chdText'>{{baokao.baokao_xuzhi}}</text>
-    <navigator url="examination/examination?title=navigate" hover-class="none">
-      <button class='btn'>我要报考</button>
-    </navigator>
+<view class="weui-cells__title" wx:for="{{apiData.signInfo}}">
+  <view class='chd' wx:if="{{defaultTab==index}}">
+    <image mode='widthFix' src="{{filepath}}{{item.baokao_banner[0].url}}"></image>
+    <text class='chdText'>{{item.baokao_xuzhi}}</text>
+    <button class='btn' bindtap='navigate_sign' data-index='{{index}}'>我要报{{index==0?'名':'考'}}</button>
   </view>
 </view>

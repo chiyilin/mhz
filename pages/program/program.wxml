@@ -2,10 +2,10 @@
 <block wx:for="{{data}}">
   <view class='cont'>
     <image class='shu' src='/imgs/lv.jpg'></image>
-    <text  catchtap="kechengfl" class='title'>{{item.category_name}}</text>
+    <text  catchtap="navigate_max_category" class='title'>{{item.category_name}}</text>
     <view class='list clearfix'>
       <block wx:for="{{item.cates}}" wx:for-item="items">
-        <text bindtap="kechengfl" data-categoryid='{{items.category_id}}' class='ke'>{{items.category_name}}</text>
+        <text bindtap="navigate_min_category" data-categoryid='{{items.category_id}}' class='ke'>{{items.category_name}}</text>
       </block>
     </view>  
   </view>

@@ -20,6 +20,8 @@ Page({
   onLoad: function(options) {
     var that = this;
     var index = options.index;
+    console.log(index)
+    that.data.index = index;
     if (index == 0) {
       var title = '热门课程';
     } else if (index == 1) {
@@ -37,15 +39,43 @@ Page({
       index: index
     }, function(data) {
       that.setData({
-
-        product: data.product,
+        productList: data.productList,
         category: data.category,
       });
       console.log(data)
       wx.hideLoading();
     });
   },
+  /**
+   * 选项卡切换
+   */
+  navbarTap: function(e) {
+    var that = this;
+    var category_id = e.currentTarget.dataset.category_id;
+    wx.showLoading({
+      title: '加载中',
+    });
 
+    common.PostMain('courses/product', {
+      index: that.data.index,
+      category_id: category_id
+    }, function(data) {
+      that.setData({
+        productList: data.productList,
+        currentTab: category_id
+      });
+      wx.hideLoading();
+    });
+  },
+  /**
+   * 跳转至产品详情
+   */
+  xiangqing: function(e) {
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: "../../program/buy/buy?productid=" + id,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -93,29 +123,5 @@ Page({
    */
   onShareAppMessage: function() {
 
-  },
-  navbarTap: function(e) {
-    var category_ids = e.currentTarget.dataset.ids;
-    wx.showLoading({
-      title: '加载中',
-    });
-    var that = this;
-    common.PostMain('courses/product', {
-      category_ids: category_ids
-    }, function(data) {
-      that.setData({
-        filepath: getApp().globalData.filepath,
-        product: data.product,
-        currentTab: e.currentTarget.dataset.idx
-      });
-      console.log(data)
-      wx.hideLoading();
-    });
-  },
-  xiangqing: function(e) {
-    var id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: "../../program/buy/buy?productid=" + id,
-    })
   },
 })

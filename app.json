@@ -1,8 +1,14 @@
 {
   "pages": [
     "pages/mhzindex/mhzindex",
-    "pages/mhzindex/mhzindex/template",
+    "pages/mhzindex/coursesList/coursesList",
     
+    "pages/mhzindex/examination/examination",
+    
+    
+    
+    "pages/mhzindex/mhzindex/template",
+    "pages/mhzindex/EnrolmentDetails/EnrolmentDetails",
     "pages/Login/againLogin/againLogin",
     "pages/mine/MySubject/MySubject",
     "pages/comment/comment",
@@ -20,16 +26,14 @@
     "pages/mine/authentication/authentication",
     "pages/mine/nopersonal/nopersonal",
     "pages/mine/personal/personal",
-    "pages/mhzindex/EnrolmentDetails/EnrolmentDetails",
+   
     "pages/PromotionCenter/product/product",
     "pages/PromotionCenter/IntegralDetail/IntegralDetail",
     "pages/mine/Registration/Registration",
     "pages/PromotionCenter/PromotionCenter",
     "pages/PromotionCenter/ExchangeOfDetails/ExchangeOfDetails",
     "pages/PromotionCenter/withdrawal/withdrawal",
-    "pages/mhzindex/examination/examination",
-    "pages/mhzindex/coursesList/coursesList",
-    "pages/mhzindex/commen/commen",
+    
     "pages/program/program",
     "pages/mine/MyMessage/MyMessage",
     "pages/mine/privilege/privilege",

@@ -1,9 +1,9 @@
 <!--pages/mhzindex/coursesList/coursesList.wxml-->
 <view class="navbar">
-  <text wx:for="{{category}}" data-idx="{{index}}" data-ids="{{index}}" data-id="0" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item.category_name}}</text>
+  <text wx:for="{{category}}" data-category_id="{{item.category_id}}" class="item {{currentTab==item.category_id ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item.category_name}}</text>
 </view>
 <!--理论-->
-<block wx:for="{{product}}">
+<block wx:for="{{productList}}">
   <view class='TuiJian' bindtap='xiangqing' data-id="{{item.product_id}}">
     <image class='TJimg' mode='widthFix' src='/imgs/img1.jpg'></image>
     <text class='tjtitle'>{{item.product_name}}</text>

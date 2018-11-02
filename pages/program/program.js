@@ -28,7 +28,10 @@ Page({
       wx.hideLoading();
     });
   },
-  kechengfl: function(e) {
+  /**
+   * 跳转至小分类
+   */
+  navigate_min_category: function(e) {
     var category_id = e.currentTarget.dataset.categoryid;
     wx.navigateTo({
       url: 'programlist/programlist?category_id=' + category_id,
