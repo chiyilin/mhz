@@ -5,7 +5,10 @@
 <!--理论-->
 <block wx:for="{{productList}}">
   <view class='TuiJian' bindtap='xiangqing' data-id="{{item.product_id}}">
-    <image class='TJimg' mode='widthFix' src='/imgs/img1.jpg'></image>
+    <!-- <image class='TJimg' mode='widthFix' src='/imgs/img1.jpg'></image> -->
+      <image wx:if="{{item.product_banner[0].url}}" class='TJimg' src='{{filepath}}{{item.product_banner[0].url}}' mode='aspectFit'></image>
+    <image wx:elif="{{item.product_video_vframe}}" class='TJimg' mode='aspectFit' src='{{item.product_video_vframe}}'></image>
+    <image wx:else class='TJimg' mode='aspectFit' src='/imgs/img1.jpg'></image>
     <text class='tjtitle'>{{item.product_name}}</text>
     <text class='tjcont'>{{item.product_introduce}}</text>
     <text class='time'>课程时长：{{item.product_times}}</text>

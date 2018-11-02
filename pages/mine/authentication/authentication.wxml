@@ -7,17 +7,17 @@
   </view>
   <view class='clearfix'>
     <text>身份证号：</text>
-    <input type='idcard'name="smrz_code"></input>
+    <input type='idcard' name="smrz_code"></input>
   </view>
   <view class='bottom'>
-    <label >
-      <image class='addImg' wx:if="{{!tempFilePaths[0]}}" bindtap='chooseImage' id="0" name="smrz_photo" src='/imgs/jia.jpg'></image>
-      <image class='addImg' wx:else bindtap='chooseImage' id="0" name="smrz_photo" src='{{tempFilePaths[0]}}'></image>
+    <label>
+      <image class='addImg' wx:if="{{!tempFilePaths[0]}}" bindtap='chooseImage' data-index="{{0}}"name="smrz_photo" src='/imgs/jia.jpg'></image>
+      <image class='addImg' wx:else bindtap='chooseImage' data-index="{{0}}" name="smrz_photo" src='{{tempFilePaths[0]}}'></image>
     </label>
     <text>身份证件（正面）</text>
-    <label >
-      <image class='addImg' wx:if="{{!tempFilePaths[1]}}" bindtap='chooseImage' id="1" name="smrz_photos" src='/imgs/jia.jpg'></image>
-      <image class='addImg' wx:else bindtap='chooseImage' id="1" name="smrz_photo" src='{{tempFilePaths[1]}}'></image>
+    <label>
+      <image class='addImg' wx:if="{{!tempFilePaths[1]}}" bindtap='chooseImage' data-index="{{1}}" name="smrz_photos" src='/imgs/jia.jpg'></image>
+      <image class='addImg' wx:else bindtap='chooseImage' data-index="{{1}}" name="smrz_photo" src='{{tempFilePaths[1]}}'></image>
     </label>
     <text>身份证件（背面）</text>
   </view>

@@ -25,6 +25,7 @@
 }
 .TJimg{
   width: 264rpx;
+  height: 200rpx;
   float: left;
   margin-right: 30rpx;
 }

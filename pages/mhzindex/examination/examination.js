@@ -17,7 +17,8 @@ Page({
     var that = this;
     var index = options.index;
     console.log(options)
-    var state = index + 1;
+
+    var state = Number(index) + 1;
     wx.showLoading({
       title: '加载中',
     });
@@ -25,7 +26,7 @@ Page({
       state: state
     }, function(data) {
       that.setData({
-        currentTab:index,
+        currentTab: index,
         baoming: data.baoming,
         selectData: data.baoming,
       });
@@ -39,6 +40,9 @@ Page({
   onReady: function() {
 
   },
+  /**
+   * 展开、隐藏下拉菜单
+   */
   selectTap() {
     this.setData({
       show: !this.data.show
@@ -115,6 +119,9 @@ Page({
   onShareAppMessage: function() {
 
   },
+  /**
+   * 报名、报考选项卡切换
+   */
   swichNav: function(e) {
     var that = this;
     var state = e.currentTarget.dataset.state;
@@ -129,6 +136,9 @@ Page({
         state: state,
       }, function(data) {
         that.setData({
+          show: false,
+          baomings: data.baoming,
+          name: '',
           baoming: data.baoming,
           selectData: data.baoming,
           currentTab: e.target.dataset.current,

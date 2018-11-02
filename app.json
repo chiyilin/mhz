@@ -1,12 +1,11 @@
 {
   "pages": [
     "pages/mhzindex/mhzindex",
+    "pages/mine/authentication/authentication",
+    "pages/mine/nopersonal/nopersonal",
+    
     "pages/mhzindex/coursesList/coursesList",
-    
     "pages/mhzindex/examination/examination",
-    
-    
-    
     "pages/mhzindex/mhzindex/template",
     "pages/mhzindex/EnrolmentDetails/EnrolmentDetails",
     "pages/Login/againLogin/againLogin",
@@ -23,17 +22,15 @@
     "pages/program/talk/talk",
     "pages/mhzindex/PressReleases/PressReleases",
     "pages/mhzindex/PressReleases/article/article",
-    "pages/mine/authentication/authentication",
-    "pages/mine/nopersonal/nopersonal",
+    
+    
     "pages/mine/personal/personal",
-   
     "pages/PromotionCenter/product/product",
     "pages/PromotionCenter/IntegralDetail/IntegralDetail",
     "pages/mine/Registration/Registration",
     "pages/PromotionCenter/PromotionCenter",
     "pages/PromotionCenter/ExchangeOfDetails/ExchangeOfDetails",
     "pages/PromotionCenter/withdrawal/withdrawal",
-    
     "pages/program/program",
     "pages/mine/MyMessage/MyMessage",
     "pages/mine/privilege/privilege",
