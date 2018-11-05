@@ -14,19 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var user_id = wx.getStorageSync('userinfo').user_id;
-    wx.showLoading({
-      title: '加载中',
-    });
-    var that = this;
-    common.PostMain('user/userinfo', {
-      user_id: user_id
-    }, function(data) {
-      that.setData({
-        userinfo: data,
-      });
-      wx.hideLoading();
-    });
+
   },
 
   /**
@@ -97,8 +85,6 @@ Page({
         },
       });
     }
-
-
   },
   message: function() {
     wx.navigateTo({
@@ -120,9 +106,23 @@ Page({
 
   /**
    * 生命周期函数--监听页面显示
+   * 每次点击我的按钮拉去最新的用户状态，存至小程序缓存中
    */
   onShow: function() {
-
+    var user_id = wx.getStorageSync('userInfo').user_id;
+    wx.showLoading({
+      title: '加载中',
+    });
+    var that = this;
+    common.PostMain('user/userinfo', {
+      user_id: user_id
+    }, function(data) {
+      wx.setStorageSync('userInfo', data);
+      that.setData({
+        userinfo: data,
+      });
+      wx.hideLoading();
+    });
   },
 
   /**
