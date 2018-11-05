@@ -15,13 +15,13 @@ Page({
    */
   onLoad: function(options) {
     var that = this;
-    var baokao_id = options.baokao_id;
+    var list_id = options.list_id ? options.list_id:20;
     var user_id = wx.getStorageSync('userinfo').user_id;
     wx.showLoading({
       title: '加载中',
     });
     common.PostMain('baoming/chenggong', {
-      baokao_id:baokao_id,
+      list_id: list_id,
       user_id:user_id,
     }, function (data) {
       that.setData({
@@ -32,6 +32,9 @@ Page({
       wx.hideLoading();
     });
   },
+  /**
+   * 点击返回
+   */
   fanhui:function(){
     wx.navigateBack({
       delta:1,

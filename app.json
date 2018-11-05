@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/mhzindex/mhzindex",
-    "pages/Login/againLogin/againLogin",
+    "pages/Login/againLogin/againLogin",    
+    "pages/mhzindex/finish/finish",
     "pages/mine/authentication/authentication",
     "pages/mine/nopersonal/nopersonal",
     "pages/mhzindex/coursesList/coursesList",
@@ -12,7 +13,6 @@
     "pages/comment/comment",
     "pages/Login/Login",
     "pages/mine/mine",
-    "pages/mhzindex/finish/finish",
     "pages/program/programlist/programlist",
     "pages/program/buyAlready/buyAlready",
     "pages/program/buy/buy",
