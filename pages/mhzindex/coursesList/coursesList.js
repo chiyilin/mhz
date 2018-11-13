@@ -1,7 +1,6 @@
 var App = getApp();
 var common = require('../../../utils/common.js');
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -55,7 +54,6 @@ Page({
     wx.showLoading({
       title: '加载中',
     });
-
     common.PostMain('courses/product', {
       index: that.data.index,
       category_id: category_id

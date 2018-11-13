@@ -15,6 +15,7 @@ var request = function(that) {
   }
   common.PostMain('product/details', param, function(data) {
     console.log(data)
+    data.product.product_introduce = JSON.parse(data.product.product_introduce)
     that.setData({
       product: data.product,
       dingynum: data.product.product_subscribe,
@@ -34,7 +35,7 @@ Page({
   data: {
     isShow: true,
     currentTab: 0,
-    user_id: wx.getStorageSync('userinfo').user_id,
+    user_id: wx.getStorageSync('userInfo').user_id,
     experience_time: 360,
     isEnd: false
   },
@@ -113,10 +114,17 @@ Page({
     request(that)
   },
   /**
+   * 当开始/继续播放时触发play事件
+   */
+  bindplay: function(e) {
+    var oldHistory = wx.getStorageSync('playerHistory') ? wx.getStorageSync('playerHistory') : [];
+    oldHistory.push(this.data.product_id)
+    wx.setStorageSync('playerHistory', oldHistory);
+  },
+  /**
    * 播放时间发生改变时触发
    */
   bindtimeupdate: function(e) {
-    console.log(e.detail.currentTime)
     var that = this;
     if (e.detail.currentTime >= that.data.experience_time) {
       wx.showModal({
@@ -132,116 +140,49 @@ Page({
     // })
   },
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 收藏/取消收藏
    */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
-  },
   shouc: function(e) {
-    var shouckey = e.currentTarget.dataset.usershouc;
-    var product_id = e.currentTarget.dataset.productid;
-    var user_id = wx.getStorageSync('userinfo').user_id;
-    console.log(e)
-    wx.request({
-      url: App.globalData.apiurl + 'usershouc/index',
-      method: "POST",
-      data: {
-        shouckey: shouckey,
-        product_id: product_id,
-        user_id: user_id,
-      },
-      success: function(res) {
-        wx.showToast({
-          title: '操作成功',
-          icon: 'success',
-        })
-      },
+    var that = this;
+    var dataset = e.currentTarget.dataset;
+    common.PostMain('product/createshoucang', {
+      shouckey: dataset.usershouc,
+      product_id: dataset.productid,
+      user_id: wx.getStorageSync('userInfo').user_id,
+    }, function(e) {
+      that.setData({
+        usershouc: dataset.usershouc == 1 ? 0 : 1,
+      })
     });
-    if (shouckey == 1) {
-      var shouc = 0
-    } else {
-      var shouc = 1
-    }
-    this.setData({
-      usershouc: shouc,
-    })
   },
+  /**
+   * 订阅/取消订阅
+   */
   dingy: function(e) {
-    console.log(e)
-    var dingykey = e.currentTarget.dataset.userdingy;
-    var product_id = e.currentTarget.dataset.productid;
-    var user_id = wx.getStorageSync('userinfo').user_id;
-    var dingynum = e.currentTarget.dataset.dingynum;
-    wx.request({
-      url: App.globalData.apiurl + 'userdingy/index',
-      method: "POST",
-      data: {
-        dingykey: dingykey,
-        product_id: product_id,
-        user_id: user_id,
+    var that = this;
+    var dataset = e.currentTarget.dataset;
+    common.PostMain('product/createdingyue', {
+      dingykey: dataset.userdingy,
+      product_id: dataset.productid,
+      user_id: wx.getStorageSync('userInfo').user_id,
+    }, function(e) {
+      var dingynum = that.data.product.product_subscribe
+      if (dataset.userdingy == 1) {
+        var dingy = 0;
+        var dingynum = Number(dingynum);
+      } else {
+        var dingy = 1;
+        var dingynum = Number(dingynum) + Number(1);
+      }
+      that.setData({
         dingynum: dingynum,
-      },
-      success: function(res) {
-        wx.showToast({
-          title: '操作成功',
-          icon: 'success',
-        })
-      },
-    });
-    if (dingykey == 1) {
-      var dingy = 0;
-      var dingynum = Number(dingynum) - Number(1);
-    } else {
-      var dingy = 1;
-      var dingynum = Number(dingynum) + Number(1);
-    }
-    this.setData({
-      dingynum: dingynum,
-      userdingy: dingy
+        userdingy: dingy
+      });
     });
   },
+  /**
+   * 套餐/课程切换
+   */
   swichNav: function(e) {
     var that = this;
     var current = e.target.dataset.current;
@@ -273,6 +214,9 @@ Page({
       })
     }
   },
+  /**
+   * 更多评论
+   */
   toTalk: function(e) {
     var product_id = e.currentTarget.dataset.id;
     var taoc_id = e.currentTarget.dataset.taocid;
@@ -286,8 +230,10 @@ Page({
       })
     }
   },
+  /**
+   * 查看套餐内产品详情
+   */
   looktaoc: function(e) {
-    console.log(e)
     var id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: "buy?productid=" + id,
@@ -338,10 +284,59 @@ Page({
     that.data.current = e.currentTarget.dataset.current;
     that.data.taoc_id = e.currentTarget.dataset.taocid;
     that.data.product_id = e.currentTarget.dataset.id;
-    that.data.user_id = wx.getStorageSync('userinfo').user_id;
+    that.data.user_id = wx.getStorageSync('userInfo').user_id;
     that.payRequest(that);
     // wx.navigateBack({
     //   delta: 1,
     // })
-  }
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function() {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function() {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function() {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function() {
+
+  },
 })

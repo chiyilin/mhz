@@ -34,7 +34,7 @@ Page({
     })
   },
   mycl: function() {
-    var user_id = wx.getStorageSync('userinfo').user_id
+    var user_id = wx.getStorageSync('userInfo').user_id
     wx.navigateTo({
       url: "MyCollection/MyCollection?user_id=" + user_id,
     })
@@ -92,7 +92,7 @@ Page({
     })
   },
   Registration: function() {
-    var user_id = wx.getStorageSync('userinfo').user_id;
+    var user_id = wx.getStorageSync('userInfo').user_id;
     wx.navigateTo({
       url: "Registration/Registration?user_id=" + user_id,
     })

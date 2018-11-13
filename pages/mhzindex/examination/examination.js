@@ -108,7 +108,6 @@ Page({
       baokao_id: data.baokao_id,
       user_id: userInfo.user_id,
     }, function(res) {
-      
       wx.requestPayment({
         timeStamp: res.timeStamp,
         nonceStr: res.nonce_str,

@@ -1,19 +1,32 @@
-// pages/mine/history/history.js
+// pages/article/details/details.js
 var App = getApp();
 var common = require('../../../utils/common.js');
 Page({
+
   /**
    * 页面的初始数据
    */
   data: {
-    filepath: App.globalData.filepath
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    var that = this;
+    common.PostMain('article/details', {
+      id: options.id
+    }, function(e) {
+      that.setData({
+        title: e.article_title,
+        details: JSON.parse(e.article_details),
+        time: e.article_time,
+      });
+      wx.setNavigationBarTitle({
+        title: e.article_title
+      });
+    });
   },
 
   /**
@@ -27,26 +40,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    var that = this;
-    wx.showNavigationBarLoading();
-    var playerHistoryId = wx.getStorageSync('playerHistory');
-    common.PostMain('user/playerhistory', {
-      idArr: playerHistoryId
-    }, function(e) {
-      that.setData({
-        data: e
-      });
-      wx.hideNavigationBarLoading();
-    });
-  },
-  /**
-   * 跳转至详情页面
-   */
-  details: function(e) {
-    var id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '/pages/program/buy/buy?productid=' + id,
-    })
+
   },
 
   /**

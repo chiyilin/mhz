@@ -1,7 +1,11 @@
 {
   "pages": [
+    
     "pages/mhzindex/mhzindex",
-    "pages/Login/againLogin/againLogin",    
+    "pages/mine/history/history",
+    "pages/article/list/list",
+    "pages/article/details/details",
+    "pages/Login/againLogin/againLogin",
     "pages/mhzindex/finish/finish",
     "pages/mine/authentication/authentication",
     "pages/mine/nopersonal/nopersonal",
@@ -19,8 +23,6 @@
     "pages/program/CurriculaVariable/CurriculaVariable",
     "pages/mine/UpHomework/UpHomework",
     "pages/program/talk/talk",
-    "pages/mhzindex/PressReleases/PressReleases",
-    "pages/mhzindex/PressReleases/article/article",
     "pages/mine/personal/personal",
     "pages/PromotionCenter/product/product",
     "pages/PromotionCenter/IntegralDetail/IntegralDetail",
@@ -37,7 +39,6 @@
     "pages/mine/DiscipleClass/DiscipleClass",
     "pages/PromotionCenter/Exchange/Exchange",
     "pages/mine/MyHomework/MyHomework",
-    "pages/mine/history/history",
     "pages/mine/MyCollection/MyCollection",
     "pages/index/index",
     "pages/logs/logs"

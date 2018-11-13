@@ -11,7 +11,7 @@ Page({
     duration: 1000,
     currentTab: [0, 0, 0],
     //默认展示报名还是报考
-    defaultTab:0,
+    defaultTab: 0,
     filepath: App.globalData.filepath
   },
 
@@ -19,19 +19,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    
-    return null;
-    wx.showLoading({
-      title: '加载中',
-    });
-    var that = this;
-    common.PostMain('index/index', {}, function(data) {
-      console.log(data)
-      that.setData({
-        apiData: data
-      });
-      wx.hideLoading();
-    });
+
   },
 
   /**
@@ -45,7 +33,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    wx.showLoading({
+      title: '加载中',
+    });
+    var that = this;
+    common.PostMain('index/index', {}, function(data) {
+      that.setData({
+        apiData: data
+      });
+      wx.hideLoading();
+    });
   },
 
   /**
@@ -79,8 +76,26 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function(e) {
+   
+    var pages = getCurrentPages()    //获取加载的页面
 
+    var currentPage = pages[pages.length - 1]    //获取当前页面的对象
+
+    var url = currentPage.route    //当前页面url
+
+    var options = currentPage.options    //如果要获取url中所带的参数可以查看options
+
+    console.log(options)
+    // return {
+
+    //   title: '弹出分享时显示的分享标题',
+
+    //   desc: '分享页面的内容',
+
+    //   path: '/page/user?id=123' // 路径，传递参数到指定页面。
+
+    // }
   },
   /**
    * 课程选项卡切换
@@ -143,8 +158,8 @@ Page({
   /**
    * 跳转至报名报考页面
    */
-  navigate_sign:function(e){
-    var index=e.currentTarget.dataset.index;
+  navigate_sign: function(e) {
+    var index = e.currentTarget.dataset.index;
     wx.navigateTo({
       url: 'examination/examination?index=' + index,
     })

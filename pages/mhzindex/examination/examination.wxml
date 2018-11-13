@@ -4,7 +4,7 @@
   <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" data-state="2" bindtap="swichNav">取证报考</view>
 </view>
 <view class="weui-cells__title">
-  <text class='title'>报考内容</text>
+  <text class='title'>内容：</text>
   <view class='select_box '>
     <view class='select' catchtap='selectTap'>
       <text class='select_text'>{{name}}</text>
@@ -16,8 +16,13 @@
   </view>
   <!--报考须知-->
   <view class='bottom'>
-    <text class='Btitle'>报考须知</text>
-    <text class='content'>{{baomings.baokao_xuzhi}}</text>
+    <text class='Btitle'>报考须知：</text>
+    <view class='content'>
+      <block wx:for="{{baomings.baokao_xuzhi}}" wx:for-item="items">
+        <image mode='widthFix' wx:if="{{items.image}}" src="{{items.image}}"></image>
+        <text class='chdText' wx:if="{{items.text}}">{{items.text}}</text>
+      </block>
+    </view>
     <text class='time'>考试时间：{{baomings.baokao_time}}</text>
     <text class='address'>考试地点：{{baomings.baokao_address}}</text>
     <checkbox checked="{{true}}" class='fuxuan' color='#4f4f4f'>

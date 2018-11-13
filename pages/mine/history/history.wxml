@@ -1,19 +1,8 @@
 <!--pages/mine/history/history.wxml-->
-<view class='vid clearfix'>
-  <image class='fl hui' src='/imgs/hui.jpg'></image>
-  <text class='name'>梅花针暑期集训</text>
-  <text class='date'>2018-09-09</text>
-  <image class='fr you' mode='widthFix' src='/imgs/you.jpg'></image>
-</view>
-<view class='vid clearfix'>
-  <image class='fl hui' src='/imgs/hui.jpg'></image>
-  <text class='name'>梅花针暑期集训</text>
-  <text class='date'>2018-09-09</text>
-  <image class='fr you' mode='widthFix' src='/imgs/you.jpg'></image>
-</view>
-<view class='vid clearfix'>
-  <image class='fl hui' src='/imgs/hui.jpg'></image>
-  <text class='name'>梅花针暑期集训</text>
-  <text class='date'>2018-09-09</text>
+<view class='vid clearfix' wx:for="{{data}}" bindtap='details' data-id='{{item.product_id}}'>
+  <image wx:if="{{item.product_banner[0].url}}" class='fl hui' src='{{filepath}}{{item.product_banner[0].url}}'></image>
+  <image wx:else class='fl hui' mode='widthFix' src='{{item.product_video_vframe}}'></image>
+  <text class='name'>{{item.product_name}}</text>
+  <text class='date'>{{item.product_time_str}}</text>
   <image class='fr you' mode='widthFix' src='/imgs/you.jpg'></image>
 </view>

@@ -16,7 +16,7 @@ Page({
    */
   onLoad: function(options) {
     var that = this;
-    common.PostMain('prodlist/pingjiafb', {   //prodlist/productListDetails
+    common.PostMain('prodlist/pingjiafb', { //prodlist/productListDetails
       list_id: options.list_id,
     }, function(data) {
       console.log(data)
@@ -91,7 +91,7 @@ Page({
   /**
    * 表单提交
    */
-  bindFormSubmit: function (e) {
+  bindFormSubmit: function(e) {
     var that = this;
     if (!e.detail.value.textarea) {
       common.tips('请填写评价哦~');

@@ -1,12 +1,12 @@
 <!--pages/program/buy/buy.wxml-->
 <block wx:if="{{!flag}}">
   <view class="section tc">
-    <video src="{{product.product_video_src}}" bindtimeupdate='bindtimeupdate' wx:if="{{!isEnd}}"></video>
+    <video src="{{product.product_video_src}}" bindplay="bindplay" bindtimeupdate='bindtimeupdate' wx:if="{{!isEnd}}"></video>
     <video wx:else src="{{product.product_video_src}}" duration="{{experience_time}}"></video>
-    <view class='shikan'>
+    <!-- <view class='shikan'>
       <image class='bofang' mode='widthFix' src='/imgs/bofang.png'></image>
       <text class='sktext'>试看</text>
-    </view>
+    </view> -->
   </view>
   <view class='share clearfix'>
     <text>{{product.product_name}}</text>
@@ -22,14 +22,18 @@
   </view>
   <view class="swiper-tab">
     <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">课程简介</view>
-    <view wx:if="{{product.taoc_id==null}}" class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}">无套餐组合</view>
-    <view wx:else class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-productid='{{product.product_id}}' data-current="1" bindtap="swichNav">套餐组合</view>
+    <!-- <view wx:if="{{product.taoc_id==null}}" class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}">无套餐组合</view> -->
+    <view  wx:if="{{product.taoc_id!=null}}" class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-productid='{{product.product_id}}' data-current="1" bindtap="swichNav" >套餐组合</view>
   </view>
   <view class="weui-cells__title" hidden="{{!isShow}}">
-    <text class='jianjie'>{{product.product_introduce}}</text>
-    <image wx:if="{{userdingy==0}}" bindtap="dingy" data-productid="{{product.product_id}}" data-userdingy='0' data-dingynum='{{dingynum}}' class='dy' mode='widthFix' src='/imgs/dy.jpg'></image>
-    <image wx:else class='dy' bindtap="dingy" data-productid="{{product.product_id}}" data-userdingy='1' data-dingynum='{{dingynum}}' mode='widthFix' src='/imgs/dingyue.jpg'></image>
-    <text class='price'>订阅：{{dingynum}}</text>
+<image wx:if="{{userdingy==0}}" bindtap="dingy" data-productid="{{product.product_id}}" data-userdingy='0' class='dy' mode='widthFix' src='/imgs/dy.jpg'></image>
+    <image wx:else class='dy' bindtap="dingy" data-productid="{{product.product_id}}" data-userdingy='1' mode='widthFix' src='/imgs/dingyue.jpg'></image>
+    <text class='price'>{{dingynum}}人已订阅</text>
+  <!-- 课程简介 -->
+    <block wx:for="{{product.product_introduce}}">
+      <text class='jianjie' wx:if="{{item.text}}">{{item.text}}</text>
+      <image class='jianjie' wx:if="{{item.image}}" src='{{item.image}}' mode='widthFix'></image>
+    </block>
   </view>
   <view class="weui-cells__title" hidden="{{isShow}}">
     <block wx:for="{{producttaoc}}">

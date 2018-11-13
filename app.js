@@ -30,9 +30,9 @@ App({
                       if (data.data.code == 200) {
                         if (data.data.data.user_is_lock == 1) {
                           wx.setStorageSync('userInfo', data.data.data);
-                          wx.switchTab({
-                            url: '/pages/mhzindex/mhzindex',
-                          })
+                          // wx.switchTab({
+                          //   url: '/pages/mhzindex/mhzindex',
+                          // })
                         } else {
 
                         }

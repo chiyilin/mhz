@@ -1,14 +1,12 @@
+// pages/article/list/list.js
 var App = getApp();
 var common = require('../../../utils/common.js');
-// pages/mhzindex/mhzindex.js
-// pages/mhzindex/PressReleases/PressReleases.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    navbar: ['全部', '文章', '理论', '咨询'],
     currentTab: 0,
     isShow: true,
   },
@@ -27,7 +25,8 @@ Page({
         data[i]['details'] = JSON.parse(data[i].article_details);
       }
       that.setData({
-        article: data,
+        navbar: data.articleCate,
+        article: data.article,
       });
       wx.hideLoading();
     });
@@ -81,19 +80,25 @@ Page({
   onShareAppMessage: function() {
 
   },
+  /**
+   * 文章分类切换
+   */
   navbarTap: function(e) {
-    var typeid = e.currentTarget.dataset.idx;
+    wx.showNavigationBarLoading();
     var that = this;
+    var param = e.currentTarget.dataset;
     common.PostMain('article/index', {
-      article_type: typeid
+      article_cate: param.id
     }, function(data) {
-      for (var i = 0; i < data.length; i++) {
-        data[i]['details'] = JSON.parse(data[i].article_details);
+      var list = data.article;
+      for (var i = 0; i < list.length; i++) {
+        list[i]['details'] = JSON.parse(list[i].article_details);
       }
       that.setData({
-        article: data,
-        currentTab: e.currentTarget.dataset.idx
+        article: list,
+        currentTab: param.idx
       });
+      wx.hideNavigationBarLoading();
     })
   },
   navbarTap1: function(e) {
@@ -101,11 +106,14 @@ Page({
       currentTab: e.currentTarget.dataset.idx
     })
   },
-  xiangqing: function(e) {
+  /**
+   * 跳转至文章详情
+   */
+  details: function(e) {
     // console.log(e.currentTarget.dataset.id)
     // return null;
     wx.navigateTo({
-      url: "article/article?id=" + e.currentTarget.dataset.id,
+      url: "/pages/article/details/details?id=" + e.currentTarget.dataset.id,
     })
   },
 })

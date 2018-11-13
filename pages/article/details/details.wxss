@@ -1,0 +1,26 @@
+/* pages/article/details/details.wxss */
+.title{
+  font-size: 40rpx;
+  text-align: center;
+
+}
+.date{
+  display: block;
+  font-size: 24rpx;
+  margin-left: 400rpx;
+  margin-top: 20rpx;
+    color:  #676666;
+}
+label{
+  padding: 0 3%;
+}
+image{
+  width: 94%;
+}
+.text{
+  padding: 0 3%;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color:  #676666;
+  text-indent: 2em;
+}

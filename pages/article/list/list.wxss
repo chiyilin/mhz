@@ -1,4 +1,4 @@
-/* pages/mhzindex/PressReleases/PressReleases.wxss */
+/* pages/article/list/list.wxss */
 .item{
   width: 15%;
   height: 39rpx;

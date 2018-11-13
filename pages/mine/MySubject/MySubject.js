@@ -9,6 +9,7 @@ Page({
   data: {
     isShow: true,
     currentTab: 0,
+    filepath: App.globalData.filepath,
   },
 
   /**
@@ -16,7 +17,7 @@ Page({
    */
   onLoad: function(options) {
     var that = this;
-    var user_id = wx.getStorageSync('userinfo').user_id;
+    var user_id = wx.getStorageSync('userInfo').user_id;
     wx.showLoading({
       title: '加载中',
     });
@@ -24,7 +25,6 @@ Page({
       user_id: user_id
     }, function(data) {
       that.setData({
-        filepath: App.globalData.filepath,
         kecheng: data,
       });
       console.log(data)

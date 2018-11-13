@@ -1,12 +1,12 @@
-<!--pages/mhzindex/PressReleases/PressReleases.wxml-->
+<!--pages/article/list/list.wxml-->
 <scroll-view scroll-x>
   <view class="navbar">
-    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+    <text wx:for="{{navbar}}" data-idx="{{index}}" data-id='{{item.cate_id}}' class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item.cate_name}}</text>
   </view>
 </scroll-view>
 <view>
   <block wx:for="{{article}}" wx:key="">
-    <view class='list clearfix' bindtap='xiangqing' data-id='{{item.article_id}}'>
+    <view class='list clearfix' bindtap='details' data-id='{{item.article_id}}'>
       <image mode='widthFix' src='/imgs/lv.jpg'></image>
       <text class='title'>{{item.article_title}}</text>
       <text class='date fr'>发布日期：{{item.article_time}}</text>

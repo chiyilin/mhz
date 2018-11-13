@@ -1,0 +1,11 @@
+<!--pages/article/details/details.wxml-->
+<view class='title'>
+  <!-- <text>{{title}}</text> -->
+  <text class='date'>{{time}}</text>
+</view>
+<block wx:for="{{details}}" wx:key="">
+  <view class='text' wx:if="{{item.text}}">
+    <text>{{item.text}}</text>
+  </view>
+  <image wx:if="{{item.image}}" mode='widthFix' class='img' src='{{item.image}}'></image>
+</block>

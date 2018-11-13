@@ -9,7 +9,7 @@
 </swiper>
 <!--导航-->
 <view class='nav'>
-  <navigator url="PressReleases/PressReleases?title=navigate" hover-class="none">
+  <navigator url="/pages/article/list/list" hover-class="none">
     <view class='navView'>
       <image class='navImg' mode='widthFix' src='/imgs/xwgg.jpg'></image>
       <text class='navText'>新闻公告</text>
@@ -44,8 +44,10 @@
 </view>
 <view class="weui-cells__title" wx:for="{{apiData.signInfo}}">
   <view class='chd' wx:if="{{defaultTab==index}}">
-    <image mode='widthFix' src="{{filepath}}{{item.baokao_banner[0].url}}"></image>
-    <text class='chdText'>{{item.baokao_xuzhi}}</text>
+    <block wx:for="{{item.baokao_xuzhi}}" wx:for-item="items">
+      <image mode='widthFix' wx:if="{{items.image}}" src="{{items.image}}"></image>
+      <text class='chdText' wx:if="{{items.text}}">{{items.text}}</text>
+    </block>
     <button class='btn' bindtap='navigate_sign' data-index='{{index}}'>我要报{{index==0?'名':'考'}}</button>
   </view>
 </view>

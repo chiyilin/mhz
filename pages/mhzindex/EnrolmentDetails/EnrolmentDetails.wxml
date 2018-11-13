@@ -3,8 +3,10 @@
   <text wx:if="{{list.list_state==1}}" class='title'>报名内容：{{list.baokao.baokao_name}}</text>
   <text wx:else class='title'>报考内容：{{list.list_name}}</text>
   <text class='title'>课程预告：</text>
-  <text wx:if="{{zhi}}" class='content1'>{{list.baokao.baokao_xuzhi}}</text>
-  <text wx:else class='content'>{{list.baokao.baokao_xuzhi}}</text>
+  <block wx:for="{{list.baokao.baokao_xuzhi}}" class='content'>
+    <image src='{{item.image}}' wx:if='{{item.image}}' mode='widthFix'></image>
+    <text wx:if="{{item.text}}">{{item.text}}</text>
+  </block>
   <image bindtap='gengduo' hidden='{{zhi?true:false}}' class='down' mode='widthFix' src='/imgs/down.jpg'></image>
 </view>
 <view class='bottom'>

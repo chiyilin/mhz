@@ -2,7 +2,6 @@ var App = getApp();
 var common = require('../../utils/common.js');
 // pages/PromotionCenter/PromotionCenter.js
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -14,7 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var user_id = wx.getStorageSync('userinfo').user_id
+    var user_id = wx.getStorageSync('userInfo').user_id
     wx.showLoading({
       title: '加载中',
     });
