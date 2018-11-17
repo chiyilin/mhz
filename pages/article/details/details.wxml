@@ -1,7 +1,14 @@
 <!--pages/article/details/details.wxml-->
-<view class='title'>
-  <!-- <text>{{title}}</text> -->
+<view class='title clearfix'>
+  <text>{{title}}</text>
   <text class='date'>{{time}}</text>
+  <view class='fr share'>
+          <button class='fen' open-type='share'>
+        <image class='shareimg' mode='widthFix' src='/imgs/share.png'></image>
+      </button>
+      <text class='stext'>分享</text>
+  </view>
+
 </view>
 <block wx:for="{{details}}" wx:key="">
   <view class='text' wx:if="{{item.text}}">

@@ -1,7 +1,28 @@
 /* pages/program/program.wxss */
+input{
+  margin: 20rpx;
+  border: #DEDEDE 1px solid;
+  border-radius: 10rpx;
+  height: 49rpx;
+  font-size: 26rpx;
+  padding-left: 20rpx;
+  margin-bottom: 10rpx;
+}
 .cont{
   padding: 40rpx;
-  border-bottom: 1px solid #E6E6E6;
+  background-color: #fff;
+  position: relative;
+}
+.cont::after{
+  position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 1px;
+background-color:#e6e6e6;
+content: ' ';
+display: block;
+transform: scaley(0.5);
 }
 .shu{
   width: 12rpx;

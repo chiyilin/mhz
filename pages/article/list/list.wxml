@@ -10,8 +10,10 @@
       <image mode='widthFix' src='/imgs/lv.jpg'></image>
       <text class='title'>{{item.article_title}}</text>
       <text class='date fr'>发布日期：{{item.article_time}}</text>
-      <text class='content' wx:if="{{item.details[0].text}}">{{item.details[0].text}}</text>
-      <text class='content' wx:if="{{item.details[0].image}}">[图片]</text>
+      <image class='pict' mode='aspectFill' src='{{filepath}}{{item.article_cover}}'></image>
+      <text class='content' >45898754656465464ksdjfaksdfhlkjasdfkjasdlkjsdhlks</text>
+      <!-- <text class='content' wx:if="{{item.details[0].text}}">{{item.details[0].text}}</text>
+      <text class='content' wx:if="{{item.details[0].image}}">[图片]</text> -->
       <!-- <image src="{{filepath}}{{item.dettails['1']}}" class="slide-image" /> -->
     </view>
   </block>

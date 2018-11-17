@@ -22,7 +22,6 @@ var request = function(that) {
       productlistcomment: data.productlistcomment,
       usershouc: data.usershouc,
       userdingy: data.userdingy,
-      filepath: getApp().globalData.filepath,
     });
     wx.hideLoading();
   });
@@ -37,7 +36,8 @@ Page({
     currentTab: 0,
     user_id: wx.getStorageSync('userInfo').user_id,
     experience_time: 360,
-    isEnd: false
+    isEnd: false,
+    filepath: getApp().globalData.filepath,
   },
   /**
    * 分享按钮
@@ -152,13 +152,14 @@ Page({
     }, function(e) {
       that.setData({
         usershouc: dataset.usershouc == 1 ? 0 : 1,
-      })
+      });
     });
   },
   /**
    * 订阅/取消订阅
    */
   dingy: function(e) {
+    return;
     var that = this;
     var dataset = e.currentTarget.dataset;
     common.PostMain('product/createdingyue', {
@@ -193,11 +194,15 @@ Page({
       common.PostMain('product/taoc', {
         product_id: product_id
       }, function(data) {
-        console.log(data)
+        let taocanMoney = 0;
+        for (var i = 0; i < data.res.length; i++) {
+          taocanMoney = taocanMoney + Number(data.res[i].product_money)
+        }
         that.setData({
+          taocanMoney: taocanMoney,
           producttaoc: data.res,
           productlistcomment: data.ress
-        })
+        });
       })
     } else {
       that.setData({

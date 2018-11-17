@@ -1,13 +1,87 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+<!--pages/index/index.wxml-->
+<swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{apiData.banner}}" wx:key="">
+    <swiper-item>
+      <image mode='aspectFill' src="{{filepath}}{{item.url}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+<!--导航-->
+<view class='nav'>
+  <navigator url="/pages/article/list/list" hover-class="none">
+    <view class='navView'>
+      <image class='navImg' mode='widthFix' src='/imgs/xwgg.jpg'></image>
+      <text class='navText'>新闻公告</text>
+    </view>
+  </navigator>
+  <navigator url="HotCourses/HotCourses?category_id=0" hover-class="none">
+    <view class='navView'>
+      <image class='navImg' mode='widthFix' src='/imgs/rmkc.jpg'></image>
+      <text class='navText'>热门课程</text>
+    </view>
+  </navigator>
+  <navigator url="examination/examination?state=1" hover-class="none">
+    <view class='navView'>
+      <image class='navImg' mode='widthFix' src='/imgs/bmbk.jpg'></image>
+      <text class='navText'>报名报考</text>
+    </view>
+  </navigator>
+  <navigator url="../mine/MySubject/MySubject?title=navigate" hover-class="none">
+    <view class='navView'>
+      <image class='navImg' mode='widthFix' src='/imgs/wdkc.jpg'></image>
+      <text class='navText'>我的课程</text>
+    </view>
+  </navigator>
+</view>
+<!-- 报考/报名图片按钮 -->
+<view class="baokao">
+  <image src='/imgs/baokao1.jpg' bindtap='navigate_sign' data-index='0'></image>
+  <image class='img2' src='/imgs/baokao2.jpg' bindtap='navigate_sign' data-index='1'></image>
+</view>
+
+<!-- 推荐课程 -->
+<view style='border:none;' class='title'>
+  <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
+  <text>推荐课程</text>
+</view>
+<view class='clearfix' style='padding-bottom:40rpx;'>
+  <view wx:for="{{apiData.recommendCourses}}" bindtap='coursesDetails' data-id='{{item.product_id}}' class='fl kuai'>
+    <image class='kuaitu' src='{{filepath}}{{item.product_cover}}' mode='aspectFill'></image>
+
+    <view class='hui clearfix'>
+      <text class='name'>{{item.product_name}}</text>
+      <text class='chu fl'>课程时长：{{item.product_times}}</text>
+      <text class='fr  price'>￥{{item.product_money}}</text>
+    </view>
   </view>
 </view>
+<!--热门课程-->
+<view class='title'>
+  <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
+  <text>热门课程</text>
+</view>
+<view class='rmView' wx:for="{{apiData.popularCourses}}" bindtap='coursesDetails' data-id='{{item.product_id}}'>
+  <image class='w100' src='{{filepath}}{{item.product_cover}}' mode='widthFix'></image>
+  <view class='mengban'>
+    <text class='z1'>{{item.product_name}}</text>
+    <text class='z2'>课程时长：{{item.product_times}}</text>
+    <text class='y1'>￥{{item.product_money}}</text>
+  </view>
+</view>
+<!--最新课程-->
+<view class='title'>
+  <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
+  <text>最新课程</text>
+</view>
+<!--导航条-->
+<view class='TuiJian' wx:for="{{apiData.newCourses}}" bindtap='coursesDetails' data-id='{{item.product_id}}'>
+  <image class='TJimg' src='{{filepath}}{{item.product_cover}}' mode='aspectFill'></image>
+  <text class='tjtitle'>{{item.product_name}}</text>
+  <text class='tjcont'>{{item.product_introduce}}</text>
+  <text class='time'>课程时长：{{item.product_times}}</text>
+  <text class='price'>￥{{item.product_money}}</text>
+</view>
+<!-- 客服悬窗 -->
+<button open-type="contact">
+  <image hover-class='other-button-hover' mode='widthFix' src='/imgs/kefu.png'></image>
+</button>

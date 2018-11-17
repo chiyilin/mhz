@@ -1,11 +1,12 @@
 <!--pages/mhzindex/examination/examination.wxml-->
-<view class="swiper-tab">
+<!-- <view class="swiper-tab">
   <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" data-state="1" bindtap="swichNav">线上报名</view>
   <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" data-state="2" bindtap="swichNav">取证报考</view>
-</view>
+</view> -->
 <view class="weui-cells__title">
   <text class='title'>内容：</text>
-  <view class='select_box '>
+  <picker mode="selector" range="{{selectData}}" range-key="baokao_name" bindchange="bindchange">{{name?name:'点击选择'}}</picker>
+  <!-- <view class='select_box '>
     <view class='select' catchtap='selectTap'>
       <text class='select_text'>{{name}}</text>
       <image class='select_img {{show&&"select_img_rotate"}}' src='/imgs/sanjiao.jpg'></image>
@@ -13,10 +14,10 @@
     <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
       <text class='option' style='{{index==selectData.length&&"border:0;"}}' wx:for='{{baoming}}' wx:key='this' data-name="{{item.baokao_name}}" data-id="{{item.baokao_id}}" data-index='{{index}}' catchtap='optionTap'>{{item.baokao_name}}</text>
     </view>
-  </view>
+  </view> -->
   <!--报考须知-->
   <view class='bottom'>
-    <text class='Btitle'>报考须知：</text>
+    <text class='Btitle'>须知：</text>
     <view class='content'>
       <block wx:for="{{baomings.baokao_xuzhi}}" wx:for-item="items">
         <image mode='widthFix' wx:if="{{items.image}}" src="{{items.image}}"></image>

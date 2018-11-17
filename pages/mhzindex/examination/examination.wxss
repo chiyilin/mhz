@@ -187,3 +187,11 @@
   background-color: #aeb184;
   color: #fff;
 }
+
+picker{
+  position: relative;
+  top: 75rpx;
+  left: 200rpx;
+  font-size: 28rpx;
+  color:  #5f5f5f;
+}

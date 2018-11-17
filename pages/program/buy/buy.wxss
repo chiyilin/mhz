@@ -19,14 +19,22 @@ video {
   border-radius: 18px;
   z-index: 2;
 }
-
+.teacher-info{
+  margin-bottom:20rpx;
+}
+.teacher-face{
+  border-radius: 50rpx;
+  width: 100rpx;
+  height: 100rpx;
+  float: left;
+  margin:10rpx;
+}
 .share {
-  height: 96rpx;
-  border-bottom: #f3f3f3 solid 6rpx;
-  line-height: 96rpx;
+  border-bottom: #f3f3f3 solid 9rpx;
   color: #727171;
   font-size: 26rpx;
   padding: 0 40rpx;
+  line-height: 50rpx;
 }
 
 .cllo text {
@@ -77,9 +85,26 @@ video {
 
 .TuiJian {
   padding: 40rpx 59rpx 17rpx 58rpx;
-  border-top: 1px solid #e6e6e6;
+  background-color: #fff;
+  position: relative;
 }
-
+.TuiJian::after {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 1px;
+background-color: #e6e6e6;
+content: ' ';
+display: block;
+transform: scaley(0.5);
+}
+.isplay{
+  width: 30rpx;
+  position: absolute;
+  right: 80rpx;
+  top: 60rpx;
+}
 .TJimg {
   width: 136rpx;
   float: left;
@@ -89,26 +114,27 @@ video {
 .price {
   font-size: 24rpx;
   color: #8d8d8d;
+  margin-top: -30rpx;
+  display: inline-block;
 }
 
 .jianjie {
-  padding: 20rpx 40rpx;
+  width: 750rpx;
   display: block;
   font-size: 24rpx;
   color: #a6a6a6;
   line-height: 38rpx;
+  text-indent: 2em;
 }
 
 .dy {
   width: 20rpx;
   vertical-align: middle;
-  margin-left: 530rpx;
-  margin-right: 15rpx;
+  margin-right: 10rpx;
 }
 
 .weui-cells__title {
-  border-bottom: 6rpx solid #f3f3f3;
-  padding-bottom: 10rpx;
+  border-bottom: 9rpx solid #f3f3f3;
 }
 
 .time {
@@ -134,11 +160,9 @@ video {
 .attention text {
   vertical-align: middle;
 }
-
-.attention .cont {
-  vertical-align: middle;
+.fr{
+  margin-top: 20rpx;
 }
-
 .attention .cont {
   display: block;
   padding-left: 24rpx;
@@ -182,16 +206,20 @@ video {
 }
 
 .btn {
-  width: 100%;
+  width: 690rpx;
   height: 97rpx;
-  background-color: #adb183;
-  color: #fff;
+  /* background-color: #adb183; */
+  color: #adb183;
+  /* color: #fff; */
+  background-color: #fff;
   line-height: 97rpx;
   text-align: center;
   position: fixed;
   font-size: 30rpx;
   left: 0;
   bottom: 0;
+  border-top: 1px solid #e6e6e6;
+  padding: 0 30rpx;
 }
 
 .message {
@@ -264,6 +292,7 @@ video {
 /*确定文本*/
 
 .txtsurename {
+  color:#fff;
   margin-bottom: 0rpx;
   font-size: 28rpx;
 }
@@ -284,4 +313,25 @@ video {
   display: block;
   width: 60rpx;
   height: 60rpx;
+}
+.sb{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-right: 30rpx;
+}
+.fen{
+  width: 33rpx;
+  display: inline-block;
+  height: 30rpx;
+  text-align: center;
+  background-color: #fff;
+  vertical-align: middle;
+}
+button::after{
+  border: none;
+  background-color: none;
+}
+.fen image{
+  margin-top: -70rpx;
 }

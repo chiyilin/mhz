@@ -8,6 +8,7 @@ Page({
     show: false, //控制下拉列表的显示隐藏，false隐藏、true显示
     index: 0, //选择的下拉列表下标
     filepath: getApp().globalData.filepath,
+    userInfo: wx.getStorageSync('userInfo')
   },
 
   /**
@@ -17,12 +18,16 @@ Page({
     var that = this;
     //初次加载的时候选择报名还是报考
     var index = options.index;
-    var state = Number(index) + 1;
+    var title = index == 0 ? '线上报名' : '取证报考';
+    wx.setNavigationBarTitle({
+      title: title
+    })
+    that.data.state = Number(index) + 1;
     wx.showLoading({
       title: '加载中',
     });
     common.PostMain('baoming/index', {
-      state: state
+      state: that.data.state
     }, function(data) {
       that.setData({
         currentTab: index,
@@ -38,6 +43,26 @@ Page({
   selectTap() {
     this.setData({
       show: !this.data.show
+    });
+  },
+  bindchange: function(e) {
+    var that = this;
+    wx.showNavigationBarLoading();
+    var info = that.data.selectData[e.detail.value];
+    // return null;
+    common.PostMain('baoming/baoming', {
+      baomingid: info.baokao_id,
+      state: that.data.state,
+      user_id: that.data.userInfo.user_id
+    }, function(data) {
+      that.setData({
+        // selectIndex: selectIndex,
+        show: !that.data.show,
+        name: info.baokao_name,
+        baomings: data.baomings,
+        user: data.user,
+      });
+      wx.hideNavigationBarLoading();
     });
   },
   // 点击下拉列表
@@ -125,7 +150,7 @@ Page({
     });
     return null;
     var baokao_id = e.currentTarget.dataset.baokaoid;
-    
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

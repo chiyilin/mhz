@@ -4,7 +4,7 @@ App({
     wx.getSetting({
       success: function (e) {
         //检测本地授权状态
-        if (!e.authSetting['scope.userInfo']) {
+        if (!e.authSetting['scope.userInfo']||!wx.getStorageSync('userInfo').user_id) {
           // 登录
           wx.login({
             success: res => {

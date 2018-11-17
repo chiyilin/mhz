@@ -97,3 +97,116 @@ page{
 .bottom1{
   margin-top: -40rpx;
 }
+
+/**
+*/
+
+.zhezao {
+  z-index: 9999;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  background: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.t_w {
+  position: relative;
+}
+
+.tanchu_view {
+  width: 80%;
+  margin: 25% auto;
+  overflow: hidden;
+  /* background-color: #fff1e6; */
+  
+  background-color: #ADB183;
+  border-radius: 10rpx;
+  padding: 4rpx;
+}
+
+.tanchu_view image {
+  width: 100%;
+}
+
+.bg_view {
+  margin: 30rpx auto 30rpx auto;
+  color: #fcb712;
+  font-size: 50rpx;
+  /* background-color: #fff1e6; */
+  background-color: #ADB183;
+  padding: 0rpx 30rpx;
+  text-align: center;
+}
+
+.txtys {
+  font-size: 50rpx;
+  text-align: center;
+  margin-bottom: 200rpx;
+}
+
+.txtsure {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20rpx;
+}
+
+/*确定背景*/
+
+.txtsurebg {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  /* background-color: #fff1e6; */
+  background-color: #ADB183;
+  color: #fff;
+  flex-direction: column;
+}
+
+/*确定文本*/
+
+.txtsurename {
+  margin-bottom: 0rpx;
+  font-size: 28rpx;
+}
+
+/*右上角图标*/
+
+.t_image {
+  width: 204rpx;
+  height: 200rpx;
+  position: absolute;
+  top: -4%;
+  left: 86%;
+}
+
+/*右上角图标*/
+
+.t_image1 {
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+}
+.sb{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-right: 30rpx;
+}
+.fen{
+  width: 33rpx;
+  display: inline-block;
+  height: 30rpx;
+  text-align: center;
+  background-color: #fff;
+  vertical-align: middle;
+}
+button::after{
+  border: none;
+  background-color: none;
+}
+.fen image{
+  margin-top: -70rpx;
+}

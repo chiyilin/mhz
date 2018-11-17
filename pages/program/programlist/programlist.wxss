@@ -1,5 +1,5 @@
 .top{
-  padding: 26rpx 44rpx;
+  padding: 10rpx 44rpx;
   border-bottom: #C9B195 solid 1px;
   color: #6B400D;
 }
@@ -20,19 +20,30 @@
   vertical-align: middle;
   margin-right: 20rpx;
 }
-input{
+/* input{
   border: #DEDEDE 1px solid;
   border-radius: 10rpx;
   height: 49rpx;
   font-size: 26rpx;
   padding-left: 20rpx;
   margin-bottom: 10rpx;
-}
+} */
 
 .TuiJian{
   padding:40rpx 59rpx 17rpx 30rpx; 
-  border-bottom: 1px solid #E6E6E6;
+  background-color: #fff;
   position: relative;
+}
+.TuiJian::after {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 1px;
+background-color: #e6e6e6;
+content: ' ';
+display: block;
+transform: scaley(0.5);
 }
 .TJimg{
   width: 264rpx;
@@ -47,7 +58,7 @@ input{
 }
 .redblod{
   font-weight: bold;
-  color:  #FE0000;
+  color:  #000;
 }
 .tjcont{
   font-size: 24rpx;

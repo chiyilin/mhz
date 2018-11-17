@@ -1,7 +1,19 @@
 /* pages/mine/history/history.wxss */
 .vid{
   padding: 47rpx 49rpx 47rpx 56rpx;
-  border-bottom: #E3E3E3 1px solid;
+  position: relative;
+  background-color: #fff;
+}
+.vid::after{
+  position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 1px;
+background-color: #e6e6e6;
+content: ' ';
+display: block;
+transform: scaley(0.5);
 }
 .hui{
   width: 199rpx;

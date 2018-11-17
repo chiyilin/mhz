@@ -9,6 +9,7 @@ Page({
   data: {
     currentTab: 0,
     isShow: true,
+    filepath: App.globalData.filepath
   },
 
   /**

@@ -1,33 +1,36 @@
 <!--pages/mine/UpHomework/UpHomework.wxml-->
 <view class='top'>
   <view class='clearfix'>
-    <text class='title'>课程：</text>
-    <text class='content'>什么是梅花针</text>
-    <text class='color'>获得评分（积分）：78</text>
+    <text class='title'>作业：</text>
+    <text class='content'>{{data.homework.homework_name}}</text>
+    <text class='color' wx:if="{{data.homework_status==2}}">审核中</text>
+    <text class='color' wx:if="{{data.homework_status==3}}">获得评分（积分）：{{data.score}}</text>
   </view>
   <view class='clearfix'>
-    <text class='title'>作业：</text>
-    <text class='content'>了空间地方拉开京东方拉科技的卡的借方；啊了打算考撒地方撒地方撒地方阿斯蒂芬阿斯蒂芬是几分；拉开第三方就来的空间十分绿卡的时间发；拉开大</text>
+    <text class='title'>详情：{{data.homework.homework_content}}</text>
+    <text class='content'></text>
   </view>
 </view>
-<view class='bottom'>
+<form bindsubmit='submit'>
+  <view class='bottom'>
     <text class='up'>上传</text>
-      <view class='pinlun clearfix'>
-    <textarea maxlength="300" placeholder="输入文字" class='pinlun-text' name="textarea" />
-    <view class='tupian'>
-      <label wx:for='{{tempFilePaths}}' wx:key="" class='add-item'>
-        <image mode='aspectFill' src='{{item}}' bindtap='previewImage' data-index='{{index}}'></image>
-        <image class='close' mode='widthFix' src='/imgs/close.jpg' bindtap='closeimg' data-index='{{index}}'></image>
-      </label>
-      <label wx:if="{{tempFilePaths.length!=9}}">
-        <view>
-          <image bindtap='chooseImage' src='/imgs/imgup.jpg' class='addImg'></image>
-        </view>
-      </label>
+    <view class='pinlun clearfix'>
+      <textarea maxlength="300" placeholder="输入文字" class='pinlun-text' 
+      name="homework_reply" value='{{data.homework_reply}}' disabled="{{data.homework_status!=1}}"></textarea>
+      <view class='tupian'>
+        <label wx:for='{{tempFilePaths}}' wx:key="" class='add-item'>
+          <image mode='aspectFill' src='{{item}}' bindtap='previewImage' data-index='{{index}}'></image>
+          <image class='close' mode='widthFix' src='/imgs/close.jpg' bindtap='closeimg' data-index='{{index}}' wx:if="{{canChoose}}"></image>
+        </label>
+        <label wx:if="{{tempFilePaths.length!=9&&canChoose}}">
+          <view>
+            <image bindtap='chooseImage' src='/imgs/imgup.jpg' class='addImg'></image>
+          </view>
+        </label>
+      </view>
+    </view>
+    <view wx:if="{{data.homework_status==1}}">
+      <button form-type="submit"> 提交作业 </button>
     </view>
   </view>
-  <view>
-    <button form-type="submit"> 提交作业 </button>
-  </view>
-
-</view>
+</form>

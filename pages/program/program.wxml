@@ -1,4 +1,5 @@
 <!--pages/program/program.wxml-->
+<input type='text' class='searchBarInput_in' placeholder="请输入课程名称" value='{{valueKeyword}}' confirm-type='search' focus="{{autoFocus}}"  bindconfirm='resignFocus'   bindfocus="activeFocus" bindblur="resignFocus"></input>
 <block wx:for="{{data}}">
   <view class='cont'>
     <image class='shu' src='/imgs/lv.jpg'></image>

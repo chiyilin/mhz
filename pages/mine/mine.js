@@ -58,7 +58,7 @@ Page({
       })
     } else {
       wx.request({
-        url: App.globalData.apiurl + 'user/userinfo',
+        url: App.globalData.apiurl + 'user/userInfo',
         method: "POST",
         data: {
           user_id: user_id,
@@ -114,9 +114,10 @@ Page({
       title: '加载中',
     });
     var that = this;
-    common.PostMain('user/userinfo', {
+    common.PostMain('user/userInfo', {
       user_id: user_id
     }, function(data) {
+      console.log(data)
       wx.setStorageSync('userInfo', data);
       that.setData({
         userinfo: data,
