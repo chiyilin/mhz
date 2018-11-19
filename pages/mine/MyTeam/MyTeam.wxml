@@ -2,30 +2,29 @@
 <view class='top'>
   <view class='tuijian'>
     <image mode='widthFix' src='/imgs/teamimg1.jpg'></image>
-    <text>我的推荐人：曲美瑶</text>
+    <text>我的推荐人：{{fidUserInfo.nick_name}}</text>
   </view>
   <view class='mt'>
     <image mode='widthFix' src='/imgs/phone.jpg'></image>
-    <text>手机号：15511234566</text>
+    <text>手机号：{{fidUserInfo.user_mobile}}</text>
   </view>
 </view>
 <view class='bottom'>
-  <text class='team'>我的团队（3人）</text>
-  <block wx:for="{{2}}">
-  <view class='list'>
-    <text class='num'>1</text>
-    <view class='tuijian'>
-      <image mode='widthFix' src='/imgs/name.jpg'></image>
-      <text>我的推荐人：曲美瑶</text>
+  <block wx:for="{{myTeam}}">
+    <view class='list'>
+      <text class='num'>1</text>
+      <view class='tuijian'>
+        <image mode='widthFix' src='/imgs/name.jpg'></image>
+        <text>姓名：{{item.nick_name}}</text>
+      </view>
+      <view class='mt'>
+        <image mode='widthFix' src='/imgs/phone.jpg'></image>
+        <text>手机号：{{item.user_mobile}}</text>
+      </view>
+      <view class='mt'>
+        <image mode='widthFix' src='/imgs/dhmximg3.jpg'></image>
+        <text>加入时间：{{item.user_add_time}}</text>
+      </view>
     </view>
-    <view class='mt'>
-      <image mode='widthFix' src='/imgs/phone.jpg'></image>
-      <text>手机号：15511234566</text>
-    </view>
-    <view class='mt'>
-      <image mode='widthFix' src='/imgs/dhmximg3.jpg'></image>
-      <text>加入时间：2018-09-25  10：22</text>
-    </view>
-  </view>
   </block>
 </view>

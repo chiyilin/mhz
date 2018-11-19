@@ -19,7 +19,7 @@ Page({
   onLoad: function(options) {
     var that = this;
     var jfproduct_id = options.jfproduct_id;
-    var user_id = wx.getStorageSync('userinfo').user_id;
+    var user_id = wx.getStorageSync('userInfo').user_id;
     wx.showLoading({
       title: '加载中',
     });
@@ -154,19 +154,20 @@ Page({
   duihuan: function(e) {
     console.log(e)
     var that = this;
-    var user_id = wx.getStorageSync('userinfo').user_id;
+    var user_id = wx.getStorageSync('userInfo').user_id;
     var needjifen = e.currentTarget.dataset.need;
     var num = e.currentTarget.dataset.num;
     var jfproduct_id = e.currentTarget.dataset.jfproductid;
+    var data = {
+      user_id: user_id,
+      jfproduct_id: jfproduct_id,
+      needjifen: needjifen,
+      num: num,
+    };
     wx.request({
       url: App.globalData.apiurl + 'usertuiguang/index',
       method: "POST",
-      data: {
-        user_id: user_id,
-        jfproduct_id: jfproduct_id,
-        needjifen: needjifen,
-        num: num,
-      },
+      data: data,
       success: function(res) {
         wx.showToast({
           title: '兑换成功',

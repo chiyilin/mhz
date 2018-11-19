@@ -21,28 +21,13 @@
       <image wx:else mode='widthFix' bindtap="shouc" data-productid="{{product.product_id}}" data-usershouc='1' src='/imgs/xing1.png'></image>
       <text>收藏</text>
       <button class='fen' open-type='share'>
-        <image mode='widthFix' src='/imgs/share.png'></image>
       </button>
+      <image mode='widthFix' src='/imgs/share.png'></image>
       <text>分享</text>
 
     </view>
   </view>
-  <view class='attention'>
-    <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
-    <text>讲师信息</text>
-    <view class='teacher-info clearfix'>
-      <view class='sb fl'>
-        <image class="teacher-face" src='{{filepath}}{{product.teacher.teacher_face}}' mode='aspectFit'></image>
-        <text style='margin-top:-5rpx;' class='cont'>{{product.teacher.teacher_name}}</text>
-      </view>
 
-      <label class='teacher-text'>
-        <view style='width:500rpx' class='fr '>
-          <text class='cont'>{{product.teacher.teacher_introduce}}</text>
-        </view>
-      </label>
-    </view>
-  </view>
   <view class="swiper-tab">
     <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">课程简介</view>
     <!-- <view wx:if="{{product.taoc_id==null}}" class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}">无套餐组合</view> -->
@@ -76,10 +61,26 @@
   </view>
   <view class='attention'>
     <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
+    <text>讲师信息</text>
+    <view class='teacher-info clearfix'>
+      <view class='sb fl'>
+        <image class="teacher-face" src='{{filepath}}{{product.teacher.teacher_face}}' mode='aspectFit'></image>
+        <text style='margin-top:-5rpx;' class='cont'>{{product.teacher.teacher_name}}</text>
+      </view>
+
+      <label class='teacher-text'>
+        <view style='width:500rpx' class='fr '>
+          <text class='cont'>{{product.teacher.teacher_introduce}}</text>
+        </view>
+      </label>
+    </view>
+  </view>
+  <view class='attention'>
+    <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
     <text>注意事项</text>
     <text class='cont'>{{product.product_zysx}}</text>
   </view>
-  <view class='attention clearfix'>
+  <view class='attention pinglun clearfix'>
     <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
     <text>评论区</text>
     <text class='more fr' bindtap="toTalk" data-id="{{product.product_id}}" data-taocid="{{product.taoc_id}}" data-current='{{currentTab}}'>更多></text>
@@ -99,7 +100,7 @@
   </view>
   <view class='btn clearfix' bindtap='goumai' data-current="{{currentTab}}" data-id="{{product.product_id}}" data-taocid="{{product.taoc_id}}">
     <text class='fl'>￥{{taocanMoney?taocanMoney:product.product_money}}</text>
-    <text class='fr' style='text-align:right'>{{currentTab==1?'套餐':'立即'}}购买</text>
+    <text class='fr' style='text-align:right;margin-top:0;'>{{currentTab==1?'套餐':'立即'}}购买</text>
   </view>
 </block>
 <view class="zhezao" wx:if="{{shareImage&&flag}}">

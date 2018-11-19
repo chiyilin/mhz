@@ -26,6 +26,7 @@ scroll-view{
   position: relative;
   line-height: 70rpx;
   background-color: #fff;
+  height: 120rpx;
 }
 .list::after {
 position: absolute;
@@ -43,18 +44,28 @@ image{
   margin-right: 10rpx;
   vertical-align: middle;
 }
+.lv{
+  margin-top: 10rpx;
+}
 .title{
   font-size: 30rpx;
   display: inline-block;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  width: 500rpx;
+  overflow: hidden;
+  height: 32rpx;
+  line-height: 32rpx;
+  vertical-align: middle;
 }
 .date{
-  text-align: right;
   font-size: 24rpx;
   color: #8D8D8D;
-  margin-right: 160rpx;
+  position: absolute;
+  left: 47rpx;
+  bottom: 0rpx;
 }
 .content{
-  display: block;
   font-size: 24rpx;
   color: #8D8D8D;
   height: 50rpx;
@@ -62,6 +73,11 @@ image{
   width:500rpx;
   overflow: hidden;
   margin-top: -20rpx;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  position: absolute;
+  left: 47rpx;
+  top: 75rpx;
   
 }
 ::-webkit-scrollbar {

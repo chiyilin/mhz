@@ -75,14 +75,15 @@ swiper image {
 }
 
 .mengban {
-  height: 95rpx;
+  height: 80rpx;
   width: 710rpx;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.5);
-  margin-top: -95rpx;
+  background-color: rgba(0, 0, 0, 0.3);
   color: #fff;
   font-size: 24rpx;
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  right: 20rpx;
 }
 
 .z1, .z2, .y1 {
@@ -93,6 +94,7 @@ swiper image {
 .z1 {
   left: 19rpx;
   top: 16rpx;
+  font-size: 22rpx;
 }
 
 .z2 {
@@ -193,7 +195,7 @@ swiper image {
 }
 
 .hui {
-  /* background-color: rgba(0, 0, 0, 0.4); */
+  /* background-color: rgba(0, 0, 0, 0.3); */
 
   width: 320rpx;
   height: 80rpx;
@@ -206,7 +208,7 @@ button {
   width: 70rpx;
   height: 70rpx;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
   right: 30rpx;
   bottom: 200rpx;
@@ -235,4 +237,5 @@ button::after {
 
 .rmView {
   margin-bottom: 20rpx;
+  position: relative;
 }

@@ -19,9 +19,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(wx.getStorageSync('userInfo'))
-    console.log(options)
-    if (options.scene || !wx.getStorageSync('user_fid')) {
+    // console.log(wx.getStorageSync('userInfo'))
+
+    if (options.scene && !wx.getStorageSync('user_fid')) {
       wx.setStorageSync('user_fid', options.scene)
     }
   },
@@ -36,7 +36,8 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function(options) {
+    console.log(options)
     wx.showNavigationBarLoading();
     var that = this;
     common.PostMain('index/index', {}, function(data) {
@@ -79,25 +80,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function(e) {
-
-    var pages = getCurrentPages() //获取加载的页面
-
-    var currentPage = pages[pages.length - 1] //获取当前页面的对象
-
-    var url = currentPage.route //当前页面url
-
-    var options = currentPage.options //如果要获取url中所带的参数可以查看options
-
-    console.log(options)
-    // return {
-
-    //   title: '弹出分享时显示的分享标题',
-
-    //   desc: '分享页面的内容',
-
-    //   path: '/page/user?id=123' // 路径，传递参数到指定页面。
-
-    // }
+    common.share();
   },
   /**
    * 课程选项卡切换

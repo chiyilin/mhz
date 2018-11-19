@@ -102,6 +102,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(e) {
+    console.log(e)
     var that = this;
     if (e.taocid) {
       that.data.taoc_id = e.taocid;
@@ -342,6 +343,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return common.share();
   },
 })

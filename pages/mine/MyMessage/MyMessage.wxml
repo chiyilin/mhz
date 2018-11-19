@@ -9,21 +9,23 @@
     <view class='content'>
       <view class='top clearfix'>
         <image mode='widthFix' class='shu' src='/imgs/shu.jpg'></image>
-        <text>所属课程：</text><text>什么是梅花针</text>
+        <text>所属课程：</text>
+        <text>什么是梅花针</text>
         <text class='huifu'>回复</text>
       </view>
       <view class='bottom'>
         <image mode='widthFix' class='xiaoxi' src='/imgs/xiaoxi.jpg'></image>
-        <text>回复评论：</text><text>好的</text>
+        <text>回复评论：</text>
+        <text>好的</text>
       </view>
     </view>
   </block>
 </view>
 <view class="weui-cells__title" hidden="{{isShow}}">
-  <block wx:for="{{2}}">
+  <block wx:for="{{systemMessage}}">
     <view class='content clearfix'>
-        <image mode='widthFix' class='shu dingwei' src='/imgs/laba.jpg'></image>
-        <text class='xtText'>系统消息：将伤口是第几集克里斯多夫困了dstasdtgadgasdg就收到发</text>
+      <image mode='widthFix' class='shu dingwei' src='/imgs/laba.jpg'></image>
+      <text class='xtText'>{{item.message_title}}：{{item.message_content}}</text>
     </view>
   </block>
 </view>

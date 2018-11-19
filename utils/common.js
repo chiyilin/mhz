@@ -26,7 +26,7 @@ function showWarn(message) {
 }
 // 第一个是路由，第二个则是判断是否是tabbar的路由，跳这两个路由是不一致的
 function completeOperating(to, isTabbar) {
-  var time = setTimeout(function () {
+  var time = setTimeout(function() {
     if (isTabbar === true) {
       wx.switchTab({
         url: to
@@ -43,7 +43,7 @@ function completeOperating(to, isTabbar) {
 function Post(api, params, callback) {
   if (!module.exports.globalData.apiurl) {
     wx.getExtConfig({
-      success: function (res) {
+      success: function(res) {
         module.exports.globalData = res.extConfig;
         PostMain(api, params, callback);
       }
@@ -60,7 +60,7 @@ function PostMain(api, params, callback) {
     data: params,
     method: 'POST',
     dataType: 'json',
-    success: function (data) {
+    success: function(data) {
       //wx.hideLoading();
       switch (data.data.code) {
         case 100:
@@ -78,7 +78,7 @@ function PostMain(api, params, callback) {
           break;
       }
     },
-    fail: function (data) {
+    fail: function(data) {
       wx.hideLoading();
       wx.showToast({
         title: '请求接口超时',
@@ -92,7 +92,7 @@ function updateUserInfo() {
   if (userInfo) {
     PostMain('user/userinfo', {
       user_id: userInfo.user_id
-    }, function (data) {
+    }, function(data) {
       // console.log(data)
       wx.setStorageSync('userInfo', data);
 
@@ -109,17 +109,39 @@ function updateUserInfo() {
   }
 
 }
+
 function showToast(tips) {
   wx.showToast({
     title: tips,
     image: '/imgs/close2.png',
   })
 }
+
 function tips(message) {
   wx.showToast({
     title: message,
     icon: 'none',
   })
+}
+/**
+ * 邀请携带额外的参数
+ */
+function share() {
+  var pages = getCurrentPages() //获取加载的页面
+  var currentPage = pages[pages.length - 1] //获取当前页面的对象
+  var url = currentPage.route //当前页面url
+  var options = currentPage.options //如果要获取url中所带的参数可以查看options
+  var param = '';
+  for (var key in options) {
+    param += '&' + key + '=' + options[key]
+  }
+  var path = '/' + url + "?scene=" + wx.getStorageSync('userInfo').user_id + param;
+  return {
+    // title: '弹出分享时显示的分享标题',
+    // desc: '分享页面的内容',
+    // 路径，传递参数到指定页面。
+    path: path
+  }
 }
 module.exports = {
   completeOperating: completeOperating,
@@ -132,4 +154,5 @@ module.exports = {
   updateUserInfo: updateUserInfo,
   showToast: showToast,
   tips: tips,
+  share: share,
 }

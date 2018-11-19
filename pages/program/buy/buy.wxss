@@ -36,7 +36,9 @@ video {
   padding: 0 40rpx;
   line-height: 50rpx;
 }
-
+.cllo{
+  position: relative;
+}
 .cllo text {
   margin-right: 20rpx;
   vertical-align: middle;
@@ -206,7 +208,7 @@ transform: scaley(0.5);
 }
 
 .btn {
-  width: 690rpx;
+  width: 700rpx;
   height: 97rpx;
   /* background-color: #adb183; */
   color: #adb183;
@@ -321,12 +323,15 @@ transform: scaley(0.5);
   margin-right: 30rpx;
 }
 .fen{
-  width: 33rpx;
+  width: 30rpx;
   display: inline-block;
   height: 30rpx;
-  text-align: center;
-  background-color: #fff;
-  vertical-align: middle;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 10rpx;
+  padding: 0;
+  right: 80rpx;
 }
 button::after{
   border: none;
@@ -334,4 +339,20 @@ button::after{
 }
 .fen image{
   margin-top: -70rpx;
+}
+.pinglun{
+  background-color: #fff;
+  position: relative;
+  border: none;
+}
+.pinglun::after{
+  position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 1px;
+background-color: #e6e6e6;
+content: ' ';
+display: block;
+transform: scaley(0.5);
 }

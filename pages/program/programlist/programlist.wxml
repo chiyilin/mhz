@@ -8,15 +8,15 @@
       </view>
       <view>
         <text bindtap="SwitchTab" data-tab="{{2}}" data-jiageStatus='{{jiageStatus}}' class="{{(jiageStatus==2||jiageStatus==3)?'redblod':''}}">价格</text>
-        <image wx:if="{{jiageStatus==2}}" mode='widthFix' src='/imgs/choose2.jpg'></image>
-        <image wx:elif="{{jiageStatus==3}}" mode='widthFix' src='/imgs/choose.jpg'></image>
-        <image wx:else mode='widthFix' src='/imgs/choose1.jpg'></image>
+        <image wx:if="{{jiageStatus==2}}" mode='widthFix' src='/imgs/choose1.png'></image>
+        <image wx:elif="{{jiageStatus==3}}" mode='widthFix' src='/imgs/choose2.png'></image>
+        <image wx:else mode='widthFix' src='/imgs/choose.png'></image>
       </view>
       <view>
         <text bindtap="SwitchTab" data-tab="{{3}}" data-renqiStatus='{{renqiStatus}}' class="{{(renqiStatus==2||renqiStatus==3)?'redblod':''}}">人气</text>
-        <image wx:if="{{renqiStatus==2}}" mode='widthFix' src='/imgs/choose2.jpg'></image>
-        <image wx:elif="{{renqiStatus==3}}" mode='widthFix' src='/imgs/choose.jpg'></image>
-        <image wx:else mode='widthFix' src='/imgs/choose1.jpg'></image>
+        <image wx:if="{{renqiStatus==2}}" mode='widthFix' src='/imgs/choose1.png'></image>
+        <image wx:elif="{{renqiStatus==3}}" mode='widthFix' src='/imgs/choose2.png'></image>
+        <image wx:else mode='widthFix' src='/imgs/choose.png'></image>
       </view>
     </view>
   </view>

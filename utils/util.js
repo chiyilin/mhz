@@ -38,6 +38,7 @@ function fo(number, format) {
   return format;
 }
 
+
 module.exports = {
   timetostr: fo,
   formatTime: formatTime

@@ -3,10 +3,10 @@
   <text>{{title}}</text>
   <text class='date'>{{time}}</text>
   <view class='fr share'>
-          <button class='fen' open-type='share'>
-        <image class='shareimg' mode='widthFix' src='/imgs/share.png'></image>
-      </button>
-      <text class='stext'>分享</text>
+    <button class='fen' open-type='share'>
+    </button>
+    <image class='shareimg' mode='widthFix' src='/imgs/share.png'></image>
+    <text class='stext'>分享</text>
   </view>
 
 </view>

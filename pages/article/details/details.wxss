@@ -29,17 +29,18 @@ image{
   display: inline-block;
   height: 30rpx;
   text-align: center;
-  background-color: #fff;
+  background-color:rgba(0, 0,0, 0);
   vertical-align: middle;
+  position: absolute;
+  right:120rpx;
+  top: 60rpx;
+  padding: 0;
+  
 }
 button::after{
   border: none;
   background-color: none;
 }
-.fen image{
-  margin-top: -70rpx;
-}
-
 .stext {
   margin-right: 20rpx;
   vertical-align: middle;

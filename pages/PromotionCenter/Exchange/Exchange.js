@@ -15,7 +15,7 @@ Page({
    */
   onLoad: function(options) {
     var that = this;
-    var user_id = wx.getStorageSync('userinfo').user_id;
+    var user_id = wx.getStorageSync('userInfo').user_id;
     wx.showLoading({
       title: '加载中',
     });

@@ -1,7 +1,8 @@
 .top{
   padding: 10rpx 44rpx;
   border-bottom: #C9B195 solid 1px;
-  color: #6B400D;
+  color: #bebebe;
+  height: 55rpx;
 }
 .shaixuan{
   display: flex;
@@ -16,7 +17,7 @@
   vertical-align: middle;
 }
 .top text{
-  font-size: 28rpx;
+  font-size: 30rpx;
   vertical-align: middle;
   margin-right: 20rpx;
 }
@@ -30,7 +31,7 @@
 } */
 
 .TuiJian{
-  padding:40rpx 59rpx 17rpx 30rpx; 
+  padding:20rpx 59rpx 17rpx 30rpx; 
   background-color: #fff;
   position: relative;
 }
@@ -53,7 +54,7 @@ transform: scaley(0.5);
 }
 .tjtitle{
   font-size: 30rpx;
-  color: #605F5F;
+  color: #727171;
   display: block;
 }
 .redblod{
