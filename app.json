@@ -2,6 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/PromotionCenter/PromotionCenter",
+    "pages/PromotionCenter/PutForward/PutForward",
+    
     "pages/mine/MyTeam/MyTeam",
     "pages/mine/MyMessage/MyMessage",
     "pages/mhzindex/examination/examination",
@@ -35,7 +37,6 @@
     "pages/PromotionCenter/withdrawal/withdrawal",
     "pages/program/program",
     "pages/mine/privilege/privilege",
-    "pages/PromotionCenter/PutForward/PutForward",
     "pages/PromotionCenter/Bill/Bill",
     "pages/mine/DiscipleClass/DiscipleClass",
     "pages/PromotionCenter/Exchange/Exchange",

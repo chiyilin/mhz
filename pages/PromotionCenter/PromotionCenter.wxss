@@ -49,7 +49,7 @@ page{
   color: #74412A;
   background-color: #DEE2BA;
   display: inline-block;
-  width: 97rpx;
+  width: 180rpx;
   height: 32rpx;
   padding-left: 20rpx;
   line-height: 32rpx;

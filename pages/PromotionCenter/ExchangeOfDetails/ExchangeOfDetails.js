@@ -1,4 +1,6 @@
 // pages/PromotionCenter/ExchangeOfDetails/ExchangeOfDetails.js
+var App = getApp();
+var common = require('../../../utils/common.js');
 Page({
 
   /**

@@ -38,7 +38,7 @@
     <!-- 课程简介 -->
     <block wx:for="{{product.product_introduce}}">
       <text class='jianjie' wx:if="{{item.text}}">{{item.text}}</text>
-      <image class='jianjie' wx:if="{{item.image}}" src='{{item.image}}' mode='widthFix'></image>
+      <image style='width:750rpx' wx:if="{{item.image}}" src='{{item.image}}' mode='widthFix'></image>
     </block>
   </view>
   <view class="weui-cells__title" hidden="{{isShow}}">

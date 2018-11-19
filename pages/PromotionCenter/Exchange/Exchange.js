@@ -1,6 +1,6 @@
+// pages/PromotionCenter/Exchange/Exchange.js
 var App = getApp();
 var common = require('../../../utils/common.js');
-// pages/PromotionCenter/Exchange/Exchange.js
 Page({
 
   /**

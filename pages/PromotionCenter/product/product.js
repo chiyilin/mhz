@@ -1,6 +1,7 @@
+
+// pages/PromotionCenter/product/product.js
 var App = getApp();
 var common = require('../../../utils/common.js');
-// pages/PromotionCenter/product/product.js
 Page({
 
   /**

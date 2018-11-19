@@ -86,7 +86,7 @@ video {
 }
 
 .TuiJian {
-  padding: 40rpx 59rpx 17rpx 58rpx;
+  padding: 23rpx 59rpx 23rpx 58rpx;
   background-color: #fff;
   position: relative;
 }
@@ -116,8 +116,7 @@ transform: scaley(0.5);
 .price {
   font-size: 24rpx;
   color: #8d8d8d;
-  margin-top: -30rpx;
-  display: inline-block;
+  display:block;
 }
 
 .jianjie {
@@ -127,6 +126,7 @@ transform: scaley(0.5);
   color: #a6a6a6;
   line-height: 38rpx;
   text-indent: 2em;
+  padding-bottom: 20rpx;
 }
 
 .dy {

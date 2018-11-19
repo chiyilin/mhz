@@ -1,7 +1,7 @@
-﻿// pages/article/details/details.js
+// pages/article/details/details.js
 var App = getApp();
 var common = require('../../../utils/common.js');
-Page({  
+Page({
 
   /**
    * 页面的初始数据

@@ -1,4 +1,6 @@
 // pages/PromotionCenter/IntegralDetail/IntegralDetail.js
+var App = getApp();
+var common = require('../../../utils/common.js');
 Page({
 
   /**

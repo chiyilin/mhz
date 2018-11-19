@@ -1,20 +1,22 @@
 <!--pages/PromotionCenter/PromotionCenter.wxml-->
 <view class='top clearfix'>
-  <image class='touxiang fl' mode='widthFix' src='{{userinfo.face}}'></image>
+  <image class='touxiang fl' mode='widthFix' src='{{userInfo.face}}'></image>
   <text class='tuiguang fr'>推广总则</text>
-  <text class='name'>{{userinfo.nick_name}}</text>
+  <text class='name'>{{userInfo.nick_name}}</text>
   <view class='vip'>
     <text class='VipV'>V</text>
-    <text class='VipText'>vip1</text>
+    <text class='VipText' wx:if="{{userInfo.fxs_level==1}}">一级代理商</text>
+    <text class='VipText' wx:elif="{{userInfo.fxs_level==2}}">二级代理商</text>
+    <text class='VipText' wx:elif="{{userInfo.fxs_level==3}}">三级代理商</text>
   </view>
   <view class='money'>
     <view class='yue'>
       <text>余额（￥）</text>
-      <text>500</text>
+      <text>{{userInfo.money}}</text>
     </view>
     <view class='yue'>
       <text>积分（分）</text>
-      <text>{{userinfo.addjifen-userinfo.jianjifen-need}}</text>
+      <text>{{userInfo.addjifen-userInfo.jianjifen-need}}</text>
     </view>
   </view>
 </view>

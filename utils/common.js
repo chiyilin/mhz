@@ -136,6 +136,7 @@ function share() {
     param += '&' + key + '=' + options[key]
   }
   var path = '/' + url + "?scene=" + wx.getStorageSync('userInfo').user_id + param;
+  console.log(path)
   return {
     // title: '弹出分享时显示的分享标题',
     // desc: '分享页面的内容',

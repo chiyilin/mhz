@@ -80,7 +80,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function(e) {
-    common.share();
+    return common.share();
   },
   /**
    * 课程选项卡切换

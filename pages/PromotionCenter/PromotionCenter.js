@@ -1,6 +1,7 @@
+// pages/PromotionCenter/PromotionCenter.js
 var App = getApp();
 var common = require('../../utils/common.js');
-// pages/PromotionCenter/PromotionCenter.js
+
 Page({
   /**
    * 页面的初始数据
@@ -35,7 +36,7 @@ Page({
     }, function(data) {
       wx.setStorageSync('userInfo', data);
       that.setData({
-        userinfo: data,
+        userInfo: data,
         need: 0,
       });
       wx.hideNavigationBarLoading();
@@ -74,7 +75,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return common.share();
   },
   money: function() {
     wx.navigateTo({
