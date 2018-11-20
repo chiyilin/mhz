@@ -21,22 +21,22 @@
     </view>
   </view>
   <block wx:for="{{data}}">
-    <view wx:if="{{item.taoc_id}}" bindtap='xiangqing' data-taocid="{{item.taoc_id}}" class='TuiJian'>
+    <view wx:if="{{item.taoc_id}}" bindtap='xiangqing' data-taocid="{{item.taoc_id}}" class='TuiJian clearfix'>
       <text class='taocan'>套餐</text>
       <image wx:if="{{item.producttaocbanner['0'].url}}" class='TJimg' src="{{filepath}}{{item.producttaocbanner['0'].url}}"></image>
       <image wx:else class='TJimg' src="/imgs/img1.jpg"></image>
       <text class='tjtitle'>{{item.taoc_name}}</text>
       <text class='tjcont'>{{item.taoc_content}}</text>
-      <text class='time'>课程节数：{{item.num}}节</text>
-      <text class='price'>￥{{item.product_money}}</text>
+      <text class='time '>课程节数：{{item.num}}节</text>
+      <text class='price fr'>￥{{item.product_money}}</text>
     </view>
-    <view wx:else class='TuiJian' bindtap='xiangqing' data-productid="{{item.product_id}}">
+    <view wx:else class='TuiJian clearfix' bindtap='xiangqing' data-productid="{{item.product_id}}">
       <image wx:if="{{item.productbanner['0'].url}}" class='TJimg' src="{{filepath}}{{item.productbanner['0'].url}}"></image>
       <image wx:else class='TJimg' src="/imgs/img1.jpg"></image>
       <text class='tjtitle'>{{item.product_name}}</text>
       <text class='tjcont'>{{item.product_introduce}}</text>
       <text class='time'>课程时长：{{item.product_times}}</text>
-      <text class='price'>￥{{item.product_money}}</text>
+      <text class='price fr'>￥{{item.product_money}}</text>
     </view>
   </block>
 </form>

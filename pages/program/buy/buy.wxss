@@ -23,7 +23,7 @@ video {
   margin-bottom:20rpx;
 }
 .teacher-face{
-  border-radius: 50rpx;
+  border-radius: 50%;
   width: 100rpx;
   height: 100rpx;
   float: left;
@@ -133,10 +133,12 @@ transform: scaley(0.5);
   width: 20rpx;
   vertical-align: middle;
   margin-right: 10rpx;
+  margin-top: 10rpx;
 }
 
 .weui-cells__title {
   border-bottom: 9rpx solid #f3f3f3;
+  min-height: 80rpx;
 }
 
 .time {
@@ -148,7 +150,7 @@ transform: scaley(0.5);
 
 .attention {
   padding: 28rpx 46rpx;
-  border-bottom: 6rpx solid #f3f3f3;
+  border-bottom: 9rpx solid #f3f3f3;
   font-size: 26rpx;
   color: #4f4f4f;
 }

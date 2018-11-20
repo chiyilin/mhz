@@ -1,6 +1,6 @@
+// pages/program/program.js
 var App = getApp();
 var common = require('../../utils/common.js');
-// pages/program/program.js
 Page({
 
   /**

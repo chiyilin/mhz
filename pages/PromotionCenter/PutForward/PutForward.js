@@ -7,10 +7,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: wx.getStorageSync('userInfo')
+
   },
   submit: function(e) {
     var that = this;
+    if (that.data.userInfo.money < e.detail.value.money) {
+      common.tips('余额不足！');
+      return null;
+    }
     common.PostMain('user/withdrawal', {
       user_id: that.data.userInfo.user_id,
       money: e.detail.value.money,
@@ -20,7 +24,7 @@ Page({
         success: function() {
           setTimeout(function() {
             wx.navigateBack({
-              delta:-1
+              delta: -1
             })
           }, 1500)
         }
@@ -45,7 +49,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    this.setData({
+      userInfo: wx.getStorageSync('userInfo')
+    })
   },
 
   /**

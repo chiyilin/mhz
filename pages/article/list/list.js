@@ -22,9 +22,9 @@ Page({
     });
     var that = this;
     common.PostMain('article/index', {}, function(data) {
-      for (var i = 0; i < data.length; i++) {
-        data[i]['details'] = JSON.parse(data[i].article_details);
-      }
+      // for (var i = 0; i < data.length; i++) {
+      //   data[i]['details'] = JSON.parse(data[i].article_details);
+      // }
       that.setData({
         navbar: data.articleCate,
         article: data.article,
@@ -85,16 +85,18 @@ Page({
    * 文章分类切换
    */
   navbarTap: function(e) {
+    
     wx.showNavigationBarLoading();
     var that = this;
     var param = e.currentTarget.dataset;
+    console.log(param.idx)
     common.PostMain('article/index', {
       article_cate: param.id
     }, function(data) {
       var list = data.article;
-      for (var i = 0; i < list.length; i++) {
-        list[i]['details'] = JSON.parse(list[i].article_details);
-      }
+      // for (var i = 0; i < list.length; i++) {
+      //   list[i]['details'] = JSON.parse(list[i].article_details);
+      // }
       that.setData({
         article: list,
         currentTab: param.idx

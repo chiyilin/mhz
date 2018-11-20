@@ -28,7 +28,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    common.PostMain('user/JfBill', {
+      user_id: wx.getStorageSync('userInfo').user_id
+    }, function(res) {
+      that.setData({
+        data: res
+      })
+    })
   },
 
   /**

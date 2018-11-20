@@ -74,12 +74,12 @@
   <text>最新课程</text>
 </view>
 <!--导航条-->
-<view class='TuiJian' wx:for="{{apiData.newCourses}}" bindtap='coursesDetails' data-id='{{item.product_id}}'>
+<view class='TuiJian clearfix' wx:for="{{apiData.newCourses}}" bindtap='coursesDetails' data-id='{{item.product_id}}'>
   <image class='TJimg' src='{{filepath}}{{item.product_cover}}' mode='aspectFill'></image>
   <text class='tjtitle'>{{item.product_name}}</text>
   <text class='tjcont'>{{item.product_introduce}}</text>
   <text class='time'>课程时长：{{item.product_times}}</text>
-  <text class='price'>￥{{item.product_money}}</text>
+  <text style='margin-top:20rpx' class='price fr'>￥{{item.product_money}}</text>
 </view>
 <!-- 客服悬窗 -->
 <button open-type="contact">

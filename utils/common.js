@@ -144,6 +144,15 @@ function share() {
     path: path
   }
 }
+/**
+ * 
+ */
+function onLoad(options) {
+  if (options.scene && !wx.getStorageSync('user_fid')) {
+    wx.setStorageSync('user_fid', options.scene)
+    console.log('缓存fid', options.scene);
+  }
+}
 module.exports = {
   completeOperating: completeOperating,
   showWarn: showWarn,
@@ -156,4 +165,5 @@ module.exports = {
   showToast: showToast,
   tips: tips,
   share: share,
+  onLoad: onLoad,
 }

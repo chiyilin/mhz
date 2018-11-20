@@ -46,6 +46,7 @@ Page({
     });
   },
   bindchange: function(e) {
+    console.log(e)
     var that = this;
     wx.showNavigationBarLoading();
     var info = that.data.selectData[e.detail.value];
@@ -56,7 +57,7 @@ Page({
       user_id: that.data.userInfo.user_id
     }, function(data) {
       that.setData({
-        // selectIndex: selectIndex,
+        selectIndex: e.detail.value,
         show: !that.data.show,
         name: info.baokao_name,
         baomings: data.baomings,

@@ -1,3 +1,4 @@
+// pages/redPacket/redPacket.js
 var App = getApp();
 var common = require('../../../utils/common.js');
 Page({
@@ -6,23 +7,39 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isShow: true,
-    currentTab: 0,
-    userInfo: wx.getStorageSync('userInfo'),
+    hidden: false,
+    userInfo: wx.getStorageSync('userInfo')
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
-  },
-  redPacket: function(e) {
-    wx.navigateTo({
-      url: '/pages/mine/redPacket/redPacket?id=' + e.currentTarget.dataset.id,
+    var that = this;
+    that.data.id = options.id
+    common.PostMain('message/redPacket', {
+      user_id: that.data.userInfo.user_id,
+      id: that.data.id
+    }, function(res) {
+      var param = res;
+      param.hidden = res.message_status == 2 ? true : false;
+      that.setData(param)
     });
+    wx.hideShareMenu();
   },
+  //点击红包
+  hidden: function(e) {
+    var that = this;
+    common.PostMain('message/redPacketdo', {
+      user_id: that.data.userInfo.user_id,
+      id: that.data.id
+    }, function(res) {
+      that.setData({
+        hidden: true
+      })
+    });
 
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -33,15 +50,8 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
-    var that = this;
-    common.PostMain('message/index', {
-      user_id: that.data.userInfo.user_id
-    }, function(res) {
-      that.setData({
-        systemMessage: res.systemMessage
-      })
-    })
+  onShow: function(e) {
+
   },
 
   /**
@@ -77,19 +87,5 @@ Page({
    */
   onShareAppMessage: function() {
 
-  },
-  onShareAppMessage: function() {
-
-  },
-  swichNav: function(e) {
-    if (this.data.currentTab === e.target.dataset.current) {
-      return false;
-    } else {
-      var showMode = e.target.dataset.current == 0;
-      this.setData({
-        currentTab: e.target.dataset.current,
-        isShow: showMode
-      })
-    }
-  },
+  }
 })

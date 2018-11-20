@@ -1,18 +1,19 @@
 <!--pages/PromotionCenter/IntegralDetail/IntegralDetail.wxml-->
-<block wx:for="{{3}}">
+<block wx:for="{{data}}">
   <view class='view'>
     <view>
-        <image mode='widthFix' src='/imgs/jfmx.jpg'></image>
-      <text>积分来源 ： 推广会员</text>
+      <image mode='widthFix' src='/imgs/jfmx.jpg'></image>
+      <text wx:if="{{item.bill_type==2}}">积分来源 ： 推广会员</text>
+      <text wx:if="{{item.bill_type==4}}">积分用途 ： {{item.jfproduct.jfproduct_name}}</text>
     </view>
     <view>
       <image mode='widthFix' src='/imgs/dhmximg2.jpg'></image>
       <text>积分数额 ： </text>
-      <text class='red'>-500</text>
+      <text class='red'>{{item.bill_type==2?'+':'-'}}{{item.bill_money}}</text>
     </view>
     <view>
       <image mode='widthFix' src='/imgs/dhmximg3.jpg'></image>
-      <text>获得时间 ： 2018-09-18  20:22</text>
+      <text>获得时间 ： {{item.bill_add_time}}</text>
     </view>
   </view>
 </block>

@@ -136,7 +136,6 @@ swiper image {
 .price {
   font-size: 20rpx;
   color: #fe0000;
-  margin-left: 70rpx;
   margin-top: -10rpx;
 }
 
@@ -158,6 +157,10 @@ swiper image {
   font-size: 30rpx;
   color: #605f5f;
   display: block;
+  height: 38rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
 }
 
 .tjcont {
@@ -167,6 +170,7 @@ swiper image {
   overflow: hidden;
   display: block;
   margin-top: 10rpx;
+  text-overflow:ellipsis;
 }
 
 .navigator-hover {

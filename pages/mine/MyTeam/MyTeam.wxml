@@ -12,7 +12,7 @@
 <view class='bottom'>
   <block wx:for="{{myTeam}}">
     <view class='list'>
-      <text class='num'>1</text>
+      <text class='num'>{{index+1}}</text>
       <view class='tuijian'>
         <image mode='widthFix' src='/imgs/name.jpg'></image>
         <text>姓名：{{item.nick_name}}</text>

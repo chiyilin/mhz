@@ -1,0 +1,6 @@
+<!--pages/redPacket/redPacket.wxml-->
+<view>
+  <image class='two' src='/imgs/red2.png'></image>
+  <image class='one' bindtap='hidden' src='/imgs/red1.png' hidden='{{hidden}}'></image>
+  <text class='money' hidden='{{hidden}}'>￥{{money}}</text>
+</view>

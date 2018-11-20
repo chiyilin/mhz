@@ -2,10 +2,10 @@
   "pages": [
     "pages/index/index",
     "pages/PromotionCenter/PromotionCenter",
-    "pages/PromotionCenter/PutForward/PutForward",
-    
-    "pages/mine/MyTeam/MyTeam",
     "pages/mine/MyMessage/MyMessage",
+    "pages/mine/redPacket/redPacket",
+    "pages/PromotionCenter/PutForward/PutForward",
+    "pages/mine/MyTeam/MyTeam",
     "pages/mhzindex/examination/examination",
     "pages/mine/MyHomework/MyHomework",
     "pages/mine/UpHomework/UpHomework",

@@ -1,27 +1,36 @@
 <!--pages/PromotionCenter/Bill/Bill.wxml-->
-<block wx:for="{{3}}">
+<block wx:for="{{data}}" wx:key="">
   <view class='view'>
     <view>
-      <label wx:if="{{index==0}}">
+      <block wx:if="{{item.product}}">
         <image mode='widthFix' src='/imgs/shu.jpg'></image>
-      </label>
-      <label wx:if="{{index==1}}">
-        <image mode='widthFix' src='/imgs/xsbm.jpg'></image>
-      </label>
-      <label wx:if="{{index==2}}">
+        <text>课程订购 ： {{item.product.product_name}}</text>
+      </block>
+      <block wx:elif="{{item.taocan}}">
         <image mode='widthFix' src='/imgs/pen.jpg'></image>
-      </label>
-
-      <text>课程订购 ：梅花针×1</text>
+        <text>套餐订购 ： {{item.taocan.taoc_name}}</text>
+      </block>
+      <block wx:elif="{{item.jfproduct}}">
+        <image mode='widthFix' src='/imgs/jfmx.jpg'></image>
+        <text>积分商品 ： {{item.jfproduct.jfproduct_name}}</text>
+      </block>
+      <block wx:elif="{{item.baokao}}">
+        <image mode='widthFix' src='/imgs/xsbm.jpg'></image>
+        <text>报名报考 ： {{item.baokao.baokao_name}}</text>
+      </block>
+      <block wx:elif="{{item.deposit}}">
+        <image mode='widthFix' src='/imgs/xsbm.jpg'></image>
+        <text>余额提现 ： {{item.deposit.money}}</text>
+      </block>
     </view>
     <view>
       <image mode='widthFix' src='/imgs/dhmximg2.jpg'></image>
-      <text>实付金额 ： </text>
-      <text class='red'>-500</text>
+      <text>金额 ： </text>
+      <text class='red'>{{item.bill_type>2?'-':'+'}}{{item.bill_money}}{{item.bill_type%2==1?'元':'积分'}}</text>
     </view>
     <view>
       <image mode='widthFix' src='/imgs/dhmximg3.jpg'></image>
-      <text>交易时间 ： 2018-09-18  20:22</text>
+      <text>交易时间 ： {{item.bill_add_time}}</text>
     </view>
   </view>
 </block>

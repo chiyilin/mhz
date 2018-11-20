@@ -1,0 +1,42 @@
+/* pages/redPacket/redPacket.wxss */
+
+page {
+  background: url("https://class.chdmhz.com/uploads/productCover/201811/fab46f57d9677bfe1409d53134ee6a19.png");
+  background-size: 750rpx 100%;
+  height: 100%;
+}
+
+image {
+  width: 510rpx;
+  height: 656rpx;
+  position: fixed;
+  top: 250rpx;
+  left: 120rpx;
+  border-radius: 20px;
+}
+
+.isRuleShow {
+  display: block;
+}
+
+.isRuleHide {
+  display: none;
+}
+
+view .two {
+  z-index: 1rpx;
+}
+
+.money {
+  position: relative;
+  top: 430rpx;
+  text-align: center;
+  display: block;
+  font-size: 60rpx;
+  color: brown;
+  z-index: 2;
+}
+
+.one {
+  z-index: 3;
+}

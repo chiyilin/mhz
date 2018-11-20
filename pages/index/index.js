@@ -20,10 +20,8 @@ Page({
    */
   onLoad: function(options) {
     // console.log(wx.getStorageSync('userInfo'))
-
-    if (options.scene && !wx.getStorageSync('user_fid')) {
-      wx.setStorageSync('user_fid', options.scene)
-    }
+    common.onLoad(options);
+    
   },
 
   /**
@@ -37,7 +35,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function(options) {
-    console.log(options)
     wx.showNavigationBarLoading();
     var that = this;
     common.PostMain('index/index', {}, function(data) {

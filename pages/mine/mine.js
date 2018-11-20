@@ -110,9 +110,7 @@ Page({
    */
   onShow: function() {
     var user_id = wx.getStorageSync('userInfo').user_id;
-    wx.showLoading({
-      title: '加载中',
-    });
+    wx.showNavigationBarLoading();
     var that = this;
     common.PostMain('user/userInfo', {
       user_id: user_id
@@ -122,7 +120,7 @@ Page({
       that.setData({
         userinfo: data,
       });
-      wx.hideLoading();
+      wx.hideNavigationBarLoading();
     });
   },
 

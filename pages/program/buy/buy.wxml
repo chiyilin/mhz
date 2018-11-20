@@ -11,9 +11,9 @@
   <view class='share clearfix'>
     <view class='fl'>
       <text style='font-size:28rpx;font-weight:bold; display:block'>{{product.product_name}}</text>
-      <image wx:if="{{userdingy==0}}" bindtap="dingy" data-productid="{{product.product_id}}" data-userdingy='0' class='dy' mode='widthFix' src='/imgs/dy.jpg'></image>
-      <image wx:else class='dy' bindtap="dingy" data-productid="{{product.product_id}}" data-userdingy='1' mode='widthFix' src='/imgs/dingyue.jpg'></image>
-      <text class='price'>{{dingynum}}人已订阅</text>
+      <image wx:if="{{userdingy==0}}" bindtap="dingy" data-productid="{{product.product_id}}" data-userdingy='0' class='dy fl' mode='widthFix' src='/imgs/dy.jpg'></image>
+      <image wx:else class='dy fl' bindtap="dingy" data-productid="{{product.product_id}}" data-userdingy='1' mode='widthFix' src='/imgs/dingyue.jpg'></image>
+      <text class='price fl'>{{dingynum}}人已订阅</text>
     </view>
     <view class='cllo fr'>
       <!-- <label bindtap="share"></label> -->
@@ -64,10 +64,9 @@
     <text>讲师信息</text>
     <view class='teacher-info clearfix'>
       <view class='sb fl'>
-        <image class="teacher-face" src='{{filepath}}{{product.teacher.teacher_face}}' mode='aspectFit'></image>
-        <text style='margin-top:-5rpx;' class='cont'>{{product.teacher.teacher_name}}</text>
+        <image class="teacher-face" src='{{filepath}}{{product.teacher.teacher_face}}'></image>
+        <text class='cont'>{{product.teacher.teacher_name}}</text>
       </view>
-
       <label class='teacher-text'>
         <view style='width:500rpx' class='fr '>
           <text class='cont'>{{product.teacher.teacher_introduce}}</text>
