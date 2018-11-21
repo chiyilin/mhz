@@ -21,7 +21,6 @@ Page({
   onLoad: function(options) {
     // console.log(wx.getStorageSync('userInfo'))
     common.onLoad(options);
-    
   },
 
   /**

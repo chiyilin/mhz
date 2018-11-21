@@ -51,7 +51,7 @@ swiper image {
 }
 
 .title text {
-  font-size: 30rpx;
+  font-size: 28rpx;
   color: #727171;
   vertical-align: middle;
 }
@@ -111,10 +111,11 @@ swiper image {
 .TuiJian {
   padding: 40rpx 59rpx 17rpx 30rpx;
   border-bottom: 1px solid #f4f4f4;
+  position: relative;
 }
 
 .tjtitle {
-  font-size: 30rpx;
+  font-size: 28rpx;
   color: #605f5f;
   display: block;
 }
@@ -134,9 +135,19 @@ swiper image {
 }
 
 .price {
-  font-size: 20rpx;
-  color: #fe0000;
-  margin-top: -10rpx;
+font-size: 20rpx;
+color: #fe0000;
+margin-top: -12rpx;
+}
+.red{
+position: absolute;
+bottom: 22rpx;
+right: 59rpx;
+}
+.date{
+position: absolute;
+bottom: 22rpx;
+left:400rpx;
 }
 
 .TuiJian {
@@ -154,7 +165,7 @@ swiper image {
 }
 
 .tjtitle {
-  font-size: 30rpx;
+  font-size: 28rpx;
   color: #605f5f;
   display: block;
   height: 38rpx;

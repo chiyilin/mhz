@@ -18,6 +18,7 @@
 <view bindtap='showRule' class='btn'>
   <text>兑 换</text>
 </view>
+<form bindsubmit='duihuan' report-submit='{{true}}'>
 <view class="ruleZhezhao {{isRuleTrue?'isRuleShow':'isRuleHide'}}">
   <image src='/imgs/33.png' class='ruleHide' bindtap='hideRule'></image>
   <view class='rulecontent'>
@@ -40,9 +41,13 @@
         <text class='rulecolor'>{{user.addjifen-user.jianjifen-needj}}</text>
       </view>
     </view>
-    <text wx:if="{{user.useraddress==null}}" class='red'>(地址未填写)</text>
-    <text wx:if="{{needjifen > (user.addjifen-user.jianjifen)}}" class='red'>(兑换积分不足)</text>
-    <button wx:if="{{(needjifen > (user.addjifen-user.jianjifen))||(user.useraddress==null)}}">不可兑换</button>
-    <button wx:else bindtap="duihuan" data-need='{{needjifen}}' data-num='{{num}}' data-jfproductid='{{jfproduct.jfproduct_id}}'>确认兑换</button>
+    
+      <text wx:if="{{user.useraddress==null}}" class='red'>(地址未填写)</text>
+      <text wx:if="{{needjifen > (user.addjifen-user.jianjifen)}}" class='red'>(兑换积分不足)</text>
+      <button wx:if="{{(needjifen > (user.addjifen-user.jianjifen))||(user.useraddress==null)}}">不可兑换</button>
+
+      <button wx:else form-type='submit' data-need='{{needjifen}}' data-num='{{num}}' data-jfproductid='{{jfproduct.jfproduct_id}}'>确认兑换</button>
+    
   </view>
 </view>
+</form>

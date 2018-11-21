@@ -1,4 +1,3 @@
-
 // pages/PromotionCenter/product/product.js
 var App = getApp();
 var common = require('../../../utils/common.js');
@@ -18,6 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    common.onLoad(options);
     var that = this;
     var jfproduct_id = options.jfproduct_id;
     var user_id = wx.getStorageSync('userInfo').user_id;
@@ -98,7 +98,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return common.share();
   },
   bindMinus: function() {
     var num = this.data.num;
@@ -156,15 +156,17 @@ Page({
     console.log(e)
     var that = this;
     var user_id = wx.getStorageSync('userInfo').user_id;
-    var needjifen = e.currentTarget.dataset.need;
-    var num = e.currentTarget.dataset.num;
-    var jfproduct_id = e.currentTarget.dataset.jfproductid;
+    var needjifen = e.detail.target.dataset.need;
+    var num = e.detail.target.dataset.num;
+    var jfproduct_id = e.detail.target.dataset.jfproductid;
     var data = {
       user_id: user_id,
       jfproduct_id: jfproduct_id,
       needjifen: needjifen,
       num: num,
+      formid: e.detail.formId
     };
+    console.log(data)
     wx.request({
       url: App.globalData.apiurl + 'usertuiguang/index',
       method: "POST",

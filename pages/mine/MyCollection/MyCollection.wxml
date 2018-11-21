@@ -1,10 +1,10 @@
 <!--pages/mine/MyCollection/MyCollection.wxml-->
 <block wx:for='{{userinfo}}'>
   <view class='clo clearfix' bindtap='details' data-id='{{item.product_id}}'>
-    <image class='cloImg' src='{{filepath}}{{item.product_cover}}'></image>
+    <image class='fl cloImg' src='{{filepath}}{{item.product_cover}}'></image>
     <text class='cloText'>{{item.product_name}}</text>
     <image class='dingyue' mode='widthFix' src='/imgs/dingyue.jpg'></image>
     <text class='dyText'>订阅 : {{item.product_subscribe}}</text>
-    <image mode='widthFix' class='xing fr' src='/imgs/xing.jpg'></image>
+    <text class='xing'>取消收藏</text>
   </view>
 </block>

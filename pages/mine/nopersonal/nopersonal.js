@@ -14,20 +14,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var user_id = options.userid;
-    wx.showLoading({
-      title: '加载中',
-    });
+    common.onLoad(options);
+    var user_id = wx.getStorageSync('userInfo').user_id;
+    wx.showNavigationBarLoading();
     var that = this;
     common.PostMain('user/userinfo', {
       user_id: user_id
-    }, function (data) {
+    }, function(data) {
       console.log(data)
       that.setData({
         userinfo: data,
-        region:[data.useraddress.sheng,data.useraddress.shi,data.useraddress.qu],
+        region: [data.useraddress.sheng, data.useraddress.shi, data.useraddress.qu],
       });
-      wx.hideLoading();
+      wx.hideNavigationBarLoading();
     });
   },
 
@@ -107,7 +106,7 @@ Page({
         qu: e.detail.value.region['2'],
         addxiang: e.detail.value.addxiang
       },
-      success: function (res) {
+      success: function(res) {
         wx.showToast({
           title: '修改成功',
           icon: 'success',

@@ -1,12 +1,16 @@
-<!--pages/Login/Login.wxml-->
-<view>
-  <image mode='widthFix' src='/imgs/banner.jpg'></image>
-  <form bindsubmit="bindFormSubmit">
-  <text class='buqian'>手机号:</text>
-  <input  type="digit" class='pt2' placeholder="" name="phone" maxlength="11" focus="{{focus}}" />
-  <text class='buqian buqian1'>邀请码:</text>
-  <input class='pt1' placeholder=" " name="staff_random" maxlength="6" focus="{{focus}}" />
-  <button open-type='getUserInfo' bindgetuserinfo="getUserInfo" form-type='submit'>一键启动</button>
-  <text class='rexian'>{{rexian}}</text>
-  </form>
+<view wx:if="{{canIUse}}">
+    <view class='header'>
+        <image src='/imgs/banner.jpg'></image>
+    </view>
+ 
+    <view class='content'>
+        <view>申请获取以下权限</view>
+        <text>获得你的公开信息(昵称，头像等)</text>
+    </view>
+ 
+    <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+        授权登录
+    </button>
 </view>
+ 
+<view wx:else>请升级微信版本</view>

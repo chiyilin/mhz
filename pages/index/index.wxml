@@ -51,7 +51,7 @@
     <view class='hui clearfix'>
       <text class='name'>{{item.product_name}}</text>
       <text class='chu fl'>课程时长：{{item.product_times}}</text>
-      <text class='fr  price'>￥{{item.product_money}}</text>
+      <text class='fr price'>￥{{item.product_money}}</text>
     </view>
   </view>
 </view>
@@ -78,8 +78,8 @@
   <image class='TJimg' src='{{filepath}}{{item.product_cover}}' mode='aspectFill'></image>
   <text class='tjtitle'>{{item.product_name}}</text>
   <text class='tjcont'>{{item.product_introduce}}</text>
-  <text class='time'>课程时长：{{item.product_times}}</text>
-  <text style='margin-top:20rpx' class='price fr'>￥{{item.product_money}}</text>
+  <text class='time date'>课程时长：{{item.product_times}}</text>
+  <text class='price red fr'>￥{{item.product_money}}</text>
 </view>
 <!-- 客服悬窗 -->
 <button open-type="contact">

@@ -12,6 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    common.onLoad(options);
     var that = this;
     console.log(options)
     var list_id = options.list_id;

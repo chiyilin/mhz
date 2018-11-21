@@ -14,6 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    common.onLoad(options);
     var that = this;
     var taoc_id = options.taoc_id;
     var product_id = options.product_id;
@@ -91,7 +92,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return common.share();
   },
   pinglun: function(e) {
     var that = this;

@@ -8,6 +8,8 @@ page{
   background-size: 100%;
   background-color: #FDFFE9;
   padding-bottom: 40rpx;
+  border-bottom: 8rpx solid #f4f4f4;
+
 }
 .zhiwu{
   color: #74412A;
@@ -42,6 +44,7 @@ form view{
 .green{
   color: #969A6D;
   border: none;
+  border-top: 1px solid #f4f4f4; 
 }
 button{
   background-color: #969A6D;

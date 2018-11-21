@@ -14,9 +14,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    wx.showLoading({
-      title: '加载中',
-    });
+    common.onLoad(options);
+    wx.showNavigationBarLoading();
     var that = this;
     common.PostMain('category/index', {}, function(data) {
       that.setData({
@@ -25,7 +24,7 @@ Page({
         data: data
       });
       console.log(data)
-      wx.hideLoading();
+      wx.hideNavigationBarLoading();
     });
   },
   /**
@@ -36,6 +35,15 @@ Page({
     wx.navigateTo({
       url: 'programlist/programlist?category_id=' + category_id,
     });
+  },
+  /*
+   * 失焦搜索
+   */
+  resignFocus: function(e) {
+    var value=e.detail.value;
+    common.PostMain('',{},function(){
+
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -89,7 +97,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return common.share();
   },
 
 })

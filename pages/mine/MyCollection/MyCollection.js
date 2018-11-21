@@ -14,8 +14,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(options)
-    var user_id = options.user_id
+    common.onLoad(options);
+    var user_id = wx.getStorageSync('userInfo').user_id;
     wx.showLoading({
       title: '加载中',
     });
@@ -82,6 +82,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return common.share();
   }
 })

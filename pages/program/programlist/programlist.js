@@ -31,6 +31,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    common.onLoad(options);
     var that = this;
     var category_id = options.category_id;
     that.data.category_id = category_id;
@@ -164,7 +165,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return common.share();
   },
   xiangqing: function (e) {
     if(e.currentTarget.dataset.taocid){

@@ -15,11 +15,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    wx.hideShareMenu();
     var that = this;
     that.data.id = options.id
     common.PostMain('message/redPacket', {
       user_id: that.data.userInfo.user_id,
-      id: that.data.id
+      id: that.data.id,
+
     }, function(res) {
       var param = res;
       param.hidden = res.message_status == 2 ? true : false;
@@ -28,11 +30,13 @@ Page({
     wx.hideShareMenu();
   },
   //点击红包
-  hidden: function(e) {
+  submit: function(e) {
+    console.log(e)
     var that = this;
     common.PostMain('message/redPacketdo', {
       user_id: that.data.userInfo.user_id,
-      id: that.data.id
+      id: that.data.id,
+      formid: e.detail.formId
     }, function(res) {
       that.setData({
         hidden: true

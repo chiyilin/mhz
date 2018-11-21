@@ -1,49 +1,56 @@
-/* pages/mine/MyCollection/MyCollection.wxss */
-
 .clo {
-  padding: 48rpx 55rpx;
-  background-color: #fff;
-  position: relative;
+padding: 0rpx 55rpx;
+background-color: #fff;
+position: relative;
+height: 166rpx;
+overflow: hidden;
 }
 
 .clo::after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: #e6e6e6;
-  content: ' ';
-  display: block;
-  transform: scaley(0.5);
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 1px;
+background-color: #e6e6e6;
+content: ' ';
+display: block;
+transform: scaley(0.5);
 }
 
 .cloImg {
-  width: 199rpx;
-  height: 120rpx;
-  float: left;
-  margin-right: 34rpx;
+width: 199rpx;
+height: 120rpx;
+float: left;
+margin-right: 34rpx;
+margin-top: 24rpx;
 }
 
 .cloText {
-  font-size: 26rpx;
-  display: block;
-  margin-right: 40rpx;
+font-size: 26rpx;
+display: block;
+margin-top: 26rpx;
 }
 
 .dingyue {
-  width: 17rpx;
-  margin-right: 15rpx;
-  vertical-align: middle;
+width: 17rpx;
+position: absolute;
+left: 288rpx;
+bottom: 26rpx;
 }
 
 .dyText {
-  font-size: 24rpx;
-  vertical-align: middle;
-  color: #9e9e9e;
+font-size: 24rpx;
+color: #9e9e9e;
+position: absolute;
+left: 320rpx;
+bottom: 24rpx
 }
 
 .xing {
-  width: 36rpx;
-  margin-top: -30rpx;
+font-size: 24rpx;
+color: #9e9e9e;
+position: absolute;
+right: 55rpx;
+bottom: 24rpx;
 }

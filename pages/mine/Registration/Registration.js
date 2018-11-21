@@ -14,6 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    common.onLoad(options);
     var user_id = options.user_id;
     console.log(user_id)
     var that = this;
@@ -76,7 +77,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return common.share();
   },
   xiangqing: function(e){
     var list_id = e.currentTarget.dataset.id;

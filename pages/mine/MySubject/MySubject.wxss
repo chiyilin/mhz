@@ -1,39 +1,40 @@
-/* pages/mine/MySubject/MySubject.wxss */
 .swiper-tab {
-  width: 100%;
-  line-height:75rpx;
-  background-color:white;
-  border-bottom:  #DCDCDC solid 1px;
+width: 100%;
+line-height:75rpx;
+background-color:white;
+border-bottom: #DCDCDC solid 1px;
 }
 .swiper-tab-list {
-  font-size: 30rpx;
-  display: inline-block;
-  color: #777;
-  border-bottom: 0rpx;
-  text-align: center;
-  width:20%;
-  margin-left: 20%;
+font-size: 30rpx;
+display: inline-block;
+color: #777;
+border-bottom: 0rpx;
+text-align: center;
+width:20%;
+margin-left: 20%;
 }
 .on {
-  color: #666666;
-  border-bottom: 2px solid #727171;
+color: #666666;
+border-bottom: 2px solid #727171;
 }
 .swiper-box {
-  display: block;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
+display: block;
+height: 100%;
+width: 100%;
+overflow: hidden;
 }
 .swiper-box view {
-  text-align: center;
+text-align: center;
 }
 .TuiJian{
-  position: relative;
-  padding:40rpx 59rpx 17rpx 30rpx; 
-  background-color: #fff;
+position: relative;
+padding:0rpx 59rpx 0rpx 30rpx; 
+background-color: #fff;
+height: 236rpx;
+overflow: hidden;
 }
 .TuiJian::after{
-  position: absolute;
+position: absolute;
 bottom: 0;
 left: 0;
 width: 100%;
@@ -44,38 +45,43 @@ display: block;
 transform: scaley(0.5);
 }
 .TJimg{
-  width: 264rpx;
-  height: 196rpx;
-  float: left;
-  margin-right: 30rpx;
+width: 264rpx;
+height: 196rpx;
+float: left;
+margin-right: 30rpx;
+margin-top: 20rpx;
 }
 .tjtitle{
-  font-size: 30rpx;
-  color: #605F5F;
-  display: block;
+font-size: 28rpx;
+color: #605F5F;
+display: block;
+margin-top: 20rpx;
 }
 .tjcont{
-  font-size: 24rpx;
-  color: #8D8D8D;
-  height: 100rpx;
-  overflow: hidden;
-  display: block;
-  margin-top: 10rpx;
+font-size: 24rpx;
+color: #8D8D8D;
+height: 100rpx;
+overflow: hidden;
+display: block;
+margin-top: 10rpx;
 }
 .time{
-  font-size: 24rpx;
-  color: #8D8D8D;
-  }
+font-size: 24rpx;
+color: #8D8D8D;
+position: absolute;
+left: 324rpx;
+bottom:16rpx;
+}
 .price{
-  font-size: 24rpx;
-  color: #ADB183;
-  margin-left: 15rpx;
-  border: 1px solid #ADB183;
-  padding: 3rpx 10rpx;
-  border-radius: 6px;
-  position: absolute;
-  right: 65rpx;
-  bottom: 16rpx;
+font-size: 24rpx;
+color: #ADB183;
+margin-left: 15rpx;
+border: 1px solid #ADB183;
+padding: 3rpx 10rpx;
+border-radius: 3px;
+position: absolute;
+right: 65rpx;
+bottom: 16rpx;
 }
 .taocan{
 color: #fff;

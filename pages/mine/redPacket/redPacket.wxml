@@ -1,6 +1,9 @@
 <!--pages/redPacket/redPacket.wxml-->
-<view>
-  <image class='two' src='/imgs/red2.png'></image>
-  <image class='one' bindtap='hidden' src='/imgs/red1.png' hidden='{{hidden}}'></image>
-  <text class='money' hidden='{{hidden}}'>￥{{money}}</text>
-</view>
+<form bindsubmit='submit' report-submit="{{true}}">
+  <view>
+    <image class='two' src='/imgs/red2.png'></image>
+    <image class='one' src='/imgs/red1.png' hidden='{{hidden}}'></image>
+    <text class='money' hidden='{{hidden}}'>￥{{money}}</text>
+  </view>
+  <button form-type='submit' hidden='{{hidden}}'></button>
+</form>

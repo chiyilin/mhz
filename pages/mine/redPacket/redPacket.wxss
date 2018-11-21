@@ -15,6 +15,23 @@ image {
   border-radius: 20px;
 }
 
+button {
+  height: 200rpx;
+  width: 200rpx;
+  margin-top: 536rpx;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  z-index: 999;
+}
+
+button::after {
+  border: none;
+}
+
+.button-hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
 .isRuleShow {
   display: block;
 }

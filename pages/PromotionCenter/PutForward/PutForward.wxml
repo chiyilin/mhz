@@ -1,7 +1,7 @@
 <!--pages/PromotionCenter/PutForward/PutForward.wxml-->
 <view class='tixian'>
   <text class='title'>提现金额（提现至微信钱包）</text>
-  <form bindsubmit='submit'>
+  <form bindsubmit='submit' report-submit="{{true}}">
     <view class='content'>
       <input type="digit" name="money"></input>
       <text class='tip'>可用额度：{{userInfo.money}}元</text>

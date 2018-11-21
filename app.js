@@ -1,10 +1,10 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     wx.getSetting({
-      success: function (e) {
+      success: function(e) {
         //检测本地授权状态
-        if (!e.authSetting['scope.userInfo']||!wx.getStorageSync('userInfo').user_id) {
+        if (!e.authSetting['scope.userInfo'] || !wx.getStorageSync('userInfo').user_id) {
           // 登录
           wx.login({
             success: res => {
@@ -16,7 +16,7 @@ App({
                 data: {
                   code: res.code
                 },
-                success: function (data) {
+                success: function(data) {
                   console.log(JSON.parse(data.data.data))
                   getApp().globalData.openid = JSON.parse(data.data.data).openid;
                   // console.log(getApp().globalData.openid)
@@ -25,9 +25,10 @@ App({
                     data: {
                       openid: getApp().globalData.openid
                     },
-                    success: function (data) {
+                    success: function(data) {
                       // console.log(data.data.data)
                       if (data.data.code == 200) {
+
                         if (data.data.data.user_is_lock == 1) {
                           wx.setStorageSync('userInfo', data.data.data);
                           // wx.switchTab({
@@ -38,7 +39,7 @@ App({
                         }
                       } else {
                         wx.navigateTo({
-                          url: '/pages/Login/againLogin/againLogin',
+                          url: '/pages/Login/Login',
                         })
                       }
                     }

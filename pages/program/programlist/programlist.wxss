@@ -1,16 +1,19 @@
 .top{
-  padding: 10rpx 44rpx;
-  border-bottom: #C9B195 solid 1px;
-  color: #bebebe;
-  height: 65rpx;
+padding: 0 44rpx 10rpx 44rpx;
+border-bottom: #DCDCDC solid 1px;
+color: #bebebe;
+height:75rpx;
+overflow: hidden;
 }
 .shaixuan{
-  display: flex;
-  width: 100%;
+display: flex;
+width: 100%;
 }
 .shaixuan view{
-  width: 32%;
-  text-align: center;
+width: 32%;
+text-align: center;
+height: 75rpx;
+line-height: 75rpx;
 }
 .top image{
   width: 20rpx;
@@ -31,9 +34,11 @@
 } */
 
 .TuiJian{
-  padding:20rpx 59rpx 17rpx 30rpx; 
-  background-color: #fff;
-  position: relative;
+padding:0rpx 59rpx 0rpx 30rpx; 
+background-color: #fff;
+position: relative;
+height: 232rpx;
+overflow: hidden;
 }
 .TuiJian::after {
 position: absolute;
@@ -47,36 +52,44 @@ display: block;
 transform: scaley(0.5);
 }
 .TJimg{
-  width: 264rpx;
-  height: 195rpx;
-  float: left;
-  margin-right: 30rpx;
+width: 264rpx;
+height: 195rpx;
+float: left;
+margin-right: 30rpx;
+margin-top: 17rpx;
 }
 .tjtitle{
-  font-size: 30rpx;
-  color: #727171;
-  display: block;
+font-size: 28rpx;
+color: #727171;
+display: block;
+margin-top: 20rpx;
 }
 .redblod{
-  font-weight: bold;
-  color:  #000;
+font-weight: bold;
+color: #727171;
 }
 .tjcont{
-  font-size: 24rpx;
-  color: #8D8D8D;
-  height: 100rpx;
-  overflow: hidden;
-  display: block;
-  margin-top: 10rpx;
+font-size: 24rpx;
+color: #8D8D8D;
+height: 100rpx;
+overflow: hidden;
+display: block;
+margin-top: 10rpx;
 }
 .time{
-  font-size: 24rpx;
-  color: #8D8D8D;
-  }
+font-size: 24rpx;
+color: #8D8D8D;
+position: absolute;
+bottom: 20rpx;
+left: 324rpx;
+}
 .price{
-  font-size: 26rpx;
-  color: #FE0000;
-  margin-top: 13rpx;
+font-size: 26rpx;
+color: #FE0000;
+margin-left: 70rpx;
+position: absolute;
+right: 59rpx;
+bottom: 20rpx;
 }
 .taocan{
 color: #fff;

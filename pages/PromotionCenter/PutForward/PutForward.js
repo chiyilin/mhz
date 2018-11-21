@@ -10,6 +10,7 @@ Page({
 
   },
   submit: function(e) {
+    console.log(e)
     var that = this;
     if (that.data.userInfo.money < e.detail.value.money) {
       common.tips('余额不足！');
@@ -18,6 +19,7 @@ Page({
     common.PostMain('user/withdrawal', {
       user_id: that.data.userInfo.user_id,
       money: e.detail.value.money,
+      formid: e.detail.formId
     }, function(res) {
       wx.showToast({
         title: '提现已申请！',
@@ -35,7 +37,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    common.onLoad(options);
   },
 
   /**

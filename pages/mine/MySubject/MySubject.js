@@ -16,6 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    common.onLoad(options);
     var that = this;
     var user_id = wx.getStorageSync('userInfo').user_id;
     wx.showLoading({
@@ -78,10 +79,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
-  },
-  onShareAppMessage: function() {
-
+    return common.share();
   },
   swichNav: function(e) {
     if (this.data.currentTab === e.target.dataset.current) {

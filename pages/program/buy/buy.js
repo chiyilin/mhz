@@ -102,7 +102,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(e) {
-    console.log(e)
+    common.onLoad(e);
     var that = this;
     if (e.taocid) {
       that.data.taoc_id = e.taocid;
@@ -200,7 +200,7 @@ Page({
           taocanMoney = taocanMoney + Number(data.res[i].product_money)
         }
         that.setData({
-          taocanMoney: taocanMoney,
+          taocanMoney: taocanMoney.toFixed(2),
           producttaoc: data.res,
           productlistcomment: data.ress
         });
@@ -215,6 +215,7 @@ Page({
     } else {
       var showMode = e.target.dataset.current == 0;
       this.setData({
+        taocanMoney: false,
         currentTab: e.target.dataset.current,
         isShow: showMode
       })

@@ -2,7 +2,7 @@
 input{
   margin: 20rpx;
   border: #DEDEDE 1px solid;
-  border-radius: 10rpx;
+  border-radius: 5rpx;
   height: 49rpx;
   font-size: 26rpx;
   padding-left: 20rpx;

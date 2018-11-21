@@ -28,7 +28,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    common.onLoad(options);
   },
   /**
    * 作业详情
@@ -85,10 +85,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
-  },
-  onShareAppMessage: function() {
-
+    return common.share();
   },
   /**
    * 选项卡切换

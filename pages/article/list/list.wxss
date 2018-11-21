@@ -1,21 +1,23 @@
 /* pages/article/list/list.wxss */
 .item{
-  width: 15%;
-  height: 39rpx;
-  display: inline-block;
-  color: #BEBEBE;
-  font-size: 26rpx;
-  text-align: center;
-  margin-left: 30rpx;
-  padding: 5rpx 0; 
-  margin-top:10rpx;
-  border-bottom: 3rpx solod #fff;
+width: 15%;
+height: 57rpx;
+display: inline-block;
+color: #BEBEBE;
+font-size: 30rpx;
+text-align: center;
+margin-left: 30rpx;
+padding: 5rpx 0; 
+margin-top:10rpx;
+line-height: 55rpx;
+border-bottom: 3rpx solod #fff;
 }
 .navbar{
-  white-space: nowrap;
+white-space: nowrap;
+height: 75rpx;
 }
 scroll-view{
-    border-bottom: 1px solid #E6E6E6;
+border-bottom: 1px solid #DCDCDC;
 }
 .navbar .item.active{ 
  color: #727171; 

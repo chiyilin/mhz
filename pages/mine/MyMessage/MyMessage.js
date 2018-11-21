@@ -15,7 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    common.onLoad(options);
   },
   redPacket: function(e) {
     wx.navigateTo({
@@ -76,10 +76,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
-  },
-  onShareAppMessage: function() {
-
+    return common.share();
   },
   swichNav: function(e) {
     if (this.data.currentTab === e.target.dataset.current) {

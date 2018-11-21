@@ -14,6 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    common.onLoad(options);
     var user_id = wx.getStorageSync('userInfo').user_id;
     this.setData({
       user_id: user_id,
@@ -66,7 +67,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return common.share();
   },
   chooseImage: function(e) {
     var that = this

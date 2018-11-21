@@ -16,6 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    common.onLoad(options);
     console.log(wx.getStorageInfoSync('userInfo'))
     wx.showLoading({
       title: '加载中',
@@ -79,13 +80,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return common.share();
   },
   /**
    * 文章分类切换
    */
   navbarTap: function(e) {
-    
+
     wx.showNavigationBarLoading();
     var that = this;
     var param = e.currentTarget.dataset;
