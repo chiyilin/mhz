@@ -39,4 +39,7 @@
       <text class='price fr'>￥{{item.product_money}}</text>
     </view>
   </block>
+  <block wx:if="{{data.length==0}}">
+    <text style='color:#ccc;font-size:28rpx;'>暂无课程！</text>
+  </block>
 </form>

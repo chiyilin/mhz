@@ -1,6 +1,4 @@
-var App = getApp();
-var common = require('../../../utils/common.js');
-// pages/mine/Registration/Registration.js
+// pages/Login/againLogin/againLogin.js
 Page({
 
   /**
@@ -14,21 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    common.onLoad(options);
-    var user_id = wx.getStorageSync('userInfo').user_id;
-    console.log(user_id)
-    var that = this;
-    wx.showLoading({
-      title: '加载中',
-    });
-    common.PostMain('baoming/guanli', {
-      user_id: user_id
-    }, function (data) {
-      that.setData({
-        baoming: data,
-      });
-      wx.hideLoading();
-    });
+
   },
 
   /**
@@ -77,12 +61,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    return common.share();
-  },
-  xiangqing: function(e){
-    var list_id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '../../mhzindex/EnrolmentDetails/EnrolmentDetails?list_id=' + list_id,
-    })
-  },
+
+  }
 })

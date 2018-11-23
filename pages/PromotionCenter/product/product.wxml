@@ -1,6 +1,7 @@
 <!--pages/PromotionCenter/product/product.wxml-->
 <view class='top clearfix'>
-  <text class='address'>兑换产品（配送至{{user.useraddress.sheng}}{{user.useraddress.shi}}{{user.useraddress.qu}}{{user.useraddress.addxiang}}）</text>
+  <text class='address' bindtap='chooseAddr'>收货人：{{userAddr[nowIndex].address_name}}{{userAddr[nowIndex].address_phone}}</text>
+  <text class='address' bindtap='chooseAddr'>兑换产品（配送至{{userAddr[nowIndex].sheng}}{{userAddr[nowIndex].shi}}{{userAddr[nowIndex].qu}}{{userAddr[nowIndex].more_addr}}）</text>
   <view class='fr jifen'>
     <text>剩余积分 ： </text>
     <text class='num'>{{user.addjifen-user.jianjifen}}</text>

@@ -58,12 +58,24 @@ Page({
   onReady: function() {
 
   },
-
+  chooseAddr: function() {
+    wx.navigateTo({
+      url: '/pages/address/ChooseAddress/ChooseAddress',
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    var that = this;
+    common.PostMain('user/addrList', {
+      user_id: wx.getStorageSync('userInfo').user_id
+    }, function(e) {
+      that.setData({
+        userAddr: e,
+        nowIndex: wx.getStorageSync('userAddrIndex') ? wx.getStorageSync('userAddrIndex') : 0
+      });
+    })
   },
 
   /**
@@ -164,6 +176,7 @@ Page({
       jfproduct_id: jfproduct_id,
       needjifen: needjifen,
       num: num,
+      address_id: that.data.userAddr[that.data.nowIndex].address_id,
       formid: e.detail.formId
     };
     console.log(data)

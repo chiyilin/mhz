@@ -1,12 +1,34 @@
 <!--pages/PromotionCenter/PutForward/PutForward.wxml-->
 <view class='tixian'>
   <text class='title'>提现金额（提现至微信钱包）</text>
-  <form bindsubmit='submit' report-submit="{{true}}">
+  <form data-type="submit" bindsubmit='submit' report-submit="{{true}}">
+    <view class='tixian'>
+      <text class='title'>提现金额（提现至微信钱包）</text>
+      <form data-type="submit" bindsubmit='submit' report-submit="{{true}}">
+        <view class='tixian'>
+          <text class='title'>提现金额（提现至微信钱包）</text>
+          <form data-type="submit" bindsubmit='submit' report-submit="{{true}}">
+            <view class='content'>
+              <input type="digit" name="money"></input>
+              <text class='tip'>可用额度：{{userInfo.money}}元</text>
+              <image class='money' mode='widthFix' src='/imgs/money.jpg'></image>
+            </view>
+            <button class='btn' formType='submit'>提 现</button>
+          </form>
+        </view>
+        <view class='content'>
+          <input type="digit" name="money"></input>
+          <text class='tip'>可用额度：{{userInfo.money}}元</text>
+          <image class='money' mode='widthFix' src='/imgs/money.jpg'></image>
+        </view>
+        <button class='btn' formType='submit'>提 现</button>
+      </form>
+    </view>
     <view class='content'>
       <input type="digit" name="money"></input>
       <text class='tip'>可用额度：{{userInfo.money}}元</text>
       <image class='money' mode='widthFix' src='/imgs/money.jpg'></image>
     </view>
-    <button class='btn' form-type='submit'>提 现</button>
+    <button class='btn' formType='submit'>提 现</button>
   </form>
 </view>

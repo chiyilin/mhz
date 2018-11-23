@@ -1,5 +1,23 @@
 var App = getApp();
 var common = require('../../../utils/common.js');
+var selectRequest = (that, index) => {
+  wx.showNavigationBarLoading();
+  var info = that.data.selectData[index];
+  common.PostMain('baoming/baoming', {
+    baomingid: info.baokao_id,
+    state: that.data.state,
+    user_id: that.data.userInfo.user_id
+  }, function(data) {
+    that.setData({
+      selectIndex: index,
+      show: !that.data.show,
+      name: info.baokao_name,
+      baomings: data.baomings,
+      user: data.user,
+    });
+    wx.hideNavigationBarLoading();
+  });
+}
 Page({
   /**
    * 页面的初始数据
@@ -30,71 +48,70 @@ Page({
     common.PostMain('baoming/index', {
       state: that.data.state
     }, function(data) {
+
       that.setData({
         currentTab: index,
         baoming: data.baoming,
         selectData: data.baoming,
       });
+      if (data.defaultIndex) {
+        var indexs = data.defaultIndex
+        selectRequest(that, indexs.toString())
+      }
       wx.hideLoading();
     });
   },
   /**
+   * 同意条款
+   */
+  checkboxChange: function(e) {
+    this.setData({
+      xieyi: e.detail.value.length ? true : false
+    })
+  },
+  /**
    * 展开、隐藏下拉菜单
    */
-  selectTap() {
-    this.setData({
-      show: !this.data.show
-    });
-  },
+  // selectTap() {
+  //   this.setData({
+  //     show: !this.data.show
+  //   });
+  // },
+  /**
+   * 选择器下拉
+   */
   bindchange: function(e) {
-    console.log(e)
-    var that = this;
-    wx.showNavigationBarLoading();
-    var info = that.data.selectData[e.detail.value];
-    // return null;
-    common.PostMain('baoming/baoming', {
-      baomingid: info.baokao_id,
-      state: that.data.state,
-      user_id: that.data.userInfo.user_id
-    }, function(data) {
-      that.setData({
-        selectIndex: e.detail.value,
-        show: !that.data.show,
-        name: info.baokao_name,
-        baomings: data.baomings,
-        user: data.user,
-      });
-      wx.hideNavigationBarLoading();
-    });
+    // console.log(e.detail.value)
+    selectRequest(this, e.detail.value)
   },
   // 点击下拉列表
-  optionTap(e) {
-    console.log(e)
-    var id = e.currentTarget.dataset.id;
-    var state = e.currentTarget.dataset.state;
-    var name = e.currentTarget.dataset.name;
-    var user_id = wx.getStorageSync('userinfo').user_id;
-    //获取点击的下拉列表的下标
-    let selectIndex = e.currentTarget.dataset.index;
-    wx.showLoading({
-      title: '加载中',
-    });
-    var that = this;
-    common.PostMain('baoming/baoming', {
-      baomingid: id,
-      state: state,
-      user_id: user_id
-    }, function(data) {
-      that.setData({
-        selectIndex: selectIndex,
-        show: !that.data.show,
-        name: name,
-        baomings: data.baomings,
-        user: data.user,
-      });
-      wx.hideLoading();
-    });
-  },
+  // optionTap(e) {
+  //   console.log(e)
+  //   var id = e.currentTarget.dataset.id;
+  //   var state = e.currentTarget.dataset.state;
+  //   var name = e.currentTarget.dataset.name;
+  //   var user_id = wx.getStorageSync('userinfo').user_id;
+  //   //获取点击的下拉列表的下标
+  //   let selectIndex = e.currentTarget.dataset.index;
+  //   wx.showLoading({
+  //     title: '加载中',
+  //   });
+  //   var that = this;
+  //   common.PostMain('baoming/baoming', {
+  //     baomingid: id,
+  //     state: state,
+  //     user_id: user_id
+  //   }, function(data) {
+  //     that.setData({
+  //       selectIndex: selectIndex,
+  //       show: !that.data.show,
+  //       name: name,
+  //       baomings: data.baomings,
+  //       user: data.user,
+  //     });
+  //     wx.hideLoading();
+  //   });
+  // },
   /**
    * 线上报名、取证报考选项卡切换
    */
@@ -115,7 +132,6 @@ Page({
           show: false,
           baomings: data.baoming,
           name: '',
-          baoming: data.baoming,
           selectData: data.baoming,
           currentTab: e.target.dataset.current,
         });
@@ -128,6 +144,10 @@ Page({
    */
   baom: function(e) {
     var that = this;
+    // if (that.data.xieyi != true) {
+    //   common.tips('请先阅读条款后操作！');
+    //   return null;
+    // }
     var userInfo = wx.getStorageSync('userInfo');
     var index = that.data.selectIndex;
     var data = that.data.selectData[index]
@@ -199,9 +219,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
-  },
-  onShareAppMessage: function() {
-
+    return common.share();
   },
 })

@@ -15,6 +15,7 @@ Page({
    */
   onLoad: function(options) {
     common.onLoad(options);
+
     var that = this;
     var user_id = wx.getStorageSync('userInfo').user_id;
     wx.showLoading({
@@ -32,7 +33,11 @@ Page({
       wx.hideLoading();
     });
   },
-
+  chooseAddr: function() {
+    wx.navigateTo({
+      url: '/pages/address/ChooseAddress/ChooseAddress',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -44,7 +49,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    var that = this;
+    common.PostMain('user/addrList', {
+      user_id: wx.getStorageSync('userInfo').user_id
+    }, function(e) {
+      that.setData({
+        userAddr: e,
+        nowIndex: wx.getStorageSync('userAddrIndex') ? wx.getStorageSync('userAddrIndex') : 0
+      });
+    })
   },
 
   /**

@@ -19,16 +19,19 @@ video {
   border-radius: 18px;
   z-index: 2;
 }
-.teacher-info{
-  margin-bottom:20rpx;
+
+.teacher-info {
+  margin-bottom: 20rpx;
 }
-.teacher-face{
+
+.teacher-face {
   border-radius: 50%;
   width: 100rpx;
   height: 100rpx;
   float: left;
-  margin:10rpx;
+  margin: 10rpx;
 }
+
 .share {
   border-bottom: #f3f3f3 solid 9rpx;
   color: #727171;
@@ -36,9 +39,11 @@ video {
   padding: 0 40rpx;
   line-height: 50rpx;
 }
-.cllo{
+
+.cllo {
   position: relative;
 }
+
 .cllo text {
   margin-right: 20rpx;
   vertical-align: middle;
@@ -90,23 +95,26 @@ video {
   background-color: #fff;
   position: relative;
 }
+
 .TuiJian::after {
-position: absolute;
-bottom: 0;
-left: 0;
-width: 100%;
-height: 1px;
-background-color: #e6e6e6;
-content: ' ';
-display: block;
-transform: scaley(0.5);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #e6e6e6;
+  content: ' ';
+  display: block;
+  transform: scaley(0.5);
 }
-.isplay{
+
+.isplay {
   width: 30rpx;
   position: absolute;
   right: 80rpx;
   top: 60rpx;
 }
+
 .TJimg {
   width: 136rpx;
   float: left;
@@ -116,7 +124,7 @@ transform: scaley(0.5);
 .price {
   font-size: 24rpx;
   color: #8d8d8d;
-  display:block;
+  display: block;
 }
 
 .jianjie {
@@ -139,6 +147,10 @@ transform: scaley(0.5);
 .weui-cells__title {
   border-bottom: 9rpx solid #f3f3f3;
   min-height: 80rpx;
+}
+
+.weui-cells__title image {
+  vertical-align: middle;
 }
 
 .time {
@@ -164,9 +176,11 @@ transform: scaley(0.5);
 .attention text {
   vertical-align: middle;
 }
-.fr{
+
+.fr {
   margin-top: 20rpx;
 }
+
 .attention .cont {
   display: block;
   padding-left: 24rpx;
@@ -296,7 +310,7 @@ transform: scaley(0.5);
 /*确定文本*/
 
 .txtsurename {
-  color:#fff;
+  color: #fff;
   margin-bottom: 0rpx;
   font-size: 28rpx;
 }
@@ -318,13 +332,15 @@ transform: scaley(0.5);
   width: 60rpx;
   height: 60rpx;
 }
-.sb{
+
+.sb {
   display: flex;
   flex-direction: column;
   align-items: left;
   margin-right: 30rpx;
 }
-.fen{
+
+.fen {
   width: 30rpx;
   display: inline-block;
   height: 30rpx;
@@ -335,26 +351,30 @@ transform: scaley(0.5);
   padding: 0;
   right: 80rpx;
 }
-button::after{
+
+button::after {
   border: none;
   background-color: none;
 }
-.fen image{
+
+.fen image {
   margin-top: -70rpx;
 }
-.pinglun{
+
+.pinglun {
   background-color: #fff;
   position: relative;
   border: none;
 }
-.pinglun::after{
+
+.pinglun::after {
   position: absolute;
-bottom: 0;
-left: 0;
-width: 100%;
-height: 1px;
-background-color: #e6e6e6;
-content: ' ';
-display: block;
-transform: scaley(0.5);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #e6e6e6;
+  content: ' ';
+  display: block;
+  transform: scaley(0.5);
 }

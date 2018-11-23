@@ -1,6 +1,6 @@
-// pages/PromotionCenter/PutForward/PutForward.js
-var App = getApp();
+// pages/mail/mail.js
 var common = require('../../../utils/common.js');
+var app = getApp();
 Page({
 
   /**
@@ -9,36 +9,32 @@ Page({
   data: {
 
   },
-  submit: function(e) {
-    var that = this;
-    if (that.data.userInfo.money < e.detail.value.money) {
-      common.tips('余额不足！');
-      return null;
-    }
-    common.PostMain('user/withdrawal', {
-      user_id: that.data.userInfo.user_id,
-      money: e.detail.value.money,
-      formid: e.detail.formId
-    }, function(res) {
-      wx.showToast({
-        title: '提现已申请！',
-        success: function() {
-          setTimeout(function() {
-            wx.navigateBack({
-              delta: -1
-            })
-          }, 1500)
-        }
-      })
-    });
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    common.onLoad(options);
+    wx.hideShareMenu();
   },
-
+  choose: function(e) {
+    var that = this;
+    that.setData({
+      nowIndex: e.currentTarget.dataset.index
+    })
+    wx.setStorageSync('userAddr', that.data.data[e.currentTarget.dataset.index])
+    wx.setStorageSync('userAddrIndex', e.currentTarget.dataset.index)
+    wx.navigateBack({
+      delta:-1
+    })
+  },
+  /**
+   * 新增
+   */
+  creatAddr: function() {
+    wx.navigateTo({
+      url: '/pages/address/add/add',
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -50,9 +46,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    this.setData({
-      userInfo: wx.getStorageSync('userInfo')
-    })
+    var that = this;
+
+    common.PostMain('user/addrList', {
+      user_id: wx.getStorageSync('userInfo').user_id
+    }, function(e) {
+      console.log(e)
+      that.setData({
+        data: e,
+        nowIndex: wx.getStorageSync('userAddrIndex') ? wx.getStorageSync('userAddrIndex') : 0
+      })
+    });
   },
 
   /**
@@ -87,6 +91,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-    return common.share();
+
   }
 })

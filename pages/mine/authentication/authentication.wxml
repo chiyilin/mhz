@@ -3,15 +3,19 @@
   <view class='clearfix'>
     <input type="text" value="{{user_id}}" name="hidden" hidden="true"></input>
     <text>真实姓名：</text>
-    <input name="smrz_name"></input>
+    <input name="smrz_name" maxlength="10"></input>
+  </view>
+  <view class='clearfix'>
+    <text>手机号：</text>
+    <input type="number" name="smrz_mobile" maxlength="11"></input>
   </view>
   <view class='clearfix'>
     <text>身份证号：</text>
-    <input type='idcard' name="smrz_code"></input>
+    <input type='idcard' name="smrz_code" maxlength="18"></input>
   </view>
   <view class='bottom'>
     <label>
-      <image class='addImg' wx:if="{{!tempFilePaths[0]}}" bindtap='chooseImage' data-index="{{0}}"name="smrz_photo" src='/imgs/jia.jpg'></image>
+      <image class='addImg' wx:if="{{!tempFilePaths[0]}}" bindtap='chooseImage' data-index="{{0}}" name="smrz_photo" src='/imgs/jia.jpg'></image>
       <image class='addImg' wx:else bindtap='chooseImage' data-index="{{0}}" name="smrz_photo" src='{{tempFilePaths[0]}}'></image>
     </label>
     <text>身份证件（正面）</text>

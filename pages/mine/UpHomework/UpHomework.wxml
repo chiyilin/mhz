@@ -11,7 +11,7 @@
     <text class='content'></text>
   </view>
 </view>
-<form bindsubmit='submit'>
+<form bindsubmit='submit' report-submit='true'>
   <view class='bottom'>
     <text class='up'>上传</text>
     <view class='pinlun clearfix'>

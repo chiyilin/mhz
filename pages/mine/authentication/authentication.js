@@ -107,70 +107,81 @@ Page({
     var smrz_name = e.detail.value.smrz_name;
     var smrz_code = e.detail.value.smrz_code;
     var tempFilePaths = that.data.tempFilePaths
-    if (smrz_name.length == 0 || smrz_code.length == 0 || tempFilePaths.length != 2) {
+    var smrz_mobile = e.detail.value.smrz_mobile
+    if (smrz_name.length == 0 || smrz_mobile.length == 0 || smrz_code.length == 0 || tempFilePaths.length != 2) {
       wx.showToast({
         title: '请填写完整！',
         icon: 'none'
       })
       return null;
     }
-    //已经上传完成的数组
-    var uploadfiledone = [];
-    //身份证正反面数组
-    var idcard = {};
-    for (var i = 0; i < tempFilePaths.length; i++) {
-      var uploadFile = wx.uploadFile({
-        url: App.globalData.apiurl + 'usersmrz/imgupload',
-        filePath: tempFilePaths[i],
-        name: 'image',
-        formData: {
-          //正反面标识
-          sign: i + 1,
-        },
-        success: function(e) {
-          var data = JSON.parse(e.data)
-          if (data.data[1]) {
-            idcard.front = data.data[1]
-          } else if (data.data[2]) {
-            idcard.side = data.data[2]
-          } else {
+    /**
+     * 验证手机号身份证的有效性
+     */
+    common.PostMain('usersmrz/check', {
+      smrz_code: smrz_code,
+      smrz_mobile: smrz_mobile,
+    }, function() {
+      //已经上传完成的数组
+      var uploadfiledone = [];
+      //身份证正反面数组
+      var idcard = {};
+      for (var i = 0; i < tempFilePaths.length; i++) {
+        var uploadFile = wx.uploadFile({
+          url: App.globalData.apiurl + 'usersmrz/imgupload',
+          filePath: tempFilePaths[i],
+          name: 'image',
+          formData: {
+            //正反面标识
+            sign: i + 1,
+          },
+          success: function(e) {
+            var data = JSON.parse(e.data)
+            if (data.data[1]) {
+              idcard.front = data.data[1]
+            } else if (data.data[2]) {
+              idcard.side = data.data[2]
+            } else {
 
-          }
-          if (idcard.front && idcard.side) {
-            common.PostMain('usersmrz/addsmrz', {
-              user_id: user_id,
-              smrz_name: smrz_name,
-              smrz_code: smrz_code,
-              front: idcard.front,
-              side: idcard.side
-            }, function(e) {
-              wx.showToast({
-                title: '已提交，等待审核！',
-                icon: 'none',
-                success: function() {
-                  console.log(idcard)
-                  setTimeout(function() {
-                    wx.navigateBack({
-                      delta:1
-                    })
-                  }, 1500)
-                }
+            }
+            if (idcard.front && idcard.side) {
+              common.PostMain('usersmrz/addsmrz', {
+                user_id: user_id,
+                smrz_name: smrz_name,
+                smrz_code: smrz_code,
+                smrz_mobile: smrz_mobile,
+                front: idcard.front,
+                side: idcard.side
+              }, function(e) {
+                wx.showToast({
+                  title: '已提交，等待审核！',
+                  icon: 'none',
+                  success: function() {
+                    console.log(idcard)
+                    setTimeout(function() {
+                      wx.navigateBack({
+                        delta: 1
+                      })
+                    }, 1500)
+                  }
+                })
               })
-            })
+            }
           }
-        }
-      });
-      uploadFile.onProgressUpdate((res) => {
-        wx.showLoading({
-          title: res.progress + '%',
         });
-        if (res.progress == 100) {
-          uploadfiledone.push(1);
-          if (uploadfiledone.length == tempFilePaths.length) {
+        uploadFile.onProgressUpdate((res) => {
+          wx.showLoading({
+            title: res.progress + '%',
+          });
+          if (res.progress == 100) {
+            uploadfiledone.push(1);
+            if (uploadfiledone.length == tempFilePaths.length) {
 
+            }
           }
-        }
-      })
-    }
+        })
+      }
+    });
+
   },
 })

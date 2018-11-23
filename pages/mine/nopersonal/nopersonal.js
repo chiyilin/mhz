@@ -15,19 +15,7 @@ Page({
    */
   onLoad: function(options) {
     common.onLoad(options);
-    var user_id = wx.getStorageSync('userInfo').user_id;
-    wx.showNavigationBarLoading();
-    var that = this;
-    common.PostMain('user/userinfo', {
-      user_id: user_id
-    }, function(data) {
-      console.log(data)
-      that.setData({
-        userinfo: data,
-        region: [data.useraddress.sheng, data.useraddress.shi, data.useraddress.qu],
-      });
-      wx.hideNavigationBarLoading();
-    });
+
   },
 
   /**
@@ -41,7 +29,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    var user_id = wx.getStorageSync('userInfo').user_id;
+    wx.showNavigationBarLoading();
+    var that = this;
+    common.PostMain('user/userinfo', {
+      user_id: user_id
+    }, function(data) {
+      console.log(data)
+      that.setData({
+        userinfo: data,
+        region: [data.useraddress.sheng, data.useraddress.shi, data.useraddress.qu],
+      });
+      wx.hideNavigationBarLoading();
+    });
   },
 
   /**

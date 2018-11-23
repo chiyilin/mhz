@@ -2,6 +2,10 @@
 page{
   background-color: #F9F9F9;
 }
+.tixian{
+  position:fixed;
+  top: 150rpx;
+}
 .title{
   font-size: 28rpx;
   margin-top: 96rpx;

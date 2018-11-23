@@ -4,8 +4,6 @@
   <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" data-state="2" bindtap="swichNav">取证报考</view>
 </view> -->
 <view class="weui-cells__title">
-  <text class='title'>内容：</text>
-  <picker mode="selector" range="{{selectData}}" range-key="baokao_name" bindchange="bindchange">{{name?name:'点击选择'}}</picker>
   <!-- <view class='select_box '>
     <view class='select' catchtap='selectTap'>
       <text class='select_text'>{{name}}</text>
@@ -15,34 +13,43 @@
       <text class='option' style='{{index==selectData.length&&"border:0;"}}' wx:for='{{baoming}}' wx:key='this' data-name="{{item.baokao_name}}" data-id="{{item.baokao_id}}" data-index='{{index}}' catchtap='optionTap'>{{item.baokao_name}}</text>
     </view>
   </view> -->
-  <!--报考须知-->
-  <view class='bottom'>
-    <text class='Btitle'>须知：</text>
-    <view class='content'>
-      <block wx:for="{{baomings.baokao_xuzhi}}" wx:for-item="items">
-        <image mode='widthFix' wx:if="{{items.image}}" src="{{items.image}}"></image>
-        <text class='chdText' wx:if="{{items.text}}">{{items.text}}</text>
-      </block>
+  <text class='title'>{{currentTab==0?'学习课程':'报考类型'}}：</text>
+  <picker class='choose' mode="selector" range="{{selectData}}" range-key="baokao_name" bindchange="bindchange" value='{{selectIndex}}'>{{name?name:' 点击选择'}}</picker>
+  <block wx:if="{{selectIndex}}">
+    <view class='bottom'>
+      <text class='Btitle'>{{currentTab==0?'学习内容':'报考内容'}}：</text>
+      <view class='content'>
+        <block wx:for="{{baomings.baokao_xuzhi}}" wx:for-item="items">
+          <image mode='widthFix' wx:if="{{items.image}}" src="{{items.image}}"></image>
+          <text class='chdText' wx:if="{{items.text}}">{{items.text}}</text>
+        </block>
+      </view>
+      <text class='time'>注意事项：{{baomings.baokao_zysx}}</text>
+      <text class='time'>{{currentTab==0?'开课时间':'考试时间'}}：{{baomings.baokao_start_time}}
+      {{baomings.baokao_end_time}}</text>
+      <text class='time'>{{currentTab==0?'学习地点':'考试地点'}}：{{baomings.baokao_address}}</text>
+      <text class='address'>{{currentTab==0?'报名人数':'报考人数'}}：{{baomings.member_num}}</text>
+      <!-- <checkbox-group bindchange="checkboxChange">
+        <checkbox checked="true" class='fuxuan' value='123' color='#4f4f4f'>
+        </checkbox>
+        <text class='tiaokuan'>同意接受以下服务条款>></text>
+      </checkbox-group> -->
+
+      <view class='foot'>
+        <view class='zuo'>
+          <text>费用：</text>
+          <text class='red'>￥{{baomings.baokao_money}}</text>
+        </view>
+        <view wx:if="{{user.usersmrz.smrz_state==2&&baomings.lists==null}}" bindtap='baom' data-baokaoid='{{baomings.baokao_id}}' class='you'>
+          <text>支付报名</text>
+        </view>
+        <view wx:elif="{{user.usersmrz.smrz_state!=2}}" class='you'>
+          <text>请实名认证后操作</text>
+        </view>
+        <view wx:elif="{{baomings.lists!=null}}" class='you'>
+          <text>已报名</text>
+        </view>
+      </view>
     </view>
-    <text class='time'>考试时间：{{baomings.baokao_time}}</text>
-    <text class='address'>考试地点：{{baomings.baokao_address}}</text>
-    <checkbox checked="{{true}}" class='fuxuan' color='#4f4f4f'>
-    </checkbox>
-    <text class='tiaokuan'>同意接受以下服务条款>></text>
-    <view class='foot'>
-      <view class='zuo'>
-        <text>费用：</text>
-        <text class='red'>￥{{baomings.baokao_money}}</text>
-      </view>
-      <view wx:if="{{baomings.lists==null&&((baomings.baokao_state==2&&user.usersmrz!=null)||(baomings.baokao_state==1&&(user.usersmrz==null||user.usersmrz!=null)))}}" bindtap='baom' data-baokaoid='{{baomings.baokao_id}}' class='you'>
-        <text>支付报名</text>
-      </view>
-      <view wx:elif="{{baomings.baokao_state==2&&baomings.lists==null&&user.usersmrz==null}}" class='you'>
-        <text>请实名认证后操作</text>
-      </view>
-      <view wx:elif="{{baomings.lists!=null}}" class='you'>
-        <text>已报名</text>
-      </view>
-    </view>
-  </view>
+  </block>
 </view>

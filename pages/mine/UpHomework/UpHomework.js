@@ -43,7 +43,8 @@ Page({
     common.PostMain('userhomework/create', {
       homework_reply: homework_reply,
       id: that.data.id,
-      user_id: that.data.userInfo.user_id
+      user_id: that.data.userInfo.user_id,
+      formid: e.detail.formId
     }, function(result) {
       var uploadfiledone = [];
       var tempFilePaths = that.data.tempFilePaths;

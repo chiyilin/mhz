@@ -1,5 +1,8 @@
 /* pages/mhzindex/examination/examination.wxss */
+page{
+  position: relative
 
+}
 .swiper-tab {
   width: 100%;
   line-height: 75rpx;
@@ -44,7 +47,7 @@
   left: 80rpx;
   top: 75rpx;
 }
-
+/* 
 .sanjiao {
   width: 73rpx;
   position: absolute;
@@ -111,10 +114,11 @@
   font-size: 30rpx;
   border-bottom: 1px solid #efefef;
   padding: 10rpx;
-}
+} */
 
 .bottom {
   position: relative;
+  padding-bottom:110rpx; 
 }
 
 .content {
@@ -194,4 +198,10 @@ picker{
   left: 200rpx;
   font-size: 28rpx;
   color:  #5f5f5f;
+}
+.choose{
+  width: 500rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
 }
