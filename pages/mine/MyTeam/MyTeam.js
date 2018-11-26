@@ -30,7 +30,7 @@ Page({
   onShow: function() {
     var that = this;
     common.PostMain('message/myteam', {
-      user_id: that.data.userInfo.user_id
+      user_id: wx.getStorageSync('userInfo').user_id
     }, function(res) {
       that.setData({
         fidUserInfo: res.fidUserInfo,
