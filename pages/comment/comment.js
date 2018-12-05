@@ -99,7 +99,7 @@ Page({
       common.tips('请填写评价哦~');
       return null;
     }
-    var user_id = wx.getStorageSync('userinfo').user_id;
+    var user_id = wx.getStorageSync('userInfo').user_id;
     var pingjia = this.data.pingjia;
     var data = {
       product_id: pingjia.product_id,
