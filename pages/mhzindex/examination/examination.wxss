@@ -1,51 +1,27 @@
 /* pages/mhzindex/examination/examination.wxss */
 page{
   position: relative
-
 }
-.swiper-tab {
-  width: 100%;
-  line-height: 75rpx;
-  border-bottom: #dcdcdc solid 1px;
-}
-
-.swiper-tab-list {
-  font-size: 30rpx;
-  display: inline-block;
-  color: #777;
-  border-bottom: 0rpx;
-  text-align: center;
-  width: 20%;
-  margin-left: 20%;
-}
-
-
-.on {
-  color: #666;
-  border-bottom: 2px solid #727171;
-}
-
-.swiper-box {
-  display: block;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
-
-.swiper-box view {
-  text-align: center;
-}
-
 .weui-cells__title {
   position: relative;
+  overflow: hidden;
+  padding-bottom: 120rpx;
 }
-
+.weui-cells__title .list{
+  padding: 30rpx 0;
+  position: relative;
+  border-bottom: 9rpx solid #f4f4f4;
+}
+.lv {
+  width: 12rpx;
+  vertical-align: middle;
+  margin-right: 12rpx;
+  margin-left: 30rpx;
+}
 .title {
   font-size: 28rpx;
   color: #5f5f5f;
-  position: absolute;
-  left: 80rpx;
-  top: 75rpx;
+  vertical-align: midden;
 }
 /* 
 .sanjiao {
@@ -122,24 +98,29 @@ page{
 }
 
 .content {
-  padding: 90rpx 80rpx;
   display: block;
-  font-size: 24rpx;
-  color: #5f5f5f;
-  margin-top: 60rpx;
-  line-height: 53rpx;
-}
-
-.Btitle {
   font-size: 28rpx;
   color: #5f5f5f;
-  position: absolute;
-  left: 80rpx;
-  top: 50rpx;
+  line-height: 53rpx;
+  margin: 0 auto;
 }
-
+.content text{
+  display: block;
+  padding: 0 53rpx;
+}
+.content image{
+  margin: 0 auto;
+  display: block;
+  width: 750rpx;
+}
+.cText{
+    font-size: 28rpx;
+    color: #5f5f5f;
+    display: block;
+    padding: 20rpx 53rpx;
+}
 .time {
-  padding: 0rpx 80rpx;
+  padding: 0rpx 90rpx;
   display: block;
   font-size: 24rpx;
   margin-bottom: 34rpx;
@@ -169,6 +150,8 @@ page{
   left: 0;
   bottom: 0;
   width: 750rpx;
+  background-color: #fff;
+  box-shadow: 0 0 1rpx #ccc;
 }
 
 .foot view {
@@ -193,15 +176,22 @@ page{
 }
 
 picker{
-  position: relative;
-  top: 75rpx;
-  left: 200rpx;
+  position: absolute;
+  top: 100rpx;
+  left:54rpx;
   font-size: 28rpx;
   color:  #5f5f5f;
+  z-index: 2;
 }
 .choose{
-  width: 500rpx;
+  width:680rpx;
   overflow: hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
+}
+.jiantou{
+  width: 18rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 100rpx;
 }

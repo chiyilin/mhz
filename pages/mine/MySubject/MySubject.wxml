@@ -8,27 +8,37 @@
 <view class="weui-cells__title" hidden="{{!isShow}}">
   <block wx:for="{{kecheng}}">
     <view wx:if="{{item.producttaoc==null}}" bindtap='xiangqing' data-productid='{{item.product_id}}' class='TuiJian'>
-      <image wx:if="{{item.productbanner.url}}" class='TJimg' src="{{filepath}}{{item.productbanner.url}}"></image>
+      <image mode='aspectFill' wx:if="{{item.productbanner.url}}" class='TJimg' src="{{filepath}}{{item.productbanner.url}}"></image>
       <image mode='aspectFill' wx:else class="TJimg" src="{{filepath}}{{item.product.product_cover}}"></image>
       <text class='tjtitle'>{{item.product.product_name}}</text>
-      <text class='tjcont'>{{item.product.product_introduce}}</text>
+      <!-- <text class='tjcont'>{{item.product.product_introduce}}</text> -->
       <text class='time'>课程时长：{{item.product.product_times}}</text>
       <text wx:if="{{item.is_pay==2}}" bindtap='pingjia' data-listid='{{item.list_id}}' class='price'>评价</text>
       <text wx:else class='price' style='color:red;border-color:red'>已评价</text>
+    </view>
+  </block>
+  <block wx:if="{{countProd.length==0}}">
+    <view class='none'>
+      <text>暂无记录</text>
     </view>
   </block>
 </view>
 <view class="weui-cells__title" hidden="{{isShow}}">
   <block wx:for="{{kecheng}}">
     <view wx:if="{{item.product==null}}" bindtap='taocan' data-taocid='{{item.taoc_id}}' class='TuiJian'>
-      <image wx:if="{{item.producttaocbanner.url}}" class='TJimg' src="{{filepath}}{{item.producttaocbanner.url}}"></image>
-      <image wx:else class="TJimg" src="/imgs/img1.jpg"></image>
+      <image mode='aspectFill' wx:if="{{item.producttaocbanner.url}}" class='TJimg' src="{{filepath}}{{item.producttaocbanner.url}}"></image>
+      <image wx:else mode='aspectFill' class="TJimg" src="/imgs/img1.jpg"></image>
       <text class='tjtitle'>{{item.producttaoc.taoc_name}}</text>
       <text class='taocan'>套餐</text>
       <text class='tjcont'>{{item.producttaoc.taoc_content}}</text>
       <text class='time'>课程节数：{{item.num}}节</text>
       <text wx:if="{{item.is_pay==2}}" bindtap='pingjia' data-listid='{{item.list_id}}' class='price'>评价</text>
       <text wx:else class='price' style='color:red;border-color:red'>已评价</text>
+    </view>
+  </block>
+  <block wx:if="{{countProdT.length==0}}">
+    <view class='none'>
+      <text>暂无记录</text>
     </view>
   </block>
 </view>

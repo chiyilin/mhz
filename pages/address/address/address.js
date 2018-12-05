@@ -21,7 +21,33 @@ Page({
    */
   edit: function(e) {
     wx.navigateTo({
-      url: '/pages/mail/edit/edit?id=' + e.target.dataset.id,
+      url: '/pages/address/address/address?id=' + e.target.dataset.id,
+    })
+  },
+  /**
+   * 删除邮箱
+   */
+  del: function(e) {
+    var that = this;
+    wx.showModal({
+      title: '确定？',
+      content: '确定要删除此地址吗？',
+      success: function(res) {
+        if (res.confirm) {
+          common.PostMain('user/delAddr', {
+            id: e.currentTarget.dataset.id
+          }, function(result) {
+            wx.showToast({
+              title: '已删除！',
+              success: function(e) {
+                setTimeout(function(e) {
+                  that.onShow()
+                }, 1500)
+              }
+            });
+          });
+        }
+      }
     })
   },
   /**

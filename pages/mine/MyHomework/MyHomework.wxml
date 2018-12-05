@@ -13,7 +13,7 @@
 </view>
 <!--已提交-->
 <view hidden="{{currentTab!==1}}">
-  <view class='NoFinish clearfix'  wx:for="{{data[2]}}" bindtap='homeworkdetails' data-id='{{item.user_homework_id}}'>
+  <view class='NoFinish clearfix' wx:for="{{data[2]}}" bindtap='homeworkdetails' data-id='{{item.user_homework_id}}'>
     <image class='shu' mode='widthFix' src='/imgs/shu.jpg'></image>
     <text class='NoFinishText'>名称：{{item.homework.homework_name}}</text>
     <image class='shenhe fr' mode='widthFix' src='/imgs/shenhe.jpg'></image>
@@ -22,9 +22,14 @@
 
 <!--已完成-->
 <view hidden="{{currentTab!==2}}">
-  <view class='NoFinish clearfix'  wx:for="{{data[3]}}" bindtap='homeworkdetails' data-id='{{item.user_homework_id}}'>
+  <view class='NoFinish clearfix' wx:for="{{data[3]}}" bindtap='homeworkdetails' data-id='{{item.user_homework_id}}'>
     <image class='shu' mode='widthFix' src='/imgs/shu.jpg'></image>
     <text class='NoFinishText'>名称：{{item.homework.homework_name}}</text>
     <text class='pingfen fr'>评分{{item.score}}</text>
   </view>
 </view>
+  <block wx:if="{{data.length==0}}">
+    <view class='none'>
+      <text>暂无记录</text>
+    </view>
+  </block>

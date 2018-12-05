@@ -78,7 +78,11 @@ Page({
   onShareAppMessage: function() {
 
   },
-
+  addr: function() {
+    wx.navigateTo({
+      url: "../../address/address/address",
+    })
+  },
   renzheng: function(e) {
     var userid = e.currentTarget.dataset.userid;
     wx.navigateTo({

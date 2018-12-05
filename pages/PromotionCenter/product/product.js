@@ -60,7 +60,7 @@ Page({
   },
   chooseAddr: function() {
     wx.navigateTo({
-      url: '/pages/address/ChooseAddress/ChooseAddress',
+      url: '/pages/address/address/address',
     })
   },
   /**

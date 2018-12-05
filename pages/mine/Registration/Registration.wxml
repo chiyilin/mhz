@@ -1,11 +1,17 @@
 <!--pages/mine/Registration/Registration.wxml-->
 <block wx:for="{{baoming}}">
-  <view class='baoming' bindtap='xiangqing' data-id='{{item.list_id}}'>
+  <view class='baoming clearfix' bindtap='xiangqing' data-id='{{item.list_id}}'>
     <text wx:if="{{item.list_state==1}}" class='title'>报名内容：{{item.baokao.baokao_name}}</text>
     <text wx:else class='title'>报考内容：{{item.baokao.baokao_name}}</text>
-    <text class='time'>{{item.addtime}}</text>
-    <text class='content'>{{item.baokao.baokao_xuzhi}}</text>
-    <text class='name'>姓名：{{item.usersmrz.smrz_name}}</text>
+    <!-- <text class='content'>{{item.baokao.baokao_xuzhi}}</text> -->
+    <text class='name '>姓名：{{item.usersmrz.smrz_name}}</text>
     <text class='phone'>电话：{{item.user.user_mobile}}</text>
+    <text class='time'>报名时间：{{item.addtime}}</text>
+    <image mode='widthFix' src='/imgs/you.png'></image>
+  </view>
+</block>
+<block wx:if="{{baoming.length==0}}">
+  <view class='none'>
+    <text>暂无记录</text>
   </view>
 </block>

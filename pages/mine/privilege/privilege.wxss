@@ -19,11 +19,11 @@ image{
   color: #605F5F;
 }
 button{
-  width: 336rpx;
-  height: 66rpx;
+  width: 650rpx;
+  height: 67rpx;
   color: #fff;
   background-color: #ADB183;
-  line-height: 66rpx;
+  line-height: 67rpx;
   font-size: 30rpx;
   margin-top: 22rpx;
   

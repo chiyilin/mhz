@@ -6,12 +6,12 @@
     <input name="smrz_name" maxlength="10"></input>
   </view>
   <view class='clearfix'>
-    <text>手机号：</text>
-    <input type="number" name="smrz_mobile" maxlength="11"></input>
-  </view>
-  <view class='clearfix'>
     <text>身份证号：</text>
     <input type='idcard' name="smrz_code" maxlength="18"></input>
+  </view>
+    <view class='clearfix'>
+    <text>手机号码：</text>
+    <input type="number" name="smrz_mobile" maxlength="11"></input>
   </view>
   <view class='bottom'>
     <label>

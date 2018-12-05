@@ -1,0 +1,28 @@
+/* pages/PromotionCenter/ExchangeOfDetails/ExchangeOfDetails.wxss */
+page{
+background-color: #F9F9F9;
+}
+.view{
+  width: 96%-61rpx;
+  margin:3% 2%;
+  padding-left: 61rpx;
+  padding-top: 41rpx;
+  border: 1px solid #ECEBEB;
+  font-size: 28rpx;
+  padding-bottom: 51rpx;
+  background-color: #FFF;
+}
+.view view{
+  margin-top: 10rpx;
+}
+image{
+  width: 35rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+text{
+  vertical-align: middle;
+}
+.red{
+  color: #FE0000;
+}

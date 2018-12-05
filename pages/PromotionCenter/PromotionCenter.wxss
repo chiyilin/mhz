@@ -4,11 +4,12 @@ page{
 }
 .top{
   background-color: #FDFFE9;
+  overflow: hidden;
 }
 .touxiang{
   border-radius: 50% 50%;
   width: 143rpx;
-  margin-top: 86rpx;
+  margin-top: 60rpx;
   margin-left: 72rpx;
   margin-right: 34rpx;
 }
@@ -21,17 +22,17 @@ page{
   font-size: 26rpx;
   color: #74412A;
   position: absolute;
-  top: 138rpx;
+  top: 100rpx;
 }
 .vip{
   position: absolute;
-  top: 164rpx;
-  left: 250rpx;
+  top: 134rpx;
+  left: 215rpx;
   margin-top: 16rpx;
 }
 .VipV{
-  color: #FFFFFF;
-  background-color: #FDF98B;
+  color: #fff;
+  background-color: rgb(240, 187, 12);
   display: inline-block;
   width: 37rpx;
   height: 37rpx;
@@ -40,7 +41,7 @@ page{
   font-size: 20rpx;
   border-radius: 50% 50%;
   position: absolute;
-  left: 0;
+  left: 30rpx;
   top: 0;
   z-index: 2;
 }
@@ -49,20 +50,21 @@ page{
   color: #74412A;
   background-color: #DEE2BA;
   display: inline-block;
-  width: 180rpx;
+  width: 120rpx;
   height: 32rpx;
   padding-left: 20rpx;
   line-height: 32rpx;
   text-align: center;
   border-radius: 8px;
   position: absolute;
-  left: 10rpx;
+  left: 40rpx;
   top: 3rpx;
   }
+
   .money{
-    margin-top: 104rpx;
     display: flex;
     width: 750rpx;
+    padding-top: 30rpx;
   }
   .money view{
     width: 50%;
@@ -76,8 +78,9 @@ page{
   }
   .bottom{
     display: flex;
-    padding: 25rpx 30rpx;
+    padding: 25rpx 0rpx;
     width: 100%;
+    margin-top: -12rpx;
   }
   .bottom view{
     background-color: #fff;
@@ -87,7 +90,7 @@ page{
     font-size: 28rpx;
     color: #74412A;
     padding: 44rpx 0 25rpx 0;
-    width: 30%;
+    width: 33%;
     margin-right: 9rpx;
   }
   .bottom image{

@@ -25,8 +25,24 @@ Page({
     common.PostMain('user/kecheng', {
       user_id: user_id
     }, function(data) {
+      var countProd = [];
+      var countProdT = [];
+      
+      for (var i = 0; i < data.length;i++){
+        if (data[i].product) {
+          countProd.push(1)
+        }
+        if (data[i].producttaoc) {
+          countProdT.push(1)
+        }
+      }
+      console.log(countProd)
+      // return null;
       that.setData({
         kecheng: data,
+        countProd: countProd,
+        countProdT: countProdT,
+
       });
       console.log(data)
       wx.hideLoading();

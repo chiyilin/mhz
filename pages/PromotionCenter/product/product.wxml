@@ -1,16 +1,8 @@
 <!--pages/PromotionCenter/product/product.wxml-->
-<view class='top clearfix'>
-  <text class='address' bindtap='chooseAddr'>收货人：{{userAddr[nowIndex].address_name}}{{userAddr[nowIndex].address_phone}}</text>
-  <text class='address' bindtap='chooseAddr'>兑换产品（配送至{{userAddr[nowIndex].sheng}}{{userAddr[nowIndex].shi}}{{userAddr[nowIndex].qu}}{{userAddr[nowIndex].more_addr}}）</text>
-  <view class='fr jifen'>
-    <text>剩余积分 ： </text>
-    <text class='num'>{{user.addjifen-user.jianjifen}}</text>
-  </view>
-</view>
 <view class='center clearfix'>
-  <image class='banner' src="{{filepath}}{{jfproduct.jfproductbanner['0'].url}}"></image>
+  <image mode='aspectFill' class='banner' src="{{filepath}}{{jfproduct.jfproductbanner['0'].url}}"></image>
   <text class='name fl'>{{jfproduct.jfproduct_name}}</text>
-  <text class='color fr'>{{jfproduct.jfproduct_money}}积分</text>
+  <text class='color fr'>兑换所需:{{jfproduct.jfproduct_money}}积分</text>
 </view>
 <view class='bottom'>
   <text class='title'>产品介绍</text>
@@ -23,7 +15,7 @@
 <view class="ruleZhezhao {{isRuleTrue?'isRuleShow':'isRuleHide'}}">
   <image src='/imgs/33.png' class='ruleHide' bindtap='hideRule'></image>
   <view class='rulecontent'>
-    <image class='ruleimg' src="{{filepath}}{{jfproduct.jfproductbanner['0'].url}}"></image>
+    <image mode='aspectFill' class='ruleimg' src="{{filepath}}{{jfproduct.jfproductbanner['0'].url}}"></image>
     <view class="stepper">
       <!-- 减号 -->
       <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
@@ -48,7 +40,14 @@
       <button wx:if="{{(needjifen > (user.addjifen-user.jianjifen))||(user.useraddress==null)}}">不可兑换</button>
 
       <button wx:else form-type='submit' data-need='{{needjifen}}' data-num='{{num}}' data-jfproductid='{{jfproduct.jfproduct_id}}'>确认兑换</button>
-    
+    <view class='top clearfix'>
+  <text class='address' bindtap='chooseAddr'>收货人：{{userAddr[nowIndex].address_name}}{{userAddr[nowIndex].address_phone}}</text>
+  <text class='address' bindtap='chooseAddr'>配送至：{{userAddr[nowIndex].sheng}}{{userAddr[nowIndex].shi}}{{userAddr[nowIndex].qu}}{{userAddr[nowIndex].more_addr}}   ></text>
+  <view class='fr jifen'>
+    <!-- <text>剩余积分 ： </text>
+    <text class='num'>{{user.addjifen-user.jianjifen}}</text> -->
+  </view>
+</view>
   </view>
 </view>
 </form>

@@ -138,11 +138,12 @@
   position: relative;
 }
 button{
-  width: 321rpx;
-  line-height: 59rpx;
-  background-color: #ADB183;
+  width: 650rpx;
+  height: 67rpx;
   color: #fff;
+  background-color: #ADB183;
+  line-height: 67rpx;
   font-size: 30rpx;
-  margin-top: 74rpx;
-  margin-bottom: 107rpx;
+  margin-top: 22rpx;
+  
 }

@@ -8,7 +8,6 @@
     <image class='shareimg' mode='widthFix' src='/imgs/share.png'></image>
     <text class='stext'>分享</text>
   </view>
-
 </view>
 <block wx:for="{{details}}" wx:key="">
   <view class='text' wx:if="{{item.text}}">
@@ -16,3 +15,4 @@
   </view>
   <image wx:if="{{item.image}}" mode='widthFix' class='img' src='{{item.image}}'></image>
 </block>
+<view bindtap='fanhui' class='back'>返回首页</view>

@@ -1,6 +1,6 @@
 /* pages/invoice/address/address.wxss */
 .list {
-  padding: 30rpx 23rpx;
+  padding: 30rpx 23rpx 0 23rpx;
   border-bottom: 1px solid #f1f1f1;
 }
 .quan {
@@ -15,13 +15,21 @@
   line-height: 65rpx;
   margin-right: 10rpx;
 }
-.name, .mail {
+.name{
   display: block;
   font-size: 26rpx;
   margin-top: 15rpx;
   color: #202020;
   margin-right: 20rpx;
   width: 80%;
+}
+.mail {
+  display: block;
+  font-size: 26rpx;
+  margin-top: -30rpx;
+  color: #202020;
+  margin-right: 20rpx;
+  width:160rpx;
 }
 .check {
   font-size: 26rpx;
@@ -54,11 +62,10 @@
   color: #575757;
 }
 .bianji{
-  width: 40rpx;
-  float: right;
-  margin-top: -80rpx;
-  margin-right: 20rpx;
-
+  width: 25rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+  margin-left: 25rpx;
 }
 .moren{
   font-size: 22rpx;
@@ -72,4 +79,16 @@
   position: absolute;
   top: 45rpx;
   left: 140rpx;
+}
+.change{
+  border-top:1rpx solid #ccc; 
+  height: 40rpx;
+  margin-top: 20rpx;
+  padding: 20rpx 0;
+  font-size: 26rpx;
+  vertical-align: middle;
+}
+radio{
+transform:scale(0.7);
+vertical-align: middle;
 }

@@ -1,27 +1,28 @@
 <!--pages/invoice/invoice.wxml-->
 <form bindsubmit='submit'>
-  <view class='clearfix box name'>
+  <view class='box name'>
     <text>姓名：</text>
-    <input placeholder='请填写姓名' name="name"></input>
+    <input placeholder='请填写姓名' name="name" value='{{addr.userName}}'></input>
   </view>
   <block>
-    <view class='clearfix box'>
+    <view class='box'>
       <text>电话：</text>
-      <input name="phone" type='number' placeholder='请填写电话'></input>
+      <input name="phone" type='number' placeholder='请填写电话' value='{{addr.telNumber}}'></input>
     </view>
-    <view class='clearfix box'>
+    <view class='box'>
       <text>地址：</text>
-      <picker class='fl' name="addr" mode="region" value='{{currentCity}}'>{{currentCity}}</picker>
+      <picker name="addr" mode="region" value='{{currentCity}}'>{{currentCity}}</picker>
       <!-- <input placeholder='请填写地址'></input> -->
     </view>
-    <view class='clearfix box'>
-      <text class='fl'>详细地址：</text>
-      <textarea class='fl' name="moreAddr" value='{{moreAddr}}' placeholder='请填写详细地址信息'></textarea>
+    <view class='xiangxi'>
+      <text>详细地址：</text>
+      <textarea name="moreAddr" value='{{moreAddr}}' placeholder='请填写详细地址信息'  value='{{addr.detailInfo}}'></textarea>
     </view>
-    <view class='clearfix list box'>
+    <!-- <view class='clearfix list box'>
       <text style='margin-top:4rpx;' class='name fl'>设为默认地址：</text>
       <switch class='fr' bindchange="switch1Change" name="default" color="#969A6D" />
-    </view>
+    </view> -->
   </block>
-  <button form-type="submit">提交</button>
+  <button bindtap='address' class='getAdd'>一键获取收货地址</button>
+  <button class='btn' form-type="submit">保存</button>
 </form>

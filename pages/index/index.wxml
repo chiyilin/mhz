@@ -1,42 +1,26 @@
 <!--pages/index/index.wxml-->
 <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{apiData.banner}}" wx:key="">
-    <swiper-item>
+    <swiper-item bindtap="banner" data-index="{{index}}">
       <image mode='aspectFill' src="{{filepath}}{{item.url}}" class="slide-image" />
     </swiper-item>
   </block>
 </swiper>
 <!--导航-->
 <view class='nav'>
-  <navigator url="/pages/article/list/list" hover-class="none">
-    <view class='navView'>
-      <image class='navImg' mode='widthFix' src='/imgs/xwgg.jpg'></image>
-      <text class='navText'>新闻公告</text>
-    </view>
-  </navigator>
-  <navigator url="HotCourses/HotCourses?category_id=0" hover-class="none">
-    <view class='navView'>
-      <image class='navImg' mode='widthFix' src='/imgs/rmkc.jpg'></image>
-      <text class='navText'>热门课程</text>
-    </view>
-  </navigator>
-  <navigator url="examination/examination?state=1" hover-class="none">
-    <view class='navView'>
-      <image class='navImg' mode='widthFix' src='/imgs/bmbk.jpg'></image>
-      <text class='navText'>报名报考</text>
-    </view>
-  </navigator>
-  <navigator url="../mine/MySubject/MySubject?title=navigate" hover-class="none">
-    <view class='navView'>
-      <image class='navImg' mode='widthFix' src='/imgs/wdkc.jpg'></image>
-      <text class='navText'>我的课程</text>
-    </view>
-  </navigator>
+  <block wx:for="{{apiData['navInfo']}}">
+    <navigator url="{{item.ext_path}}" hover-class="none">
+      <view class='navView'>
+        <image class='navImg' mode='widthFix' src='{{filepath}}{{item.cover_src}}'></image>
+        <text class='navText'>{{item.nav_title}}</text>
+      </view>
+    </navigator>
+  </block>
 </view>
 <!-- 报考/报名图片按钮 -->
 <view class="baokao">
-  <image src='/imgs/baokao1.jpg' bindtap='navigate_sign' data-index='0'></image>
-  <image class='img2' src='/imgs/baokao2.jpg' bindtap='navigate_sign' data-index='1'></image>
+  <image src='{{filepath}}{{apiData.BaokaoImage.baoming_image}}' bindtap='navigate_sign' data-index='0'></image>
+  <image class='img2' src='{{filepath}}{{apiData.BaokaoImage.baokao_image}}' bindtap='navigate_sign' data-index='1'></image>
 </view>
 
 <!-- 推荐课程 -->
@@ -51,7 +35,7 @@
     <view class='hui clearfix'>
       <text class='name'>{{item.product_name}}</text>
       <text class='chu fl'>课程时长：{{item.product_times}}</text>
-      <text class='fr price'>￥{{item.product_money}}</text>
+      <text class='fr price' wx:if="{{apiData.config.show_money==1}}">￥{{item.product_money}}</text>
     </view>
   </view>
 </view>
@@ -61,11 +45,11 @@
   <text>热门课程</text>
 </view>
 <view class='rmView' wx:for="{{apiData.popularCourses}}" bindtap='coursesDetails' data-id='{{item.product_id}}'>
-  <image class='w100' src='{{filepath}}{{item.product_cover}}' mode='widthFix'></image>
+  <image class='w100' src='{{filepath}}{{item.product_cover}}' mode='aspectFill'></image>
   <view class='mengban'>
     <text class='z1'>{{item.product_name}}</text>
     <text class='z2'>课程时长：{{item.product_times}}</text>
-    <text class='y1'>￥{{item.product_money}}</text>
+    <text class='y1' wx:if="{{apiData.config.show_money==1}}">￥{{item.product_money}}</text>
   </view>
 </view>
 <!--最新课程-->
@@ -79,9 +63,10 @@
   <text class='tjtitle'>{{item.product_name}}</text>
   <text class='tjcont'>{{item.product_introduce}}</text>
   <text class='time date'>课程时长：{{item.product_times}}</text>
-  <text class='price red fr'>￥{{item.product_money}}</text>
+  <text class='price red fr' wx:if="{{apiData.config.show_money==1}}">￥{{item.product_money}}</text>
 </view>
 <!-- 客服悬窗 -->
-<button open-type="contact">
-  <image hover-class='other-button-hover' mode='widthFix' src='/imgs/kefu.png'></image>
-</button>
+<view class='kefu'>
+  <button hover-class='other-button-hover' open-type="contact"></button>
+  <image mode='widthFix' src='/imgs/kefu.png'></image>
+</view>

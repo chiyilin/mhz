@@ -1,13 +1,10 @@
 /* pages/program/buy/buy.wxss */
-
 video {
   width: 750rpx;
 }
-
 .bofang {
   width: 18rpx;
 }
-
 .shikan {
   position: absolute;
   top: 348rpx;
@@ -31,9 +28,7 @@ video {
   float: left;
   margin: 10rpx;
 }
-
 .share {
-  border-bottom: #f3f3f3 solid 9rpx;
   color: #727171;
   font-size: 26rpx;
   padding: 0 40rpx;
@@ -42,8 +37,9 @@ video {
 
 .cllo {
   position: relative;
+  overflow: hidden;
+  height: 50rpx;
 }
-
 .cllo text {
   margin-right: 20rpx;
   vertical-align: middle;
@@ -62,6 +58,7 @@ video {
   line-height: 75rpx;
   background-color: white;
   border-bottom: #dcdcdc solid 1px;
+  border-top: #f3f3f3 solid 9rpx;
 }
 
 .swiper-tab-list {
@@ -91,7 +88,7 @@ video {
 }
 
 .TuiJian {
-  padding: 23rpx 59rpx 23rpx 58rpx;
+  padding: 13rpx 45rpx 7rpx 45rpx;
   background-color: #fff;
   position: relative;
 }
@@ -111,7 +108,7 @@ video {
 .isplay {
   width: 30rpx;
   position: absolute;
-  right: 80rpx;
+  right: 30rpx;
   top: 60rpx;
 }
 
@@ -119,6 +116,7 @@ video {
   width: 136rpx;
   float: left;
   margin-right: 30rpx;
+  border-radius: 2px;
 }
 
 .price {
@@ -130,11 +128,11 @@ video {
 .jianjie {
   width: 750rpx;
   display: block;
-  font-size: 24rpx;
-  color: #a6a6a6;
+  font-size: 26rpx;
+  color: #8c8c8c;
   line-height: 38rpx;
   text-indent: 2em;
-  padding-bottom: 20rpx;
+  padding: 20rpx 0;
 }
 
 .dy {
@@ -155,9 +153,11 @@ video {
 
 .time {
   display: block;
-  font-size: 24rpx;
+  font-size: 20rpx;
   color: #a6a6a6;
   line-height: 38rpx;
+  margin-top: 20rpx;
+  
 }
 
 .attention {
@@ -184,10 +184,12 @@ video {
 .attention .cont {
   display: block;
   padding-left: 24rpx;
-  margin-top: 5rpx;
+  margin-top: 20rpx;
   color: #8c8c8c;
 }
-
+.minW{
+  max-width: 400rpx;
+}
 .more {
   margin-top: 5rpx;
 }
@@ -341,15 +343,15 @@ video {
 }
 
 .fen {
-  width: 30rpx;
+  width: 100rpx;
   display: inline-block;
-  height: 30rpx;
+  height:40rpx;
   text-align: left;
   background-color: rgba(0, 0, 0, 0);
   position: absolute;
   top: 10rpx;
   padding: 0;
-  right: 80rpx;
+  right: 10rpx;
 }
 
 button::after {
@@ -377,4 +379,18 @@ button::after {
   content: ' ';
   display: block;
   transform: scaley(0.5);
+}
+.back{
+  width: 60rpx;
+  padding: 5rpx 10rpx; 
+  font-size: 26rpx;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  right:0rpx;
+  bottom: 200rpx;
+  color: #fff;
+  text-align: center;
+  height: 70rpx;
+  line-height: 35rpx;
+  border-radius: 2px;
 }

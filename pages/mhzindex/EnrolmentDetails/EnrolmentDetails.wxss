@@ -1,29 +1,23 @@
 /* pages/mhzindex/EnrolmentDetails/EnrolmentDetails.wxss */
 .top{
-  padding:80rpx 100rpx;
+  font-size: 26rpx;
+  color: #605F5F;
+  line-height: 52rpx;
 }
 .title{
   font-size: 28rpx;
   color: #605F5F;
   display: block;
+  padding: 20rpx;
+  border-bottom: 9rpx solid #f4f4f4;
   margin-bottom: 20rpx;
 }
 .content{
   font-size: 26rpx;
   color: #605F5F;
   line-height: 52rpx;
-  margin-top: -10rpx;
-  display: inline-block;
-  height: 260rpx;
-  overflow: hidden;
-}
-.content1{
-  font-size: 26rpx;
-  color: #605F5F;
-  line-height: 52rpx;
-  margin-top: -10rpx;
-  display: inline-block;
-  overflow: hidden;
+  padding: 0 20rpx;
+  display: block;
 }
 .down{
   width: 32rpx;
@@ -32,7 +26,9 @@
   margin-top: 30rpx;
 }
 .bottom{
-  padding: 0 100rpx;
+  padding: 10rpx 30rpx;
+  margin-bottom:120rpx; 
+  border-top: 9rpx solid #f4f4f4;
 }
 .red{
   color: #F52020;
@@ -59,12 +55,4 @@
   color: #605F5F;
   margin-bottom: 20rpx;
   display: block;
-}
-.footer{
-  font-size: 26rpx;
-  color: #605F5F;
-  margin-bottom: 20rpx;
-  display: block;
-  margin-top: 80rpx;
-  text-align: right;
 }

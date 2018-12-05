@@ -2,12 +2,33 @@
 <block wx:for="{{data}}" wx:key="">
   <view class='clearfix list'>
     <text class='name'>{{item.address_name}}</text>
-    <text class='moren' wx:if="{{item.address_default==2}}">默认</text>
-    <text class='mail'>{{item.address_phone}}</text>
+    <text class='mail fr'>{{item.address_phone}}</text>
     <text class='address name'>{{item.sheng}}{{item.shi}}{{item.qu}}{{item.more_addr}}</text>
     <!-- <image class='shu' mode='widthFix' src='/imgs/shu.jpg'></image> -->
     <!-- <text class='fr check' bindtap='edit' data-id='{{item.address_id}}'>编辑</text> -->
-    <image class='bianji' mode='widthFix' bindtap='edit' data-id='{{item.address_id}}' src='/imgs/bianji.png'></image>
+    <view class="change clearfix">
+      <radio-group class="radio-group fl" bindchange="radioChange">
+        <label class="radio">
+          <radio value="{{item.name}}" checked="{{item.checked}}" color="red" />默认地址
+        </label>
+      </radio-group>
+      <view style="margin-right:20rpx;" class='fr'>
+        <label bindtap='edit' data-id='{{item.address_id}}'>
+          <image class='bianji' mode='widthFix' src='/imgs/bianji.png'></image>
+          <text>编辑</text>
+        </label>
+        <label bindtap='del' data-id='{{item.address_id}}'>
+          <image class='bianji' mode='widthFix' src='/imgs/del.png'></image>
+          <text>删除</text>
+        </label>
+
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:if="{{data.length==0}}">
+  <view class='none'>
+    <text>暂无记录</text>
   </view>
 </block>
 <view class='new'>

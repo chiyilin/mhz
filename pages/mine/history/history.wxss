@@ -1,8 +1,10 @@
 /* pages/mine/history/history.wxss */
 .vid{
-  padding: 47rpx 49rpx 47rpx 56rpx;
+  padding: 0 30rpx;
   position: relative;
   background-color: #fff;
+  height: 206rpx;
+  overflow: hidden;
 }
 .vid::after{
   position: absolute;
@@ -16,9 +18,12 @@ display: block;
 transform: scaley(0.5);
 }
 .hui{
-  width: 199rpx;
-  height: 147rpx;
-  margin-right: 40rpx;
+  width: 280rpx;
+  height: 160rpx;
+  float: left;
+  margin-right: 30rpx;
+  margin-top: 20rpx;
+  border-radius: 3px;
 }
 text{
   display: block;
@@ -26,14 +31,12 @@ text{
 .name{
   font-size: 28rpx;
   color: #605F5F;
-  line-height: 45rpx;
+  margin-top: 20rpx;
 }
 .date{
-  font-size: 24rpx;
-  color: #AAAAAA;
-  line-height: 50rpx;
-}
-.you{
-  width: 15rpx;
-  margin-top: -30rpx;
+  font-size: 20rpx;
+  color: #9e9e9e;
+  position: absolute;
+  left: 340rpx;
+  bottom:26rpx;
 }

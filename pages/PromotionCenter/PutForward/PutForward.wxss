@@ -4,11 +4,12 @@ page{
 }
 .tixian{
   position:fixed;
-  top: 150rpx;
+  top: 10rpx;
+  width: 750rpx;
 }
 .title{
-  font-size: 28rpx;
-  margin-top: 96rpx;
+  font-size: 20rpx;
+  margin-top: 36rpx;
   margin-left: 55rpx;
   display: block;
   color: #605E5F;
@@ -42,7 +43,7 @@ input{
   left: 66rpx;
 }
 .btn{
-  width: 280rpx;
+  width: 650rpx;
   height: 67rpx;
   line-height: 67rpx;
   color: #FEFEFE;

@@ -102,3 +102,9 @@ opacity: 0.5;
 padding: 3rpx 6rpx;
 border-radius: 8rpx;
 }
+.none{
+  text-align: center;
+  color:#ccc;
+  font-size:28rpx;
+  margin-top: 45%;
+}

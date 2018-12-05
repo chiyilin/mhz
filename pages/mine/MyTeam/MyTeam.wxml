@@ -1,5 +1,5 @@
 <!--pages/mine/MyTeam/MyTeam.wxml-->
-<view class='top'>
+<!-- <view class='top'>
   <view class='tuijian'>
     <image mode='widthFix' src='/imgs/teamimg1.jpg'></image>
     <text>我的推荐人：{{fidUserInfo.nick_name}}</text>
@@ -8,23 +8,28 @@
     <image mode='widthFix' src='/imgs/phone.jpg'></image>
     <text>手机号：{{fidUserInfo.user_mobile}}</text>
   </view>
-</view>
+</view> -->
 <view class='bottom'>
   <block wx:for="{{myTeam}}">
     <view class='list'>
       <text class='num'>{{index+1}}</text>
       <view class='tuijian'>
-        <image mode='widthFix' src='/imgs/name.jpg'></image>
+        <image style="width:47rpx" mode='widthFix' src='/imgs/name.jpg'></image>
         <text>姓名：{{item.nick_name}}</text>
       </view>
       <view class='mt'>
-        <image mode='widthFix' src='/imgs/phone.jpg'></image>
+        <image style='width:43rpx;' mode='widthFix' src='/imgs/phone.jpg'></image>
         <text>手机号：{{item.user_mobile}}</text>
       </view>
       <view class='mt'>
-        <image mode='widthFix' src='/imgs/dhmximg3.jpg'></image>
+        <image style="width:36rpx" mode='widthFix' src='/imgs/dhmximg3.jpg'></image>
         <text>加入时间：{{item.user_add_time}}</text>
       </view>
     </view>
   </block>
+  <block wx:if="{{myTeam.length==0}}">
+  <view class='none'>
+    <text>暂无记录</text>
+  </view>
+</block>
 </view>

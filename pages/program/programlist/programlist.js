@@ -11,7 +11,8 @@ var request = function(that) {
   }, function(data) {
     console.log(data)
     that.setData({
-      data: data,
+      data: data.data,
+      config:data.config,
       filepath: App.globalData.filepath,
     });
   });
@@ -42,7 +43,8 @@ Page({
       category_id: category_id
     }, function(data) {
       that.setData({
-        data: data,
+        data: data.data,
+        config: data.config,
         filepath: getApp().globalData.filepath,
         cateid: category_id,
         xuanzhong: 1,

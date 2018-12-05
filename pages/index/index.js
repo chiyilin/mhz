@@ -38,12 +38,25 @@ Page({
     var that = this;
     common.PostMain('index/index', {}, function(data) {
       that.setData({
-        apiData: data
+        apiData: data,
       });
       wx.hideNavigationBarLoading();
     });
   },
+  banner: function(e) {
+    var that = this;
+    var path = that.data.apiData.banner[e.currentTarget.dataset.index].ext_path;
+    if (path == '/pages/mine/mine' || path == '/pages/index/index' || path == '/pages/program/program') {
+      wx.switchTab({
+        url: path,
+      })
+    } else {
+      wx.navigateTo({
+        url: path,
+      })
+    }
 
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

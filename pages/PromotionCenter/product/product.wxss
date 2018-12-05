@@ -7,6 +7,7 @@
 }
 .address{
   display: block;
+  line-height: 40rpx;
 }
 .bottom{
   padding-left: 10rpx;
@@ -18,11 +19,14 @@
   margin-top: -30rpx;
 }
 .center{
-  border-bottom: #DEDEDE 1px solid;
+  border-bottom: #f4f4f4 9rpx solid;
 }
 .banner{
   width: 100%;
-  height: 371rpx;
+  height: 480rpx;
+}
+.name{
+  font-weight: bold;
 }
 .name,.color{
   font-size: 28rpx;
@@ -40,6 +44,7 @@
 .title{
   font-size: 28rpx;
   display: block;
+  font-weight: bold;
 }
 .content{
   font-size: 24rpx;
@@ -88,8 +93,8 @@
     right: 90rpx;
 }
 .stepper { 
-  width: 80px; 
-  height: 26px; 
+  width: 102px; 
+  height: 30px; 
   /*给主容器设一个边框*/
   border: 1px solid #ccc; 
   border-radius: 3px; 
@@ -98,14 +103,14 @@
 .rulecontent{
   background-color: #fff;
   width: 621rpx;
-  height: 862rpx;
+  height: 900rpx;
   margin-left: auto;
   margin-right: auto;
   margin-top: 92rpx;
 }
 .ruleimg{
   width: 453rpx;
-  height: 296rpx;
+  height: 326rpx;
   margin-left: 84rpx;
   margin-top: 61rpx;
   margin-bottom: 50rpx;
@@ -113,8 +118,8 @@
   
 /*加号和减号*/
 .stepper text { 
-  width: 19px; 
-  line-height: 26px; 
+  width: 25px; 
+  line-height: 30px; 
   text-align: center; 
   float: left; 
   background-color: #F0F0F0;
@@ -123,13 +128,12 @@
   
 /*数值*/
 .stepper input { 
-  width: 40px; 
-  height: 26px; 
+  width: 50px; 
+  height: 30px; 
   float: left; 
   margin: 0 auto; 
   text-align: center; 
   font-size: 12px; 
-  background-color: #fff;
   /*给中间的input设置左右边框即可*/
   border-left: 1px solid #ccc; 
   border-right: 1px solid #ccc; 
@@ -147,7 +151,7 @@
 .ruletext{
   font-size: 28rpx;
   line-height: 100rpx;
-  padding: 0 0 0 50rpx;
+  padding: 0 0 0 70rpx;
   color: #605F5F;
 }
 .rulecolor{
@@ -171,4 +175,5 @@ button{
   line-height: 75rpx;
   color: #fff;
   font-size: 30rpx;
+  margin-bottom: 30rpx;
   }

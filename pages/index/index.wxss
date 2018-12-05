@@ -41,7 +41,7 @@ swiper image {
 
 .title {
   padding: 20rpx 36rpx;
-  border-top:  9rpx solid #f2f2f2;
+  border-top: 9rpx solid #f2f2f2;
 }
 
 .lv {
@@ -68,10 +68,10 @@ swiper image {
 
 .w100 {
   width: 710rpx;
-  /* height: 300rpx; */
+  height: 400rpx;
   margin: 0 auto;
   display: block;
-  border-radius: 15rpx 15rpx  0 0;
+  border-radius: 15rpx 15rpx 0 0;
 }
 
 .mengban {
@@ -100,7 +100,6 @@ swiper image {
 .z2 {
   bottom: 12rpx;
   left: 19rpx;
-  
 }
 
 .y1 {
@@ -135,19 +134,21 @@ swiper image {
 }
 
 .price {
-font-size: 20rpx;
-color: #fe0000;
-margin-top: -12rpx;
+  font-size: 20rpx;
+  color: #fe0000;
+  margin-top: -12rpx;
 }
-.red{
-position: absolute;
-bottom: 22rpx;
-right: 59rpx;
+
+.red {
+  position: absolute;
+  bottom: 22rpx;
+  right: 59rpx;
 }
-.date{
-position: absolute;
-bottom: 22rpx;
-left:400rpx;
+
+.date {
+  position: absolute;
+  bottom: 22rpx;
+  left: 400rpx;
 }
 
 .TuiJian {
@@ -170,8 +171,8 @@ left:400rpx;
   display: block;
   height: 38rpx;
   overflow: hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .tjcont {
@@ -181,7 +182,7 @@ left:400rpx;
   overflow: hidden;
   display: block;
   margin-top: 10rpx;
-  text-overflow:ellipsis;
+  text-overflow: ellipsis;
 }
 
 .navigator-hover {
@@ -193,12 +194,12 @@ left:400rpx;
   margin-top: 18rpx;
   margin-left: 25rpx;
   width: 342rpx;
-  border-radius: 15rpx; 
+  border-radius: 15rpx;
   overflow: hidden;
 }
 
 .kuaitu {
-    width: 340rpx;
+  width: 340rpx;
   height: 196rpx;
 }
 
@@ -207,34 +208,25 @@ left:400rpx;
   font-size: 20rpx;
   margin-right: 20rpx;
   margin-top: -12rpx;
+  color: #8d8d8d;
 }
 
 .hui {
   /* background-color: rgba(0, 0, 0, 0.3); */
-
   width: 320rpx;
   height: 80rpx;
   line-height: 60rpx;
   padding: 0 10rpx;
 }
 
-
 button {
   width: 70rpx;
   height: 70rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.4);
-  position: fixed;
-  right: 30rpx;
-  bottom: 200rpx;
-}
-
-button image {
-  width: 55rpx;
-  margin-left: -19rpx;
-  border-radius: 50%;
-  display: block;
-  margin-top: 8rpx;
 }
 
 .name {
@@ -253,4 +245,20 @@ button::after {
 .rmView {
   margin-bottom: 20rpx;
   position: relative;
+}
+
+.kefu {
+  position: fixed;
+  right: 30rpx;
+  bottom: 200rpx;
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.kefu image {
+  width: 55rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: 9rpx;
+  bottom:10rpx;
 }

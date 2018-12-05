@@ -40,9 +40,9 @@ input{
   padding: 0;
 }
 button{
-  width: 266rpx;
-  height: 56rpx;
-  line-height: 56rpx;
+  width: 650rpx;
+  height: 67rpx;
+  line-height: 67rpx;
   color: #fff;
   font-size: 30rpx;
   background-color: #ADB183;

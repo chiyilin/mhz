@@ -1,54 +1,71 @@
 /* pages/invoice/invoice.wxss */
-
 page {
   background-color: #f7f7f7;
 }
 
-.clearfix {
-  padding: 20rpx;
+.box{
+  height: 80rpx;
   background-color: #fff;
+  position: relative;
+   border-top: 1px solid #eee;
 }
-
+.xiangxi{
+  height: 270rpx;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #eee;
+}
 text {
   font-size: 30rpx;
   color: #5f5f5f;
-  float: left;
-  margin-top: 5rpx;
   vertical-align: middle;
+  position: absolute;
+  top: 20rpx;
+  left: 40rpx;
 }
 
 input {
   font-size: 28rpx;
-  float: left;
-  margin-left: 26rpx;
+  position: absolute;
+  left: 166rpx;
+  top: 15rpx;
 }
 
 picker {
   font-size: 28rpx;
-  margin-top: 5rpx;
-  margin-left: 22rpx;
+  position: absolute;
+  left: 166rpx;
+  top: 20rpx;
 }
-button {
+.btn{
   background-color: #969A6D;
   color: #fff;
-  width: 466rpx;
+  width: 750rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-top: 20rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-radius: 0;
+}
+.getAdd{
+  background-color: #969A6D;
+  color: #fff;
+  width: 650rpx;
+  height: 67rpx;
+  line-height: 67rpx;
   margin-top: 200rpx;
 }
-
 textarea {
   width: 70%;
   height: 200rpx;
-  margin-top: 8rpx;
   font-size: 28rpx;
-}
+  position: absolute;
+  left: 180rpx;
+  top: 25rpx;
 
-.box {
-  border-top: 1px solid #eee;
-}
-
-.box-bottom {
-  border-bottom: 1px solid #eee;
-  margin-top: 20rpx;
 }
 .name{
   margin-top:20rpx;

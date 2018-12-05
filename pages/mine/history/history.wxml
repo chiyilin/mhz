@@ -3,5 +3,10 @@
   <image class='fl hui' mode='widthFix' src='{{filepath}}{{item.product_cover}}'></image>
   <text class='name'>{{item.product_name}}</text>
   <text class='date'>{{item.product_time_str}}</text>
-  <image class='fr you' mode='widthFix' src='/imgs/you.jpg'></image>
+  <!-- <image class='fr you' mode='widthFix' src='/imgs/you.png'></image> -->
 </view>
+<block wx:if="{{data.length==0}}">
+  <view class='none'>
+    <text>暂无记录</text>
+  </view>
+</block>

@@ -27,7 +27,8 @@ page{
   margin-bottom: 22rpx;
   padding-top: 12rpx;
   background-color: #fff;
-  box-shadow: 0rpx 0rpx 5rpx #ccc
+  box-shadow: 0rpx 0rpx 5rpx #ccc;
+  margin-top: 20rpx;
 }
 .jifen{
   margin-top: -30rpx;

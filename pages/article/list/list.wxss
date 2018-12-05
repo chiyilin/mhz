@@ -21,7 +21,7 @@ border-bottom: 1px solid #DCDCDC;
 }
 .navbar .item.active{ 
  color: #727171; 
- border-bottom: 3rpx solid #727171;
+ border-bottom: 2px solid #727171;
 }
 .list{
   padding:20rpx 47rpx 35rpx 47rpx;

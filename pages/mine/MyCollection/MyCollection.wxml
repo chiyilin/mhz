@@ -3,8 +3,13 @@
   <view class='clo clearfix' bindtap='details' data-id='{{item.product_id}}'>
     <image class='fl cloImg' src='{{filepath}}{{item.product_cover}}'></image>
     <text class='cloText'>{{item.product_name}}</text>
-    <image class='dingyue' mode='widthFix' src='/imgs/dingyue.jpg'></image>
+    <!-- <image class='dingyue' mode='widthFix' src='/imgs/dingyue.jpg'></image> -->
     <text class='dyText'>订阅 : {{item.product_subscribe}}</text>
     <text class='xing'>取消收藏</text>
+  </view>
+</block>
+<block wx:if="{{userinfo.length==0}}">
+  <view class='none'>
+    <text>暂无记录</text>
   </view>
 </block>

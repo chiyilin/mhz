@@ -2,7 +2,7 @@
 <block wx:if="{{!flag}}">
   <view class="section tc">
     <video src="{{product.product_video_src}}" bindplay="bindplay" bindtimeupdate='bindtimeupdate' wx:if="{{!isEnd}}"></video>
-    <video wx:else src="{{product.product_video_src}}" duration="{{experience_time}}"></video>
+    <video wx:else src="{{product.product_video_src}}"></video>
     <!-- <view class='shikan'>
       <image class='bofang' mode='widthFix' src='/imgs/bofang.png'></image>
       <text class='sktext'>试看</text>
@@ -10,7 +10,7 @@
   </view>
   <view class='share clearfix'>
     <view class='fl'>
-      <text style='font-size:28rpx;font-weight:bold; display:block'>{{product.product_name}}</text>
+      <text class='minW' style='font-size:28rpx;font-weight:bold; display:block'>{{product.product_name}}</text>
       <image wx:if="{{userdingy==0}}" bindtap="dingy" data-productid="{{product.product_id}}" data-userdingy='0' class='dy fl' mode='widthFix' src='/imgs/dy.jpg'></image>
       <image wx:else class='dy fl' bindtap="dingy" data-productid="{{product.product_id}}" data-userdingy='1' mode='widthFix' src='/imgs/dingyue.jpg'></image>
       <text class='price fl'>{{dingynum}}人已订阅</text>
@@ -19,7 +19,8 @@
       <!-- <label bindtap="share"></label> -->
       <image wx:if="{{usershouc==0}}" bindtap="shouc" data-productid="{{product.product_id}}" data-usershouc='0' mode='widthFix' src='/imgs/xing.png'></image>
       <image wx:else mode='widthFix' bindtap="shouc" data-productid="{{product.product_id}}" data-usershouc='1' src='/imgs/xing1.png'></image>
-      <text>收藏</text>
+      <text wx:if="{{usershouc==0}}" bindtap="shouc" data-productid="{{product.product_id}}" data-usershouc='0'>未收藏</text>
+      <text wx:else bindtap="shouc" data-productid="{{product.product_id}}" data-usershouc='1'>已收藏</text>
       <button class='fen' open-type='share'>
       </button>
       <image mode='widthFix' src='/imgs/share.png'></image>
@@ -47,18 +48,23 @@
         <!-- style="border:1rpx #ADB183 solid" -->
         <image wx:if="{{item.product_cover}}" class='TJimg' mode='widthFix' src='{{filepath}}{{item.product_cover}}'></image>
         <image wx:else class='TJimg' mode='widthFix' src='/imgs/img1.jpg'></image>
-        <text class='price'>课程标题：{{item.product_name}}</text>
+        <text class='price'>{{item.product_name}}</text>
         <text class='time'>课程时长：{{item.product_times}}</text>
         <image class='isplay' mode='widthFix' src='/imgs/isplay.png'></image>
       </view>
       <view wx:else bindtap="looktaoc" data-id='{{item.product_id}}' class='TuiJian clearfix'>
         <image wx:if="{{item.product_cover}}" class='TJimg' mode='widthFix' src='{{filepath}}{{item.product_cover}}'></image>
         <image wx:else class='TJimg' mode='widthFix' src='/imgs/img1.jpg'></image>
-        <text class='price'>课程标题：{{item.product_name}}</text>
+        <text class='price'>{{item.product_name}}</text>
         <text class='time'>课程时长：{{item.product_times}}</text>
       </view>
     </block>
+    <block wx:for="{{taocInfo.taoc_content}}">
+      <text class='jianjie' wx:if="{{item.text}}">{{item.text}}</text>
+      <image style='width:750rpx' wx:if="{{item.image}}" src='{{item.image}}' mode='widthFix'></image>
+    </block>
   </view>
+
   <view class='attention'>
     <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
     <text>讲师信息</text>
@@ -97,31 +103,14 @@
       <text class='name'></text>
     </view>
   </view>
-  <view class='btn clearfix' bindtap='goumai' data-current="{{currentTab}}" data-id="{{product.product_id}}" data-taocid="{{product.taoc_id}}">
-    <text class='fl'>￥{{taocanMoney?taocanMoney:product.product_money}}</text>
-    <text class='fr' style='text-align:right;margin-top:0;'>{{currentTab==1?'套餐':'立即'}}购买</text>
+  <view class='btn clearfix' bindtap='goumai' data-current="{{currentTab}}" data-id="{{product.product_id}}" data-taocid="{{product.taoc_id}}" wx:if="{{!isPay&&currentTab==0}}">
+    <text class='fl' wx:if="{{show_money==1}}">￥{{taocanMoney?taocanMoney:product.product_money}}</text>
+    <text class='fr' style='text-align:right;margin-top:0;'>立即购买</text>
   </view>
+  <view class='btn clearfix' bindtap='goumai' data-current="{{currentTab}}" data-id="{{product.product_id}}" data-taocid="{{product.taoc_id}}" wx:if="{{!taocisPay&&currentTab==1}}">
+    <text class='fl' wx:if="{{show_money==1}}">￥{{taocInfo.taoc_money?taocInfo.taoc_money:product.product_money}}</text>
+    <text class='fr' style='text-align:right;margin-top:0;'>套餐购买</text>
+  </view>
+  <!-- <view class='btn'><text>立即播放</text></view> -->
 </block>
-<view class="zhezao" wx:if="{{shareImage&&flag}}">
-  <view class="t_w">
-    <!--右上角图标开始-->
-    <view class="t_image" bindtap="conceal">
-      <image class="t_image1" src="/imgs/close1.png"></image>
-    </view>
-    <!--右上角图标结束-->
-    <!--弹出框开始-->
-    <view class="tanchu_view">
-      <view>
-        <image mode='widthFix' src='{{shareImage}}' bindlongpress='saveShareImage'></image>
-        <!--确定开始-->
-        <view class="txtsure">
-          <view class="txtsurebg" bindtap="conceal">
-            <text class="txtsurename">长按图片，保存至手机相册</text>
-          </view>
-        </view>
-        <!--确定结束-->
-      </view>
-    </view>
-    <!--弹出框结束-->
-  </view>
-</view>
+<view bindtap='fanhui' class='back'>返回首页</view>

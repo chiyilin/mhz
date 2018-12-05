@@ -1,34 +1,55 @@
 /* pages/mine/Registration/Registration.wxss */
 .baoming{
   margin: 0 25rpx;
-  padding: 43rpx 70rpx 37rpx 53rpx;
+  padding: 0 20rpx;
   border-bottom: 1px solid #E3E3E3;
   color: #605F5F;
+  height: 180rpx;
+  overflow: hidden;
+  position: relative;
 }
 .title{
   font-size: 28rpx;
   display: inline-block;
   width: 400rpx;
   overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  margin-top: 30rpx;
 }
 .time{
   font-size: 24rpx;
-  float: right;
   margin-top: 5rpx;
   color: #AAAAAA;
+  display: block;
+  position: absolute;
+  left: 20rpx;
+  bottom: 30rpx;
 }
 .content{
   display: block;
   font-size: 24rpx;
   line-height: 50rpx;
   margin-bottom: 30rpx;
-  height: 140rpx;
+  height: 90rpx;
   overflow: hidden;
 }
 .name{
   font-size: 26rpx;
-  margin-right: 100rpx;
+  display: block;
+  position: absolute;
+  left: 20rpx;
+  bottom: 72rpx;
 }
 .phone{
   font-size: 26rpx;
+  position: absolute;
+  left: 250rpx;
+  bottom: 72rpx;
+}
+image{
+  width: 12rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 80rpx;
 }

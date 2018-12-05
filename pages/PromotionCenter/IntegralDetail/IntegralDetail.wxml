@@ -17,3 +17,8 @@
     </view>
   </view>
 </block>
+<block wx:if="{{data.length==0}}">
+  <view class='none'>
+    <text>暂无记录</text>
+  </view>
+</block>

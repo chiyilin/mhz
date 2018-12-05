@@ -122,6 +122,11 @@ Page({
       });
       wx.hideNavigationBarLoading();
     });
+    common.PostMain('user/mine',{},function(e){
+      that.setData({
+        config:e.config
+      })
+    })
   },
 
   /**

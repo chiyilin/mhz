@@ -13,42 +13,64 @@
       <text class='option' style='{{index==selectData.length&&"border:0;"}}' wx:for='{{baoming}}' wx:key='this' data-name="{{item.baokao_name}}" data-id="{{item.baokao_id}}" data-index='{{index}}' catchtap='optionTap'>{{item.baokao_name}}</text>
     </view>
   </view> -->
-  <text class='title'>{{currentTab==0?'学习课程':'报考类型'}}：</text>
-  <picker class='choose' mode="selector" range="{{selectData}}" range-key="baokao_name" bindchange="bindchange" value='{{selectIndex}}'>{{name?name:' 点击选择'}}</picker>
+  <view style='padding-bottom:90rpx' class='list'>
+    <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
+    <text class='title'>{{currentTab==0?'学习课程':'报考类型'}}：</text>
+    <picker class='choose' mode="selector" range="{{selectData}}" range-key="baokao_name" bindchange="bindchange" value='{{selectIndex}}'>{{name?name:' 点击选择'}}</picker>
+    <image mode='widthFix' class='jiantou' src='/imgs/you.png'></image>
+  </view>
+
   <block wx:if="{{selectIndex}}">
-    <view class='bottom'>
-      <text class='Btitle'>{{currentTab==0?'学习内容':'报考内容'}}：</text>
+    <view class='list'>
+      <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
+      <text class='title'>{{currentTab==0?'学习内容':'报考内容'}}：</text>
       <view class='content'>
         <block wx:for="{{baomings.baokao_xuzhi}}" wx:for-item="items">
           <image mode='widthFix' wx:if="{{items.image}}" src="{{items.image}}"></image>
           <text class='chdText' wx:if="{{items.text}}">{{items.text}}</text>
         </block>
       </view>
-      <text class='time'>注意事项：{{baomings.baokao_zysx}}</text>
-      <text class='time'>{{currentTab==0?'开课时间':'考试时间'}}：{{baomings.baokao_start_time}}
-      {{baomings.baokao_end_time}}</text>
-      <text class='time'>{{currentTab==0?'学习地点':'考试地点'}}：{{baomings.baokao_address}}</text>
-      <text class='address'>{{currentTab==0?'报名人数':'报考人数'}}：{{baomings.member_num}}</text>
-      <!-- <checkbox-group bindchange="checkboxChange">
+    </view>
+    <view class='list'>
+      <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
+      <text class='title'>注意事项：</text>
+      <text class='cText'>{{baomings.baokao_zysx}}</text>
+    </view>
+    <view class='list'>
+      <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
+      <text class='title'>{{currentTab==0?'开课时间':'考试时间'}}：</text>
+      <text class='cText'>{{baomings.baokao_start_time}}-{{baomings.baokao_end_time}}</text>
+    </view>
+    <view class='list'>
+      <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
+      <text class='title'>{{currentTab==0?'学习地点':'考试地点'}}：</text>
+      <text class='cText'>{{baomings.baokao_address}}</text>
+    </view>
+    <view class='list'>
+      <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
+      <text class='title'>{{currentTab==0?'报名人数':'报考人数'}}：</text>
+      <text class='cText'>{{baomings.member_num}}</text>
+    </view>
+
+    <!-- <checkbox-group bindchange="checkboxChange">
         <checkbox checked="true" class='fuxuan' value='123' color='#4f4f4f'>
         </checkbox>
         <text class='tiaokuan'>同意接受以下服务条款>></text>
       </checkbox-group> -->
 
-      <view class='foot'>
-        <view class='zuo'>
-          <text>费用：</text>
-          <text class='red'>￥{{baomings.baokao_money}}</text>
-        </view>
-        <view wx:if="{{user.usersmrz.smrz_state==2&&baomings.lists==null}}" bindtap='baom' data-baokaoid='{{baomings.baokao_id}}' class='you'>
-          <text>支付报名</text>
-        </view>
-        <view wx:elif="{{user.usersmrz.smrz_state!=2}}" class='you'>
-          <text>请实名认证后操作</text>
-        </view>
-        <view wx:elif="{{baomings.lists!=null}}" class='you'>
-          <text>已报名</text>
-        </view>
+    <view class='foot'>
+      <view class='zuo'>
+        <text>费用：</text>
+        <text class='red'>￥{{baomings.baokao_money}}</text>
+      </view>
+      <view wx:if="{{user.usersmrz.smrz_state==2&&baomings.lists==null}}" bindtap='baom' data-baokaoid='{{baomings.baokao_id}}' class='you'>
+        <text>支付报名</text>
+      </view>
+      <view wx:elif="{{user.usersmrz.smrz_state!=2}}" class='you'>
+        <text>请实名认证后操作</text>
+      </view>
+      <view wx:elif="{{baomings.lists!=null}}" class='you'>
+        <text>已报名</text>
       </view>
     </view>
   </block>

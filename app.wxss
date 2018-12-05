@@ -26,3 +26,9 @@ page{
   clear: both;
   content: '';
   }
+  .none{
+  text-align: center;
+  color:#ccc;
+  font-size:28rpx;
+  margin-top: 45%;
+}

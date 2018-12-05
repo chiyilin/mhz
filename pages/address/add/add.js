@@ -43,6 +43,7 @@ Page({
   submit: function(e) {
     var that = this;
     var input = e.detail.value;
+    console.log(input)
     var userInfo = wx.getStorageSync('userInfo');
     //表单验证
     if (!checkForm(input)) {
@@ -60,15 +61,6 @@ Page({
       address_default: input.default ? 2 : 1,
     };
     console.log(data)
-    // CREATE TABLE`mhz_user_address`(
-    //   `address_id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT '地址编号',
-    //   `userid` int(11) DEFAULT NULL COMMENT '用户id',
-    //   `sheng` char(20) DEFAULT NULL COMMENT '地址省',
-    //   `shi` char(20) DEFAULT NULL COMMENT '地址市',
-    //   `qu` char(20) DEFAULT NULL COMMENT '地址区',
-    //   `addxiang` text COMMENT '区级下详细地址',
-    //   PRIMARY KEY(`address_id`)
-    // ) ENGINE = MyISAM AUTO_INCREMENT = 21 DEFAULT CHARSET = utf8;
     common.PostMain('user/createAddr', data, function(e) {
       wx.showToast({
         title: '新增成功！',
@@ -148,6 +140,19 @@ Page({
         });
       },
 
+    })
+  },
+  address: function() {
+    var that = this;
+    wx.chooseAddress({
+      success: function(res) {
+        console.log(res)
+        var currentCity = [res.provinceName, res.cityName, res.countyName];
+        that.setData({
+          addr: res,
+          currentCity: currentCity
+        })
+      }
     })
   }
 })

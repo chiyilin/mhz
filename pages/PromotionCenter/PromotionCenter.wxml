@@ -5,9 +5,9 @@
   <text class='name'>{{userInfo.nick_name}}</text>
   <view class='vip'>
     <text class='VipV'>V</text>
-    <text class='VipText' wx:if="{{userInfo.fxs_level==1}}">一级代理商</text>
-    <text class='VipText' wx:elif="{{userInfo.fxs_level==2}}">二级代理商</text>
-    <text class='VipText' wx:elif="{{userInfo.fxs_level==3}}">三级代理商</text>
+    <text class='VipText' wx:if="{{userInfo.fxs_level==1}}">vip1</text>
+    <text class='VipText' wx:elif="{{userInfo.fxs_level==2}}">vip2</text>
+    <text class='VipText' wx:elif="{{userInfo.fxs_level==3}}">vip3</text>
   </view>
   <view class='money'>
     <view class='yue'>
@@ -31,7 +31,7 @@
     <image mode='widthFix' src='/imgs/dh.jpg'></image>
     <text>兑换</text>
   </view>
-  <view bindtap='team'>
+  <view style='margin-right:0' bindtap='team'>
     <image mode='widthFix' src='/imgs/tj.jpg'></image>
     <text>我的推荐</text>
   </view>
@@ -46,7 +46,7 @@
     <image mode='widthFix' src='/imgs/mx.jpg'></image>
     <text>账单明细</text>
   </view>
-  <view bindtap='jifendan'>
+  <view style='margin-right:0'  bindtap='jifendan'>
     <image mode='widthFix' src='/imgs/jfmx.jpg'></image>
     <text>积分明细</text>
   </view>

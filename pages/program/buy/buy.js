@@ -2,9 +2,12 @@
 var App = getApp();
 var common = require('../../../utils/common.js');
 /**
- * 公共的请求部分
+ * 单节公共的请求部分
  */
 var request = function(that) {
+  wx.showLoading({
+    title: '加载中',
+  });
   var param = {
     user_id: that.data.user_id
   }
@@ -22,10 +25,44 @@ var request = function(that) {
       productlistcomment: data.productlistcomment,
       usershouc: data.usershouc,
       userdingy: data.userdingy,
+      isPay: data.isPay,
+      show_money: data.show_money,
+      experience_time: data.try_see_time * 60
     });
     wx.hideLoading();
   });
 }
+/**
+ * 加载判断单节还是套餐
+ */
+var onload = (that, current = 1) => {
+  var showMode = current == 0;
+  that.setData({
+    taocanMoney: false,
+    currentTab: current,
+    isShow: showMode
+  });
+  var product_id = that.data.product_id;
+  var taoc_id = that.data.taoc_id;
+  if (current == 1) {
+    common.PostMain('product/taoc', {
+      taoc_id: taoc_id,
+      product_id: product_id,
+      user_id: wx.getStorageSync('userInfo').user_id
+    }, function(data) {
+      data.taocInfo.taoc_content = JSON.parse(data.taocInfo.taoc_content)
+      console.log(data.taocInfo.taoc_content)
+      that.setData({
+        taocInfo: data.taocInfo,
+        producttaoc: data.res,
+        productlistcomment: data.ress,
+        taocisPay: data.isPay,
+      });
+    })
+  }
+  request(that)
+
+};
 Page({
 
   /**
@@ -40,79 +77,19 @@ Page({
     filepath: getApp().globalData.filepath,
   },
   /**
-   * 分享按钮
-   */
-  share: function() {
-    wx.showNavigationBarLoading();
-    wx.showLoading({
-      title: '加载中~',
-    })
-    var that = this;
-    var data = {
-      flag: true,
-    };
-    if (!that.data.shareImage) {
-      common.PostMain('share/getwxacodeunlimit', {
-        user_id: wx.getStorageInfoSync('userInfo').user_id
-      }, function(e) {
-        data['shareImage'] = e.resUrl
-        that.setData(data)
-      });
-    } else {
-      that.setData(data)
-    }
-    wx.hideNavigationBarLoading();
-    wx.hideLoading();
-  },
-  // 遮罩层隐藏
-  conceal: function() {
-    this.setData({
-      flag: false
-    })
-  },
-  /**
-   * 保存二维码
-   */
-  saveShareImage: function() {
-    var that = this;
-    wx.showActionSheet({
-      itemList: ['保存至相册'],
-      success: function(res) {
-        wx.downloadFile({
-          url: that.data.shareImage,
-          success: function(res) {
-            if (res.statusCode == 200) {
-              wx.saveImageToPhotosAlbum({
-                filePath: res.tempFilePath,
-                success: function() {
-                  wx.showToast({
-                    title: '已保存到相册！',
-                  })
-                }
-              })
-            }
-          }
-        })
-      }
-    })
-    return null;
-
-  },
-  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(e) {
     common.onLoad(e);
+    common.PostMain('')
     var that = this;
     if (e.taocid) {
       that.data.taoc_id = e.taocid;
+      onload(that, 1);
     } else {
       that.data.product_id = e.productid;
+      onload(that, 0);
     }
-    wx.showLoading({
-      title: '加载中',
-    });
-    request(that)
   },
   /**
    * 当开始/继续播放时触发play事件
@@ -127,10 +104,21 @@ Page({
    */
   bindtimeupdate: function(e) {
     var that = this;
-    if (e.detail.currentTime >= that.data.experience_time) {
+    if (that.data.isPay == false && e.detail.currentTime >= that.data.experience_time) {
       wx.showModal({
         title: '试看结束',
-        content: '试看6分钟已经结束，如需继续观看请购买后继续观看。',
+        content: '试看已经结束，如需继续观看请购买后继续观看。',
+        cancelText:'返回',
+        confirmText:'支付购买',
+        success: function(res) {
+          if (res.confirm) {
+            that.payRequest(that);
+          } else {
+            wx.navigateBack({
+              delta: -1
+            })
+          }
+        },
       })
       that.setData({
         isEnd: true
@@ -144,6 +132,7 @@ Page({
    * 收藏/取消收藏
    */
   shouc: function(e) {
+    wx.showNavigationBarLoading();
     var that = this;
     var dataset = e.currentTarget.dataset;
     common.PostMain('product/createshoucang', {
@@ -154,6 +143,12 @@ Page({
       that.setData({
         usershouc: dataset.usershouc == 1 ? 0 : 1,
       });
+      var title = dataset.usershouc == 1 ? '取消成功！' : '收藏成功！';
+      wx.showToast({
+        title: title,
+        icon: 'none',
+      });
+      wx.hideNavigationBarLoading();
     });
   },
   /**
@@ -188,38 +183,7 @@ Page({
   swichNav: function(e) {
     var that = this;
     var current = e.target.dataset.current;
-    var product_id = e.currentTarget.dataset.productid;
-    console.log(e)
-    if (current == 1) {
-      var product_id = product_id;
-      common.PostMain('product/taoc', {
-        product_id: product_id
-      }, function(data) {
-        let taocanMoney = 0;
-        for (var i = 0; i < data.res.length; i++) {
-          taocanMoney = taocanMoney + Number(data.res[i].product_money)
-        }
-        that.setData({
-          taocanMoney: taocanMoney.toFixed(2),
-          producttaoc: data.res,
-          productlistcomment: data.ress
-        });
-      })
-    } else {
-      that.setData({
-        productlistcomment: that.data.productlistcomments,
-      })
-    }
-    if (this.data.currentTab === e.target.dataset.current) {
-      return false;
-    } else {
-      var showMode = e.target.dataset.current == 0;
-      this.setData({
-        taocanMoney: false,
-        currentTab: e.target.dataset.current,
-        isShow: showMode
-      })
-    }
+    onload(that, current);
   },
   /**
    * 更多评论
@@ -242,12 +206,12 @@ Page({
    */
   looktaoc: function(e) {
     var id = e.currentTarget.dataset.id;
-    wx.navigateTo({
+    wx.redirectTo({
       url: "buy?productid=" + id,
     })
   },
   /**
-   * 购买产品公告请求
+   * 购买产品请求
    */
   payRequest: function(that) {
     var param = {
@@ -272,12 +236,21 @@ Page({
           package: 'prepay_id=' + res.prepay_id,
           signType: 'MD5',
           paySign: res.sign,
-          success: function() {
-            console.log('支付成功！')
+          success: function(e) {
+            console.log(e)
+            return null;
             wx.showToast({
-              title: '购买成功',
+              title: '购买成功！',
               icon: 'success',
+              success: function() {
+                setTimeout(function() {
+                  onload(that, that.data.currentTab);
+                }, 1500)
+              }
             })
+          },
+          complete:function(e){
+            console.log(e)
           }
         })
       }
@@ -297,7 +270,14 @@ Page({
     //   delta: 1,
     // })
   },
-
+  /**
+   * 返回首页
+   */
+  fanhui: function(e) {
+    wx.navigateTo({
+      url: '/pages/index/index',
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -308,7 +288,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function(e) {
 
   },
 
