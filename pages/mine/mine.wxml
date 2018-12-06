@@ -3,7 +3,7 @@
   <image bindtap='person' class='touxiang' mode='widthFix' src='{{userinfo.face}}'></image>
   <view class='message'>
     <image bindtap='message' mode='widthFix' class='xiaoxi' src='../../imgs/message.jpg'></image>
-    <text bindtap='message'>13</text>
+    <text bindtap='message' wx:if="{{countMessage!=0}}">{{countMessage}}</text>
   </view>
   <text bindtap='person' class='zhiwu'>{{userinfo.nick_name}}</text>
   <view class='vip'>

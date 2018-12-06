@@ -16,31 +16,22 @@ Page({
   onLoad: function(options) {
     common.onLoad(options);
     var that = this;
-    var taoc_id = options.taoc_id;
-    var product_id = options.product_id;
-    if (taoc_id) {
-      common.PostMain('product/talk', {
-        taoc_id: taoc_id
-      }, function(data) {
-        console.log(data)
-        that.setData({
-          filepath: App.globalData.filepath,
-          producttalk: data.producttalk,
-          current: 1,
-        });
+    that.data.options = options;
+    that.loader();
+  },
+  loader: function() {
+    var that = this;
+    common.PostMain('product/talk', {
+      taoc_id: that.data.options.taoc_id,
+      product_id: that.data.options.product_id
+    }, function(data) {
+      console.log(data)
+      that.setData({
+        filepath: App.globalData.filepath,
+        producttalk: data.producttalk,
+        current: 1,
       });
-    } else {
-      common.PostMain('product/talk', {
-        product_id: product_id
-      }, function(data) {
-        console.log(data)
-        that.setData({
-          filepath: App.globalData.filepath,
-          producttalk: data.producttalk,
-          current: 1,
-        });
-      });
-    }
+    });
   },
   onChangeShowState: function() {
 
@@ -118,7 +109,7 @@ Page({
       url: App.globalData.apiurl + 'product/pinglun',
       method: "POST",
       data: {
-        user_id: wx.getStorageSync('userinfo').user_id,
+        user_id: wx.getStorageSync('userInfo').user_id,
         list_comment_id: that.data.listcommentid,
         list_id: that.data.listid,
         product_id: that.data.productid,
@@ -130,6 +121,11 @@ Page({
         wx.showToast({
           title: '评论成功',
           icon: 'success',
+          success: function() {
+            setTimeout(function() {
+              that.loader();
+            }, 1500)
+          }
         })
       }
     });

@@ -122,10 +122,11 @@ Page({
       });
       wx.hideNavigationBarLoading();
     });
-    common.PostMain('user/mine',{},function(e){
+    common.PostMain('user/mine', { user_id: user_id}, function(e) {
       that.setData({
-        config:e.config
-      })
+        config: e.config,
+        countMessage: e.countMessage
+      });
     })
   },
 

@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/comment/reply",
     "pages/PromotionCenter/Exchange/Exchange",
     "pages/address/ChooseAddress/ChooseAddress",
     "pages/address/address/address",

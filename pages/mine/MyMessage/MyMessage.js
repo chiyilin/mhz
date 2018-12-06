@@ -22,7 +22,11 @@ Page({
       url: '/pages/mine/redPacket/redPacket?id=' + e.currentTarget.dataset.id,
     });
   },
-
+  huifu:function(e){
+    wx.navigateTo({
+      url: '/pages/comment/reply?id='+e.currentTarget.dataset.id,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -39,7 +43,8 @@ Page({
       user_id: that.data.userInfo.user_id
     }, function(res) {
       that.setData({
-        systemMessage: res.systemMessage
+        systemMessage: res.systemMessage,
+        commentMessage: res.commentMessage
       })
     })
   },

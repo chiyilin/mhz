@@ -52,11 +52,12 @@ display: block;
 transform: scaley(0.5);
 }
 .TJimg{
-width: 264rpx;
-height: 195rpx;
+width: 340rpx;
+height: 196rpx;
 float: left;
 margin-right: 30rpx;
 margin-top: 17rpx;
+border-radius: 8px;
 }
 .tjtitle{
 font-size: 28rpx;
@@ -81,7 +82,7 @@ font-size: 24rpx;
 color: #8D8D8D;
 position: absolute;
 bottom: 20rpx;
-left: 324rpx;
+left: 400rpx;
 }
 .price{
 font-size: 26rpx;

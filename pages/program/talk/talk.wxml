@@ -13,20 +13,20 @@
     </view>
     <!-- 其他用户评论  -->
     <block wx:for="{{producttalk}}" wx:for-item="item1">
-      <!-- 判断 评论是否是当前显示上级 上级是购买的用户评价 品论等级是否为2  -->
+      <!-- 判断 评论是否是当前显示上级 上级是购买的用户评价 评价等级是否为2  -->
       <view bindtap='huifu' data-fid="{{item.user.user_id}}" data-productid='{{item1.product_id}}' data-taocid='{{item1.taoc_id}}' data-listid='{{item1.list_id}}' data-listcommentid='{{item1.list_comment_id}}' wx:if="{{item1.list_id==item.list_id&&item1.list_comment_fid==item.user_id&&item1.list_comment_fid_lv==2}}"
         class='clearfix com'>
         <image class='plq' src='{{item1.user.face}}'></image>
         <text class='name' space="ensp">{{item1.user.nick_name}} </text>
-        <text wx:if="{{item1.list_comment_fid_prolistid==item.list_comment_id}}" class='cont'>:{{item1.list_comment_content}}</text>
-        <text wx:else class='cont'>
+        <text class='cont' wx:if="{{item1.list_comment_fid_prolistid==item.list_comment_id}}">:{{item1.list_comment_content}}</text>
+        <text class='cont' wx:else>
           <block wx:for="{{producttalk}}" wx:for-item="item2">
             <text wx:if="{{item1.list_comment_fid_prolistid==item2.list_comment_id}}" >回复 {{item2.user.nick_name}}: {{item1.list_comment_content}} </text>
-          </block>
-        </text>
-      </view>
     </block>
-  </view>
+    </text>
+    </view>
+</block>
+</view>
 </block>
 <view class="input {{current==1?'hide':''}}">
   <form bindsubmit="formSubmit">

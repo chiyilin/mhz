@@ -13,7 +13,7 @@
       <text class='tjtitle'>{{item.product.product_name}}</text>
       <!-- <text class='tjcont'>{{item.product.product_introduce}}</text> -->
       <text class='time'>课程时长：{{item.product.product_times}}</text>
-      <text wx:if="{{item.is_pay==2}}" bindtap='pingjia' data-listid='{{item.list_id}}' class='price'>评价</text>
+      <text wx:if="{{item.is_pay==2}}" catchtap='pingjia' data-listid='{{item.list_id}}' class='price'>评价</text>
       <text wx:else class='price' style='color:red;border-color:red'>已评价</text>
     </view>
   </block>

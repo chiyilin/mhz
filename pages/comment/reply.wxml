@@ -1,0 +1,21 @@
+<!--pages/User-Centre/Services-purchased/Purchased-contract/Release-comments/Release-comments.wxml-->
+<form bindsubmit="bindFormSubmit">
+  <view class='question'>
+    <image mode='widthFix' src='/imgs/lv.jpg'></image>
+    <text>{{data.product.product_name||data.producttaoc.taoc_name}}</text>
+  </view>
+
+  <view class='bottom'>
+    <view class='clearfix'>
+      <image class='tou fl' src='{{data.user.face}}'></image>
+      <text class='name'>{{data.user.nick_name}}</text>
+      <text class='date'>{{data.list_comment_content}}</text>
+    </view>
+  </view>
+  <view class='pinlun clearfix'>
+    <textarea maxlength="300" placeholder="@{{data.user.nick_name}}" class='pinlun-text' name="textarea" auto-focus='{{true}}' />
+  </view>
+  <view>
+    <button form-type="submit"> 回复 </button>
+  </view>
+</form>

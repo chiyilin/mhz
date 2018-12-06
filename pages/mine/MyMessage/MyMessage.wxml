@@ -5,18 +5,18 @@
 </view>
 <!--切换-->
 <view class="weui-cells__title" hidden="{{!isShow}}">
-  <block wx:for="{{3}}">
+  <block wx:for="{{commentMessage}}">
     <view class='content'>
       <view class='top clearfix'>
         <image mode='widthFix' class='shu' src='/imgs/shu.jpg'></image>
         <text>所属课程：</text>
-        <text>什么是梅花针</text>
-        <text class='huifu'>回复</text>
+        <text>{{item.product.product_name}}</text>
+        <text class='huifu' bindtap='huifu' data-id='{{item.list_comment_id}}'>回复</text>
       </view>
       <view class='bottom'>
         <image mode='widthFix' class='xiaoxi' src='/imgs/xiaoxi.jpg'></image>
-        <text>回复评论：</text>
-        <text>好的</text>
+        <text>内容：</text>
+        <text>{{item.list_comment_content}}</text>
       </view>
     </view>
   </block>

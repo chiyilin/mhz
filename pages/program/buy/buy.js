@@ -81,7 +81,6 @@ Page({
    */
   onLoad: function(e) {
     common.onLoad(e);
-    common.PostMain('')
     var that = this;
     if (e.taocid) {
       that.data.taoc_id = e.taocid;

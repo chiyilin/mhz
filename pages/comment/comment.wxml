@@ -5,13 +5,13 @@
   <text>{{pingjia.product.product_name||pingjia.producttaoc.taoc_name}}</text>
 </view>
 
-<view class='bottom'>
+<!-- <view class='bottom'>
   <view class='clearfix'>
     <image class='tou fl' src='{{pingjia.user.face}}'></image>
     <text class='name'>{{pingjia.user.nick_name}}</text>
     <text class='date'>{{pingjia.list_add_time}}</text>
   </view>
-  </view>
+  </view> -->
   <view class='pinlun clearfix'>
     <textarea maxlength="300" placeholder="我来说点什么......" class='pinlun-text' name="textarea"/>
     <view class='tupian'>

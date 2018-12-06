@@ -43,6 +43,45 @@ swiper image {
   padding: 20rpx 36rpx;
   border-top: 9rpx solid #f2f2f2;
 }
+.gong {
+padding-top: 30rpx;
+position: relative;
+border-bottom: 1px solid #d1d1d1;
+padding-bottom: 15rpx;
+background-color: #fff;
+}
+
+.gimg {
+width: 33rpx;
+position: absolute;
+left: 109rpx;
+top: 35rpx;
+}
+
+.shu {
+width: 4rpx;
+height: 50rpx;
+position: absolute;
+left: 159rpx;
+top: 24rpx;
+}
+
+.gtext {
+font-size: 26rpx;
+position: absolute;
+left: 39rpx;
+top: 30rpx;
+color: #ed6a00;
+}
+
+.swiper_item {
+font-size: 26rpx;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+letter-spacing: 2px;
+margin-left: 180rpx;
+}
 
 .lv {
   width: 7rpx;

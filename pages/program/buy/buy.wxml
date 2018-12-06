@@ -103,12 +103,14 @@
       <text class='name'></text>
     </view>
   </view>
-  <view class='btn clearfix' bindtap='goumai' data-current="{{currentTab}}" data-id="{{product.product_id}}" data-taocid="{{product.taoc_id}}" wx:if="{{!isPay&&currentTab==0}}">
-    <text class='fl' wx:if="{{show_money==1}}">￥{{taocanMoney?taocanMoney:product.product_money}}</text>
+  
+  <view class='btn clearfix' bindtap='goumai' data-current="{{currentTab}}" data-id="{{product.product_id}}" data-taocid="{{product.taoc_id}}" wx:if="{{show_money==1&&!isPay&&currentTab==0}}">
+    <text class='fl' >￥{{taocanMoney?taocanMoney:product.product_money}}</text>
     <text class='fr' style='text-align:right;margin-top:0;'>立即购买</text>
+    <!-- <text class='play'>立即播放</text> -->
   </view>
-  <view class='btn clearfix' bindtap='goumai' data-current="{{currentTab}}" data-id="{{product.product_id}}" data-taocid="{{product.taoc_id}}" wx:if="{{!taocisPay&&currentTab==1}}">
-    <text class='fl' wx:if="{{show_money==1}}">￥{{taocInfo.taoc_money?taocInfo.taoc_money:product.product_money}}</text>
+  <view wx:if="{{show_money==1}}" class='btn clearfix' bindtap='goumai' data-current="{{currentTab}}" data-id="{{product.product_id}}" data-taocid="{{product.taoc_id}}" wx:if="{{show_money==1&&!taocisPay&&currentTab==1}}">
+    <text class='fl' >￥{{taocInfo.taoc_money?taocInfo.taoc_money:product.product_money}}</text>
     <text class='fr' style='text-align:right;margin-top:0;'>套餐购买</text>
   </view>
   <!-- <view class='btn'><text>立即播放</text></view> -->
