@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/memberCenter/memberCenter",
     "pages/index/index",
     "pages/comment/reply",
     "pages/PromotionCenter/Exchange/Exchange",

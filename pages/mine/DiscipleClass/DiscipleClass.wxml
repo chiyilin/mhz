@@ -8,8 +8,8 @@
   <image class='fl' mode='widthFix' src='/imgs/dzbyou.jpg'></image>
 </view>
 <view class='bottom'>
-  <text>弟子姓名：{{userdata.nick_name}}</text>
-  <text>联系方式：{{userdata.user_mobile}}</text>
+  <text>弟子姓名：{{userdata.usersmrz.smrz_name}}</text>
+  <text>联系方式：{{userdata.usersmrz.smrz_mobile}}</text>
   <text>身份证号：{{userdata.usersmrz.smrz_code}}</text>
 </view>
 <button bindtap='xuekec'>学课程</button>

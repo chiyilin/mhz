@@ -5,6 +5,7 @@
   <image class='dun' mode='widthFix' src='/imgs/wtongguo.jpg'></image>
   <text wx:if="{{userinfo.usersmrz.smrz_state==1}}" class='Dtext'>认证待审核</text>
   <text wx:elif="{{userinfo.usersmrz.smrz_state==2}}" class='Dtext'>已通过实名认证</text>
+  <text wx:elif="{{userinfo.usersmrz.smrz_state==3}}" class='Dtext'>实名认证被驳回</text>
   <text wx:else class='Dtext'>未通过实名认证</text>
 </view>
 <form bindsubmit="formSubmit">
@@ -36,7 +37,7 @@
     </picker>
     <input class="addxiang" name="addxiang" value='{{userinfo.useraddress.addxiang}}'></input>
   </view> -->
-  <view wx:if="{{!userinfo.usersmrz.smrz_state}}" class='green' bindtap='renzheng' data-userid='{{userinfo.user_id}}'>
+  <view wx:if="{{!userinfo.usersmrz.smrz_state||userinfo.usersmrz.smrz_state==3}}" class='green' bindtap='renzheng' data-userid='{{userinfo.user_id}}'>
     <text>进行实名认证>></text>
   </view>
   <view class='green' bindtap='addr' data-userid='{{userinfo.user_id}}'>

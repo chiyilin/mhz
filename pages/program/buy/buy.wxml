@@ -32,7 +32,7 @@
   <view class="swiper-tab">
     <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">课程简介</view>
     <!-- <view wx:if="{{product.taoc_id==null}}" class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}">无套餐组合</view> -->
-    <view wx:if="{{product.taoc_id!=null}}" class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-productid='{{product.product_id}}' data-current="1" bindtap="swichNav">套餐组合</view>
+    <view wx:if="{{product.taoc_id!=null}}" class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-productid='{{product.product_id}}' data-current="1" bindtap="swichNav">章节目录</view>
   </view>
   <view class="weui-cells__title" hidden="{{!isShow}}">
 

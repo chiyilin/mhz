@@ -1,47 +1,52 @@
+// pages/memberCenter/memberCenter.js
 var App = getApp();
-var common = require('../../../utils/common.js');
-// pages/mine/DiscipleClass/DiscipleClass.js
+var common = require('../../utils/common.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    current: 0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var user_id = wx.getStorageSync('userInfo').user_id;
-    var that = this;
-    wx.showLoading({
-      title: '加载中',
-    });
-    common.PostMain('user/dizibtg', {
-      user_id: user_id
-    }, function(data) {
-      console.log(data)
-      that.setData({
-        userdata: data
-      })
-    });
-    wx.hideLoading();
-  },
 
+  },
+  showRule: function() {
+    this.setData({
+      isRuleTrue: true
+    })
+  },
+  //关闭规则提示
+  hideRule: function() {
+    this.setData({
+      isRuleTrue: false
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function() {
-
+    var that = this;
+    var userInfo = wx.getStorageSync('userInfo');
+    common.PostMain('memberprice/index', {
+      user_id: userInfo.user_id
+    }, function(data) {
+      that.setData({
+        data: data.MemberPriceModel,
+        userInfo: userInfo,
+        config: data.config
+      })
+    });
+  },
+  choose: function(e) {
+    this.setData({
+      current: e.currentTarget.dataset.index
+    })
   },
 
   /**
@@ -76,12 +81,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-    return common.share();
-  },
 
-  xuekec: function() {
-    wx.navigateBack({
-      delta: 1,
-    })
   }
 })

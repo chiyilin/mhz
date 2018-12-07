@@ -54,14 +54,6 @@
   left: 0;
   bottom: 0;
   height: 100rpx;
-
-  font-size: 24rpx;
-}
-.btn{
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  height: 100rpx;
   background-color: #ADB183;
   width:100%;
   font-size: 34rpx;
@@ -177,3 +169,4 @@ button{
   font-size: 30rpx;
   margin-bottom: 30rpx;
   }
+  

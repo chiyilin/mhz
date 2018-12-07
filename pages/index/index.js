@@ -170,8 +170,9 @@ Page({
    */
   navigate_sign: function(e) {
     var index = e.currentTarget.dataset.index;
+    console.log(index)
     wx.navigateTo({
-      url: '/pages/mhzindex/examination/examination?index=' + index,
+      url: index
     })
   }
 })

@@ -50,8 +50,20 @@ Page({
     })
   },
   dizi: function(e) {
+    var userInfo = wx.getStorageSync('userInfo');
+    if (userInfo.usersmrz.dizib_state == 2) {
+      var url = "DiscipleClass/DiscipleClass"
+    } else {
+      var url = "privilege/privilege"
+    }
+    wx.navigateTo({
+      url: url
+    })
+    return null;
     var user_id = e.currentTarget.dataset.userid;
     var usersmrz = e.currentTarget.dataset.usersmrz;
+    // console.log(usersmrz)
+    // return null;
     if (usersmrz == 0) {
       wx.navigateTo({
         url: "privilege/privilege?user_id=" + user_id,
@@ -72,7 +84,7 @@ Page({
               url: "privilege/privilege?user_id=" + user_id,
             })
           } else {
-            if (dizibstate == 1) {
+            if (dizibstate == 1 || dizibstate == 4) {
               wx.navigateTo({
                 url: "privilege/privilege?user_id=" + user_id,
               })
@@ -122,7 +134,9 @@ Page({
       });
       wx.hideNavigationBarLoading();
     });
-    common.PostMain('user/mine', { user_id: user_id}, function(e) {
+    common.PostMain('user/mine', {
+      user_id: user_id
+    }, function(e) {
       that.setData({
         config: e.config,
         countMessage: e.countMessage

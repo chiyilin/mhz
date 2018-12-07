@@ -1,5 +1,5 @@
 <!--pages/mine/authentication/authentication.wxml-->
-<form bindsubmit="formSubmit" bindreset="formReset">
+<form bindsubmit="formSubmit" bindreset="formReset" report-submit="{{true}}">
   <view class='clearfix'>
     <input type="text" value="{{user_id}}" name="hidden" hidden="true"></input>
     <text>真实姓名：</text>

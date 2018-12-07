@@ -101,8 +101,9 @@ Page({
    * 实名认证 表单提交
    */
   formSubmit: function(e) {
-    var that = this;
     console.log(e)
+    var formId = e.detail.formId
+    var that = this;
     var user_id = e.detail.value.hidden;
     var smrz_name = e.detail.value.smrz_name;
     var smrz_code = e.detail.value.smrz_code;
@@ -121,6 +122,7 @@ Page({
     common.PostMain('usersmrz/check', {
       smrz_code: smrz_code,
       smrz_mobile: smrz_mobile,
+
     }, function() {
       //已经上传完成的数组
       var uploadfiledone = [];
@@ -151,7 +153,9 @@ Page({
                 smrz_code: smrz_code,
                 smrz_mobile: smrz_mobile,
                 front: idcard.front,
-                side: idcard.side
+                side: idcard.side,
+                form_id: formId,
+                smrz_type: 1
               }, function(e) {
                 wx.showToast({
                   title: '已提交，等待审核！',

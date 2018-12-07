@@ -23,7 +23,6 @@ Page({
     common.PostMain('user/dizi', {
       user_id: user_id
     }, function(data) {
-      console.log(data)
       that.setData({
         userdata: data
       })
@@ -67,17 +66,24 @@ Page({
   },
   sub: function(e) {
     var user_id = e.currentTarget.dataset.userid;
-    console.log(user_id)    
+    console.log(user_id)
     wx.request({
       url: App.globalData.apiurl + 'user/dizibsq',
       method: "POST",
       data: {
         user_id: user_id,
       },
-      success: function (res) {
+      success: function(res) {
         wx.showToast({
           title: '等待审核！',
           icon: 'success',
+          success:function(){
+            setTimeout(function(){
+              wx.navigateBack({
+                delta:-1
+              })
+            },1500);
+          }
         })
       },
     });

@@ -18,7 +18,7 @@
   </swiper>
 </view> -->
 <view class='nav'>
-  <block wx:for="{{apiData['navInfo']}}">
+  <block wx:for="{{apiData['navInfo']}}" wx:if="{{item.nav_type==1}}">
     <navigator url="{{item.ext_path}}" hover-class="none">
       <view class='navView'>
         <image class='navImg' mode='widthFix' src='{{filepath}}{{item.cover_src}}'></image>
@@ -29,8 +29,10 @@
 </view>
 <!-- 报考/报名图片按钮 -->
 <view class="baokao">
-  <image src='{{filepath}}{{apiData.BaokaoImage.baoming_image}}' bindtap='navigate_sign' data-index='0'></image>
-  <image class='img2' src='{{filepath}}{{apiData.BaokaoImage.baokao_image}}' bindtap='navigate_sign' data-index='1'></image>
+  <block wx:for="{{apiData['navInfoMiddle']}}">
+    <image wx:if="{{index!=1}}" src='{{filepath}}{{item.cover_src}}' bindtap='navigate_sign' data-index='{{item.ext_path}}'></image>
+    <image wx:if="{{index==1}}" src='{{filepath}}{{item.cover_src}}' class='img2' bindtap='navigate_sign' data-index='{{item.ext_path}}'></image>
+  </block>
 </view>
 
 <!-- 推荐课程 -->
@@ -71,7 +73,7 @@
 <view class='TuiJian clearfix' wx:for="{{apiData.newCourses}}" bindtap='coursesDetails' data-id='{{item.product_id}}'>
   <image class='TJimg' src='{{filepath}}{{item.product_cover}}' mode='aspectFill'></image>
   <text class='tjtitle'>{{item.product_name}}</text>
-  <text class='tjcont'>{{item.product_introduce}}</text>
+  <text class='tjcont' wx:if="{{item.cover_introduce}}">{{item.cover_introduce}}</text>
   <text class='time date'>课程时长：{{item.product_times}}</text>
   <text class='price red fr' wx:if="{{apiData.config.show_money==1}}">￥{{item.product_money}}</text>
 </view>
