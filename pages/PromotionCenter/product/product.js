@@ -12,7 +12,11 @@ Page({
     // 使用data数据对象设置样式名 
     minusStatus: 'disabled'
   },
-
+  chooseAddr: function () {
+    wx.navigateTo({
+      url: '/pages/address/ChooseAddress/ChooseAddress',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -57,11 +61,6 @@ Page({
    */
   onReady: function() {
 
-  },
-  chooseAddr: function() {
-    wx.navigateTo({
-      url: '/pages/address/address/address',
-    })
   },
   /**
    * 生命周期函数--监听页面显示
@@ -180,6 +179,7 @@ Page({
       formid: e.detail.formId
     };
     console.log(data)
+    // return null;
     wx.request({
       url: App.globalData.apiurl + 'usertuiguang/index',
       method: "POST",

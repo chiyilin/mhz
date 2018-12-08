@@ -20,8 +20,9 @@ Page({
    * 编辑邮箱
    */
   edit: function(e) {
+    console.log(e)
     wx.navigateTo({
-      url: '/pages/address/address/address?id=' + e.target.dataset.id,
+      url: '/pages/address/edit/edit?id=' + e.currentTarget.dataset.id,
     })
   },
   /**
@@ -64,11 +65,32 @@ Page({
   onReady: function() {
 
   },
-
+  radioChange: function(e) {
+    var that = this;
+    console.log(e.detail.value.length)
+    if (e.detail.value.length) {
+      var address_id = e.currentTarget.dataset.id
+    }
+    var address_id = e.currentTarget.dataset.id
+    common.PostMain('user/defaultAddr', {
+      address_id: address_id,
+      address_default: e.detail.value.length + 1,
+    }, function(res) {
+      wx.showToast({
+        title: '操作成功！',
+        success: function() {
+          setTimeout(function() {
+            that.onShow()
+          }, 1500)
+        }
+      })
+    });
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    wx.showNavigationBarLoading();
     var that = this;
     common.PostMain('user/addrList', {
       user_id: wx.getStorageSync('userInfo').user_id
@@ -77,6 +99,7 @@ Page({
       that.setData({
         data: e
       })
+      wx.hideNavigationBarLoading();
     });
   },
 

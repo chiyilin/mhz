@@ -1,12 +1,13 @@
 {
   "pages": [
-    "pages/memberCenter/memberCenter",
     "pages/index/index",
+    "pages/address/address/address",
+    "pages/memberCenter/memberCenter",
     "pages/comment/reply",
     "pages/PromotionCenter/Exchange/Exchange",
     "pages/address/ChooseAddress/ChooseAddress",
-    "pages/address/address/address",
     "pages/address/add/add",
+    "pages/address/edit/edit",
     "pages/mine/DiscipleClass/DiscipleClass",
     "pages/PromotionCenter/Bill/Bill",
     "pages/mine/privilege/privilege",

@@ -276,6 +276,7 @@ button {
   display: block;
   line-height: 40rpx;
   margin-top: 5rpx;
+  min-height: 88rpx;
 }
 
 button::after {

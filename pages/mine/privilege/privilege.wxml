@@ -1,9 +1,11 @@
 <!--pages/mine/privilege/privilege.wxml-->
-<view class='content'>
-  <image mode='widthFix' src='/imgs/dzbimg.jpg'></image>
-  <text class='title'>弟子班享有全部视频特权</text>
-  <text wx:if="{{userdata.usersmrz.smrz_state!=2}}" class='text'>未完成实名认证</text>
-  <text wx:elif="{{userdata.usersmrz.dizib_state==1}}" class='text'>请耐心等待审核结果</text>
-  <text wx:else class='text'>已完成实名认证直接提交即可</text>
-  <button wx:if="{{(userdata.usersmrz.dizib_state==3||userdata.usersmrz.dizib_state==4)&&userdata.usersmrz.smrz_state==2}}" bindtap='sub' data-userid='{{userdata.user_id}}'>提交申请</button>
-</view>
+<form bindsubmit='sub' report-submit="{{true}}">
+  <view class='content'>
+    <image mode='widthFix' src='/imgs/dzbimg.jpg'></image>
+    <text class='title'>弟子班享有全部视频特权</text>
+    <text wx:if="{{userdata.usersmrz.smrz_state!=2}}" class='text'>未完成实名认证</text>
+    <text wx:elif="{{userdata.usersmrz.dizib_state==1}}" class='text'>请耐心等待审核结果</text>
+    <text wx:else class='text'>已完成实名认证直接提交即可</text>
+    <button wx:if="{{(userdata.usersmrz.dizib_state==3||userdata.usersmrz.dizib_state==4)&&userdata.usersmrz.smrz_state==2}}" form-type='submit' data-userid='{{userdata.user_id}}'>提交申请</button>
+  </view>
+</form>

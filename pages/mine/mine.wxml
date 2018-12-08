@@ -58,6 +58,7 @@
   </view>
 </view>
 
+
 <view bindtap='dizi' data-userid="{{userinfo.user_id}}" data-usersmrz="{{userinfo.usersmrz}}" class='list clearfix'>
   <view class='left fl'>
     <image mode='widthFix' src='/imgs/dzb.jpg'></image>

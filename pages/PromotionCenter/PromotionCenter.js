@@ -34,9 +34,10 @@ Page({
     common.PostMain('user/tuiguang', {
       user_id: user_id
     }, function(data) {
-      wx.setStorageSync('userInfo', data);
+      wx.setStorageSync('userInfo', data.res);
       that.setData({
-        userInfo: data,
+        userInfo: data.res,
+        fxs: data.fxs,
         need: 0,
       });
       wx.hideNavigationBarLoading();

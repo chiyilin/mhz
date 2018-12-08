@@ -16,16 +16,76 @@ Page({
   onLoad: function(options) {
 
   },
+  /**
+   * 权益说明
+   */
   showRule: function() {
-    this.setData({
-      isRuleTrue: true
-    })
+    var that = this;
+    if (that.data.rule) {
+      that.setData({
+        isRuleTrue: true,
+      })
+    } else {
+      wx.showNavigationBarLoading();
+      common.PostMain('user/state', {
+        id: 1
+      }, function(e) {
+        that.setData({
+          rule: e,
+          isRuleTrue: true,
+        })
+        wx.hideNavigationBarLoading();
+      });
+    }
   },
   //关闭规则提示
   hideRule: function() {
     this.setData({
       isRuleTrue: false
     })
+  },
+  submit: function() {
+    var that = this;
+    var param = {
+      id: that.data.data[that.data.current].id,
+      user_id: wx.getStorageSync('userInfo').user_id
+    };
+    console.log(param)
+    common.PostMain('memberprice/goumai', param, function(data) {
+      wx.requestPayment({
+        timeStamp: data.timeStamp,
+        nonceStr: data.nonce_str,
+        package: 'prepay_id=' + data.prepay_id,
+        signType: 'MD5',
+        paySign: data.sign,
+        success: function() {
+          wx.showToast({
+            title: '充值成功！',
+            success: function() {
+              setTimeout(function() {
+                wx.navigateBack({
+                  delta: -1
+                })
+              }, 1500);
+            }
+          })
+        },
+        complete: function(e) {
+          if (e.errMsg == "requestPayment:fail cancel") {
+            wx.showModal({
+              title: '放弃支付？',
+              content: '您确定要放弃支付吗？',
+              confirmText: '继续支付',
+              success: function(resmodal) {
+                if (resmodal.confirm) {
+                  that.submit();
+                }
+              }
+            });
+          }
+        }
+      })
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

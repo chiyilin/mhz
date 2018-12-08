@@ -43,5 +43,8 @@
   <view class='green' bindtap='addr' data-userid='{{userinfo.user_id}}'>
     <text>收货地址设置>></text>
   </view>
+  <view class='green' bindtap='member'>
+    <text>会员充值>></text>
+  </view>
   <!-- <button form-type='submit'>设置</button> -->
 </form>

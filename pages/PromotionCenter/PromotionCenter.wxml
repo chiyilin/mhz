@@ -5,10 +5,11 @@
   <text class='name'>{{userInfo.nick_name}}</text>
   <view class='vip'>
     <text class='VipV'>V</text>
-    <text class='VipText' wx:if="{{userInfo.fxs_level==1}}">vip1</text>
-    <text class='VipText' wx:elif="{{userInfo.fxs_level==2}}">vip2</text>
-    <text class='VipText' wx:elif="{{userInfo.fxs_level==3}}">vip3</text>
+    <block wx:for="{{fxs}}" wx:for-index="i">
+      <text class='VipText' wx:if="{{userInfo.fxs_level==i}}">{{item}}</text>
+    </block>
   </view>
+  
   <view class='money'>
     <view class='yue'>
       <text>余额（￥）</text>

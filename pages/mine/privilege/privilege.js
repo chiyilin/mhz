@@ -65,24 +65,26 @@ Page({
 
   },
   sub: function(e) {
-    var user_id = e.currentTarget.dataset.userid;
+    var form_id = e.detail.formId;
+    var user_id = wx.getStorageSync('userInfo').user_id;
     console.log(user_id)
     wx.request({
       url: App.globalData.apiurl + 'user/dizibsq',
       method: "POST",
       data: {
         user_id: user_id,
+        form_id: form_id
       },
       success: function(res) {
         wx.showToast({
           title: '等待审核！',
           icon: 'success',
-          success:function(){
-            setTimeout(function(){
+          success: function() {
+            setTimeout(function() {
               wx.navigateBack({
-                delta:-1
+                delta: -1
               })
-            },1500);
+            }, 1500);
           }
         })
       },

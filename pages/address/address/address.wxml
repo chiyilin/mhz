@@ -7,11 +7,11 @@
     <!-- <image class='shu' mode='widthFix' src='/imgs/shu.jpg'></image> -->
     <!-- <text class='fr check' bindtap='edit' data-id='{{item.address_id}}'>编辑</text> -->
     <view class="change clearfix">
-      <radio-group class="radio-group fl" bindchange="radioChange">
+      <checkbox-group class="radio-group fl" bindchange="radioChange" data-id="{{item.address_id}}">
         <label class="radio">
-          <radio value="{{item.name}}" checked="{{item.checked}}" color="red" />默认地址
+          <checkbox checked="{{item.address_default==2}}" color="red" value='1'/>默认地址
         </label>
-      </radio-group>
+      </checkbox-group>
       <view style="margin-right:20rpx;" class='fr'>
         <label bindtap='edit' data-id='{{item.address_id}}'>
           <image class='bianji' mode='widthFix' src='/imgs/bianji.png'></image>

@@ -12,7 +12,10 @@
   <image mode='widthFix' class='huang' src='/imgs/huangguan.png'></image>
   <text>当前会员权益</text>
   <text bindtap='showRule' class='tip fr'>权益说明</text>
+  <text class='mtext'>{{data[current].member_introduce}}</text>
+  
 </view>
+
 <form bindsubmit='submit'>
   <view class='choose'>
     <block wx:for="{{data}}">
@@ -28,13 +31,13 @@
   </view>
   <button form-type='submit'>立即开通</button>
 </form>
-<form bindsubmit='duihuan' report-submit='{{true}}'>
+<form bindsubmit='hideRule' report-submit='{{true}}'>
   <view class="ruleZhezhao {{isRuleTrue?'isRuleShow':'isRuleHide'}}">
     <image src='/imgs/33.png' class='ruleHide' bindtap='hideRule'></image>
-    <text class='title'>标题</text>
+    <text class='title'>{{rule.title}}</text>
     <scroll-view scroll-y style="height: 679rpx;">
-      <text class='rultext'>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字dlkjfalksdjf alsdkjf as;ldkjf季卡来得及看是否  </text>
+      <text class='rultext'>{{rule.content}}</text>
     </scroll-view>
-    <button class='btn1'>我知道了</button>
+    <button class='btn1' form-type='submit'>我知道了</button>
   </view>
 </form>
