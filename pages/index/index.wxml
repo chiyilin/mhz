@@ -7,16 +7,16 @@
   </block>
 </swiper>
 <!--导航-->
-<!-- <view class='gong'>
-  <text class='gtext'>公告</text>
+<view class='gong' wx:if="{{apiData.systemMessage.length}}">
+  <text class='gtext'>系统消息</text>
   <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
-    <block wx:for="{{msgList}}">
-      <swiper-item>
-        <view class="swiper_item">{{item.title}}</view>
+    <block wx:for="{{apiData.systemMessage}}">
+      <swiper-item style="height:10%;" bindtap="message" data-id='{{item.user_message_id}}'>
+        <view class="swiper_item" >{{item.message_title}}{{item.message_content}}</view>
       </swiper-item>
     </block>
   </swiper>
-</view> -->
+</view>
 <view class='nav'>
   <block wx:for="{{apiData['navInfo']}}" wx:if="{{item.nav_type==1}}">
     <navigator url="{{item.ext_path}}" hover-class="none">

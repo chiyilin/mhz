@@ -21,21 +21,7 @@ Page({
   onLoad: function(options) {
     // console.log(wx.getStorageSync('userInfo'))
     common.onLoad(options);
-    this.setData({
-      msgList: [{
-        url: "url",
-        title: "多地首套房贷利率上浮 热点城市渐迎零折扣时代"
-      },
-      {
-        url: "url",
-        title: "悦如公寓三周年生日趴邀你免费吃喝欢唱"
-      },
-      {
-        url: "url",
-        title: "你想和一群有志青年一起过生日嘛？"
-      }
-      ]
-    });
+    
   },
 
   /**
@@ -44,14 +30,20 @@ Page({
   onReady: function() {
 
   },
-
+  message:function(e){
+    wx.navigateTo({
+      url: '/pages/mine/redPacket/redPacket?id=' + e.currentTarget.dataset.id,
+    });
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function(options) {
     wx.showNavigationBarLoading();
     var that = this;
-    common.PostMain('index/index', {}, function(data) {
+    common.PostMain('index/index', {
+      user_id: wx.getStorageSync('userInfo').user_id
+    }, function(data) {
       that.setData({
         apiData: data,
       });

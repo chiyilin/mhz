@@ -41,8 +41,8 @@ Page({
    */
   resignFocus: function(e) {
     var value=e.detail.value;
-    common.PostMain('',{},function(){
-
+    wx.navigateTo({
+      url: '/pages/program/programlist/programlist?content=' + value,
     })
   },
   /**

@@ -29,6 +29,7 @@ var request = function(that) {
       show_money: data.show_money,
       experience_time: data.try_see_time * 60
     });
+    that.data.videoBox = wx.createVideoContext('class-video');
     wx.hideLoading();
   });
 }
@@ -58,6 +59,7 @@ var onload = (that, current = 1) => {
         productlistcomment: data.ress,
         taocisPay: data.isPay,
       });
+
     })
   }
   request(that)
@@ -103,12 +105,20 @@ Page({
    */
   bindtimeupdate: function(e) {
     var that = this;
+    if (that.data.isEnd) {
+      return null;
+    }
     if (that.data.isPay == false && e.detail.currentTime >= that.data.experience_time) {
+      that.setData({
+        isEnd: true
+      })
+      that.data.videoBox.stop();
+      // return null;
       wx.showModal({
         title: '试看结束',
         content: '试看已经结束，如需继续观看请购买后继续观看。',
-        cancelText:'返回',
-        confirmText:'支付购买',
+        cancelText: '返回',
+        confirmText: '支付购买',
         success: function(res) {
           if (res.confirm) {
             that.payRequest(that);
@@ -119,9 +129,7 @@ Page({
           }
         },
       })
-      that.setData({
-        isEnd: true
-      })
+
     }
     // wx.showLoading({
     //   title: '',
@@ -236,20 +244,27 @@ Page({
           signType: 'MD5',
           paySign: res.sign,
           success: function(e) {
-            console.log(e)
-            return null;
             wx.showToast({
               title: '购买成功！',
               icon: 'success',
               success: function() {
                 setTimeout(function() {
-                  onload(that, that.data.currentTab);
-                }, 1500)
+                  // that.data.isPay = true;
+                  // that.data.videoBox.play();
+                  request(that);
+                  // onload(that, that.data.currentTab);
+                }, 500)
               }
             })
           },
-          complete:function(e){
-            console.log(e)
+          complete: function(e) {
+            if (e.errMsg == "requestPayment:fail cancel") {
+              that.setData({
+                isEnd: false
+              })
+            }
+            // request(that);
+            // onload(that, that.data.currentTab);
           }
         })
       }

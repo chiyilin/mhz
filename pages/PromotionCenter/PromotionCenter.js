@@ -9,7 +9,30 @@ Page({
   data: {
 
   },
-
+  hideRule: function () {
+    this.setData({
+      isRuleTrue: false
+    })
+  },
+  showRule: function () {
+    var that = this;
+    if (that.data.rule) {
+      that.setData({
+        isRuleTrue: true,
+      })
+    } else {
+      wx.showNavigationBarLoading();
+      common.PostMain('user/state', {
+        id: 2
+      }, function (e) {
+        that.setData({
+          rule: e,
+          isRuleTrue: true,
+        })
+        wx.hideNavigationBarLoading();
+      });
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */

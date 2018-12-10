@@ -6,7 +6,7 @@
     <text bindtap='message' wx:if="{{countMessage!=0}}">{{countMessage}}</text>
   </view>
   <text bindtap='person' class='zhiwu'>{{userinfo.nick_name}}</text>
-  <view class='vip'>
+  <view class='vip' bindtap='member'>
     <text class='VipV'>V</text>
     <block wx:for="{{config}}" wx:for-index="i">
       <text class='VipText' wx:if="{{userinfo.fxs_level==i}}">{{item}}</text>
@@ -28,6 +28,16 @@
   </view>
 </view>
 <!--列表-->
+<view bindtap='member' class='list clearfix'>
+  <view class='left fl'>
+    <image mode='widthFix' src='/imgs/hycz.png'></image>
+    <text>会员充值</text>
+  </view>
+  <view class='right fr'>
+    <image mode='widthFix' src='/imgs/you.png'></image>
+  </view>
+</view>
+
 <view bindtap='history' class='list clearfix'>
   <view class='left fl'>
     <image mode='widthFix' src='/imgs/bfjl.jpg'></image>

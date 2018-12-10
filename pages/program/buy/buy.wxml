@@ -1,8 +1,9 @@
 <!--pages/program/buy/buy.wxml-->
 <block wx:if="{{!flag}}">
   <view class="section tc">
-    <video src="{{product.product_video_src}}" bindplay="bindplay" bindtimeupdate='bindtimeupdate' wx:if="{{!isEnd}}"></video>
-    <video wx:else src="{{product.product_video_src}}"></video>
+    <!-- <video src="{{product.product_video_src}}" bindplay="bindplay" bindtimeupdate='bindtimeupdate' wx:if="{{!isEnd}}"></video>
+    <video wx:elif="{{isPay}}" src="{{product.product_video_src}}" bindplay="bindplay"></video> -->
+    <video src="{{product.product_video_src}}" bindplay="bindplay" bindtimeupdate='bindtimeupdate' id='class-video'></video>
     <!-- <view class='shikan'>
       <image class='bofang' mode='widthFix' src='/imgs/bofang.png'></image>
       <text class='sktext'>试看</text>
@@ -103,14 +104,14 @@
       <text class='name'></text>
     </view>
   </view>
-  
+
   <view class='btn clearfix' bindtap='goumai' data-current="{{currentTab}}" data-id="{{product.product_id}}" data-taocid="{{product.taoc_id}}" wx:if="{{show_money==1&&!isPay&&currentTab==0}}">
-    <text class='fl' >￥{{taocanMoney?taocanMoney:product.product_money}}</text>
+    <text class='fl'>￥{{taocanMoney?taocanMoney:product.product_money}}</text>
     <text class='fr' style='text-align:right;margin-top:0;'>立即购买</text>
     <!-- <text class='play'>立即播放</text> -->
   </view>
   <view wx:if="{{show_money==1}}" class='btn clearfix' bindtap='goumai' data-current="{{currentTab}}" data-id="{{product.product_id}}" data-taocid="{{product.taoc_id}}" wx:if="{{show_money==1&&!taocisPay&&currentTab==1}}">
-    <text class='fl' >￥{{taocInfo.taoc_money?taocInfo.taoc_money:product.product_money}}</text>
+    <text class='fl'>￥{{taocInfo.taoc_money?taocInfo.taoc_money:product.product_money}}</text>
     <text class='fr' style='text-align:right;margin-top:0;'>套餐购买</text>
   </view>
   <!-- <view class='btn'><text>立即播放</text></view> -->

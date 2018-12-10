@@ -12,7 +12,7 @@ var request = function(that) {
     console.log(data)
     that.setData({
       data: data.data,
-      config:data.config,
+      config: data.config,
       filepath: App.globalData.filepath,
     });
   });
@@ -34,8 +34,15 @@ Page({
   onLoad: function(options) {
     common.onLoad(options);
     var that = this;
-    var category_id = options.category_id;
-    that.data.category_id = category_id;
+    that.data.category_id = options.category_id;
+    if (options.content){
+      wx.setNavigationBarTitle({
+        title: '"' + options.content+'"的搜索结果',
+      })
+    }
+    that.data.content = options.content;
+    request(that);
+    return null;
     wx.showLoading({
       title: '加载中',
     });
@@ -88,7 +95,7 @@ Page({
           renqiStatus: 1,
         })
         break;
-      //价格变换
+        //价格变换
       case 2:
         var jiageStatus = param.jiagestatus;
         if (jiageStatus != 3) {
@@ -102,7 +109,7 @@ Page({
           tuijianStatus: 1,
         })
         break;
-      //人气变换
+        //人气变换
       case 3:
         var renqiStatus = param.renqistatus;
         if (renqiStatus != 3) {
@@ -169,13 +176,13 @@ Page({
   onShareAppMessage: function() {
     return common.share();
   },
-  xiangqing: function (e) {
-    if(e.currentTarget.dataset.taocid){
+  xiangqing: function(e) {
+    if (e.currentTarget.dataset.taocid) {
       var taocid = e.currentTarget.dataset.taocid;
       wx.navigateTo({
         url: '../buy/buy?taocid=' + taocid,
       })
-    }else{
+    } else {
       var productid = e.currentTarget.dataset.productid;
       wx.navigateTo({
         url: '../buy/buy?productid=' + productid,

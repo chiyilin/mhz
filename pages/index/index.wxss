@@ -43,44 +43,50 @@ swiper image {
   padding: 20rpx 36rpx;
   border-top: 9rpx solid #f2f2f2;
 }
-.gong {
-padding-top: 30rpx;
-position: relative;
-border-bottom: 1px solid #d1d1d1;
-padding-bottom: 15rpx;
-background-color: #fff;
+
+.gong{
+  height: 50rpx;
+  position: relative;
+  background-color: #fff;
+  margin-top: -15rpx;
+  overflow: hidden;
 }
 
 .gimg {
-width: 33rpx;
-position: absolute;
-left: 109rpx;
-top: 35rpx;
+  width: 33rpx;
+  position: absolute;
+  left: 109rpx;
+  top: 35rpx;
 }
 
 .shu {
-width: 4rpx;
-height: 50rpx;
-position: absolute;
-left: 159rpx;
-top: 24rpx;
+  width: 4rpx;
+  height: 50rpx;
+  position: absolute;
+  left: 159rpx;
+  top: 24rpx;
 }
 
 .gtext {
-font-size: 26rpx;
-position: absolute;
-left: 39rpx;
-top: 30rpx;
-color: #ed6a00;
+  font-size: 22rpx;
+  position: absolute;
+  left: 39rpx;
+  top: 0rpx;
+  color: #ed6a00;
+  letter-spacing: 2px;
 }
-
-.swiper_item {
-font-size: 26rpx;
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
-letter-spacing: 2px;
-margin-left: 180rpx;
+.gong swiper{
+  height: 30rpx;
+  overflow: hidden;
+}
+.gong .swiper_item {
+  font-size: 22rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  margin-left: 148rpx;
+  color: #8d8d8d;
 }
 
 .lv {
@@ -102,7 +108,6 @@ margin-left: 180rpx;
 }
 
 .baokao .img2 {
-  
   border-left: 9rpx solid #f2f2f2;
 }
 
@@ -162,7 +167,7 @@ margin-left: 180rpx;
 .tjcont {
   font-size: 24rpx;
   color: #8d8d8d;
-  height: 100rpx;
+  height: 73rpx;
   overflow: hidden;
   display: block;
   margin-top: 10rpx;
@@ -301,5 +306,5 @@ button::after {
   border-radius: 50%;
   position: absolute;
   left: 9rpx;
-  bottom:10rpx;
+  bottom: 10rpx;
 }

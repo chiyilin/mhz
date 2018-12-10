@@ -1,7 +1,7 @@
 <!--pages/PromotionCenter/PromotionCenter.wxml-->
 <view class='top clearfix'>
   <image class='touxiang fl' mode='widthFix' src='{{userInfo.face}}'></image>
-  <text class='tuiguang fr'>推广总则</text>
+  <text bindtap='showRule' class='tuiguang fr'>推广总则</text>
   <text class='name'>{{userInfo.nick_name}}</text>
   <view class='vip'>
     <text class='VipV'>V</text>
@@ -78,3 +78,13 @@
     <!--弹出框结束-->
   </view>
 </view>
+<form bindsubmit='hideRule' report-submit='{{true}}'>
+  <view class="ruleZhezhao {{isRuleTrue?'isRuleShow':'isRuleHide'}}">
+    <image src='/imgs/33.png' class='ruleHide' bindtap='hideRule'></image>
+    <text class='title'>{{rule.title}}</text>
+    <scroll-view scroll-y style="height: 679rpx;">
+      <text class='rultext'>{{rule.content}}</text>
+    </scroll-view>
+    <button class='btn1' form-type='submit'>我知道了</button>
+  </view>
+</form>

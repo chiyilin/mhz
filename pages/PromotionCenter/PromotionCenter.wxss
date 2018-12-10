@@ -213,3 +213,68 @@ button::after{
 .fen image{
   margin-top: -70rpx;
 }
+.isRuleShow {
+  display: block;
+}
+
+.isRuleHide {
+  display: none;
+}
+
+.ruleZhezhao {
+  position: fixed;
+  z-index: 2;
+  top: 92rpx;
+  left: 65rpx;
+  box-shadow: 0 0 5rpx #adb183;
+  background-color: #fff;
+  width: 620rpx;
+  height: 900rpx;
+}
+
+.ruleHide {
+  height: 30rpx !important;
+  width: 30rpx !important;
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+}
+
+.btn1 {
+  position: fixed;
+  top: 840rpx;
+  left: 230rpx;
+  width: 290rpx;
+  height: 75rpx; 
+  line-height: 75rpx;
+  background-color:  #ADB183;
+  color: #fff;
+}
+
+.title {
+  display: block;
+  color: #605f5f;
+  font-size: 28rpx;
+  text-align: center;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.rultext {
+  color: #605f5f;
+  font-size: 22rpx;
+  display: inline-block;
+  text-indent: 2em;
+  padding: 0 15rpx;
+  line-height: 38rpx;
+}
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.mtext{
+  display: block;
+  padding: 10rpx ;
+  color:  #605f5f;
+}
