@@ -33,6 +33,12 @@ Page({
   submit: function(e) {
     console.log(e)
     var that = this;
+    if (that.data.isdo) {
+      return null;
+    }
+    that.setData({
+      isdo: true
+    })
     common.PostMain('message/redPacketdo', {
       user_id: that.data.userInfo.user_id,
       id: that.data.id,

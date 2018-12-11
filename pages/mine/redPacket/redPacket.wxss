@@ -58,8 +58,7 @@ view .two {
 .ext {
   font-size: 30rpx;
   position: relative;
-  top: 485rpx;
-  left: 80rpx;
+  top: 525rpx;
   z-index: 2;
   display: block;
   text-align: center;
