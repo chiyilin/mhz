@@ -1,5 +1,5 @@
 /* pages/memberCenter/memberCenter.wxss */
-
+@import "/wxParse/wxParse.wxss";
 .member {
   width: 750rpx;
   padding-top: 36rpx;

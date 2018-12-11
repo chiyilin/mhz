@@ -1,4 +1,5 @@
 /* pages/PromotionCenter/PromotionCenter.wxss */
+@import "/wxParse/wxParse.wxss";
 page{
   background-color: #F5F5F5;
 }

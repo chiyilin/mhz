@@ -1,4 +1,5 @@
 <!--pages/program/buy/buy.wxml-->
+<import src="../../../wxParse/wxParse.wxml" />
 <block wx:if="{{!flag}}">
   <view class="section tc">
     <!-- <video src="{{product.product_video_src}}" bindplay="bindplay" bindtimeupdate='bindtimeupdate' wx:if="{{!isEnd}}"></video>
@@ -38,10 +39,13 @@
   <view class="weui-cells__title" hidden="{{!isShow}}">
 
     <!-- 课程简介 -->
-    <block wx:for="{{product.product_introduce}}">
+    <!-- <block wx:for="{{product.product_introduce}}">
       <text class='jianjie' wx:if="{{item.text}}">{{item.text}}</text>
       <image style='width:750rpx' wx:if="{{item.image}}" src='{{item.image}}' mode='widthFix'></image>
-    </block>
+    </block> -->
+    <view class="wxParse">
+      <template is="wxParse" data="{{wxParseData:details.nodes}}" />
+    </view>
   </view>
   <view class="weui-cells__title" hidden="{{isShow}}">
     <block wx:for="{{producttaoc}}">
@@ -75,7 +79,10 @@
       </view>
       <label class='teacher-text'>
         <view style='width:500rpx' class='fr '>
-          <text class='cont'>{{product.teacher.teacher_introduce}}</text>
+          <!-- <text class='cont'>{{product.teacher.teacher_introduce}}</text> -->
+          <view class="wxParse">
+            <template is="wxParse" data="{{wxParseData:teacherInfo.nodes}}" />
+          </view>
         </view>
       </label>
     </view>

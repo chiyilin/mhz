@@ -1,4 +1,5 @@
 /* pages/program/buy/buy.wxss */
+@import "/wxParse/wxParse.wxss";
 video {
   width: 750rpx;
 }

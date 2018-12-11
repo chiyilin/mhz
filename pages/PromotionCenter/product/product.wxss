@@ -1,4 +1,5 @@
 /* pages/PromotionCenter/product/product.wxss */
+@import "/wxParse/wxParse.wxss";
 .top{
   font-size: 26rpx;
   padding: 0 70rpx;

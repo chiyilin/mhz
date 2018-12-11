@@ -1,4 +1,5 @@
 <!--pages/PromotionCenter/product/product.wxml-->
+<import src="../../../wxParse/wxParse.wxml" />
 <view class='center clearfix'>
   <image mode='aspectFill' class='banner' src="{{filepath}}{{jfproduct.jfproductbanner['0'].url}}"></image>
   <text class='name fl'>{{jfproduct.jfproduct_name}}</text>
@@ -6,48 +7,52 @@
 </view>
 <view class='bottom'>
   <text class='title'>产品介绍</text>
-  <text class='content'>{{jfproduct.jfproduct_introduce}}</text>
+  <view class='content'>
+    <view class="wxParse">
+      <template is="wxParse" data="{{wxParseData:details.nodes}}" />
+    </view>
+  </view>
 </view>
 <view bindtap='showRule' class='btn'>
   <text>兑 换</text>
 </view>
 <form bindsubmit='duihuan' report-submit='{{true}}'>
-<view class="ruleZhezhao {{isRuleTrue?'isRuleShow':'isRuleHide'}}">
-  <image src='/imgs/33.png' class='ruleHide' bindtap='hideRule'></image>
-  <view class='rulecontent'>
-    <image mode='aspectFill' class='ruleimg' src="{{filepath}}{{jfproduct.jfproductbanner['0'].url}}"></image>
-    <view class="stepper">
-      <!-- 减号 -->
-      <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
-      <!-- 数值 -->
-      <input type="number" bindchange="bindManual" value="{{num}}" />
-      <!-- 加号 -->
-      <text class="normal" bindtap="bindPlus">+</text>
-    </view>
-    <view class='jifen1 clearfix'>
-      <view class='fl'>
-        <text class='ruletext'>消耗积分：</text>
-        <text class='rulecolor'>{{needjifen}}</text>
+  <view class="ruleZhezhao {{isRuleTrue?'isRuleShow':'isRuleHide'}}">
+    <image src='/imgs/33.png' class='ruleHide' bindtap='hideRule'></image>
+    <view class='rulecontent'>
+      <image mode='aspectFill' class='ruleimg' src="{{filepath}}{{jfproduct.jfproductbanner['0'].url}}"></image>
+      <view class="stepper">
+        <!-- 减号 -->
+        <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+        <!-- 数值 -->
+        <input type="number" bindchange="bindManual" value="{{num}}" />
+        <!-- 加号 -->
+        <text class="normal" bindtap="bindPlus">+</text>
       </view>
-      <view class='fl'>
-        <text class='ruletext'>剩余积分：</text>
-        <text class='rulecolor'>{{user.addjifen-user.jianjifen-needj}}</text>
+      <view class='jifen1 clearfix'>
+        <view class='fl'>
+          <text class='ruletext'>消耗积分：</text>
+          <text class='rulecolor'>{{needjifen}}</text>
+        </view>
+        <view class='fl'>
+          <text class='ruletext'>剩余积分：</text>
+          <text class='rulecolor'>{{user.addjifen-user.jianjifen-needj}}</text>
+        </view>
       </view>
-    </view>
-    
+
       <text wx:if="{{user.useraddress==null}}" class='red'>(地址未填写)</text>
       <text wx:if="{{needjifen > (user.addjifen-user.jianjifen)}}" class='red'>(兑换积分不足)</text>
       <button wx:if="{{(needjifen > (user.addjifen-user.jianjifen))||(user.useraddress==null)}}">不可兑换</button>
 
       <button wx:else form-type='submit' data-need='{{needjifen}}' data-num='{{num}}' data-jfproductid='{{jfproduct.jfproduct_id}}'>确认兑换</button>
-    <view class='top clearfix'>
-  <text class='address' bindtap='chooseAddr'>收货人：{{userAddr[nowIndex].address_name}}{{userAddr[nowIndex].address_phone}}</text>
-  <text class='address' bindtap='chooseAddr'>配送至：{{userAddr[nowIndex].sheng}}{{userAddr[nowIndex].shi}}{{userAddr[nowIndex].qu}}{{userAddr[nowIndex].more_addr}}   ></text>
-  <view class='fr jifen'>
-    <!-- <text>剩余积分 ： </text>
+      <view class='top clearfix'>
+        <text class='address' bindtap='chooseAddr'>收货人：{{userAddr[nowIndex].address_name}}{{userAddr[nowIndex].address_phone}}</text>
+        <text class='address' bindtap='chooseAddr'>配送至：{{userAddr[nowIndex].sheng}}{{userAddr[nowIndex].shi}}{{userAddr[nowIndex].qu}}{{userAddr[nowIndex].more_addr}}   ></text>
+        <view class='fr jifen'>
+          <!-- <text>剩余积分 ： </text>
     <text class='num'>{{user.addjifen-user.jianjifen}}</text> -->
+        </view>
+      </view>
+    </view>
   </view>
-</view>
-  </view>
-</view>
 </form>

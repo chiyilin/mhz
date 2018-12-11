@@ -1,18 +1,20 @@
 <!--pages/article/details/details.wxml-->
+<import src="../../../wxParse/wxParse.wxml" />
 <view class='title clearfix'>
   <text>{{title}}</text>
   <text class='date'>{{time}}</text>
   <view class='fr share'>
-    <button class='fen' open-type='share'>
-    </button>
-    <image class='shareimg' mode='widthFix' src='/imgs/share.png'></image>
-    <text class='stext'>分享</text>
+    <button class='stext' open-type='share'>
+      <image class='shareimg' mode='widthFix' src='/imgs/share.png'></image>分享</button>
   </view>
 </view>
-<block wx:for="{{details}}" wx:key="">
+<view class="wxParse">
+  <template is="wxParse" data="{{wxParseData:details.nodes}}" />
+</view>
+<!-- <block wx:for="{{details}}" wx:key="">
   <view class='text' wx:if="{{item.text}}">
     <text>{{item.text}}</text>
   </view>
   <image wx:if="{{item.image}}" mode='widthFix' class='img' src='{{item.image}}'></image>
-</block>
+</block> -->
 <view bindtap='fanhui' class='back'>返回首页</view>

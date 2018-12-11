@@ -1,4 +1,5 @@
 <!--pages/PromotionCenter/PromotionCenter.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
 <view class='top clearfix'>
   <image class='touxiang fl' mode='widthFix' src='{{userInfo.face}}'></image>
   <text bindtap='showRule' class='tuiguang fr'>推广总则</text>
@@ -9,7 +10,7 @@
       <text class='VipText' wx:if="{{userInfo.fxs_level==i}}">{{item}}</text>
     </block>
   </view>
-  
+
   <view class='money'>
     <view class='yue'>
       <text>余额（￥）</text>
@@ -47,7 +48,7 @@
     <image mode='widthFix' src='/imgs/mx.jpg'></image>
     <text>账单明细</text>
   </view>
-  <view style='margin-right:0'  bindtap='jifendan'>
+  <view style='margin-right:0' bindtap='jifendan'>
     <image mode='widthFix' src='/imgs/jfmx.jpg'></image>
     <text>积分明细</text>
   </view>
@@ -83,7 +84,10 @@
     <image src='/imgs/33.png' class='ruleHide' bindtap='hideRule'></image>
     <text class='title'>{{rule.title}}</text>
     <scroll-view scroll-y style="height: 679rpx;">
-      <text class='rultext'>{{rule.content}}</text>
+      <!-- <text class='rultext'>{{rule.content}}</text> -->
+      <view class="wxParse rultext">
+        <template is="wxParse" data="{{wxParseData:details.nodes}}" />
+      </view>
     </scroll-view>
     <button class='btn1' form-type='submit'>我知道了</button>
   </view>

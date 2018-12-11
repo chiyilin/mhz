@@ -1,3 +1,4 @@
+<import src="../../wxParse/wxParse.wxml" />
 <view class='member'>
   <image bindtap='person' class='touxiang' mode='widthFix' src='{{userInfo.face}}'></image>
   <text bindtap='person' class='zhiwu'>{{userInfo.nick_name}}</text>
@@ -13,7 +14,7 @@
   <text>当前会员权益</text>
   <text bindtap='showRule' class='tip fr'>权益说明</text>
   <text class='mtext'>{{data[current].member_introduce}}</text>
-  
+
 </view>
 
 <form bindsubmit='submit'>
@@ -36,7 +37,10 @@
     <image src='/imgs/33.png' class='ruleHide' bindtap='hideRule'></image>
     <text class='title'>{{rule.title}}</text>
     <scroll-view scroll-y style="height: 679rpx;">
-      <text class='rultext'>{{rule.content}}</text>
+      <!-- <text class='rultext'>{{rule.content}}</text> -->
+      <view class="wxParse rultext">
+        <template is="wxParse" data="{{wxParseData:details.nodes}}" />
+      </view>
     </scroll-view>
     <button class='btn1' form-type='submit'>我知道了</button>
   </view>
