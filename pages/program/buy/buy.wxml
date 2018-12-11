@@ -60,12 +60,11 @@
         <text class='time'>课程时长：{{item.product_times}}</text>
       </view>
     </block>
-    <block wx:for="{{taocInfo.taoc_content}}">
+    <!-- <block wx:for="{{taocInfo.taoc_content}}">
       <text class='jianjie' wx:if="{{item.text}}">{{item.text}}</text>
       <image style='width:750rpx' wx:if="{{item.image}}" src='{{item.image}}' mode='widthFix'></image>
-    </block>
+    </block> -->
   </view>
-
   <view class='attention'>
     <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
     <text>讲师信息</text>
@@ -110,10 +109,12 @@
     <text class='fr' style='text-align:right;margin-top:0;'>立即购买</text>
     <!-- <text class='play'>立即播放</text> -->
   </view>
-  <view wx:if="{{show_money==1}}" class='btn clearfix' bindtap='goumai' data-current="{{currentTab}}" data-id="{{product.product_id}}" data-taocid="{{product.taoc_id}}" wx:if="{{show_money==1&&!taocisPay&&currentTab==1}}">
+  <view class='btn clearfix' bindtap='goumai' data-current="{{currentTab}}" data-id="{{product.product_id}}" data-taocid="{{product.taoc_id}}" wx:elif="{{show_money==1&&!taocisPay&&currentTab==1}}">
     <text class='fl'>￥{{taocInfo.taoc_money?taocInfo.taoc_money:product.product_money}}</text>
     <text class='fr' style='text-align:right;margin-top:0;'>套餐购买</text>
   </view>
-  <!-- <view class='btn'><text>立即播放</text></view> -->
+  <view class='btn' wx:elif="{{taocisPay||isPay}}" bindtap="startvideo">
+    <text>立即播放</text>
+  </view>
 </block>
 <view bindtap='fanhui' class='back'>返回首页</view>

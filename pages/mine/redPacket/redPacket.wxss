@@ -47,11 +47,23 @@ view .two {
 .money {
   position: relative;
   top: 530rpx;
+  left: 0rpx;
   text-align: center;
   display: block;
-  font-size: 60rpx;
+  font-size: 50rpx;
   color: brown;
   z-index: 2;
+}
+
+.ext {
+  font-size: 30rpx;
+  position: relative;
+  top: 485rpx;
+  left: 80rpx;
+  z-index: 2;
+  display: block;
+  text-align: center;
+  color: brown;
 }
 
 .one {

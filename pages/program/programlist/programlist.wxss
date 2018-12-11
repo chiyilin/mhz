@@ -1,29 +1,34 @@
-.top{
-padding: 0 44rpx 10rpx 44rpx;
-border-bottom: #DCDCDC solid 1px;
-color: #bebebe;
-height:75rpx;
-overflow: hidden;
+.top {
+  padding: 0 44rpx 10rpx 44rpx;
+  border-bottom: #dcdcdc solid 1px;
+  color: #bebebe;
+  height: 75rpx;
+  overflow: hidden;
 }
-.shaixuan{
-display: flex;
-width: 100%;
+
+.shaixuan {
+  display: flex;
+  width: 100%;
 }
-.shaixuan view{
-width: 32%;
-text-align: center;
-height: 75rpx;
-line-height: 75rpx;
+
+.shaixuan view {
+  width: 32%;
+  text-align: center;
+  height: 75rpx;
+  line-height: 75rpx;
 }
-.top image{
+
+.top image {
   width: 20rpx;
   vertical-align: middle;
 }
-.top text{
+
+.top text {
   font-size: 30rpx;
   vertical-align: middle;
   margin-right: 20rpx;
 }
+
 /* input{
   border: #DEDEDE 1px solid;
   border-radius: 10rpx;
@@ -33,79 +38,88 @@ line-height: 75rpx;
   margin-bottom: 10rpx;
 } */
 
-.TuiJian{
-padding:0rpx 59rpx 0rpx 30rpx; 
-background-color: #fff;
-position: relative;
-height: 232rpx;
-overflow: hidden;
+.TuiJian {
+  padding: 0rpx 59rpx 0rpx 30rpx;
+  background-color: #fff;
+  position: relative;
+  height: 232rpx;
+  overflow: hidden;
 }
+
 .TuiJian::after {
-position: absolute;
-bottom: 0;
-left: 0;
-width: 100%;
-height: 1px;
-background-color: #e6e6e6;
-content: ' ';
-display: block;
-transform: scaley(0.5);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #e6e6e6;
+  content: ' ';
+  display: block;
+  transform: scaley(0.5);
 }
-.TJimg{
-width: 340rpx;
-height: 196rpx;
-float: left;
-margin-right: 30rpx;
-margin-top: 17rpx;
-border-radius: 8px;
+
+.TJimg {
+  width: 340rpx;
+  height: 196rpx;
+  float: left;
+  margin-right: 30rpx;
+  margin-top: 17rpx;
+  border-radius: 8px;
 }
-.tjtitle{
-font-size: 28rpx;
-color: #727171;
-display: block;
-margin-top: 20rpx;
+
+.tjtitle {
+  font-size: 28rpx;
+  color: #727171;
+  display: block;
+  margin-top: 20rpx;
 }
-.redblod{
-font-weight: bold;
-color: #727171;
+
+.redblod {
+  font-weight: bold;
+  color: #727171;
 }
-.tjcont{
-font-size: 24rpx;
-color: #8D8D8D;
-height: 100rpx;
-overflow: hidden;
-display: block;
-margin-top: 10rpx;
+
+.tjcont {
+  font-size: 24rpx;
+  color: #8d8d8d;
+  height: 100rpx;
+  overflow: hidden;
+  display: block;
+  margin-top: 10rpx;
 }
-.time{
-font-size: 24rpx;
-color: #8D8D8D;
-position: absolute;
-bottom: 20rpx;
-left: 400rpx;
+
+.time {
+  font-size: 24rpx;
+  color: #8d8d8d;
+  position: absolute;
+  bottom: 20rpx;
+  left: 400rpx;
 }
-.price{
-font-size: 26rpx;
-color: #FE0000;
-margin-left: 70rpx;
-position: absolute;
-right: 59rpx;
-bottom: 20rpx;
+
+.price {
+  font-size: 26rpx;
+  color: #fe0000;
+  margin-left: 70rpx;
+  position: absolute;
+  right: 59rpx;
+  bottom: 20rpx;
 }
-.taocan{
-color: #fff;
-font-size: 24rpx;
-position: absolute;
-left: 225rpx;
-top: 50rpx;
-background-color: #000;
-opacity: 0.5;
-padding: 3rpx 6rpx;
-border-radius: 8rpx;
+
+.taocan {
+  color: #fff;
+  font-size: 24rpx;
+  position: absolute;
+  left: 225rpx;
+  top: 50rpx;
+  background-color: #000;
+  opacity: 0.5;
+  padding: 3rpx 6rpx;
+  border-radius: 8rpx;
 }
-.none{
+
+.none {
   text-align: center;
-  color:#ccc;
-  font-size:28rpx;
+  color: #ccc;
+  font-size: 28rpx;
   margin-top: 45%;
 }

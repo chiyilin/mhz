@@ -92,6 +92,9 @@ Page({
       onload(that, 0);
     }
   },
+  startvideo: function() {
+    this.data.videoBox.play()
+  },
   /**
    * 当开始/继续播放时触发play事件
    */
@@ -288,7 +291,7 @@ Page({
    * 返回首页
    */
   fanhui: function(e) {
-    wx.navigateTo({
+    wx.switchTab({
       url: '/pages/index/index',
     });
   },

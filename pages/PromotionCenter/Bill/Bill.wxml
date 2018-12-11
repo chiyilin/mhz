@@ -22,6 +22,14 @@
         <image mode='widthFix' src='/imgs/xsbm.jpg'></image>
         <text>余额提现 ： {{item.deposit.money}}</text>
       </block>
+      <block wx:elif="{{item.bill_type==1}}">
+        <image mode='widthFix' src='/imgs/xsbm.jpg'></image>
+        <text>红包收益 ： 邀请有礼</text>
+      </block>
+      <block wx:elif="{{item.bill_type==2}}">
+        <image mode='widthFix' src='/imgs/xsbm.jpg'></image>
+        <text>积分收益 ： 邀请有礼</text>
+      </block>
     </view>
     <view>
       <image mode='widthFix' src='/imgs/dhmximg2.jpg'></image>

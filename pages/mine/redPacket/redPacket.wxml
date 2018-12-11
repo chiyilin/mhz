@@ -3,7 +3,9 @@
   <view>
     <image class='two' src='/imgs/red2.png'></image>
     <image class='one' src='/imgs/red1.png' hidden='{{hidden}}'></image>
-    <text class='money' hidden='{{hidden}}'>￥{{money}}</text>
+    <text class='money' hidden='{{hidden}}'>{{money}}</text>
+    <text class="ext" wx:if="{{message_type==2}}">元</text>
+    <text class="ext" wx:if="{{message_type==3}}">积分</text>
   </view>
   <button form-type='submit' hidden='{{hidden}}'></button>
 </form>

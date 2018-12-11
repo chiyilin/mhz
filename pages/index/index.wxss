@@ -164,15 +164,6 @@ swiper image {
   display: block;
 }
 
-.tjcont {
-  font-size: 24rpx;
-  color: #8d8d8d;
-  height: 73rpx;
-  overflow: hidden;
-  display: block;
-  margin-top: 10rpx;
-}
-
 .time {
   font-size: 20rpx;
   color: #8d8d8d;
@@ -223,10 +214,11 @@ swiper image {
 .tjcont {
   font-size: 24rpx;
   color: #8d8d8d;
-  height: 100rpx;
+  height: 76rpx;
   overflow: hidden;
   display: block;
   margin-top: 10rpx;
+  line-height: 38rpx;
   text-overflow: ellipsis;
 }
 

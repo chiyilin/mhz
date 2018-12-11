@@ -22,9 +22,9 @@ Page({
       url: '/pages/mine/redPacket/redPacket?id=' + e.currentTarget.dataset.id,
     });
   },
-  huifu:function(e){
+  huifu: function(e) {
     wx.navigateTo({
-      url: '/pages/comment/reply?id='+e.currentTarget.dataset.id,
+      url: '/pages/comment/reply?id=' + e.currentTarget.dataset.id,
     })
   },
   /**

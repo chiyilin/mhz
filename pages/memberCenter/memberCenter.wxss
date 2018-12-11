@@ -240,7 +240,7 @@ button {
   color: #605f5f;
   font-size: 22rpx;
   display: inline-block;
-  text-indent: 2em;
+  /* text-indent: 2em; */
   padding: 0 15rpx;
   line-height: 38rpx;
 }
