@@ -5,7 +5,7 @@
     <text wx:else class='title'>报考内容：{{item.baokao.baokao_name}}</text>
     <!-- <text class='content'>{{item.baokao.baokao_xuzhi}}</text> -->
     <text class='name '>姓名：{{item.usersmrz.smrz_name}}</text>
-    <text class='phone'>电话：{{item.user.user_mobile}}</text>
+    <text class='phone'>电话：{{item.usersmrz.smrz_mobile}}</text>
     <text class='time'>报名时间：{{item.addtime}}</text>
     <image mode='widthFix' src='/imgs/you.png'></image>
   </view>

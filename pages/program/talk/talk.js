@@ -43,7 +43,27 @@ Page({
   onReady: function() {
 
   },
-
+  seeImage: function(e) {
+    var that = this;
+    var index = e.currentTarget.dataset.index;
+    var current = e.currentTarget.dataset.current;
+    var urlss = [];
+    // console.log(that.data.productlistcomment.prodlistcommentimg)
+    var data = that.data.producttalk[current].prodlistcommentimg
+    for (var i = 0; i < data.length; i++) {
+      var image = App.globalData.filepath + data[i].list_comment_img_src
+      console.log(i, image)
+      if (e.currentTarget.dataset.index == i) {
+        var currentUrl = image
+      }
+      urlss.push(image)
+    }
+    console.log(urlss)
+    wx.previewImage({
+      urls: urlss,
+      current: currentUrl
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -105,29 +125,24 @@ Page({
   formSubmit: function(e) {
     console.log(e);
     var that = this;
-    wx.request({
-      url: App.globalData.apiurl + 'product/pinglun',
-      method: "POST",
-      data: {
-        user_id: wx.getStorageSync('userInfo').user_id,
-        list_comment_id: that.data.listcommentid,
-        list_id: that.data.listid,
-        product_id: that.data.productid,
-        taoc_id: that.data.taocid,
-        list_comment_fid: that.data.listcommentfid,
-        list_comment_content: e.detail.value.content,
-      },
-      success: function(res) {
-        wx.showToast({
-          title: '评论成功',
-          icon: 'success',
-          success: function() {
-            setTimeout(function() {
-              that.loader();
-            }, 1500)
-          }
-        })
-      }
+    common.PostMain('product/pinglun', {
+      user_id: wx.getStorageSync('userInfo').user_id,
+      list_comment_id: that.data.listcommentid,
+      list_id: that.data.listid,
+      product_id: that.data.productid,
+      taoc_id: that.data.taocid,
+      list_comment_fid: that.data.listcommentfid,
+      list_comment_content: e.detail.value.content,
+    }, function(e) {
+      wx.showToast({
+        title: '评论成功',
+        icon: 'success',
+        success: function() {
+          setTimeout(function() {
+            that.loader();
+          }, 1500)
+        }
+      })
     });
     that.setData({
       current: 1,

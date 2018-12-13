@@ -32,7 +32,7 @@ var selectRequest = (that, index) => {
       "18": "18.gif",
       "19": "19.gif",
     });
-    console.log(data.baomings.baokao_xuzhi)
+    // console.log(data.baomings.baokao_xuzhi)
     that.setData({
       selectIndex: index,
       show: !that.data.show,
@@ -41,6 +41,7 @@ var selectRequest = (that, index) => {
       user: data.user,
     });
     WxParse.wxParse('details', 'html', data.baomings.baokao_xuzhi, that, 5);
+    console.log(data.user.usersmrz.smrz_state)
     wx.hideNavigationBarLoading();
   });
 }
@@ -79,7 +80,7 @@ Page({
         baoming: data.baoming,
         selectData: data.baoming,
       });
-      if (data.defaultIndex) {
+      if (data.defaultIndex || data.defaultIndex == 0) {
         var indexs = data.defaultIndex
         selectRequest(that, indexs.toString())
       }

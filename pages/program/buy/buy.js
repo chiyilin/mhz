@@ -19,29 +19,29 @@ var request = function(that) {
   }
   common.PostMain('product/details', param, function(data) {
     console.log(data)
-    WxParse.emojisInit('[]', "/wxParse/emojis/", {
-      "00": "00.gif",
-      "01": "01.gif",
-      "02": "02.gif",
-      "03": "03.gif",
-      "04": "04.gif",
-      "05": "05.gif",
-      "06": "06.gif",
-      "07": "07.gif",
-      "08": "08.gif",
-      "09": "09.gif",
-      "09": "09.gif",
-      "10": "10.gif",
-      "11": "11.gif",
-      "12": "12.gif",
-      "13": "13.gif",
-      "14": "14.gif",
-      "15": "15.gif",
-      "16": "16.gif",
-      "17": "17.gif",
-      "18": "18.gif",
-      "19": "19.gif",
-    });
+    // WxParse.emojisInit('[]', "/wxParse/emojis/", {
+    //   "00": "00.gif",
+    //   "01": "01.gif",
+    //   "02": "02.gif",
+    //   "03": "03.gif",
+    //   "04": "04.gif",
+    //   "05": "05.gif",
+    //   "06": "06.gif",
+    //   "07": "07.gif",
+    //   "08": "08.gif",
+    //   "09": "09.gif",
+    //   "09": "09.gif",
+    //   "10": "10.gif",
+    //   "11": "11.gif",
+    //   "12": "12.gif",
+    //   "13": "13.gif",
+    //   "14": "14.gif",
+    //   "15": "15.gif",
+    //   "16": "16.gif",
+    //   "17": "17.gif",
+    //   "18": "18.gif",
+    //   "19": "19.gif",
+    // });
     WxParse.wxParse('details', 'html', data.product.product_introduce, that, 5);
     WxParse.wxParse('teacherInfo', 'html', data.product.teacher.teacher_introduce, that, 5);
     // data.product.product_introduce = JSON.parse(data.product.product_introduce)
@@ -59,6 +59,7 @@ var request = function(that) {
     wx.hideLoading();
   });
 }
+
 /**
  * 加载判断单节还是套餐
  */
@@ -77,7 +78,7 @@ var onload = (that, current = 1) => {
       product_id: product_id,
       user_id: wx.getStorageSync('userInfo').user_id
     }, function(data) {
-      data.taocInfo.taoc_content = JSON.parse(data.taocInfo.taoc_content)
+      // data.taocInfo.taoc_content = JSON.parse(data.taocInfo.taoc_content)
       console.log(data.taocInfo.taoc_content)
       that.setData({
         taocInfo: data.taocInfo,
@@ -163,6 +164,26 @@ Page({
     // wx.showLoading({
     //   title: '',
     // })
+  },
+  seeImage: function(e) {
+    console.log(e.currentTarget.dataset.index)
+    var that = this;
+    var urlss = [];
+    console.log(that.data.productlistcomment.prodlistcommentimg)
+    for (var i = 0; i < that.data.productlistcomment.prodlistcommentimg.length; i++) {
+      var image = App.globalData.filepath + that.data.productlistcomment.prodlistcommentimg[i].list_comment_img_src
+      console.log(i, image)
+      if (e.currentTarget.dataset.index == i) {
+        var currentUrl = image
+      }
+      // urls[] = image
+      urlss.push(image)
+    }
+    console.log(urlss)
+    wx.previewImage({
+      urls: urlss,
+      current: currentUrl
+    })
   },
   /**
    * 收藏/取消收藏

@@ -253,4 +253,6 @@ button {
   display: block;
   padding: 10rpx ;
   color:  #605f5f;
+  margin: 30rpx 0;
+  
 }

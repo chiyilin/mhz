@@ -43,7 +43,7 @@
     <view class='list'>
       <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
       <text class='title'>{{currentTab==0?'开课时间':'考试时间'}}：</text>
-      <text class='cText'>{{baomings.baokao_start_time}}-{{baomings.baokao_end_time}}</text>
+      <text class='cText'>{{baomings.baokao_start_time}} ~ {{baomings.baokao_end_time}}</text>
     </view>
     <view class='list'>
       <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>

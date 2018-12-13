@@ -5,6 +5,7 @@
   padding: 0 70rpx;
   line-height: 80rpx;
   color: #605F5F;
+  position: relative;
 }
 .address{
   display: block;
@@ -100,6 +101,12 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 92rpx;
+  overflow: hidden;
+}
+.jifen1 view{
+  width: 50%;
+  height: 110rpx;
+  overflow: hidden;
 }
 .ruleimg{
   width: 453rpx;
@@ -141,10 +148,16 @@
 .stepper .disabled{ 
   color: #ccc; 
 } 
+.ruletext1{
+  font-size: 28rpx;
+  line-height: 100rpx;
+  padding: 0 0 0 40rpx;
+  color: #605F5F;
+}
 .ruletext{
   font-size: 28rpx;
   line-height: 100rpx;
-  padding: 0 0 0 70rpx;
+  padding: 0 0rpx 0 20rpx;
   color: #605F5F;
 }
 .rulecolor{

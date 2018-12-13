@@ -56,12 +56,14 @@ Page({
         "18": "18.gif",
         "19": "19.gif",
       });
+      
       that.setData({
         filepath: App.globalData.filepath,
         jfproduct: data.jfproduct,
         jifen: data.jfproduct.jfproduct_money,
         needjifen: data.jfproduct.jfproduct_money,
         user: data.user,
+        lastmoney: (data.user.addjifen - data.user.jianjifen).toFixed(2),
         user_name: data.user,
         needj: 0,
       });
@@ -189,6 +191,7 @@ Page({
     });
   },
   duihuan: function(e) {
+    wx.showNavigationBarLoading()
     console.log(e)
     var that = this;
     var user_id = wx.getStorageSync('userInfo').user_id;
@@ -205,20 +208,21 @@ Page({
     };
     console.log(data)
     // return null;
-    wx.request({
-      url: App.globalData.apiurl + 'usertuiguang/index',
-      method: "POST",
-      data: data,
-      success: function(res) {
-        wx.showToast({
-          title: '兑换成功',
-          icon: 'success',
-        });
-        that.setData({
-          num: 1,
-          needj: needjifen
-        })
-      },
+    common.PostMain('usertuiguang/index', data, function(result) {
+      wx.showToast({
+        title: '兑换成功',
+        icon: 'success',
+        success:function(){
+          wx.hideNavigationBarLoading();
+        }
+      });
+      that.setData({
+        user: result.user,
+        lastmoney: (result.user.addjifen - result.user.jianjifen).toFixed(2),
+        num: 1,
+        needj: needjifen
+      })
     });
+    wx.hideNavigationBarLoading();
   },
 })

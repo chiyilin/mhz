@@ -1,8 +1,18 @@
 <!--pages/mhzindex/EnrolmentDetails/EnrolmentDetails.wxml-->
+<import src="../../../wxParse/wxParse.wxml" />
 <view class='top'>
   <text wx:if="{{list.list_state==1}}" class='title'>报名内容：{{list.baokao.baokao_name}}</text>
   <text wx:else class='title'>报考内容：{{list.list_name}}</text>
-  <text class='content'>课程预告：</text>
+  <view class='content'>
+    <text class='BTitle'>报名费用：</text>
+    <text class='red'>￥{{list.baokao.baokao_money}}</text>
+    <text class='red pay'>已付</text>
+    <text class='Btitle'>真实姓名：{{userInfo.usersmrz.smrz_name}}</text>
+    <text class='Btitle'>联系方式：{{userInfo.usersmrz.smrz_mobile}}</text>
+    <text class='Btitle'>报名时间：{{list.addtime}}</text>
+    <text class='Btitle'>开课时间：{{list.baokao.baokao_start_time}}</text>
+    <text class='Btitle'>学习地点：{{list.baokao.baokao_address}}</text>
+  </view>
   <block wx:for="{{list.baokao.baokao_xuzhi}}">
     <image src='{{item.image}}' wx:if='{{item.image}}' mode='widthFix'></image>
     <text class='content' wx:if="{{item.text}}">{{item.text}}</text>
@@ -10,12 +20,8 @@
   <!-- <image bindtap='gengduo' hidden='{{zhi?true:false}}' class='down' mode='widthFix' src='/imgs/down.jpg'></image> -->
 </view>
 <view class='bottom'>
-  <text class='BTitle'>报名费用：</text>
-  <text class='red'>￥{{list.baokao.baokao_money}}</text>
-  <text class='red pay'>已付</text>
-  <text class='Btitle'>真实姓名：{{list.usersmrz.smrz_name}}</text>
-  <text class='Btitle'>联系方式：{{list.user.user_mobile}}</text>
-  <text class='Btitle'>报名时间：{{list.addtime}}</text>
-  <text class='Btitle'>开课时间：</text>
-  <text class='Btitle'>学习地点：</text>
+  <text class='Btitle'>课程预告：</text>
+  <view class="wxParse">
+    <template is="wxParse" data="{{wxParseData:details.nodes}}" />
+  </view>
 </view>

@@ -11,6 +11,9 @@
   color:  #676666;
   margin-bottom: 30rpx;
 }
+.wxParse{
+  padding: 0 20rpx;
+}
 label{
   padding: 0 3%;
 }

@@ -85,7 +85,7 @@ Page({
         paySign: data.sign,
         success: function() {
           wx.showToast({
-            title: '充值成功！',
+            title: '开通成功！',
             success: function() {
               setTimeout(function() {
                 wx.navigateBack({

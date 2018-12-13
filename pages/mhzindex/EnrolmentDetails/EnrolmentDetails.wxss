@@ -1,4 +1,5 @@
 /* pages/mhzindex/EnrolmentDetails/EnrolmentDetails.wxss */
+@import "/wxParse/wxParse.wxss";
 .top{
   font-size: 26rpx;
   color: #605F5F;
@@ -8,15 +9,18 @@
   font-size: 28rpx;
   color: #605F5F;
   display: block;
-  padding: 20rpx;
+  padding: 20rpx 30rpx;
   border-bottom: 9rpx solid #f4f4f4;
   margin-bottom: 20rpx;
+}
+.wxParse{
+  margin: 0;
 }
 .content{
   font-size: 26rpx;
   color: #605F5F;
   line-height: 52rpx;
-  padding: 0 20rpx;
+  padding: 0 30rpx;
   display: block;
 }
 .down{

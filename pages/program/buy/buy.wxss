@@ -1,11 +1,18 @@
 /* pages/program/buy/buy.wxss */
 @import "/wxParse/wxParse.wxss";
+
 video {
   width: 750rpx;
 }
+
 .bofang {
   width: 18rpx;
 }
+
+.wxParse {
+  padding: 0 20rpx;
+}
+
 .shikan {
   position: absolute;
   top: 348rpx;
@@ -29,6 +36,7 @@ video {
   float: left;
   margin: 10rpx;
 }
+
 .share {
   color: #727171;
   font-size: 26rpx;
@@ -41,6 +49,7 @@ video {
   overflow: hidden;
   height: 50rpx;
 }
+
 .cllo text {
   margin-right: 20rpx;
   vertical-align: middle;
@@ -56,7 +65,9 @@ video {
 
 .swiper-tab {
   width: 100%;
-  line-height: 75rpx;
+  height: 90rpx;
+  overflow: hidden;
+  line-height: 86rpx;
   background-color: white;
   border-bottom: #dcdcdc solid 1px;
   border-top: #f3f3f3 solid 9rpx;
@@ -66,10 +77,10 @@ video {
   font-size: 30rpx;
   display: inline-block;
   color: #777;
-  border-bottom: 0rpx;
   text-align: center;
   width: 20%;
   margin-left: 20%;
+  border-bottom: 2px solid #fff;
 }
 
 .on {
@@ -158,7 +169,6 @@ video {
   color: #a6a6a6;
   line-height: 38rpx;
   margin-top: 20rpx;
-  
 }
 
 .attention {
@@ -188,9 +198,11 @@ video {
   margin-top: 20rpx;
   color: #8c8c8c;
 }
-.minW{
+
+.minW {
   max-width: 400rpx;
 }
+
 .more {
   margin-top: 5rpx;
 }
@@ -212,6 +224,7 @@ video {
   font-size: 26rpx;
   color: #4f4f4f;
   margin-right: 20rpx;
+  margin-left: 30rpx;
 }
 
 .date {
@@ -346,7 +359,7 @@ video {
 .fen {
   width: 100rpx;
   display: inline-block;
-  height:40rpx;
+  height: 40rpx;
   text-align: left;
   background-color: rgba(0, 0, 0, 0);
   position: absolute;
@@ -381,17 +394,29 @@ button::after {
   display: block;
   transform: scaley(0.5);
 }
-.back{
+
+.back {
   width: 60rpx;
-  padding: 5rpx 10rpx; 
+  padding: 5rpx 10rpx;
   font-size: 26rpx;
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
-  right:0rpx;
+  right: 0rpx;
   bottom: 200rpx;
   color: #fff;
   text-align: center;
   height: 70rpx;
   line-height: 35rpx;
   border-radius: 2px;
+}
+
+.hui {
+  width: 136rpx;
+  height: 136rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+}
+
+.tp {
+  padding-left: 135rpx;
 }

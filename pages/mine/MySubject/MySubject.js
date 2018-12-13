@@ -1,6 +1,36 @@
 var App = getApp();
 var common = require('../../../utils/common.js');
 // pages/mine/MySubject/MySubject.js
+var request = function(that) {
+  wx.showLoading({
+    title: '加载中',
+  });
+  common.PostMain('user/kecheng', {
+    user_id: wx.getStorageSync('userInfo').user_id
+  }, function(data) {
+    var countProd = [];
+    var countProdT = [];
+
+    for (var i = 0; i < data.length; i++) {
+      if (data[i].product) {
+        countProd.push(1)
+      }
+      if (data[i].producttaoc) {
+        countProdT.push(1)
+      }
+    }
+    console.log(countProd)
+    // return null;
+    that.setData({
+      kecheng: data,
+      countProd: countProd,
+      countProdT: countProdT,
+
+    });
+    console.log(data)
+    wx.hideLoading();
+  });
+}
 Page({
 
   /**
@@ -17,36 +47,6 @@ Page({
    */
   onLoad: function(options) {
     common.onLoad(options);
-    var that = this;
-    var user_id = wx.getStorageSync('userInfo').user_id;
-    wx.showLoading({
-      title: '加载中',
-    });
-    common.PostMain('user/kecheng', {
-      user_id: user_id
-    }, function(data) {
-      var countProd = [];
-      var countProdT = [];
-      
-      for (var i = 0; i < data.length;i++){
-        if (data[i].product) {
-          countProd.push(1)
-        }
-        if (data[i].producttaoc) {
-          countProdT.push(1)
-        }
-      }
-      console.log(countProd)
-      // return null;
-      that.setData({
-        kecheng: data,
-        countProd: countProd,
-        countProdT: countProdT,
-
-      });
-      console.log(data)
-      wx.hideLoading();
-    });
   },
 
   /**
@@ -60,7 +60,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    request(this)
   },
 
   /**

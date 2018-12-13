@@ -18,7 +18,7 @@
     </view>
     <view class='yue'>
       <text>积分（分）</text>
-      <text>{{userInfo.addjifen-userInfo.jianjifen-need}}</text>
+      <text>{{lastmoney}}</text>
     </view>
   </view>
 </view>

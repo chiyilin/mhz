@@ -97,16 +97,21 @@
     <text>评论区</text>
     <text class='more fr' bindtap="toTalk" data-id="{{product.product_id}}" data-taocid="{{product.taoc_id}}" data-current='{{currentTab}}'>更多></text>
   </view>
-  <view wx:if="{{productlistcomment}}">
-    <view class='bottom clearfix'>
+  <view class='bottom' wx:if="{{productlistcomment}}">
+    <view class='clearfix'>
       <image class='fl tou' src='{{productlistcomment.user.face}}'></image>
       <text class='name'>{{productlistcomment.user.nick_name}}</text>
       <text class='date'>{{productlistcomment.list_comment_add_time_str}}</text>
       <text class='content fr'>{{productlistcomment.list_comment_content}}</text>
     </view>
+    <view wx:if="{{productlistcomment.prodlistcommentimg}}" class='tp clearfix'>
+      <block wx:for="{{productlistcomment.prodlistcommentimg}}" wx:for-item="items">
+        <image  mode='aspectFill' class='hui fl' src='{{filepath}}{{items.list_comment_img_src}}' bindtap='seeImage' data-index='{{index}}'></image>
+      </block>
+    </view>
   </view>
-  <view wx:else>
-    <view class='bottom clearfix'>
+  <view class='bottom' wx:else>
+    <view class=' clearfix'>
       <text class='name'></text>
     </view>
   </view>

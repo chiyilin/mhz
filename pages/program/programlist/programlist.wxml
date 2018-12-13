@@ -28,7 +28,7 @@
       <text class='tjtitle'>{{item.taoc_name}}</text>
       <text class='tjcont'>{{item.taoc_content}}</text>
       <text class='time '>课程节数：{{item.num}}节</text>
-      <text class='price fr' wx:if="{{config.show_money==1}}">￥{{item.product_money}}</text>
+      <text class='price fr' wx:if="{{config.show_money==1}}">￥{{item.taoc_money}}</text>
     </view>
     <view wx:else class='TuiJian clearfix' bindtap='xiangqing' data-productid="{{item.product_id}}">
       <image wx:if="{{item.product_cover}}" class='TJimg' mode='aspectFill' src="{{filepath}}{{item.product_cover}}"></image>

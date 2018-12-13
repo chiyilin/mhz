@@ -83,8 +83,10 @@ Page({
       user_id: user_id
     }, function(data) {
       wx.setStorageSync('userInfo', data.res);
+      // data.res.jianjifen = data.res.jianjifen.toFixed(2)
       that.setData({
         userInfo: data.res,
+        lastmoney: (data.res.addjifen - data.res.jianjifen).toFixed(2),
         fxs: data.fxs,
         need: 0,
       });

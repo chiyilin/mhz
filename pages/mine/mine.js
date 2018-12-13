@@ -133,6 +133,7 @@ Page({
     }, function(data) {
       console.log(data)
       wx.setStorageSync('userInfo', data);
+      
       that.setData({
         userinfo: data,
       });

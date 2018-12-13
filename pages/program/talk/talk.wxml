@@ -7,8 +7,8 @@
     <text class='pinlun-text'>{{item.list_comment_content}}</text>
     <image class='mess' bindtap='pinglun' data-fid='{{item.user.user_id}}' data-productid='{{item.product_id}}' data-taocid='{{item.taoc_id}}' data-listid='{{item.list_id}}' data-listcommentid='{{item.list_comment_id}}' src='/imgs/mess.jpg'></image>
     <view wx:if="{{item.prodlistcommentimg}}" class='tp clearfix'>
-      <block wx:for="{{item.prodlistcommentimg}}" wx:for-item="items">
-        <image class='hui fl' src='{{filepath}}{{items.list_comment_img_src}}'></image>
+      <block wx:for="{{item.prodlistcommentimg}}" wx:for-item="items" wx:for-index="indexs">
+        <image class='hui fl' src='{{filepath}}{{items.list_comment_img_src}}' bindtap='seeImage' data-index='{{indexs}}' data-current='{{index}}'></image>
       </block>
     </view>
     <!-- 其他用户评论  -->

@@ -72,7 +72,7 @@ Page({
     })
   },
   /**
-   * success
+   * success提示
    */
   successTips: function() {
     wx.hideLoading();
@@ -111,7 +111,7 @@ Page({
     common.PostMain('ProdListComment/addcomment', data, function(res) {
       var uploadfiledone = [];
       var tempFilePaths = that.data.tempFilePaths;
-      if (tempFilePaths) {
+      if (tempFilePaths.length!=0) {
         //循环上传图片
         for (var i = 0; i < tempFilePaths.length; i++) {
           if (tempFilePaths[i]) {
@@ -143,6 +143,7 @@ Page({
           }
         }
       } else {
+        console.log('没传图片')
         that.successTips();
       }
     });

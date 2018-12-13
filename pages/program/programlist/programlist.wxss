@@ -39,7 +39,7 @@
 } */
 
 .TuiJian {
-  padding: 0rpx 59rpx 0rpx 30rpx;
+  padding: 0rpx 30rpx;
   background-color: #fff;
   position: relative;
   height: 232rpx;
@@ -82,10 +82,11 @@
 .tjcont {
   font-size: 24rpx;
   color: #8d8d8d;
-  height: 100rpx;
+  height: 76rpx;
+  line-height: 36rpx;
   overflow: hidden;
   display: block;
-  margin-top: 10rpx;
+  margin-top: 3rpx;
 }
 
 .time {
@@ -109,8 +110,8 @@
   color: #fff;
   font-size: 24rpx;
   position: absolute;
-  left: 225rpx;
-  top: 50rpx;
+  left: 305rpx;
+  top: 20rpx;
   background-color: #000;
   opacity: 0.5;
   padding: 3rpx 6rpx;

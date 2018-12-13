@@ -1,7 +1,13 @@
 <!--pages/PromotionCenter/product/product.wxml-->
 <import src="../../../wxParse/wxParse.wxml" />
 <view class='center clearfix'>
-  <image mode='aspectFill' class='banner' src="{{filepath}}{{jfproduct.jfproductbanner['0'].url}}"></image>
+  <swiper indicator-dots="{{true}}" autoplay="{{true}}" class="banner">
+    <block wx:for="{{jfproduct.jfproductbanner}}">
+      <swiper-item>
+        <image src="{{filepath}}{{item.url}}" mode='aspectFill' class="banner"></image>
+      </swiper-item>
+    </block>
+  </swiper>
   <text class='name fl'>{{jfproduct.jfproduct_name}}</text>
   <text class='color fr'>兑换所需:{{jfproduct.jfproduct_money}}积分</text>
 </view>
@@ -31,12 +37,12 @@
       </view>
       <view class='jifen1 clearfix'>
         <view class='fl'>
-          <text class='ruletext'>消耗积分：</text>
+          <text class='ruletext1'>消耗积分：</text>
           <text class='rulecolor'>{{needjifen}}</text>
         </view>
         <view class='fl'>
           <text class='ruletext'>剩余积分：</text>
-          <text class='rulecolor'>{{user.addjifen-user.jianjifen-needj}}</text>
+          <text class='rulecolor'>{{lastmoney}}</text>
         </view>
       </view>
 
@@ -46,8 +52,8 @@
 
       <button wx:else form-type='submit' data-need='{{needjifen}}' data-num='{{num}}' data-jfproductid='{{jfproduct.jfproduct_id}}'>确认兑换</button>
       <view class='top clearfix'>
-        <text class='address' bindtap='chooseAddr'>收货人：{{userAddr[nowIndex].address_name}}{{userAddr[nowIndex].address_phone}}</text>
-        <text class='address' bindtap='chooseAddr'>配送至：{{userAddr[nowIndex].sheng}}{{userAddr[nowIndex].shi}}{{userAddr[nowIndex].qu}}{{userAddr[nowIndex].more_addr}}   ></text>
+        <text class='address' bindtap='chooseAddr'>收货人：{{userAddr[nowIndex].address_name}} {{userAddr[nowIndex].address_phone}}</text>
+        <text class='address' bindtap='chooseAddr'>配送至：{{userAddr[nowIndex].sheng}}{{userAddr[nowIndex].shi}}{{userAddr[nowIndex].qu}}{{userAddr[nowIndex].more_addr}}   </text>
         <view class='fr jifen'>
           <!-- <text>剩余积分 ： </text>
     <text class='num'>{{user.addjifen-user.jianjifen}}</text> -->
