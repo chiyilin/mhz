@@ -41,7 +41,6 @@ var selectRequest = (that, index) => {
       user: data.user,
     });
     WxParse.wxParse('details', 'html', data.baomings.baokao_xuzhi, that, 5);
-    console.log(data.user.usersmrz.smrz_state)
     wx.hideNavigationBarLoading();
   });
 }

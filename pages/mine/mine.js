@@ -16,7 +16,7 @@ Page({
   onLoad: function(options) {
     common.onLoad(options);
   },
-  member: function () {
+  member: function() {
     wx.navigateTo({
       url: '/pages/memberCenter/memberCenter',
     })
@@ -132,8 +132,13 @@ Page({
       user_id: user_id
     }, function(data) {
       console.log(data)
+      if (!data.user_id) {
+        wx.reLaunch({
+          url: '/pages/Login/Login',
+        });
+      }
       wx.setStorageSync('userInfo', data);
-      
+
       that.setData({
         userinfo: data,
       });
@@ -144,7 +149,8 @@ Page({
     }, function(e) {
       that.setData({
         config: e.config,
-        countMessage: e.countMessage
+        countMessage: e.countMessage,
+        showMoney: e.showMoney
       });
     })
   },

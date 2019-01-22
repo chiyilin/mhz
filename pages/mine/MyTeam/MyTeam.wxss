@@ -14,6 +14,10 @@ text{
   font-size: 28rpx;
   color: #6B6B6B;
 }
+.dj{
+  vertical-align: middle;
+  margin-top: 5rpx;
+}
 .mt{
   margin-top: 10rpx;
 }

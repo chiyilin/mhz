@@ -42,8 +42,14 @@ var request = function(that) {
     //   "18": "18.gif",
     //   "19": "19.gif",
     // });
-    WxParse.wxParse('details', 'html', data.product.product_introduce, that, 5);
-    WxParse.wxParse('teacherInfo', 'html', data.product.teacher.teacher_introduce, that, 5);
+    if (!that.data.details) {
+      WxParse.wxParse('details', 'html', data.product.product_introduce, that, 5);
+    }
+    if (!that.data.teacherInfo) {
+      WxParse.wxParse('teacherInfo', 'html', data.product.teacher.teacher_introduce, that, 5);
+    }
+
+
     // data.product.product_introduce = JSON.parse(data.product.product_introduce)
     that.setData({
       product: data.product,

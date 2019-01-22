@@ -3,6 +3,7 @@ App({
   onLaunch: function() {
     wx.getSetting({
       success: function(e) {
+        console.log(e)
         //检测本地授权状态
         if (!e.authSetting['scope.userInfo'] || !wx.getStorageSync('userInfo').user_id) {
           // 登录
@@ -19,11 +20,12 @@ App({
                 success: function(data) {
                   console.log(JSON.parse(data.data.data))
                   getApp().globalData.openid = JSON.parse(data.data.data).openid;
+                  wx.setStorageSync('openid', JSON.parse(data.data.data).openid);
                   // console.log(getApp().globalData.openid)
                   wx.request({
                     url: getApp().globalData.apiurl + 'login/authcheck',
                     data: {
-                      openid: getApp().globalData.openid
+                      openid: wx.getStorageSync('openid')
                     },
                     success: function(data) {
                       // console.log(data.data.data)

@@ -33,6 +33,7 @@
 
 .touxiang {
   width: 143rpx;
+  height: 143rpx;
   display: block;
   border-radius: 50%;
   margin: 0 auto;
@@ -98,6 +99,7 @@
 
 .hy image {
   width: 59rpx;
+  height: 98rpx;
   display: block;
   padding: 22rpx 0;
   margin-left: auto;

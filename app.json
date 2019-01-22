@@ -1,6 +1,10 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/mine/MyTeam/MyTeam",
+    "pages/PromotionCenter/PromotionCenter",
+    "pages/Login/Login",
+    "pages/mine/redPacket/redPacketHistory",
     "pages/address/address/address",
     "pages/memberCenter/memberCenter",
     "pages/comment/reply",
@@ -32,23 +36,20 @@
     "pages/mine/MyHomework/MyHomework",
     "pages/mhzindex/examination/examination",
     "pages/PromotionCenter/PutForward/PutForward",
-    "pages/mine/MyTeam/MyTeam",
     "pages/mine/redPacket/redPacket",
-    "pages/PromotionCenter/PromotionCenter",
     "pages/program/CurriculaVariable/CurriculaVariable",
     "pages/mine/nopersonal/nopersonal",
     "pages/PromotionCenter/IntegralDetail/IntegralDetail",
     "pages/comment/comment",
     "pages/mine/MyCollection/MyCollection",
     "pages/mine/MyMessage/MyMessage",
-    "pages/Login/Login",
     "pages/mhzindex/mhzindex",
     "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ADB183",
-    "navigationBarTitleText": "梅花针",
+    "navigationBarTitleText": "梅花针课堂",
     "navigationBarTextStyle": "#FFFFFF"
   },
   "tabBar": {

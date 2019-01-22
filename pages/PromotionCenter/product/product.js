@@ -56,7 +56,7 @@ Page({
         "18": "18.gif",
         "19": "19.gif",
       });
-      
+
       that.setData({
         filepath: App.globalData.filepath,
         jfproduct: data.jfproduct,
@@ -212,7 +212,11 @@ Page({
       wx.showToast({
         title: '兑换成功',
         icon: 'success',
-        success:function(){
+        success: function() {
+
+          that.setData({
+            isRuleTrue: false
+          })
           wx.hideNavigationBarLoading();
         }
       });

@@ -10,45 +10,73 @@ Page({
     hidden: false,
     userInfo: wx.getStorageSync('userInfo')
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     wx.hideShareMenu();
     var that = this;
+    that.setData({
+      isdo: false
+    })
     that.data.id = options.id
     common.PostMain('message/redPacket', {
       user_id: that.data.userInfo.user_id,
       id: that.data.id,
-
     }, function(res) {
-      var param = res;
+      console.log(res)
+      var param = res.UserMessage;
       param.hidden = res.message_status == 2 ? true : false;
       that.setData(param)
+      that.setData({
+        count: res.Message,
+        nextId: res.nextId
+      })
     });
+
     wx.hideShareMenu();
+  },
+  showRule: function() {
+    wx.navigateTo({
+      url: '/pages/mine/redPacket/redPacketHistory',
+    });
   },
   //点击红包
   submit: function(e) {
-    console.log(e)
     var that = this;
     if (that.data.isdo) {
       return null;
     }
     that.setData({
       isdo: true
-    })
-    common.PostMain('message/redPacketdo', {
-      user_id: that.data.userInfo.user_id,
-      id: that.data.id,
-      formid: e.detail.formId
-    }, function(res) {
-      that.setData({
-        hidden: true
-      })
     });
+    wx.showLoading({
+      title: '拆红包...',
+      success: function() {
+        common.PostMain('message/redPacketdo', {
+          user_id: that.data.userInfo.user_id,
+          id: that.data.id,
+          formid: e.detail.formId
+        }, function(res) {
+          that.setData({
+            hidden: true,
+            count: that.data.count - 1
+          })
+          wx.hideLoading();
+        });
+      }
+    })
 
+
+  },
+  next: function(e) {
+    this.onLoad({
+      id: e.currentTarget.dataset.id
+    })
+    return null;
+    wx.redirectTo({
+      url: '/pages/mine/redPacket/redPacket?id=' + e.currentTarget.dataset.id,
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

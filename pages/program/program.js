@@ -40,7 +40,8 @@ Page({
    * 失焦搜索
    */
   resignFocus: function(e) {
-    var value=e.detail.value;
+    var value = e.detail.value;
+    console.log(value)
     wx.navigateTo({
       url: '/pages/program/programlist/programlist?content=' + value,
     })

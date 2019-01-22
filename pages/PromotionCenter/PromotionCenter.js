@@ -87,8 +87,10 @@ Page({
       that.setData({
         userInfo: data.res,
         lastmoney: (data.res.addjifen - data.res.jianjifen).toFixed(2),
+        countComeIn: (parseFloat(data.res.money) + parseFloat(data.moreinfo.depositMoney)).toFixed(2),
         fxs: data.fxs,
         need: 0,
+        moreinfo: data.moreinfo
       });
       wx.hideNavigationBarLoading();
     });

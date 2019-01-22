@@ -1,4 +1,4 @@
-// pages/mine/MyTeam/MyTeam.js
+// pages/PromotionCenter/Bill/Bill.js
 var App = getApp();
 var common = require('../../../utils/common.js');
 Page({
@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // userInfo: wx.getStorageSync('userInfo')
+    userInfo: wx.getStorageSync('userInfo')
   },
 
   /**
@@ -15,6 +15,9 @@ Page({
    */
   onLoad: function(options) {
     common.onLoad(options);
+    wx.setNavigationBarTitle({
+      title:'红包记录'
+    })
   },
 
   /**
@@ -29,16 +32,13 @@ Page({
    */
   onShow: function() {
     var that = this;
-    common.PostMain('message/myteam', {
-      user_id: wx.getStorageSync('userInfo').user_id
-      // user_id: 2678
+    common.PostMain('user/redpackethistory', {
+      user_id: that.data.userInfo.user_id
     }, function(res) {
       that.setData({
-        fidUserInfo: res.fidUserInfo,
-        myTeam: res.myTeam,
-        userInfo: wx.getStorageSync('userInfo')
+        data: res
       })
-    });
+    })
   },
 
   /**

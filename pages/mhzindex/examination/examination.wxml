@@ -52,7 +52,7 @@
     </view>
     <view class='list'>
       <image mode='widthFix' class='lv' src='/imgs/lv.jpg'></image>
-      <text class='title'>{{currentTab==0?'报名人数':'报考人数'}}：</text>
+      <text class='title'>{{currentTab==0?'限额人数':'限额人数'}}：</text>
       <text class='cText'>{{baomings.member_num}}</text>
     </view>
 

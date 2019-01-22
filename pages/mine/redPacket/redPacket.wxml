@@ -1,11 +1,14 @@
 <!--pages/redPacket/redPacket.wxml-->
 <form bindsubmit='submit' report-submit="{{true}}">
-  <view>
+  <view class='clearfix'>
+    <text bindtap='showRule' class='tuiguang'>红包明细</text>
+    <text class='sy'>剩余红包数量 {{count}} 个</text>
     <image class='two' src='/imgs/red2.png'></image>
     <image class='one' src='/imgs/red1.png' hidden='{{hidden}}'></image>
     <text class='money' hidden='{{hidden}}'>{{money}}</text>
     <text class="ext" wx:if="{{message_type==2}}">元</text>
     <text class="ext" wx:if="{{message_type==3}}">积分</text>
   </view>
-  <button form-type='submit' hidden='{{hidden}}'></button>
+  <button class='btn' form-type='submit' hidden='{{hidden}}'></button>
+  <button class='next' wx:if='{{hidden&&count>0&&nextId}}' bindtap='next' data-id='{{nextId}}'>我知道了</button>
 </form>

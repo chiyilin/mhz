@@ -10,52 +10,66 @@
       <text class='VipText' wx:if="{{userInfo.fxs_level==i}}">{{item}}</text>
     </block>
   </view>
-
-  <view class='money'>
-    <view class='yue'>
-      <text>余额（￥）</text>
-      <text>{{userInfo.money}}</text>
-    </view>
-    <view class='yue'>
-      <text>积分（分）</text>
-      <text>{{lastmoney}}</text>
-    </view>
-  </view>
 </view>
 
+<view class='money'>
+  <view class='yue'>
+    <text>{{userInfo.money}}</text>
+    <text class='last'>余额（元）</text>
+  </view>
+  <view>
+    <text>{{moreinfo.depositMoney}}</text>
+    <text class='last'>已提现（元）</text>
+  </view>
+</view>
+<view class='money'>
+  <view class='yue'>
+    <text>{{lastmoney}}</text>
+    <text class='last'>积分（分）</text>
+  </view>
+  <view>
+    <text>{{moreinfo.JflistMoney}}</text>
+    <text class='last'>已兑换（分）</text>
+  </view>
+</view>
 <!--&nbsp-->
-<view class='bottom'>
+<view class='bottom clearfix'>
   <view bindtap='money'>
     <image mode='widthFix' src='/imgs/tx.jpg'></image>
-    <text>提现</text>
-  </view>
-  <view bindtap='exchange'>
-    <image mode='widthFix' src='/imgs/dh.jpg'></image>
-    <text>兑换</text>
+    <text>累计收益</text>
+    <text class='tip'>{{countComeIn}}元</text>
   </view>
   <view style='margin-right:0' bindtap='team'>
     <image mode='widthFix' src='/imgs/tj.jpg'></image>
     <text>我的推荐</text>
+    <text class='tip'>{{moreinfo.shareNum}}人</text>
   </view>
-
 </view>
-<view class='bottom bottom1'>
-  <view bindtap='share'>
-    <image mode='widthFix' src='/imgs/ewm.jpg'></image>
-    <text>二维码</text>
-  </view>
+<view class='bottom bottom1 clearfix'>
+
   <view bindtap='moneydan'>
     <image mode='widthFix' src='/imgs/mx.jpg'></image>
-    <text>账单明细</text>
+    <text>提现记录</text>
+    <text class='tip'>{{moreinfo.depositCount}}笔</text>
   </view>
   <view style='margin-right:0' bindtap='jifendan'>
     <image mode='widthFix' src='/imgs/jfmx.jpg'></image>
     <text>积分明细</text>
+    <text class='tip'>{{lastmoney}}</text>
   </view>
 </view>
-
-
-
+<view class='bottom bottom1 clearfix'>
+  <view bindtap='exchange'>
+    <image mode='widthFix' src='/imgs/dh.jpg'></image>
+    <text>积分兑换</text>
+    <!-- <text class='tip'>10.221212</text> -->
+  </view>
+  <view style='margin-right:0' bindtap='share'>
+    <image mode='widthFix' src='/imgs/ewm.jpg'></image>
+    <text>二维码</text>
+    <!-- <text class='tip'>10.221212</text> -->
+  </view>
+</view>
 <view class="zhezao" wx:if="{{shareImage&&flag}}">
   <view class="t_w">
     <!--右上角图标开始-->

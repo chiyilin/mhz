@@ -1,42 +1,48 @@
 /* pages/mine/history/history.wxss */
-.vid{
+
+.vid {
   padding: 0 30rpx;
   position: relative;
   background-color: #fff;
   height: 206rpx;
   overflow: hidden;
 }
-.vid::after{
+
+.vid::after {
   position: absolute;
-bottom: 0;
-left: 0;
-width: 100%;
-height: 1px;
-background-color: #e6e6e6;
-content: ' ';
-display: block;
-transform: scaley(0.5);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #e6e6e6;
+  content: ' ';
+  display: block;
+  transform: scaley(0.5);
 }
-.hui{
+
+.hui {
   width: 280rpx;
   height: 160rpx;
   float: left;
   margin-right: 30rpx;
-  margin-top: 20rpx;
+  margin-top: 25rpx;
   border-radius: 3px;
 }
-text{
+
+text {
   display: block;
 }
-.name{
+
+.name {
   font-size: 28rpx;
-  color: #605F5F;
-  margin-top: 20rpx;
+  color: #605f5f;
+  margin-top: 25rpx;
 }
-.date{
+
+.date {
   font-size: 20rpx;
   color: #9e9e9e;
   position: absolute;
   left: 340rpx;
-  bottom:26rpx;
+  bottom: 24rpx;
 }

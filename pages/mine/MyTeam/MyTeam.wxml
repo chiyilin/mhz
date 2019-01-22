@@ -16,20 +16,30 @@
       <view class='tuijian'>
         <image style="width:47rpx" mode='widthFix' src='/imgs/name.jpg'></image>
         <text>姓名：{{item.nick_name}}</text>
+        <text class='dj fr' wx:if="{{item.user_fid==userInfo.user_id}}">一级</text>
+        <text class='dj fr' wx:else>二级</text>
+      </view>
+      <view class='mt' wx:if="{{item.usersmrz.smrz_mobile}}">
+        <image style='width:47rpx;' mode='widthFix' src='/imgs/phone.jpg'></image>
+        <text>手机号：{{item.usersmrz.smrz_mobile}}</text>
       </view>
       <view class='mt'>
-        <image style='width:43rpx;' mode='widthFix' src='/imgs/phone.jpg'></image>
-        <text>手机号：{{item.user_mobile}}</text>
-      </view>
-      <view class='mt'>
-        <image style="width:36rpx" mode='widthFix' src='/imgs/dhmximg3.jpg'></image>
+        <image style="width:37rpx; margin-left:5rpx;margin-right:24rpx;" mode='widthFix' src='/imgs/dhmximg3.jpg'></image>
         <text>加入时间：{{item.user_add_time}}</text>
+      </view>
+      <view class='mt'>
+        <image style="width:37rpx; margin-left:5rpx;margin-right:24rpx;" mode='widthFix' src='/imgs/dhmximg3.jpg'></image>
+        <text>消费金额：{{item.prodlist_money_count}}元</text>
+      </view>
+      <view class='mt'>
+        <image style="width:37rpx; margin-left:5rpx;margin-right:24rpx;" mode='widthFix' src='/imgs/dhmximg3.jpg'></image>
+        <text>订单数量：{{item.prodlist_total_count}}</text>
       </view>
     </view>
   </block>
   <block wx:if="{{myTeam.length==0}}">
-  <view class='none'>
-    <text>暂无记录</text>
-  </view>
-</block>
+    <view class='none'>
+      <text>暂无记录</text>
+    </view>
+  </block>
 </view>
