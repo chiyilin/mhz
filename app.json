@@ -50,7 +50,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ADB183",
     "navigationBarTitleText": "梅花针课堂",
-    "navigationBarTextStyle": "#FFFFFF"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#727171",
